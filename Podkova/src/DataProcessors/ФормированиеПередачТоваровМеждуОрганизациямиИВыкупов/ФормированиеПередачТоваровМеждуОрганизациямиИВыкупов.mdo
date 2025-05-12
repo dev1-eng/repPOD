@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="45f8447a-1a7b-4ca5-b4ff-40e8ac9c741c">
+  <producedTypes>
+    <objectType typeId="ea005849-fd73-4ba9-b501-3fb9fe0cf5b3" valueTypeId="5f3262dd-b9a6-427d-9ba6-1ac7a93f44a6"/>
+    <managerType typeId="7af04ce4-6e9d-49e7-8464-52d1eeeb6d1a" valueTypeId="6e1be517-db01-4c78-b651-913ce38dbfb5"/>
+  </producedTypes>
+  <name>ФормированиеПередачТоваровМеждуОрганизациямиИВыкупов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Помощник формирования передач и выкупов товаров</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ФормированиеПередачТоваровМеждуОрганизациямиИВыкупов.Form.Основная</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <tabularSections uuid="e79eb444-8be0-4d33-af83-81c9d8362618">
+    <producedTypes>
+      <objectType typeId="4bd0fc4d-b5d0-4684-a0b7-d3c5de61f4ba" valueTypeId="acc94f97-f4bf-4f6b-a5ab-d3db06c1e811"/>
+      <rowType typeId="8c5805f6-4f45-4eb2-af2c-44d0bc405a7c" valueTypeId="2eb1d415-e738-43b9-95f4-e42ce24c9305"/>
+    </producedTypes>
+    <name>ВыбранныеОтправители</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбранные отправители</value>
+    </synonym>
+    <fillChecking>ShowError</fillChecking>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="461bb43b-8803-4f48-811f-6beef397ee4c">
+      <name>Отправитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Отправитель</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Организации</types>
+        <types>CatalogRef.Партнеры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="763c56e1-e34f-4210-961a-2da8e6100fa6">
+      <name>ВидЦен</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид цен</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВидыЦен</types>
+        <types>CatalogRef.ВидыЦенПоставщиков</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Отбор.ИспользоватьПриПередачеМеждуОрганизациями</name>
+        <value xsi:type="core:BooleanValue">
+          <value>true</value>
+        </value>
+      </choiceParameters>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3938c7cc-2c0c-4298-8632-56ffe350a0b2">
+      <name>Договор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Договор</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ДоговорыМеждуОрганизациями</types>
+        <types>CatalogRef.ДоговорыКонтрагентов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b9d081b2-4e2e-420e-8136-360cdf421f69">
+      <name>ХозяйственнаяОперация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Хозяйственная операция</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ХозяйственныеОперации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="40213569-585a-48d4-b5f4-1e08f0230a78">
+      <name>ТипЗапасов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Передаваемый тип запасов</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ТипыЗапасов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="0a35aae5-8e03-489b-baff-7e633c4127bf">
+    <name>Основная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="904fbbff-37f0-4da0-856a-51522b074d0a">
+    <name>ВыборПоклажедателя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбор поклажедателя</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d22fce05-37d9-41d6-a640-0be60cda79ca">
+    <name>ВыборВариантаПродолженияФормирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбор варианта продолжения формирования</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

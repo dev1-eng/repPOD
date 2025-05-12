@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d0fbbdb8-d6e8-4e0c-a6e6-91fe155990d2">
+  <producedTypes>
+    <selectionType typeId="71bbef9d-2680-408f-9ccf-c253ed51e5e1" valueTypeId="1ca5dee6-f2df-40e1-96ad-82e045a365b9"/>
+    <listType typeId="655ee2dc-5b63-42d5-bb4b-973aea9f2cee" valueTypeId="e095bfb5-9c93-4dfd-8fb6-279265dd9e9b"/>
+    <managerType typeId="c8e27986-d656-45d2-a2db-02540a3ebf35" valueTypeId="af86a6bd-6bb8-407c-a179-d29836d05b51"/>
+    <recordSetType typeId="c4b1ad63-c587-49f0-a363-f79aa2b0dcfd" valueTypeId="f938afc8-3d2c-4e70-bafc-4b76a0d41ddf"/>
+    <recordKeyType typeId="e39bb0c0-6480-49c8-9b18-f5c224422719" valueTypeId="d2724dae-6303-4b2f-9444-aa4b5b382e75"/>
+    <recordType typeId="6ecf78d8-b8e5-4aa9-9216-800dab6fd4ac" valueTypeId="05b92ee1-1058-4bc6-871f-ca813fdcdb6a"/>
+    <recordManagerType typeId="03231f7e-b8c4-4049-a77f-834cace22df2" valueTypeId="e9e06969-c4ac-4783-87c4-5c70c4fcff47"/>
+  </producedTypes>
+  <name>ОшибкиРасчетаПартийИСебестоимости</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ошибки расчета партий и себестоимости</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.ОшибкиРасчетаПартийИСебестоимости.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период расчета</value>
+    </synonym>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <format>
+      <key>ru</key>
+      <value>ДФ='ММММ гггг'</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДФ='ММММ гггг'</value>
+    </editFormat>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Month</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="fafcfe62-a989-4a26-836a-7e59ba642977">
+    <name>ИдентификаторПротокола</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уникальный идентификатор протокола</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>36</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="29e43c05-030f-41b9-b1ef-d8ea29b630c1">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c5fde48e-d557-4a2c-9ca8-9e6bf0db5c42">
+    <name>ВариантРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант расчета</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВариантыРасчетаПартийИСебестоимости</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+  </dimensions>
+  <dimensions uuid="6cea8cbe-ae4f-4142-bc5a-7b705d804dd9">
+    <name>ТипОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип ошибки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыОшибокПартионногоУчетаИСебестоимости</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+  </dimensions>
+  <forms uuid="0647bf38-3d9c-4153-9b37-d34bbc61e9b3">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

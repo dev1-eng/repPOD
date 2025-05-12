@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d45c60f7-bee0-4695-9ea6-d9f17a86402a">
+  <producedTypes>
+    <objectType typeId="2cd27ba3-aac6-493a-af7c-a9db240071b2" valueTypeId="fd20d6eb-46ab-48a4-a170-e04be637d14e"/>
+    <refType typeId="fcd1e4a9-753c-4260-96ee-6b847c186dc5" valueTypeId="bb0b954c-86d4-4d18-9913-bcd6aa0f4ce5"/>
+    <selectionType typeId="68f8e88a-da15-41c1-91d9-8399f06ef2f4" valueTypeId="5e95ef5a-6ee1-47ae-afd4-c1d4270544fc"/>
+    <listType typeId="7a516052-f05f-4d4f-95ad-c9108a64b512" valueTypeId="71b062d4-1f2a-4f42-9d60-f2f71866cdc8"/>
+    <managerType typeId="4af886b0-fff0-4977-a11e-3ebe7a47460e" valueTypeId="227f6b65-0a28-4e12-ac51-64afe3da8d7c"/>
+  </producedTypes>
+  <name>РаспределениеНДС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Распределение НДС</value>
+  </synonym>
+  <comment>Распределение НДС по видам налогообложения</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.РаспределениеНДС.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <createOnInput>Use</createOnInput>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <numberPeriodicity>Year</numberPeriodicity>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.РаспределениеНДС.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.РаспределениеНДС.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Document.РаспределениеНДС.Form.ФормаВыбора</defaultChoiceForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDeleteOff</registerRecordsDeletion>
+  <registerRecords>AccumulationRegister.ПрочиеРасходы</registerRecords>
+  <registerRecords>AccumulationRegister.ПартииПрочихРасходов</registerRecords>
+  <registerRecords>AccumulationRegister.ПрочиеАктивыПассивы</registerRecords>
+  <registerRecords>AccumulationRegister.ПартииНДСКРаспределению</registerRecords>
+  <registerRecords>AccumulationRegister.ДвиженияДоходыРасходыПрочиеАктивыПассивы</registerRecords>
+  <registerRecords>AccumulationRegister.НДСПредъявленный</registerRecords>
+  <registerRecords>AccumulationRegister.НДСЗаписиКнигиПродаж</registerRecords>
+  <registerRecords>AccumulationRegister.НДСЗаписиКнигиПокупок</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <choiceHistoryOnInput>DontUse</choiceHistoryOnInput>
+  <attributes uuid="aa02b8d9-f0bf-4e0d-b2cd-fa34018f9896">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация, для которой производится распределение НДС</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>ВыборУправленческойОрганизации</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>IndexWithAdditionalOrder</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f492375f-5e59-41c7-89d4-a6bbe42133c7">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Пользователь, ответственный за распределение НДС</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a6dc35d9-12eb-4426-b66d-712745d8e599">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Произвольный комментарий. </value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b06f7e65-2d4c-4a1f-bba6-c960f62a66a0">
+    <name>ВыручкаНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выручка НДС</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выручка по облагаемой НДС деятельности за текущий налоговый период в валюте регламентированного учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="09a2c8e8-5185-4f6a-b0df-310397722907">
+    <name>ВыручкаНеРФ</name>
+    <synonym>
+      <key>ru</key>
+      <value>в том числе выручка от реализации работ (услуг) не на территории РФ</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выручка по облагаемой НДС деятельности за текущий налоговый период в валюте регламентированного учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1a728d6f-060e-4394-b5e5-cf082b638ff7">
+    <name>ВыручкаНеНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выручка не НДС</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выручка по не облагаемой НДС деятельности за текущий налоговый период в валюте регламентированного учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e7483629-1852-4a8a-9ae4-6ea0c12f4048">
+    <name>ВыручкаЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выручка ЕНВД</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выручка по облагаемой ЕНВД деятельности за текущий налоговый период в валюте регламентированного учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="849676df-2f84-465c-bde7-84910c38bb4a">
+    <name>ВыручкаНДС0</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выручка НДС 0</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выручка за текущий налоговый период по деятельности, облагаемой по ставке НДС 0% (экспорт), в валюте регламентированного учета. При распределении после 01.07.2016 не используется.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="77e80733-c51c-4bce-ba10-207385062c30">
+    <name>СписатьНДСПоРасходамАктивамНаСтатьиОтражения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Списать НДС по расходам активам на статьи отражения</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Отнесение НДС по операциям включения и исключения из стоимости расходов на статью отражения самих расходов/активов</value>
+    </toolTip>
+    <minValue xsi:type="core:StringValue">
+      <value>0</value>
+    </minValue>
+    <maxValue xsi:type="core:StringValue">
+      <value>1</value>
+    </maxValue>
+    <fillValue xsi:type="core:NumberValue">
+      <value>0</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="62f668cf-4d9b-4c06-8ef1-7af6bd355e6b">
+    <name>СтатьяРасходовНеНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья расходов не НДС</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.СтатьиРасходов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статья расходов по операциям включения и исключения НДС из стоимости по не облагаемой НДС деятельности</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ВариантРаспределенияРасходовУпр</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ВариантыРаспределенияРасходов.EnumValue.НаНаправленияДеятельности</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ВариантыРаспределенияРасходов.EnumValue.НаПроизводственныеЗатраты</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ВариантыРаспределенияРасходов.EnumValue.НеРаспределять</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ВариантыРаспределенияРасходов.EnumValue.НаРасходыБудущихПериодов</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ВариантыРаспределенияРасходов.EnumValue.НаВнеоборотныеАктивы</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fc41f4f3-d88c-4b9e-bd63-31ad20127fa8">
+    <name>АналитикаРасходовНеНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика расходов не НДС</value>
+    </synonym>
+    <type>
+      <types>Characteristic.СтатьиРасходов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика статьи расходов по операциям включения и исключения НДС из стоимости по не облагаемой НДС деятельности</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>Document.РаспределениеНДС.Attribute.СтатьяРасходовНеНДС</field>
+    </choiceParameterLinks>
+    <linkByType>
+      <field>Document.РаспределениеНДС.Attribute.СтатьяРасходовНеНДС</field>
+    </linkByType>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5b85ac2d-77f7-4e36-b436-58c519506c28">
+    <name>СтатьяРасходовЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья расходов ЕНВД</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.СтатьиРасходов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статья расходов по операциям включения и исключения НДС из стоимости по облагаемой ЕНВД деятельности</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ВариантРаспределенияРасходовРегл</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ВариантыРаспределенияРасходов.EnumValue.НаНаправленияДеятельности</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ВариантыРаспределенияРасходов.EnumValue.НаРасходыБудущихПериодов</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ВариантыРаспределенияРасходов.EnumValue.НаПроизводственныеЗатраты</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ВариантыРаспределенияРасходов.EnumValue.НеРаспределять</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ВариантыРаспределенияРасходов.EnumValue.НаВнеоборотныеАктивы</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a058c704-2294-413c-972c-3e46d4d9320d">
+    <name>АналитикаРасходовЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика расходов ЕНВД</value>
+    </synonym>
+    <type>
+      <types>Characteristic.СтатьиРасходов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика статьи расходов по операциям включения и исключения НДС из стоимости по облагаемой ЕНВД деятельности</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>Document.РаспределениеНДС.Attribute.СтатьяРасходовЕНВД</field>
+    </choiceParameterLinks>
+    <linkByType>
+      <field>Document.РаспределениеНДС.Attribute.СтатьяРасходовЕНВД</field>
+    </linkByType>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7a650c2b-e584-496a-9306-fcb0c47d512e">
+    <name>БазаРаспределенияУстанавливаетсяВручную</name>
+    <synonym>
+      <key>ru</key>
+      <value>База распределения устанавливается вручную</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ad649804-ea76-43b8-89a5-98f200dc4498">
+    <name>ПрименитьПравило5Процентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Применить правило5 процентов</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак того, что следует применить &quot;правило 5%&quot; и принять весь НДС к вычету (абз. 9 п.4 ст. 170 НК)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5b2ebbd6-3946-47af-82a9-a49a2d3c23af">
+    <name>ВыручкаНДС0СырьевыеТоварыУслуги</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выручка НДС 0% (сырьевые товары, услуги)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выручка за текущий налоговый период по деятельности, облагаемой по ставке НДС 0% (экспорт), от реализации услуг и сырьевых товаров. Используются при распределении с 01.07.2016.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="54acc60f-2c0f-4d01-9dee-5fbfe32fc8f9">
+    <name>ВыручкаНДС0НесырьевыеТовары</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выручка НДС 0% (несырьевые товары)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выручка за текущий налоговый период по деятельности, облагаемой по ставке НДС 0% (экспорт), от реализации несырьевых товаров. Используются при распределении с 01.07.2016.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4cbc18b5-ebe3-46f5-bdcd-cc62190768c5">
+    <name>НачалоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало периода</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Начало налогового периода по НДС</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="ae8819a4-59d6-4db7-82d2-b6c4b68c21ef">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="879fbbe1-d2e2-48b1-82f7-ee96e4f910e5">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a3b431b5-01ac-4784-99d5-4da5bd2a3095">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e0dfcab8-7ace-4e63-ad1b-f5d067052d6c">
+    <name>ФормаДокументыЭкспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документы экспорта сырьевых товаров, работ, услуг</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="be168994-a7bd-411d-80f6-1bdc9ba525a2">
+    <producedTypes>
+      <objectType typeId="adfbe8b4-45f1-46cb-912c-39f5aef57a24" valueTypeId="98277490-fee3-4160-9d13-d95453842b14"/>
+      <rowType typeId="5db81cf1-4a05-49fe-bd29-db2223e11a60" valueTypeId="2eb84a19-94a1-4f62-88ea-a7d10997186d"/>
+    </producedTypes>
+    <name>ДокументыЭкспорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документы экспорт</value>
+    </synonym>
+    <toolTip>
+      <key>ru</key>
+      <value>Таблица содержит документы экспортные реализации, до подтверждения ставки 0% по которым, откладывается принятие НДС к вычету.</value>
+    </toolTip>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="8763c243-5fae-4d8e-b2b0-68e2ddfbd0e4">
+      <name>Документ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ОснованиеСчетФактураВыданный</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Документ реализации по ставке НДС 0%</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="5c7d3ac7-a1d3-40f8-8a8d-a5394261aeee">
+      <name>СуммаВыручки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма выручки</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Используется в качестве базы для распределения суммы НДС, которую необходимо отложить до подтверждения ставки 0% по экспортной реализации.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e776cf36-9110-4847-b3f1-f391a9fcb706">
+      <name>КорректировкаВыручки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Корректировка выручки</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

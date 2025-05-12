@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АналитикаУчетаНоменклатуры</dataPath>
+			<field>АналитикаУчетаНоменклатуры</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОстаток</dataPath>
+			<field>КоличествоОстаток</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЗапасов</dataPath>
+			<field>ВидЗапасов</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтоСторно</dataPath>
+			<field>ЭтоСторно</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерГТД</dataPath>
+			<field>НомерГТД</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ВидыЗапасов.Ссылка КАК Ссылка
+ПОМЕСТИТЬ ВТКонтролируемыеВидыЗапасов
+ИЗ
+	Справочник.ВидыЗапасов КАК ВидыЗапасов
+ГДЕ
+	ВидыЗапасов.ТипЗапасов В(&amp;КонтролируемыеТипыЗапасов)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ОстаткиНаКонецМесяцаИсправления.АналитикаУчетаНоменклатуры КАК АналитикаУчетаНоменклатуры,
+	ОстаткиНаКонецМесяцаИсправления.Организация КАК Организация,
+	ОстаткиНаКонецМесяцаИсправления.ВидЗапасов КАК ВидЗапасов,
+	ОстаткиНаКонецМесяцаИсправления.НомерГТД КАК НомерГТД,
+	СУММА(ОстаткиНаКонецМесяцаИсправления.КоличествоОстаток) КАК КоличествоОстаток
+ПОМЕСТИТЬ ОстаткиНаКонецМесяцаИсправления
+ИЗ
+	(ВЫБРАТЬ
+		ТоварыОрганизацийОстатки.АналитикаУчетаНоменклатуры КАК АналитикаУчетаНоменклатуры,
+		ТоварыОрганизацийОстатки.Организация КАК Организация,
+		ТоварыОрганизацийОстатки.ВидЗапасов КАК ВидЗапасов,
+		ТоварыОрганизацийОстатки.НомерГТД КАК НомерГТД,
+		ТоварыОрганизацийОстатки.КоличествоОстаток КАК КоличествоОстаток
+	ИЗ
+		РегистрНакопления.ТоварыОрганизаций.Остатки(
+				,
+				ВидЗапасов В
+					(ВЫБРАТЬ
+						ВТКонтролируемыеВидыЗапасов.Ссылка КАК Ссылка
+					ИЗ
+						ВТКонтролируемыеВидыЗапасов)) КАК ТоварыОрганизацийОстатки
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		РезервыТоваровОрганизаций.АналитикаУчетаНоменклатуры,
+		РезервыТоваровОрганизаций.Организация,
+		РезервыТоваровОрганизаций.ВидЗапасов,
+		РезервыТоваровОрганизаций.НомерГТД,
+		РезервыТоваровОрганизаций.КоличествоОстаток
+	ИЗ
+		РегистрНакопления.РезервыТоваровОрганизаций.Остатки(
+				,
+				ВидЗапасов В
+					(ВЫБРАТЬ
+						ВТКонтролируемыеВидыЗапасов.Ссылка КАК Ссылка
+					ИЗ
+						ВТКонтролируемыеВидыЗапасов)) КАК РезервыТоваровОрганизаций) КАК ОстаткиНаКонецМесяцаИсправления
+
+СГРУППИРОВАТЬ ПО
+	ОстаткиНаКонецМесяцаИсправления.АналитикаУчетаНоменклатуры,
+	ОстаткиНаКонецМесяцаИсправления.Организация,
+	ОстаткиНаКонецМесяцаИсправления.ВидЗапасов,
+	ОстаткиНаКонецМесяцаИсправления.НомерГТД
+
+ИНДЕКСИРОВАТЬ ПО
+	АналитикаУчетаНоменклатуры,
+	Организация,
+	ВидЗапасов,
+	НомерГТД
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ОстаткиНаКонецМесяцаИсправления.АналитикаУчетаНоменклатуры КАК АналитикаУчетаНоменклатуры,
+	ОстаткиНаКонецМесяцаИсправления.Организация КАК Организация
+ПОМЕСТИТЬ ОтборПроблемныеОстатки
+ИЗ
+	ОстаткиНаКонецМесяцаИсправления КАК ОстаткиНаКонецМесяцаИсправления
+
+СГРУППИРОВАТЬ ПО
+	ОстаткиНаКонецМесяцаИсправления.АналитикаУчетаНоменклатуры,
+	ОстаткиНаКонецМесяцаИсправления.Организация,
+	ОстаткиНаКонецМесяцаИсправления.ВидЗапасов,
+	ОстаткиНаКонецМесяцаИсправления.НомерГТД
+
+ИМЕЮЩИЕ
+	СУММА(ОстаткиНаКонецМесяцаИсправления.КоличествоОстаток) &lt; 0
+
+ИНДЕКСИРОВАТЬ ПО
+	АналитикаУчетаНоменклатуры,
+	Организация
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ОстаткиНаКонецМесяцаИсправления.АналитикаУчетаНоменклатуры КАК АналитикаУчетаНоменклатуры,
+	ОстаткиНаКонецМесяцаИсправления.Организация КАК Организация
+ПОМЕСТИТЬ ОтборОтрицательныеОстатки
+ИЗ
+	ОстаткиНаКонецМесяцаИсправления КАК ОстаткиНаКонецМесяцаИсправления
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ВидыЗапасов КАК ВидыЗапасов
+		ПО ОстаткиНаКонецМесяцаИсправления.ВидЗапасов = ВидыЗапасов.Ссылка
+
+СГРУППИРОВАТЬ ПО
+	ОстаткиНаКонецМесяцаИсправления.АналитикаУчетаНоменклатуры,
+	ОстаткиНаКонецМесяцаИсправления.Организация,
+	ВЫБОР
+		КОГДА ВидыЗапасов.ТипЗапасов В (&amp;ТипыЗапасовВнешнийВладелец)
+			ТОГДА ВидыЗапасов.ВладелецТовара
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ
+
+ИМЕЮЩИЕ
+	СУММА(ОстаткиНаКонецМесяцаИсправления.КоличествоОстаток) &lt; 0
+
+ИНДЕКСИРОВАТЬ ПО
+	АналитикаУчетаНоменклатуры,
+	Организация
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ОстаткиНаКонецМесяцаИсправления.АналитикаУчетаНоменклатуры КАК АналитикаУчетаНоменклатуры,
+	ОстаткиНаКонецМесяцаИсправления.Организация КАК Организация,
+	ОстаткиНаКонецМесяцаИсправления.ВидЗапасов КАК ВидЗапасов,
+	ОстаткиНаКонецМесяцаИсправления.НомерГТД КАК НомерГТД,
+	ОстаткиНаКонецМесяцаИсправления.КоличествоОстаток КАК КоличествоОстаток
+ИЗ
+	ОстаткиНаКонецМесяцаИсправления КАК ОстаткиНаКонецМесяцаИсправления
+ГДЕ
+	(ОстаткиНаКонецМесяцаИсправления.АналитикаУчетаНоменклатуры, ОстаткиНаКонецМесяцаИсправления.Организация) В
+			(ВЫБРАТЬ
+				ОтборПроблемныеОстатки.АналитикаУчетаНоменклатуры КАК АналитикаУчетаНоменклатуры,
+				ОтборПроблемныеОстатки.Организация КАК Организация
+			ИЗ
+				ОтборПроблемныеОстатки КАК ОтборПроблемныеОстатки)
+	И НЕ (ОстаткиНаКонецМесяцаИсправления.АналитикаУчетаНоменклатуры, ОстаткиНаКонецМесяцаИсправления.Организация) В
+				(ВЫБРАТЬ
+					ОтборОтрицательныеОстатки.АналитикаУчетаНоменклатуры КАК АналитикаУчетаНоменклатуры,
+					ОтборОтрицательныеОстатки.Организация КАК Организация
+				ИЗ
+					ОтборОтрицательныеОстатки КАК ОтборОтрицательныеОстатки)
+	И ОстаткиНаКонецМесяцаИсправления.КоличествоОстаток &lt;&gt; 0</query>
+	</dataSet>
+	<totalField>
+		<dataPath>КоличествоОстаток</dataPath>
+		<expression>Сумма(КоличествоОстаток)</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>НачалоПериода(ДобавитьКДате(&amp;Месяц, "Месяц", 1), "Месяц")</expression>
+	</parameter>
+	<parameter>
+		<name>Месяц</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Месяц</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>МесяцПредставление</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Месяц</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонтролируемыеТипыЗапасов</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Контролируемые типы запасов</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.ТипыЗапасов</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>Перечисления.ТипыЗапасов.КонтролируемыеТипыЗапасов()</expression>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>ТипыЗапасовВнешнийВладелец</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Типы запасов внешний владелец</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.ТипыЗапасов</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>Перечисления.ТипыЗапасов.ТипыЗапасовВнешнийВладелец()</expression>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Развернутое сальдо по видам запасов и номерам ГТД</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>АналитикаУчетаНоменклатуры</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидЗапасов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерГТД</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Организация</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоОстаток</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Остаток</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>fba45edd-21e8-42c0-891b-191df11e3c33</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">АналитикаУчетаНоменклатуры.МестоХранения</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>0e67ea45-4964-49b7-801c-4facd79ca481</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Склад</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">АналитикаУчетаНоменклатуры.Номенклатура</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:ValueListType">
+						<v8:valueType/>
+						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+					</dcsset:right>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>dab6e968-c885-4b93-9305-a628924b86f5</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>883fe8cf-add3-4754-9ab7-6bc17613ebee</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МесяцПредставление</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Январь 2018</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ВидЗапасов</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>НомерГТД</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Организация</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>АналитикаУчетаНоменклатуры</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

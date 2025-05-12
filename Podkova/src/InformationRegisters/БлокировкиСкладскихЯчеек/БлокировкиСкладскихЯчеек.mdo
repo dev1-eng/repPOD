@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="46e19ccd-4812-43f2-b7a0-5a22c09dcd66">
+  <producedTypes>
+    <selectionType typeId="41c27b81-6f32-4f1d-a00e-e21dd9258edb" valueTypeId="d98fb74d-155c-4f3b-83b9-cdf88e3187e2"/>
+    <listType typeId="411ea122-b21e-47fb-9a65-fdfd45f0bbe8" valueTypeId="641a478c-d1fe-43a1-b681-6d31c9dcbf34"/>
+    <managerType typeId="2c837000-ad42-4885-b70a-f9677eb23367" valueTypeId="79c33cb6-1980-4c0c-83c8-5261bea3d62c"/>
+    <recordSetType typeId="73485cad-ef1a-4bff-a2e7-5fb837d70269" valueTypeId="45f86704-04e4-4744-b7c6-9cfc09cbb440"/>
+    <recordKeyType typeId="d49a71c0-c181-4573-af20-65b602da7622" valueTypeId="189465c0-92b9-4832-9bd6-0fb3369a7675"/>
+    <recordType typeId="64730d5b-a1e9-4681-8161-56ef04144028" valueTypeId="83e26304-a09a-4ba9-8db6-238f250dda79"/>
+    <recordManagerType typeId="4b53ec29-5359-4dad-be81-af10a6aaab22" valueTypeId="b10a248e-2c26-4aea-a7ed-608beb2cf8f2"/>
+  </producedTypes>
+  <name>БлокировкиСкладскихЯчеек</name>
+  <synonym>
+    <key>ru</key>
+    <value>Блокировки складских ячеек</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.БлокировкиСкладскихЯчеек.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="1e94f896-41b5-48f9-9da4-594a420ed701">
+    <name>ТипБлокировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип блокировки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыБлокировокСкладскихЯчеек</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Тип блокировки складской ячейки.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="85bb5b28-d97f-4124-8367-c2243ed94751">
+    <name>Ячейка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ячейка</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СкладскиеЯчейки</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Блокируемая складская ячейка.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="fdad5b37-0d33-4c36-93b6-abbabc1ea890">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="79e546b6-b093-44ba-a8d6-6d6db2ed17c1">
+    <name>Блокировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Блокировки</value>
+    </synonym>
+    <group>FormNavigationPanelGoTo</group>
+    <commandParameterType>
+      <types>CatalogRef.СкладскиеЯчейки</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:InformationRegister>

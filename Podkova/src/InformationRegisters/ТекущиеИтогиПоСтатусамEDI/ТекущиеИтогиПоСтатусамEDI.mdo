@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="10ccb3db-257f-4184-8edb-49b3fbb7f402">
+  <producedTypes>
+    <selectionType typeId="b8e3ec3d-3c49-4baa-8cca-6a86e7dc0453" valueTypeId="159e91e0-9fd9-4f89-bd9d-1ba00807f767"/>
+    <listType typeId="f05e2702-7454-45cd-b7ad-3043c244bc63" valueTypeId="fcc7d93c-f775-42b7-8433-4fd1e552c847"/>
+    <managerType typeId="515682a1-602d-413c-baf5-044c76fbc75e" valueTypeId="b22a46ec-840d-48c0-8851-37a21c268d28"/>
+    <recordSetType typeId="b5dec8ef-1f8b-4b10-a12f-48e96ca74263" valueTypeId="6ad14ff7-8e81-47df-bcf2-5f31836f578c"/>
+    <recordKeyType typeId="3347dc45-99cb-4423-b149-6dbc9721429e" valueTypeId="c4441645-464b-4a28-a390-3a93b89fbbde"/>
+    <recordType typeId="ffd1e0d8-d1ba-4691-9060-618dbcef14df" valueTypeId="a31940cc-559d-49d3-918d-57f242ae6df4"/>
+    <recordManagerType typeId="8037e35e-6734-4875-9acd-aaa273b0aa0d" valueTypeId="efb376d0-10a2-473e-bc9b-965bc1139a4d"/>
+  </producedTypes>
+  <name>ТекущиеИтогиПоСтатусамEDI</name>
+  <synonym>
+    <key>ru</key>
+    <value>Текущие итоги по статусам EDI</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="da276d7d-39d4-4f5a-929b-056f43621ff6">
+    <name>КоличествоДокументов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество документов</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="859efccd-5148-4eb0-bbd6-37bfea56c2f8">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыЗаказаEDI</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7b679f32-b3ff-4268-910a-da89b29a0b12">
+    <name>ТипДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип документа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыДокументовEDI</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Тип документа. Используется для отбора по типу документа</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="39dc452c-a9bc-444f-b3a7-0ceca0e37381">
+    <name>Менеджер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Менеджер</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ПользовательEDI</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e125a1ea-3078-4744-9898-a96e59ffaaeb">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>DefinedType.Организация</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ec28afac-6295-477f-923f-031c3df0491b">
+    <name>СостояниеСоответствия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние соответствия</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СостоянияСоответствияПрикладногоОбъектаДокументуEDI</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

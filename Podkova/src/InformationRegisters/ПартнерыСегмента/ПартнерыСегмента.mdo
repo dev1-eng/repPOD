@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="94dc0182-a199-4a52-af04-ed95dec30b84">
+  <producedTypes>
+    <selectionType typeId="68f1b089-bb70-40ca-89da-68a112366aba" valueTypeId="8b55b655-1e23-4651-9414-41608827a74a"/>
+    <listType typeId="aaac579f-f406-4244-9474-d9a6c5fcda76" valueTypeId="5ce2933c-7609-4132-ad77-8a4c40d5b83e"/>
+    <managerType typeId="451a4376-bade-4958-8728-36959d8ec8f6" valueTypeId="2a5a13de-9fa9-4782-b275-ed6e6044fed0"/>
+    <recordSetType typeId="0299635d-5b31-478c-a710-d2c1c8fbfa70" valueTypeId="01f604a4-d4a5-4115-bab8-d5c39b613048"/>
+    <recordKeyType typeId="e7e1eff9-9f1d-4170-92f8-b54f3f86d1b4" valueTypeId="9c11fa09-d9b3-47dd-88e0-17f750e1cdbb"/>
+    <recordType typeId="d2856e52-1bab-411f-a0ff-0b01a3dafa20" valueTypeId="9cbe0d75-5771-43e6-a3ab-ecaba0ee133a"/>
+    <recordManagerType typeId="64b04a71-e186-4cac-854c-a85375e4fbf2" valueTypeId="d01de4f3-31ee-4550-a9d6-783ff51988dd"/>
+  </producedTypes>
+  <name>ПартнерыСегмента</name>
+  <synonym>
+    <key>ru</key>
+    <value>Партнеры сегмента</value>
+  </synonym>
+  <defaultListForm>InformationRegister.ПартнерыСегмента.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dimensions uuid="3e43a713-9c5c-4f6a-b17c-926c1ef0af85">
+    <name>Сегмент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сегмент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СегментыПартнеров</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Периодически обновляемый или статический сегмент.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.СегментыПартнеров.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="994998ea-b12e-4666-a2c7-8bd46b298b2f">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Клиент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Клиент, отнесенный к сегменту.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Партнеры.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="4c2b3e54-8827-460e-82ea-80dd4bb0691b">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="6a61f611-d693-4667-8c5d-700e290956d2">
+    <name>СегментыПартнераПараметрическая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сегменты партнера параметрическая</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="2ddb5950-81f9-40ec-bfd0-de180eb2b393">
+    <name>СегментыПартнера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сегменты</value>
+    </synonym>
+    <group>FormNavigationPanelSeeAlso</group>
+    <commandParameterType>
+      <types>CatalogRef.Партнеры</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:InformationRegister>

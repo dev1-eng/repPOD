@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c3ea9638-e145-44ce-8d3c-c10abb6dcdfd">
+  <producedTypes>
+    <selectionType typeId="e2882a38-198a-49ca-961e-39bdb3e564f4" valueTypeId="4d25f78f-c7fc-4221-967f-ce96aa7b4203"/>
+    <listType typeId="74be8151-3d66-4cfb-8498-d70eec947cf8" valueTypeId="2b3fb3ca-8302-4ae8-88b1-9ed8a26ea44d"/>
+    <managerType typeId="5fe90dbd-0aeb-45f0-bf0c-28332fe84b56" valueTypeId="94f87ad4-6abf-48ea-ade1-15df717bc30c"/>
+    <recordSetType typeId="9fd75e43-4a03-40e2-9edd-5e42b09930f0" valueTypeId="6386ecb1-7c06-43c5-803b-ce70f8778bd3"/>
+    <recordKeyType typeId="fb784917-0250-4db8-a734-d616d0740e46" valueTypeId="e5d2f7b6-f4bf-4402-a17a-b160ee4495ef"/>
+    <recordType typeId="68c91534-0402-43a3-8bec-6f79e660329a" valueTypeId="74b7d198-33f0-4208-9e09-77c38d4c6cc7"/>
+  </producedTypes>
+  <name>ТоварыКОформлениюЗаявленийОВвозе</name>
+  <synonym>
+    <key>ru</key>
+    <value>Товары к оформлению заявлений о ввозе из стран ЕАЭС</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <resources uuid="47608334-3a64-46c6-8229-28dafe70cdfd">
+    <name>КОформлению</name>
+    <synonym>
+      <key>ru</key>
+      <value>К оформлению</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество, которое должно поступить на склад.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="62c0aa3a-2ace-473c-b41a-b35f84977625">
+    <name>ФактурнаяСтоимость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фактурная стоимость</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="1db37097-8ac8-429a-a230-daf6d4818f64">
+    <name>ИдентификаторСтроки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор строки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>36</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="5a45710b-b622-4071-ad20-8b63a97cd8e3">
+    <name>ДокументПоступления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ поступления</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ПриобретениеТоваровУслуг</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Документ, являющий основанием для оформления заявления о ввозе товаров из стран-участников ЕАЭС</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="99762688-65f7-4259-b989-e6a0377ee4de">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номенклатура, которая должна поступить на склад.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d8513bee-81e7-4940-80c6-7b930fabb43b">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Характеристика номенклатуры, которая должна поступить на склад.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <field>AccumulationRegister.ТоварыКОформлениюЗаявленийОВвозе.Dimension.Номенклатура</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="bb05ec03-d3b5-4468-a226-90b67b4c148d">
+    <name>Серия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СерииНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="74dd14f3-b16f-4eef-9903-01bd85bf623c">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

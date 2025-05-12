@@ -1,0 +1,126 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://ismotp.crptech.ru/types" elementFormQualified="true" attributeFormQualified="false">
+	<valueType name="Дата" base="xs:string" variety="Atomic" length="10">
+		<pattern>((((0[1-9]{1}|1[0-9]{1}|2[0-8]{1})\.(0[1-9]{1}|1[0-2]{1}))|((29|30)\.(01|0[3-9]{1}|1[0-2]{1}))|(31\.(01|03|05|07|08|10|12)))\.((19|20)[0-9]{2}))|(29\.02\.((19|20)(((0|2|4|6|8)(0|4|8))|((1|3|5|7|9)(2|6)))))</pattern>
+	</valueType>
+	<valueType name="ОКСМТип" base="xs:string" variety="Atomic" length="3">
+		<pattern>[0-9]{3}</pattern>
+	</valueType>
+	<valueType name="СправочникПричинСписания" base="xs:string" variety="Atomic">
+		<enumeration>0. Брак</enumeration>
+		<enumeration>1. Истек срок годности</enumeration>
+		<enumeration>2. Лабораторные образцы</enumeration>
+		<enumeration>3. Отзыв с рынка</enumeration>
+		<enumeration>4. Рекламации</enumeration>
+		<enumeration>5. Тестирование продукта</enumeration>
+		<enumeration>6. Демонстрационные образцы</enumeration>
+		<enumeration>7. Другие причины</enumeration>
+		<enumeration>9. Недостача</enumeration>
+		<enumeration>16. Уничтожение</enumeration>
+		<enumeration>17. Конфискация</enumeration>
+		<enumeration>18. Ликвидация предприятия</enumeration>
+	</valueType>
+	<valueType name="Стоимость" base="xs:decimal" variety="Atomic" totalDigits="17" fractionDigits="2"/>
+	<valueType name="Строка" base="xs:string" variety="Atomic" minLength="1" maxLength="1000"/>
+	<valueType name="ТипУпаковки" base="xs:string" variety="Atomic">
+		<enumeration>Транспортная</enumeration>
+		<enumeration>Потребительская</enumeration>
+	</valueType>
+	<valueType name="УникальныйИдентификатор" base="xs:string" variety="Atomic" length="36">
+		<pattern>[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}</pattern>
+	</valueType>
+	<objectType name="АдрИнфТип">
+		<property xmlns:d3p1="http://ismotp.crptech.ru/types" name="КодСтр" type="d3p1:ОКСМТип" lowerBound="1" form="Attribute"/>
+		<property name="АдрТекст" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="1000"/>
+		</property>
+	</objectType>
+	<objectType name="АдрРФТип">
+		<property name="Индекс" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" length="6">
+				<pattern>[0-9]{6}</pattern>
+			</typeDef>
+		</property>
+		<property name="КодРегион" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" length="2">
+				<pattern>[0-9]{2}</pattern>
+			</typeDef>
+		</property>
+		<property name="Район" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="50"/>
+		</property>
+		<property name="Город" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="50"/>
+		</property>
+		<property name="НаселПункт" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="50"/>
+		</property>
+		<property name="Улица" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="50"/>
+		</property>
+		<property name="Дом" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="20"/>
+		</property>
+		<property name="Корпус" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="20"/>
+		</property>
+		<property name="Кварт" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="20"/>
+		</property>
+	</objectType>
+	<objectType name="АдресТип" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://ismotp.crptech.ru/types" name="АдрРФ" type="d3p1:АдрРФТип" lowerBound="0"/>
+		<property xmlns:d3p1="http://ismotp.crptech.ru/types" name="АдрИнф" type="d3p1:АдрИнфТип" lowerBound="0"/>
+		<property xmlns:d3p1="http://ismotp.crptech.ru/types" name="КодФИАС" type="d3p1:УникальныйИдентификатор" lowerBound="0"/>
+	</objectType>
+	<objectType name="ГрупповаяУпаковка">
+		<property xmlns:d3p1="http://ismotp.crptech.ru/types" name="ТипУпаковки" type="d3p1:ТипУпаковки" lowerBound="0" fixed="false" default="Потребительская" form="Attribute"/>
+		<property name="КодГрупповойУпаковки" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="СписокКодовИдентификации">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic"/>
+		</property>
+	</objectType>
+	<objectType name="ИНН" ordered="false" sequenced="true">
+		<property name="ИННФЛТип" lowerBound="0">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" length="12">
+				<pattern>([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{10}</pattern>
+			</typeDef>
+		</property>
+		<property name="ИННЮЛТип" lowerBound="0">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" length="10">
+				<pattern>([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{8}</pattern>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="КодыИдентификации">
+		<property name="СписыватьВложения" type="xs:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property name="Список">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic"/>
+		</property>
+	</objectType>
+	<objectType name="ПервичныйДокумент">
+		<property xmlns:d3p1="http://ismotp.crptech.ru/types" name="Наименование" type="d3p1:Строка" lowerBound="1" form="Attribute"/>
+		<property xmlns:d3p1="http://ismotp.crptech.ru/types" name="Номер" type="d3p1:Строка" lowerBound="1" form="Attribute"/>
+		<property xmlns:d3p1="http://ismotp.crptech.ru/types" name="Дата" type="d3p1:Дата" lowerBound="1" form="Attribute"/>
+		<property name="Время" type="xs:time" lowerBound="1" form="Attribute"/>
+	</objectType>
+	<objectType name="Уведомление" ordered="false" sequenced="true">
+		<property name="СведенияОВыбытии" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://ismotp.crptech.ru/types" name="ПричинаВыбытия" type="d5p1:СправочникПричинСписания" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://ismotp.crptech.ru/types" name="СтоимостьВыводимойПродукции" type="d5p1:Стоимость" lowerBound="0" form="Attribute"/>
+				<property xmlns:d5p1="http://ismotp.crptech.ru/types" name="ИНН" type="d5p1:ИНН"/>
+				<property xmlns:d5p1="http://ismotp.crptech.ru/types" name="ПервичныйДокумент" type="d5p1:ПервичныйДокумент"/>
+				<property xmlns:d5p1="http://ismotp.crptech.ru/types" name="АдресПлощадки" type="d5p1:АдресТип"/>
+				<property xmlns:d5p1="http://ismotp.crptech.ru/types" name="КодыИдентификации" type="d5p1:КодыИдентификации"/>
+			</typeDef>
+		</property>
+		<property name="СведенияОбАгрегации" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://ismotp.crptech.ru/types" name="Дата" type="d5p1:Дата" lowerBound="1" form="Attribute"/>
+				<property name="Время" type="xs:time" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://ismotp.crptech.ru/types" name="ИНН" type="d5p1:ИНН"/>
+				<property xmlns:d5p1="http://ismotp.crptech.ru/types" name="ИнформацияОбАгрегировании" type="d5p1:ГрупповаяУпаковка" upperBound="-1"/>
+			</typeDef>
+		</property>
+	</objectType>
+</package>

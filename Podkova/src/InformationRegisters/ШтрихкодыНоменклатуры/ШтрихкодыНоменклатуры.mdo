@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fe779ac1-0e7f-489c-ad06-bec9af582428">
+  <producedTypes>
+    <selectionType typeId="e0122a3f-958e-4168-9ba7-ce060bfef046" valueTypeId="a4c3a332-9ce4-4213-a00a-85f17a431a55"/>
+    <listType typeId="e22d28e1-dcf1-4828-837c-2469ef507722" valueTypeId="7baab9ba-5a50-4cd6-a96a-46c0f32d35f0"/>
+    <managerType typeId="56734b8f-4cfb-40ff-a803-2ac3560254f0" valueTypeId="f0396fb9-2e1f-4590-ab9a-e095b68afe5b"/>
+    <recordSetType typeId="e84f14d2-9434-4e34-9a9c-ffed5a1af4bd" valueTypeId="66aaf19f-ab54-4748-be94-cc4b4cb0ce3c"/>
+    <recordKeyType typeId="62ca2fd3-9a59-4649-a153-2d7f867b48c6" valueTypeId="7189d712-936e-47e0-9d5c-f778456d62a9"/>
+    <recordType typeId="fa58eb8d-8efd-419a-b0aa-468287c9d20c" valueTypeId="afbb02fc-5f8e-4639-9f4f-dd1a80cb18fa"/>
+    <recordManagerType typeId="3cdb3b33-fe75-4334-b262-430be6fdb9cc" valueTypeId="ef00fe71-cb57-4762-a805-228bb5bcf30e"/>
+  </producedTypes>
+  <name>ШтрихкодыНоменклатуры</name>
+  <synonym>
+    <key>ru</key>
+    <value>Штрихкоды номенклатуры</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultRecordForm>InformationRegister.ШтрихкодыНоменклатуры.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ШтрихкодыНоменклатуры.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:DateValue">
+      <value>0001-01-01T00:00:00</value>
+    </fillValue>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <resources uuid="d561ee5a-2a87-4205-93af-4902b1247d87">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номенклатура для которой задается штрихкод</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ТипНоменклатуры</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыНоменклатуры.EnumValue.Товар</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыНоменклатуры.EnumValue.МногооборотнаяТара</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыНоменклатуры.EnumValue.Набор</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыНоменклатуры.EnumValue.Услуга</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыНоменклатуры.EnumValue.Работа</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Номенклатура.EmptyRef</value>
+    </fillValue>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="93716140-4123-4913-8258-75356dec29a0">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Если у выбранной номенклатуры используются характеристики, то необходимо выбрать характеристику номенклатуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <changeMode>DontChange</changeMode>
+      <field>InformationRegister.ШтрихкодыНоменклатуры.Resource.Номенклатура</field>
+    </choiceParameterLinks>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.ХарактеристикиНоменклатуры.EmptyRef</value>
+    </fillValue>
+  </resources>
+  <resources uuid="c79450ab-f8f1-43d9-948d-10c6481c5538">
+    <name>Упаковка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Упаковка</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Если у выбранной номенклатуры используются упаковки, то можно выбрать упаковку номенклатуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <changeMode>DontChange</changeMode>
+      <field>InformationRegister.ШтрихкодыНоменклатуры.Resource.Номенклатура</field>
+    </choiceParameterLinks>
+    <choiceParameters>
+      <name>ДобавлятьПустуюУпаковку</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.УпаковкиЕдиницыИзмерения.EmptyRef</value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="75e2d606-c8d4-4cfe-8f96-2eaa5c364409">
+    <name>Штрихкод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Штрихкод</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Штрихкод номенклатуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="daef86a9-6d12-44fa-9cb9-2e9c00f6eaad">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="63f2a2b0-0f49-4407-a2a4-099c3a101526">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="02d3529b-e31b-4185-91fc-da8d846a2bcf">
+    <name>ШтрихкодыНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Штрихкоды</value>
+    </synonym>
+    <group>FormNavigationPanelGoTo</group>
+    <commandParameterType>
+      <types>CatalogRef.Номенклатура</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:InformationRegister>

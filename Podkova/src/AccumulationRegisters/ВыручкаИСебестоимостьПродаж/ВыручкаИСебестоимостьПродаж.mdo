@@ -1,0 +1,1211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cc9cedf1-410d-414a-a05f-f167b8908470">
+  <producedTypes>
+    <selectionType typeId="1b4d6ed1-4ab4-4a01-9916-15e06ba0cb5c" valueTypeId="333d1466-5414-4c80-9e20-a603dd4e128c"/>
+    <listType typeId="7fc5f0a4-8ea3-4271-b37a-6edca3a58252" valueTypeId="420eb5a1-ce60-4183-83a4-25462588b43a"/>
+    <managerType typeId="d1c37df7-f26c-47f0-92ad-c575d099e4b1" valueTypeId="7ba48d9b-b666-4162-80af-8ec8f90afc46"/>
+    <recordSetType typeId="425e2cfa-b571-4971-9c80-757fd0bf6ccc" valueTypeId="ba516b9e-26a1-46f5-8cb0-021b4d0422df"/>
+    <recordKeyType typeId="7ef0377a-471c-440b-aebc-0e1d13f19f76" valueTypeId="1b1bd152-19d8-46b9-80b7-2bb7ba9e3912"/>
+    <recordType typeId="f9e347cf-7c8e-44d0-ad3b-f6fed3d1715a" valueTypeId="090048f0-b431-4796-b021-ed36a40ff90a"/>
+  </producedTypes>
+  <name>ВыручкаИСебестоимостьПродаж</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выручка и себестоимость продаж</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultListForm>AccumulationRegister.ВыручкаИСебестоимостьПродаж.Form.ФормаСписка</defaultListForm>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="edd9691b-b496-451a-a788-235f34120109">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество проданных товаров</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="4504d8d2-02f7-422b-8c29-e0883636ad98">
+    <name>СуммаВыручки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма выручки с НДС</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выручка от продажи товаров с НДС в валюте управленческого учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="2fbafb19-6ca1-43fa-85d2-6a4c87d42eb3">
+    <name>СуммаВыручкиБезНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма выручки без НДС</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выручка от продажи товаров без НДС в валюте управленческого учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="4d8c59a7-85b4-4c9d-9f30-bfd66d2ea1c5">
+    <name>Стоимость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость с НДС</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость проданных товаров с НДС в валюте управленческого учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="9d0454cc-268b-4614-9e5d-f3c0ee507af1">
+    <name>СтоимостьБезНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость без НДС</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость проданных товаров без НДС в валюте управленческого учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="db7a0438-d3cb-4318-99d5-03bf8a12e605">
+    <name>ДопРасходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доп. расходы</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма транспортно-заготовительных расходов с НДС в валюте управленческого учета, распределенных на проданную номенклатуру.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="b480ee1c-6147-4390-a5b4-f7da34d553a3">
+    <name>ДопРасходыБезНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доп. расходы без НДС</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма транспортно-заготовительных расходов без НДС в валюте управленческого учета, распределенных на проданную номенклатуру.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="d5850dff-58fa-4e75-80b9-ee9c34e16865">
+    <name>СтоимостьУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость (упр.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость в части прямых материальных расходов без НДС в валюте упр. учета, рассчитанным по правилам МСФО (МФУ)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="791fb719-bbb4-4eb4-b6f3-53bf000b859a">
+    <name>СтоимостьРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость (регл.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость проданных товаров без НДС в валюте регламентированного учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="0b442828-1c11-4ce9-98f3-01707a795884">
+    <name>СтоимостьЗабалансовая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость забалансовая</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Забалансовая стоимость товаров в валюте управленческого учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="94259154-4525-4528-afea-f2a828c8ba7b">
+    <name>СтоимостьЗабалансоваяРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость забалансовая (регл.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Забалансовая стоимость товаров в валюте регламентированного учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="8fe31c8d-0ded-4f3d-9d11-da1deae029b2">
+    <name>СуммаВыручкиРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма выручки без НДС (регл.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выручка от продажи товаров без НДС в валюте регламентированного учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="64867008-b82f-4766-9f7d-c90f8062e8db">
+    <name>ПостояннаяРазница</name>
+    <synonym>
+      <key>ru</key>
+      <value>Себестоимость (ПР)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма постоянной разницы в себестоимости товаров по данным налогового учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="20028c7f-7ddf-4a18-818f-54aecef63bd1">
+    <name>ДопРасходыУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доп. расходы (упр.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость в части дополнительных расходов по товарам без НДС в валюте упр. учета, рассчитанным по правилам МСФ (МФУ)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="d9ccb891-7a26-4518-b3bf-05a990da6c78">
+    <name>ДопРасходыРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доп. расходы (регл.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость дополнительных расходов по товарам в валюте регламентированного учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="3c35dbd5-ff82-463c-9811-4558ecb00884">
+    <name>ПостатейныеПостоянныеСНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Постатейные постоянные с НДС</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость постатейных постоянных затрат с НДС, включенных в себестоимость продукции, в валюте управленческого учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="a216a2d6-0987-44dc-801f-be89309d851f">
+    <name>ПостатейныеПостоянныеБезНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Постатейные постоянные без НДС</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость постатейных постоянных затрат без НДС, включенных в себестоимость продукции, в валюте управленческого учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="2b11cdc5-2716-4995-8510-28c3f7f068f1">
+    <name>ПостатейныеПостоянныеУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Постатейные постоянные (упр.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость постатейных постоянных затрат, включенных в себестоимость продукции, рассчитанных по правилам МСФО (МФУ), в валюте управленческого учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="e64364a2-11b2-400d-929b-f7e521ca74d8">
+    <name>ПостатейныеПостоянныеРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Постатейные постоянные (регл.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость постатейных постоянных затрат без НДС, включенных в себестоимость продукции, в валюте регламентированного учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="2d901ca2-210a-406f-8407-7bb2bdc0ffec">
+    <name>Трудозатраты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Трудозатраты</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость трудозатрат, включенных в себестоимость продукции, в валюте управленческого учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="ccaa816c-cfd9-477d-8349-e266a1533cae">
+    <name>ТрудозатратыУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Трудозатраты (упр.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость продукции в части трудозатрат в валюте упр. учета, рассчитанным по правилам МСФО (МФУ)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="fb6fba8d-452a-447a-a8bd-b5cd17f50e1b">
+    <name>ТрудозатратыРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Трудозатраты (регл.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость трудозатрат, включенных в себестоимость продукции, в валюте регламентированного учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="a1d92ebe-e703-442e-ae17-bb35719a01ad">
+    <name>ПостатейныеПеременныеСНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Постатейные переменные с НДС</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость постатейных переменных затрат с НДС, включенных в себестоимость продукции, в валюте управленческого учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="a1fb2217-df24-404a-baa2-db0c70971dd9">
+    <name>ПостатейныеПеременныеБезНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Постатейные переменные без НДС</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость постатейных переменных затрат без НДС, включенных в себестоимость продукции, в валюте управленческого учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="d0e7cb79-659d-45e4-a529-c894e4fa01ab">
+    <name>ПостатейныеПеременныеУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Постатейные переменные (упр.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость постатейных переменных затрат, включенных в себестоимость продукции, рассчитанных по правилам МСФО (МФУ), в валюте управленческого учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="3b7cced8-db06-41c2-8634-0d19a2fd203b">
+    <name>ПостатейныеПеременныеРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Постатейные переменные (регл.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Стоимость постатейных переменных затрат без НДС, включенных в себестоимость продукции, в валюте регламентированного учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="ee81f54b-e33c-44d3-bca4-1979b279a78f">
+    <name>ВременнаяРазница</name>
+    <synonym>
+      <key>ru</key>
+      <value>Себестоимость (ВР)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма временной разницы в себестоимости товаров по данным налогового учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="81c4428b-ec37-4c06-a1a6-b55886f980f7">
+    <name>СуммаВыручкиСНДСРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма выручки с НДС (регл.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выручка от продажи товаров с НДС в валюте регламентированного учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="0a9e3369-58e3-4c83-b8cd-5487a863fc55">
+    <name>СуммаРучнойСкидки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма ручной скидки</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма ручной скидки или наценки в валюте управленческого учета.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="deef8deb-2b93-4d66-9f52-a1f9a28a4efe">
+    <name>СуммаАвтоматическойСкидки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма автоматической скидки</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма автоматической скидки или наценки в валюте управленческого учета.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="4576c9c6-68ce-46ab-a192-2718b8390b04">
+    <name>НалогообложениеНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налогообложение НДС</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыНалогообложенияНДС</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="d7909ada-b68a-403e-9860-51de800bc036">
+    <name>ВалютаВзаиморасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта взаиморасчетов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Валюта взаиморасчетов</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="4f8729e5-bc47-41c5-a309-3e40069138a7">
+    <name>СуммаВВалютеВзаиморасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма в валюте взаиморасчетов</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма в валюте взаиморасчетов</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="1aefd2fd-2457-4711-873e-b8642ada9a2a">
+    <name>СуммаБезНДСВВалютеВзаиморасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма без НДС в валюте взаиморасчетов</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма без НДС в валюте взаиморасчетов</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="2727a882-5207-4a0d-aefd-42668a8adb73">
+    <name>ВалютаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта документа</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Валюта документа</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="32777412-5843-413a-9db5-e3fdb94e3741">
+    <name>СуммаВВалютеДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма в валюте документа</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма в валюте документа</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="dbc559fb-5646-4900-bf18-859f73fb5a9e">
+    <name>СуммаБезНДСВВалютеДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма без НДС в валюте документа</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма без НДС в валюте документа</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="70d5cbd6-5cd1-437b-b5f7-d143fa157d93">
+    <name>ИсточникГФУНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник ГФУ номенклатуры</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+      <types>CatalogRef.ВидыЗапасов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Источник группы финансового учета номенклатуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="6505aa0d-5f46-4565-8ae8-b2a22e305fb0">
+    <name>ИсточникГФУРасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник ГФУ расчетов</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.ПриобретениеТоваровУслуг</types>
+      <types>DocumentRef.ТаможеннаяДекларацияИмпорт</types>
+      <types>DocumentRef.ОтчетКомиссионера</types>
+      <types>DocumentRef.ЗаказПоставщику</types>
+      <types>DocumentRef.ВозвратТоваровПоставщику</types>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациями</types>
+      <types>DocumentRef.ЗаявкаНаВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.ОтчетКомитенту</types>
+      <types>DocumentRef.РеализацияУслугПрочихАктивов</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациямиОСписании</types>
+      <types>DocumentRef.ПриобретениеУслугПрочихАктивов</types>
+      <types>DocumentRef.АктВыполненныхРабот</types>
+      <types>DocumentRef.ВозвратТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.ПередачаТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Источник группы финансового учета расчетов с партнерами.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="4452edfd-375f-45d5-bec3-1776210d4bef">
+    <name>ДокументДвижения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ движения</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.ОтчетКомиссионера</types>
+      <types>DocumentRef.КорректировкаРегистров</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациями</types>
+      <types>DocumentRef.ОтчетКомитенту</types>
+      <types>DocumentRef.КорректировкаРеализации</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациямиОСписании</types>
+      <types>DocumentRef.ПриобретениеУслугПрочихАктивов</types>
+      <types>DocumentRef.АктВыполненныхРабот</types>
+      <types>DocumentRef.ОтчетОРозничныхПродажах</types>
+      <types>DocumentRef.ВозвратТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.ПередачаТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.СчетФактураПолученныйНалоговыйАгент</types>
+      <types>DocumentRef.СчетФактураНалоговыйАгент</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="0da81f44-49da-4ebf-94a6-d1eaa410871b">
+    <name>РасчетСебестоимости</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет себестоимости</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Движение сформировано регламентной операцией закрытия месяца</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="7d67a2b2-06fb-4ef8-a361-e6573db19922">
+    <name>РасчетПартий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет партий</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Движение сформировано регламентной операцией закрытия месяца</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="adbf37db-f8a7-40a1-be8d-8ae3f66f51dd">
+    <name>РасчетНеЗавершен</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет не завершен</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак неподобранной партии в движении</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="5ba45e3e-ee17-47fd-96da-125afdf49b1e">
+    <name>НДСРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>НДС (регл.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Используется для формирования оффлайновых движений в регистре &quot;Детализация партий товаров для НДС и УСН&quot;.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="057affd0-a970-48fe-b66a-3fd3f64bf384">
+    <name>НДСУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>НДС (упр.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Используется для формирования оффлайновых движений в регистре &quot;Детализация партий товаров для НДС и УСН&quot;.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="7eadb439-cbf2-4e6a-9022-fc66b8de8d58">
+    <name>АналитикаУчетаНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика учета номенклатуры</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиУчетаНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика учета номенклатуры (товар и характеристика)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="76d9c27f-a066-45ee-8646-a029deff4e99">
+    <name>ЗаказКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ клиента</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаявкаНаВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.АктВыполненныхРабот</types>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Заказ клиента, по которому отражена продажа товаров и услуг.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="cf1201fe-569c-4901-85d3-29da5aa53077">
+    <name>АналитикаУчетаПоПартнерам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика учета по партнерам</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиУчетаПоПартнерам</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Определяет аналитику клиентов, которым реализованы товары..</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="91c78e8b-9661-4eab-9ec5-bd2bd9f567fb">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение, по которому отражены продажи</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e0bb1e5a-7014-4cbe-81bc-9d7cc9c9d05c">
+    <name>ТипЗапасов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип запасов или услуга</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗапасов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Тип запаса проданного товара: товар или комиссионный товар</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="924018c6-a69a-4ec9-ac19-6837426e8364">
+    <name>ВидЗапасов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид запасов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыЗапасов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид запасов поступившего товара</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="3cf7c49d-9baa-4df1-8e8c-7c637c2cdaf4">
+    <name>РазделУчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Раздел учета</value>
+    </synonym>
+    <type>
+      <types>EnumRef.РазделыУчетаСебестоимостиТоваров</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Место нахождения (учета) номенклатуры и расходов.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a5e9fff7-057a-42a9-81e9-1335240572b7">
+    <name>Партия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партия</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДокументПартии</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Партия номенклатуры</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0a7bda21-39d9-43d0-a358-8431a3757203">
+    <name>АналитикаУчетаПартий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика учета партий</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиУчетаПартий</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика учета партии номенклатуры</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0969ae24-0372-4d39-ad1d-7ce44508d67e">
+    <name>АналитикаФинансовогоУчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика финансового учета</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+      <types>CatalogRef.Пользователи</types>
+      <types>CatalogRef.СделкиСКлиентами</types>
+      <types>CatalogRef.ГруппыАналитическогоУчетаНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика финансового учета номенклатуры</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="8c107abb-b863-4690-91b3-601f53c4e488">
+    <name>ВидДеятельностиНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид деятельности НДС</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыНалогообложенияНДС</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Налогообложение НДС</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0d619327-114b-4796-a50d-d3dc86dad60e">
+    <name>Менеджер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Менеджер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="39dff5de-8734-4206-b6c3-2587d83e025a">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад / комиссионер  / подразделение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+      <types>CatalogRef.СтруктураПредприятия</types>
+      <types>CatalogRef.Партнеры</types>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Склад, на котором учитываются товары, или комиссионер, которому переданы товары на комиссию, или подразделение в котором числятся материалы.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="c2e1c88d-cdf5-48bf-9615-3bd4ec44b646">
+    <name>Соглашение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Соглашение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СоглашенияСКлиентами</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Соглашение, в рамках которого оформлена продажа</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="cadb4ea8-1ff0-41ef-8d30-a8e0e3fa2780">
+    <name>Договор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыМеждуОрганизациями</types>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Договор с контрагентом, в рамках которого оформлена продажа</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="9c966579-d355-4e6a-bd83-150dfc936345">
+    <name>ХозяйственнаяОперация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Хозяйственная операция</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ХозяйственныеОперации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Хозяйственная операция, по которой выполнены движения по регистру.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d77a20e2-af03-48a8-bcef-980ff337f702">
+    <name>АналитикаУчетаНаборов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика учета наборов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиУчетаНаборов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика учета номенклатуры (товар и характеристика)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="4e4c85a4-985a-4ad6-bbb2-4c0cf68f0204">
+    <name>НаправлениеДеятельностиКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Направление деятельности контрагента</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НаправленияДеятельности</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Направление деятельности, к которому относится контрагент в рамках управленческого учета.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="341c833f-1023-43ca-81fe-0978de5da736">
+    <name>НаправлениеДеятельностиНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Направление деятельности номенклатуры</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НаправленияДеятельности</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Направление деятельности, к которому относится номенклатура в рамках управленческого учета.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <forms uuid="65b82f4a-2dce-4b2c-84df-946af4e1d332">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:AccumulationRegister>

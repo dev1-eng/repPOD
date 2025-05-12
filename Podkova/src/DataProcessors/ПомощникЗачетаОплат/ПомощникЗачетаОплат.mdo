@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0d2702f1-b0ef-44c0-8213-7726790505ce">
+  <producedTypes>
+    <objectType typeId="71e697f0-cb61-49c4-bc68-d548b0311e9b" valueTypeId="f8c3b233-9cca-4ec7-a810-c81ba9d1a1f4"/>
+    <managerType typeId="9d99758a-6c59-49d8-804b-b446430754f2" valueTypeId="68f41292-ee6d-4123-add7-73ef838f512b"/>
+  </producedTypes>
+  <name>ПомощникЗачетаОплат</name>
+  <synonym>
+    <key>ru</key>
+    <value>Помощник зачета оплат</value>
+  </synonym>
+  <defaultForm>DataProcessor.ПомощникЗачетаОплат.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <explanation>
+    <key>ru</key>
+    <value>Помощник распределения авансов между расчетными документами.</value>
+  </explanation>
+  <forms uuid="10432e9d-0051-4a17-9252-910b34fd52c9">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="2e8bc202-b82e-4381-ad7d-9932c36b78b2">
+    <name>ЗачетОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зачет оплаты</value>
+    </synonym>
+    <group>FormCommandBarImportant</group>
+    <commandParameterType>
+      <types>DocumentRef.ПриобретениеТоваровУслуг</types>
+      <types>DocumentRef.ТаможеннаяДекларацияИмпорт</types>
+      <types>DocumentRef.ОтчетКомиссионера</types>
+      <types>DocumentRef.ЗаказПоставщику</types>
+      <types>CatalogRef.ДоговорыМеждуОрганизациями</types>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациями</types>
+      <types>DocumentRef.ЗаявкаНаВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.ОтчетКомитенту</types>
+      <types>DocumentRef.РеализацияУслугПрочихАктивов</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациямиОСписании</types>
+      <types>DocumentRef.ОтчетКомитентуОСписании</types>
+      <types>DocumentRef.ВыкупВозвратнойТарыКлиентом</types>
+      <types>DocumentRef.ПриобретениеУслугПрочихАктивов</types>
+      <types>DocumentRef.АктВыполненныхРабот</types>
+      <types>DocumentRef.ОтчетКомиссионераОСписании</types>
+      <types>DocumentRef.ПередачаТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.ВыкупВозвратнойТарыУПоставщика</types>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+  <commands uuid="34ef378e-bb04-4a92-9e7d-94102fbfda4f">
+    <name>ЗачетОплатыПоКомиссионномуВознаграждению</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зачет оплаты</value>
+    </synonym>
+    <group>FormNavigationPanelSeeAlso</group>
+    <commandParameterType>
+      <types>DocumentRef.ОтчетКомиссионера</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациями</types>
+      <types>DocumentRef.ОтчетКомитенту</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Зачет оплаты по комиссионному вознаграждению</value>
+    </toolTip>
+  </commands>
+  <commands uuid="99842a58-a4ab-46b1-9bf3-3cc46e613bf7">
+    <name>ЗачетОплатыЗеркальныйМеждуОрганизациями</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зачет оплаты зеркальный между организациями</value>
+    </synonym>
+    <group>FormNavigationPanelSeeAlso</group>
+    <commandParameterType>
+      <types>CatalogRef.ДоговорыМеждуОрганизациями</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациями</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациямиОСписании</types>
+      <types>DocumentRef.ПередачаТоваровМеждуОрганизациями</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Зачет оплаты на стороне организации продавца (расчеты между организациями</value>
+    </toolTip>
+  </commands>
+  <commands uuid="7780904f-456c-48f2-8ccd-66962d67e257">
+    <name>ЗачетОплатыПоКомиссионномуВознаграждениюЗеркальный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зачет оплаты по комиссии зеркальный</value>
+    </synonym>
+    <group>FormNavigationPanelSeeAlso</group>
+    <commandParameterType>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациями</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Зачет оплаты по комиссионному вознаграждению зеркальный</value>
+    </toolTip>
+  </commands>
+</mdclass:DataProcessor>

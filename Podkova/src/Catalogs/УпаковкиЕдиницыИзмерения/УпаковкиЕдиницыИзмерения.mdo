@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c9cda7a7-da6f-4830-800a-70e77e3f6e9d">
+  <producedTypes>
+    <objectType typeId="565e0fe0-a70e-4489-915d-6aa9d7ee63bb" valueTypeId="048a5c11-374a-4baf-9e3a-96c7430cee47"/>
+    <refType typeId="254a3240-79c0-4a3f-9259-5122c9ddd71b" valueTypeId="514886e4-0256-408c-80cd-159f06a049f1"/>
+    <selectionType typeId="b0f5981d-e7e6-478c-9e8f-96360f9d84a1" valueTypeId="ab54789b-5295-426a-a74e-53b62e3c3441"/>
+    <listType typeId="405543e5-0e28-4fb8-ad03-1ae309a66f37" valueTypeId="6d7fa37a-f072-47f6-8735-ede5a4d39a31"/>
+    <managerType typeId="7d2a06b2-683f-407f-9cff-bf7dfeb59fa4" valueTypeId="9042766b-aca2-4ace-a750-19542c33a398"/>
+  </producedTypes>
+  <name>УпаковкиЕдиницыИзмерения</name>
+  <synonym>
+    <key>ru</key>
+    <value>Упаковки и единицы измерения</value>
+  </synonym>
+  <inputByString>Catalog.УпаковкиЕдиницыИзмерения.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>PredefinedDataName</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Predefined</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>IsFolder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Owner</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <toolTip>
+      <key>ru</key>
+      <value>Номенклатура или вид номенклатуры, которой принадлежат данные упаковки.</value>
+    </toolTip>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Parent</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состоит из упаковок</value>
+    </synonym>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.УпаковкиЕдиницыИзмерения.EmptyRef</value>
+    </fillValue>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>Catalog.УпаковкиЕдиницыИзмерения.StandardAttribute.Owner</field>
+    </choiceParameterLinks>
+    <choiceParameterLinks>
+      <name>Ссылка</name>
+      <field>Catalog.УпаковкиЕдиницыИзмерения.StandardAttribute.Ref</field>
+    </choiceParameterLinks>
+    <choiceParameters>
+      <name>ВыборРодителя</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+    <choiceParameters>
+      <name>ТипИзмеряемойВеличины</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ТипыИзмеряемыхВеличин.EnumValue.Упаковка</value>
+      </value>
+    </choiceParameters>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Description</name>
+    <toolTip>
+      <key>ru</key>
+      <value>Наименование упаковки номенклатуры.</value>
+    </toolTip>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Code</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <createOnInput>DontUse</createOnInput>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Упаковка</value>
+  </objectPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Упаковки</value>
+  </listPresentation>
+  <explanation>
+    <key>ru</key>
+    <value>Классификатор, содержащий перечень упаковок товаров, которые могут использоваться в качестве альтернативных единиц измерения номенклатуры.</value>
+  </explanation>
+  <hierarchical>true</hierarchical>
+  <hierarchyType>HierarchyOfItems</hierarchyType>
+  <levelCount>2</levelCount>
+  <owners>Catalog.Номенклатура</owners>
+  <owners>Catalog.НаборыУпаковок</owners>
+  <codeLength>4</codeLength>
+  <descriptionLength>50</descriptionLength>
+  <codeType>String</codeType>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>BothWays</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.УпаковкиЕдиницыИзмерения.Form.ФормаЭлементаУпаковки</defaultObjectForm>
+  <defaultListForm>Catalog.УпаковкиЕдиницыИзмерения.Form.ФормаСпискаУпаковок</defaultListForm>
+  <defaultChoiceForm>Catalog.УпаковкиЕдиницыИзмерения.Form.ФормаВыбораУпаковки</defaultChoiceForm>
+  <choiceHistoryOnInput>DontUse</choiceHistoryOnInput>
+  <attributes uuid="ebb5bfee-de18-4d14-a24f-e32cbdd90cf9">
+    <name>Безразмерная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Безразмерная</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>При адресном хранении товаров &quot;безразмерные&quot; упаковки товаров можно размещать только в ячейки, неограниченные по линейным размерам.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ba8289fe-be8a-45a4-819c-2c2f84c4de2f">
+    <name>Вес</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вес (брутто)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вес упаковки брутто</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="922b22b5-b814-4d15-b669-ded6f1e11a61">
+    <name>ВесЕдиницаИзмерения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Единица измерения веса</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ТипИзмеряемойВеличины</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ТипыИзмеряемыхВеличин.EnumValue.Вес</value>
+      </value>
+    </choiceParameters>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6f2cd6a4-d354-43cb-b6e5-9f43829d8bc3">
+    <name>Высота</name>
+    <synonym>
+      <key>ru</key>
+      <value>Высота</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Высота упаковки</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:NumberValue">
+      <value>0</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7b61ba6a-896e-4ef0-98cc-bb012362f16c">
+    <name>ВысотаЕдиницаИзмерения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Единица измерения высоты</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ТипИзмеряемойВеличины</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ТипыИзмеряемыхВеличин.EnumValue.Длина</value>
+      </value>
+    </choiceParameters>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f74a4575-a405-4411-b8a1-f7dda30e2967">
+    <name>Глубина</name>
+    <synonym>
+      <key>ru</key>
+      <value>Глубина</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Глубина упаковки</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:NumberValue">
+      <value>0</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c40dec99-d7f0-45f7-94f9-5288383ea7f7">
+    <name>ГлубинаЕдиницаИзмерения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Единица измерения глубины</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ТипИзмеряемойВеличины</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ТипыИзмеряемыхВеличин.EnumValue.Длина</value>
+      </value>
+    </choiceParameters>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e0d07478-37ac-42f6-a26a-04f4fa4c4743">
+    <name>ЕдиницаИзмерения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Единица измерения</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Единица измерения, которой соответствует данная упаковка номенклатуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Отбор.ТипИзмеряемойВеличины</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ТипыИзмеряемыхВеличин.EnumValue.КоличествоШтук</value>
+      </value>
+    </choiceParameters>
+    <fillValue xsi:type="core:ReferenceValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a7f52563-0c7c-4de6-ac07-6ef01ff7688d">
+    <name>Числитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Числитель</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:NumberValue">
+      <value>0</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="af87b08a-d7f9-4ad8-9eec-e3f927c89172">
+    <name>Знаменатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Знаменатель</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:NumberValue">
+      <value>1</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5b3c8686-3c17-42b7-a067-5bdd3f851e78">
+    <name>ЛинейныеРазмерыПредставление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Линейные размеры представление</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Представление линейных размеров, формируемое автоматически при записи упаковки.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="993b535f-c665-4cc4-b466-d11667bec4fa">
+    <name>Объем</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объем</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>18</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Объем упаковки</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:NumberValue">
+      <value>0</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="35306e02-2ad1-4232-a398-068a769610be">
+    <name>ОбъемЕдиницаИзмерения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Единица измерения объема</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ТипИзмеряемойВеличины</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ТипыИзмеряемыхВеличин.EnumValue.Объем</value>
+      </value>
+    </choiceParameters>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="df4a78ba-9180-411a-943d-2eaf96f21d69">
+    <name>СкладскаяГруппа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Складская группа</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СкладскиеГруппыУпаковок</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Упаковки объединяются в складские группы по вариантам складской обработки (например, штучные упаковки, коробки, паллеты).</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7304712c-4a4e-40e0-be6c-a895e78d8825">
+    <name>Типоразмер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Типоразмер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТипоразмерыУпаковок</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Типоразмер упаковки</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1306a2c8-039b-4b1b-a808-f8fc27b47f72">
+    <name>Ширина</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ширина</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Ширина упаковки</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:NumberValue">
+      <value>0</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c0192ca1-e274-4de7-a7bd-ffca9512f173">
+    <name>ШиринаЕдиницаИзмерения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Единица измерения ширины</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ТипИзмеряемойВеличины</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ТипыИзмеряемыхВеличин.EnumValue.Длина</value>
+      </value>
+    </choiceParameters>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="be5c2342-1fad-40cf-b4f7-a1017bc7e542">
+    <name>КоличествоУпаковок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество упаковок</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fe815fb5-1875-4130-acf3-35d54b6300d2">
+    <name>ПоставляетсяВМногооборотнойТаре</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поставляется в многооборотной таре</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Товар, упакованный в данную упаковку, транспортируется в многооборотной таре</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="57ed9ee0-517f-4fb9-bc74-2d8fcd4d0a4b">
+    <name>НоменклатураМногооборотнаяТара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Многооборотная тара</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Многооборотная тара, в которой транспортируется товар, упакованный в данную упаковку</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ТипНоменклатуры</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ТипыНоменклатуры.EnumValue.МногооборотнаяТара</value>
+      </value>
+    </choiceParameters>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5aa38e35-acdf-4eae-a145-4407937beec7">
+    <name>ХарактеристикаМногооборотнаяТара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика тары</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Характеристика многооборотной тары, в которой транспортируется товар, упакованный в данную упаковку</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <changeMode>DontChange</changeMode>
+      <field>Catalog.УпаковкиЕдиницыИзмерения.Attribute.НоменклатураМногооборотнаяТара</field>
+    </choiceParameterLinks>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4dc73fe7-64ac-43ce-ab0c-df92d01c6311">
+    <name>МинимальноеКоличествоУпаковокМногооборотнойТары</name>
+    <synonym>
+      <key>ru</key>
+      <value>Минимальное количество упаковок многооборотной тары</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Если многооборотная тара используется для транспортировки единиц, в количестве, меньшем, чем целая упаковка, укажите минимальное количество единиц, входящих в данную упаковку, начиная с которого их необходимо транспортировать в многооборотной таре.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4378e490-1e5e-4dd6-a3db-03d426ec7986">
+    <name>ТипИзмеряемойВеличины</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип измеряемой величины</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыИзмеряемыхВеличин</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="de9c8cb1-2973-4132-9988-86536c6ea891">
+    <name>НаименованиеПолное</name>
+    <synonym>
+      <key>ru</key>
+      <value>Полное наименование</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Полное наименование единицы измерения.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d3b46211-f18d-4e9a-a41a-909000e27476">
+    <name>МеждународноеСокращение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Международное сокращение</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>3</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Международное сокращение единицы измерения. Рекомендуется указывать в соответствии с Общероссийским классификатором единиц измерения.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="23aae39e-0410-48bc-917a-96177b6e468b">
+    <name>ТипУпаковки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип упаковки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыУпаковокНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ТипыУпаковокНоменклатуры.EnumValue.Конечная</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="fc726297-c004-4a0a-affe-bb7f0bb7fa6b">
+    <name>ФормаЭлементаУпаковки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента упаковки</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="27ce07ee-ac97-4c49-a202-5743d2f48ce1">
+    <name>ФормаСпискаУпаковок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка упаковок</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d2ab4ddb-b44a-4e88-9b31-755a47ae6245">
+    <name>РазблокированиеРеквизитовУпаковки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Разблокирование реквизитов упаковки</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="ee87c9b2-3019-4eb2-a7ea-69f589f05b55">
+    <name>ФормаЭлементаЕдиницыИзмерения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента единицы измерения</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8427345f-19e4-4b63-b05a-3ac7a3b477f0">
+    <name>ФормаВыбораИзДокументов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора из документов</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d3c52155-30c4-4ac1-8b0e-fd9ddb90010f">
+    <name>ФормаВыбораЕдиницыИзмерения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора единицы измерения</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="dc508953-3944-4aca-9403-6ae2efd3c78d">
+    <name>ФормаВыбораУпаковки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора упаковки</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="87a1ddcd-7499-4fa9-9732-4e0059724ad3">
+    <name>КлассификаторЕдиницИзмерения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Классификатор единиц измерения</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="994f5bbd-24ef-42e4-8ab0-f23b363cc02a">
+    <name>ФормаСпискаЕдиницИзмерения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка единиц измерения</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="995c87f4-4d1a-48c7-a4a9-28193ab44850">
+    <name>ФормаВыбораЕдиницыДляОтчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Единицы для отчетов</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="69ecb369-e948-4112-a459-1e1443a13b15">
+    <name>РазблокированиеРеквизитовЕдиницыИзмерения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Разблокирование реквизитов единицы измерения</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="c3a9c94a-2e0a-43ac-99e1-444d366509ee">
+    <name>КлассификаторЕдиницИзмерения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Классификатор единиц измерения</value>
+    </synonym>
+    <templateType>TextDocument</templateType>
+  </templates>
+</mdclass:Catalog>

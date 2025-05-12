@@ -1,0 +1,123 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://fsrar.ru/WEGAIS/RequestAdjustmentData" elementFormQualified="true" attributeFormQualified="false">
+	<import namespace="http://fsrar.ru/WEGAIS/Common"/>
+	<import namespace="http://fsrar.ru/WEGAIS/CommonEnum"/>
+	<import namespace="http://fsrar.ru/WEGAIS/TTNSingle_v4"/>
+	<valueType name="Field255" base="xs:string" variety="Atomic" maxLength="255"/>
+	<valueType name="WbType" base="xs:string" variety="Atomic">
+		<enumeration>WBInvoiceFromMe</enumeration>
+		<enumeration>WBReturnFromMe</enumeration>
+		<enumeration>WBInternal</enumeration>
+	</valueType>
+	<objectType name="ActCOType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ACORegId" type="d3p1:NoEmptyString50" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Number" type="d3p1:NoEmptyString50"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ActDate" type="d3p1:DateNoTime"/>
+	</objectType>
+	<objectType name="ActTTNType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="WBRegId" type="d3p1:NoEmptyString50" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ACTNUMBER" type="d3p1:NoEmptyString50" lowerBound="0"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ActDate" type="d3p1:DateNoTime" lowerBound="0"/>
+	</objectType>
+	<objectType name="ActWOPosType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="AWORegId" type="d3p1:NoEmptyString50" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Identity" type="d3p1:IdentityType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="SumSale" type="d3p1:NoNegativeDecimalType" lowerBound="0" nillable="false"/>
+	</objectType>
+	<objectType name="ActWOSPosType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="AWOSRegId" type="d3p1:NoEmptyString50" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Identity" type="d3p1:IdentityType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="SumSale" type="d3p1:NoNegativeDecimalType" lowerBound="0" nillable="false"/>
+	</objectType>
+	<objectType name="ActWOSType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="AWOSRegId" type="d3p1:NoEmptyString50" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ActNumber" type="d3p1:NoEmptyString50"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ActDate" type="d3p1:DateNoTime"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/CommonEnum" name="TypeWriteOff" type="d3p1:TypeWriteOff"/>
+	</objectType>
+	<objectType name="ActWOType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="AWORegId" type="d3p1:NoEmptyString50" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ActNumber" type="d3p1:NoEmptyString50" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ActDate" type="d3p1:DateNoTime" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/CommonEnum" name="TypeWriteOff" type="d3p1:TypeWriteOff" lowerBound="0" nillable="false"/>
+	</objectType>
+	<objectType name="ReportImportedType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="RegId" type="d3p1:NoEmptyString50" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="NUMBER" type="d3p1:NoEmptyString50" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Date" type="d3p1:DateNoTime" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ImportedDate" type="d3p1:DateNoTime" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="GTDNUMBER" type="d3p1:NoEmptyString50" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="GTDDate" type="d3p1:DateNoTime" lowerBound="0" nillable="false"/>
+		<property name="Country" lowerBound="0" nillable="false">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+				<pattern>[0-9][0-9][0-9]</pattern>
+			</typeDef>
+		</property>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="supplierOwnerid" type="d3p1:NoEmptyString50" lowerBound="0" nillable="false"/>
+	</objectType>
+	<objectType name="ReportProducedType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="RegId" type="d3p1:NoEmptyString50" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="NUMBER" type="d3p1:NoEmptyString50" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Date" type="d3p1:DateNoTime" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ProducedDate" type="d3p1:DateNoTime" lowerBound="0" nillable="false"/>
+	</objectType>
+	<objectType name="RequestAdjustmentData" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ClientId" type="d3p1:NoEmptyString50" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="RequestNumber" type="d3p1:NoEmptyString50" nillable="false"/>
+		<property name="RequestDate" type="xs:date" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="Content" type="d3p1:RequestAdjustmentPositionType"/>
+	</objectType>
+	<objectType name="RequestAdjustmentPositionType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="TTN" type="d3p1:TTNType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="TTNPos" type="d3p1:TTNPosType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="ReportProduced" type="d3p1:ReportProducedType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="ReportImported" type="d3p1:ReportImportedType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="ActWO" type="d3p1:ActWOType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="ActWOPos" type="d3p1:ActWOPosType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="ActWOS" type="d3p1:ActWOSType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="ActWOSPos" type="d3p1:ActWOSPosType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="ActCO" type="d3p1:ActCOType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="ActTTN" type="d3p1:ActTTNType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="Route" type="d3p1:RouteType" lowerBound="0" nillable="false"/>
+	</objectType>
+	<objectType name="RouteType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="RegId" type="d3p1:NoEmptyString50" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Date" type="d3p1:DateNoTime"/>
+		<property name="TRAN_TYPE">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+				<enumeration>410</enumeration>
+				<enumeration>411</enumeration>
+				<enumeration>412</enumeration>
+				<enumeration>413</enumeration>
+				<enumeration>419</enumeration>
+			</typeDef>
+		</property>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="TRAN_COMPANY" type="d3p1:Field255" lowerBound="0"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="TRAN_CAR" type="d3p1:Field255"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="TRAN_TRAILER" type="d3p1:Field255" lowerBound="0"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="TRAN_CUSTOMER" type="d3p1:Field255" lowerBound="0"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="TRAN_DRIVER" type="d3p1:Field255" lowerBound="0"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="TRAN_LOADPOINT" type="d3p1:NoEmptyString"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="TRAN_UNLOADPOINT" type="d3p1:NoEmptyString"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="TRAN_REDIRECT" type="d3p1:Field255" lowerBound="0"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="TRAN_FORWARDER" type="d3p1:Field255" lowerBound="0"/>
+	</objectType>
+	<objectType name="TTNPosType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="WBRegId" type="d3p1:NoEmptyString50" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Identity" type="d3p1:IdentityType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Price" type="d3p1:NoNegativeDecimalType" lowerBound="0" nillable="false"/>
+		<property name="EXCISE_NUMBER" lowerBound="0" nillable="false">
+			<typeDef xmlns:d4p1="http://fsrar.ru/WEGAIS/Common" xsi:type="ValueType" base="d4p1:NoEmptyString" variety="Atomic" maxLength="64"/>
+		</property>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="EXCISE_DATE" type="d3p1:DateWTime" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="EXCISE_SUM" type="d3p1:NoNegativeDecimalType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="EXCISE_BS" type="d3p1:PositiveDecimalType" lowerBound="0" nillable="false"/>
+	</objectType>
+	<objectType name="TTNType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="WBRegId" type="d3p1:NoEmptyString50" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="NUMBER" type="d3p1:NoEmptyString50" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Date" type="d3p1:DateNoTime" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ShippingDate" type="d3p1:DateNoTime" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/RequestAdjustmentData" name="Type" type="d3p1:WbType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/TTNSingle_v4" name="Transport" type="d3p1:TransportType" lowerBound="0"/>
+	</objectType>
+</package>

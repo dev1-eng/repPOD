@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2606a793-6365-4843-925c-ebc9d9f1c956">
+  <producedTypes>
+    <selectionType typeId="cd820442-c61c-41b8-ba9c-e4bde4c164c0" valueTypeId="787d8de5-8977-4fb6-8aa0-b068910307c4"/>
+    <listType typeId="61d3d06f-8efb-4ed4-9d67-3afbe5c0c688" valueTypeId="b693f683-0ee7-4dd6-aafd-76f0b1b7bd91"/>
+    <managerType typeId="aa4e6487-f1a5-4e05-9c19-d54ed5bd1e5d" valueTypeId="63b1a717-d298-41c4-827f-2344742d11f0"/>
+    <recordSetType typeId="4fff09e5-0092-46ad-8ad5-33e5102e03e6" valueTypeId="2ab26133-1cab-40e8-a997-24ee713158ff"/>
+    <recordKeyType typeId="fc2d2c58-2dce-492c-a253-084b6e11aa56" valueTypeId="69cda24d-ff3c-4ba8-9a3c-a5477409d833"/>
+    <recordType typeId="129dbd4c-9857-4bbd-bb3c-f52f90cd4592" valueTypeId="1f95996b-931f-4768-bcb9-f9c1dbc2b79d"/>
+  </producedTypes>
+  <name>РезервыТоваровОрганизаций</name>
+  <synonym>
+    <key>ru</key>
+    <value>Резервы товаров организаций</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultListForm>AccumulationRegister.РезервыТоваровОрганизаций.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="cacd74bf-8fe9-4597-a1ee-28cc4c1f546f">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество учитываемой номенклатуры в организации.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="eef61636-75dc-42db-981a-210427d0cdab">
+    <name>КоличествоПоРНПТ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество по РНПТ</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>11</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество в единицах прослеживаемости</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="0d9de4a1-85b1-4c8c-bc54-717274443fcd">
+    <name>КорОрганизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кор организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация, от имени которой был отгружен товар со склада.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="a6ced8c2-5238-4b28-b3bd-d94c7e130b7a">
+    <name>КорВидЗапасов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кор вид запасов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыЗапасов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид запасов получателя</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Отбор.Организация</name>
+      <field>AccumulationRegister.РезервыТоваровОрганизаций.Attribute.КорОрганизация</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="50b7d578-2737-4a38-8642-c0d7572f8b75">
+    <name>АналитикаУчетаНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика учета номенклатуры</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиУчетаНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="4c04a2b2-979e-477b-a824-3560ab382a0e">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d927351d-c8b0-459b-a1e5-f3bd8c04386f">
+    <name>ВидЗапасов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид запасов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыЗапасов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Отбор.Организация</name>
+      <field>AccumulationRegister.РезервыТоваровОрганизаций.Dimension.Организация</field>
+    </choiceParameterLinks>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="f3ddd9b9-6dc8-4990-a448-42e5a8d5cd56">
+    <name>НомерГТД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер ГТД</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НомераГТД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e0f303b8-bf2b-4627-b728-524131ae25f8">
+    <name>ЭтоСторно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это сторно</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <forms uuid="5c1b4a8e-597f-4401-97bc-af2db8db4126">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:AccumulationRegister>

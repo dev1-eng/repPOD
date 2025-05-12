@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="59a387b6-507c-4e42-8c17-5b4127e54626">
+  <name>ПроверитьНеобходимостьПереоценки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить необходимость переоценки</value>
+  </synonym>
+  <comment>Контролирует необходимость переоценки денежных средств при загрузке курсов валют.</comment>
+  <source>
+    <types>InformationRegisterRecordSet.КурсыВалют</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.ЗакрытиеМесяцаСервер.ПроверитьНеобходимостьПереоценки</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c272ec8f-18d0-41b9-91f8-8cf3525bb5b4">
+  <producedTypes>
+    <selectionType typeId="ca711837-ff8e-4bb3-8d44-36b8bae453a1" valueTypeId="eb1042a8-b312-4604-a44a-94940656ddb3"/>
+    <listType typeId="faab203b-fc9b-4057-8384-c897b1078db5" valueTypeId="29213ee3-4426-4030-a5d0-5127aade6f9f"/>
+    <managerType typeId="c4a457cf-d937-44c7-b34b-c88dd2bdfda0" valueTypeId="837ea050-87c2-4f2f-b4e1-7273a59de2c7"/>
+    <recordSetType typeId="6bb39454-971d-4ca0-9b41-b91be89df1e1" valueTypeId="95f0778b-b276-407b-a065-10c2cd953465"/>
+    <recordKeyType typeId="713510ee-691a-4443-931b-7c49f8e10c39" valueTypeId="5756145c-d5bc-46a9-8dd3-48a1ef33e713"/>
+    <recordType typeId="7d667085-b449-41a5-8548-55f041a0ce81" valueTypeId="65225461-7acd-4ca1-a5a3-e09a6315bc60"/>
+    <recordManagerType typeId="2167638c-31a3-4d67-afd3-1138230ecb24" valueTypeId="7e7b24da-b6e3-4ee0-9fee-cf83ddc745fd"/>
+  </producedTypes>
+  <name>ТребуетсяОформлениеСчетаФактуры</name>
+  <synonym>
+    <key>ru</key>
+    <value>Требуется оформление счета-фактуры</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="1ef6157c-fe76-4592-9587-51fa7038c22c">
+    <name>Валюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="38274ec3-0f20-4b7c-a106-f6d866cd8190">
+    <name>Основание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.ПриобретениеТоваровУслуг</types>
+      <types>DocumentRef.ВозвратТоваровПоставщику</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациями</types>
+      <types>DocumentRef.ОтчетКомитенту</types>
+      <types>DocumentRef.РеализацияУслугПрочихАктивов</types>
+      <types>DocumentRef.КорректировкаРеализации</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.КорректировкаПриобретения</types>
+      <types>DocumentRef.ВыкупВозвратнойТарыКлиентом</types>
+      <types>DocumentRef.АктВыполненныхРабот</types>
+      <types>DocumentRef.ВозвратТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.ПередачаТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.ЗаписьКнигиПродаж</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="93766ba6-13f1-4ae0-8b02-fab82a7986fc">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="dba44eb8-edd3-49af-9917-368ae98830c8">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="12910365-7d07-4a68-8032-d6205586e6bc">
+    <name>ТипСчетаФактуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип счета-фактуры</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ИдентификаторыОбъектовМетаданных</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Тип счета-фактуры к оформлению</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

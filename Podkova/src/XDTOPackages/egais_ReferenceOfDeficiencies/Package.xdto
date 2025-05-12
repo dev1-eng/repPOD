@@ -1,0 +1,20 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://fsrar.ru/WEGAIS/ReferenceOfDeficiencies" elementFormQualified="true" attributeFormQualified="false">
+	<import namespace="http://fsrar.ru/WEGAIS/Common"/>
+	<import namespace="http://fsrar.ru/WEGAIS/CommonEnum"/>
+	<import namespace="http://fsrar.ru/WEGAIS/ClientRef_v2"/>
+	<objectType name="ReferenceOfDeficiencies">
+		<property name="Header">
+			<typeDef xsi:type="ObjectType" ordered="false" sequenced="true">
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="ReferenceDate" type="d5p1:DateNoTime" nillable="false"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="RequestFSM" type="d5p1:NoEmptyString50" nillable="false"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="NUMBERIssueFSM" type="d5p1:NoEmptyString50"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="DateIssueFSM" type="d5p1:DateNoTime"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/ClientRef_v2" name="TerrOrganRAR" type="d5p1:OrgInfoRus_ClaimIssue" lowerBound="0"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/ClientRef_v2" name="Declarer" type="d5p1:OrgInfoRus_ClaimIssue"/>
+				<property name="Comments" type="xs:string"/>
+				<property name="SignReference" type="xs:base64Binary" lowerBound="0"/>
+				<property name="SignCertificate" type="xs:base64Binary" lowerBound="0"/>
+			</typeDef>
+		</property>
+	</objectType>
+</package>

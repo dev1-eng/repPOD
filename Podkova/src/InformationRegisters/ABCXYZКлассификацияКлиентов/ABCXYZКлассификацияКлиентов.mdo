@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e3dbae99-a6e5-4d79-9265-67d40698743c">
+  <producedTypes>
+    <selectionType typeId="0e1f1665-8011-477e-9763-7c45cb3ac5a7" valueTypeId="25749afb-71e7-4630-831e-c0f3ac4442ee"/>
+    <listType typeId="51c9e2b4-636e-4507-a35a-f4e804d5d5f2" valueTypeId="e7793ea8-f928-4324-a789-c54cf1d1a6c8"/>
+    <managerType typeId="3ee98efe-bf16-4363-a5ed-fcb5f5d23903" valueTypeId="aff8f85c-9d12-4e39-9a64-c24aac285373"/>
+    <recordSetType typeId="c46f4a04-4927-4202-9565-ee3202d06776" valueTypeId="ed7855e8-6548-4e80-a3c5-edd5c50a1fe4"/>
+    <recordKeyType typeId="3cfaebce-3350-490c-bdd8-504422aa3a73" valueTypeId="bc5a96fb-c8c9-4d27-9531-0279c3a97c67"/>
+    <recordType typeId="bad48e03-5cca-4bd1-a670-747f4635766b" valueTypeId="8814416c-8a73-45fc-bf58-85de016ea119"/>
+    <recordManagerType typeId="cbce70aa-6420-4267-829c-d69058461ead" valueTypeId="d5ff4b14-d2f4-4b2e-8975-83c60f81a324"/>
+  </producedTypes>
+  <name>ABCXYZКлассификацияКлиентов</name>
+  <synonym>
+    <key>ru</key>
+    <value>ABC/XYZ классификация клиентов</value>
+  </synonym>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата классификации</value>
+    </synonym>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата проведения классификации.</value>
+    </toolTip>
+    <fillValue xsi:type="core:DateValue">
+      <value>0001-01-01T00:00:00</value>
+    </fillValue>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <resources uuid="3cb6f440-56d3-49d7-8ac9-b793063cc8b7">
+    <name>Класс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Класс</value>
+    </synonym>
+    <type>
+      <types>EnumRef.XYZКлассификация</types>
+      <types>EnumRef.ABCКлассификация</types>
+      <types>EnumRef.СтадииВзаимоотношенийСКлиентами</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Класс клиента на дату классификации.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ABCКлассификация.EmptyRef</value>
+    </fillValue>
+  </resources>
+  <resources uuid="31834a4a-a66a-4d39-889d-2e5bdfe74602">
+    <name>ЗначениеПараметраКлассификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Значение параметра классификации</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Значение параметра, по которому выполнена классификации.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="7d6e0155-5341-4f0f-9b9c-8241159ba619">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Клиент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Классифицируемый клиент.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Партнеры.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4b0cc8ff-1658-4d55-8681-55960071c08a">
+    <name>ТипПараметраКлассификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип параметра классификации</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыПараметровКлассификации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Параметр, по которому выполнена классификация.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ТипыПараметровКлассификации.EmptyRef</value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="da5d7301-39c7-4e54-90d4-f276a8ce1d23">
+    <name>ТипКлассификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип классификации</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыКлассификации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Тип выполненной классификации.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="6dd2909f-7b49-40a0-bfe0-979298d28dc8">
+    <name>ИсторияКлассификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>История классификации</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="c4aea5d0-db26-4e13-98ec-aec20d8965e3">
+    <name>ИсторияКлассификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>История классификации</value>
+    </synonym>
+    <group>FormNavigationPanelGoTo</group>
+    <commandParameterType>
+      <types>CatalogRef.Партнеры</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:InformationRegister>

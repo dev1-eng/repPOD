@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="595987a3-5276-4261-a164-f161dba38189">
+  <producedTypes>
+    <selectionType typeId="9b119b79-9a66-47dc-b9e2-cc4f7a845790" valueTypeId="8dc29965-18c6-493f-b338-15bb55265540"/>
+    <listType typeId="4ef2f16a-2342-459e-a215-eaa1f1939ae6" valueTypeId="3fc08138-2063-4990-a56e-97f46d9cf7ee"/>
+    <managerType typeId="aed4c09e-0348-49f2-b8c4-32f6b52144b8" valueTypeId="4ecbfce6-7b39-46d4-a7ac-399fb3217778"/>
+    <recordSetType typeId="f25efd8e-74c4-48ab-b1c0-a5c456ad894e" valueTypeId="2d0b67d1-0a56-4ce1-a307-8bb0b7d48523"/>
+    <recordKeyType typeId="00d38122-88c5-4cf8-87ec-12f1a497e550" valueTypeId="01113955-c335-4d6f-a926-209d81776fc6"/>
+    <recordType typeId="90771f11-8c58-46a7-971e-f38e154ef223" valueTypeId="6b3a5a94-4b8e-433e-99af-756517619108"/>
+    <recordManagerType typeId="1c9ddb9d-1f16-4ce3-83b5-0bd3bd455150" valueTypeId="3d983f40-ac12-48ae-8530-8266f6bd8902"/>
+  </producedTypes>
+  <name>РегистрацииВНалоговомОргане</name>
+  <synonym>
+    <key>ru</key>
+    <value>Регистрации подразделений</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.РегистрацииВНалоговомОргане.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.РегистрацииВНалоговомОргане.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <listPresentation>
+    <key>ru</key>
+    <value>Регистрации подразделений</value>
+  </listPresentation>
+  <explanation>
+    <key>ru</key>
+    <value>Состав структурных единиц предприятия, зарегистрированных в налоговом органе.</value>
+  </explanation>
+  <resources uuid="e1d62cda-e64f-4fc1-8f5d-a5e0e367a7dd">
+    <name>РегистрацияВНалоговомОргане</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регистрация в налоговом органе</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегистрацииВНалоговомОргане</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Хранит данные регистрации в налоговых органах</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>InformationRegister.РегистрацииВНалоговомОргане.Dimension.Организация</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="536429a0-3c35-406c-beb1-afc5ec19e078">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение, для которого определяется регистрация в налоговых органах.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="dd83ab08-ede9-49d5-a61a-383731bca73a">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация, для которой определяется регистрация в налоговых органах.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>РежимВыбораВзаимосвязанныхОрганизаций</name>
+      <value xsi:type="core:StringValue">
+        <value>БезОбособленныхПодразделений</value>
+      </value>
+    </choiceParameters>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="5bf3d904-b0a7-4500-9d9c-adafc29c438c">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="98e9c4b7-0b64-44a6-b2b0-951f0ff728ff">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="011e8155-425a-4872-bac2-75d070c5a610">
+    <name>РегистрацииВНалоговомОргане</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регистрации подразделений</value>
+    </synonym>
+    <group>FormNavigationPanelGoTo</group>
+    <commandParameterType>
+      <types>CatalogRef.Организации</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:InformationRegister>

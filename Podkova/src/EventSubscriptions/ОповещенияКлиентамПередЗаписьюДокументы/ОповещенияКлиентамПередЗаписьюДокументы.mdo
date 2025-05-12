@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="835ad008-08b1-4ef8-a26d-0c9369b7c9e7">
+  <name>ОповещенияКлиентамПередЗаписьюДокументы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Оповещения клиентам перед записью документы</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.ОперацияПоПлатежнойКарте</types>
+    <types>DocumentObject.СчетНаОплатуКлиенту</types>
+    <types>DocumentObject.ПоступлениеБезналичныхДенежныхСредств</types>
+    <types>DocumentObject.ПриходныйКассовыйОрдер</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.РассылкиИОповещенияКлиентам.ИсточникОповещенияПередЗаписьюДокументы</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,35 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://fsrar.ru/WEGAIS/InvoiceExportFSM" elementFormQualified="true" attributeFormQualified="false">
+	<import namespace="http://fsrar.ru/WEGAIS/Common"/>
+	<import namespace="http://fsrar.ru/WEGAIS/CommonEnum"/>
+	<import namespace="http://fsrar.ru/WEGAIS/CommonV3"/>
+	<import namespace="http://fsrar.ru/WEGAIS/ClientRef_v2"/>
+	<import namespace="http://fsrar.ru/WEGAIS/ProductRef_v2"/>
+	<objectType name="InvoiceExportFSMType">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Identity" type="d3p1:IdentityType" lowerBound="0" nillable="false"/>
+		<property name="Header">
+			<typeDef xsi:type="ObjectType" ordered="false" sequenced="true">
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="NUMBER" type="d5p1:NoEmptyString50" nillable="false"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="Date" type="d5p1:DateNoTime" nillable="false"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/ClientRef_v2" name="Importer" type="d5p1:OrgInfoRus_ClaimIssue" nillable="false"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/ClientRef_v2" name="TerrOrganRAR" type="d5p1:OrgInfoRus_ClaimIssue" lowerBound="0"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="RequestFSM" type="d5p1:NoEmptyString50" nillable="false"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="ActualShipmentDate" type="d5p1:DateNoTime" nillable="false"/>
+				<property name="TotalQuantity" type="xs:integer" nillable="false"/>
+			</typeDef>
+		</property>
+		<property name="Content">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/InvoiceExportFSM" name="Position" type="d5p1:PositionInvoiceExportFSMType" upperBound="-1" nillable="false"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="PositionInvoiceExportFSMType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Identity" type="d3p1:IdentityType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="MarkType" type="d3p1:MarkGZTypeString" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="MarkTypeCode" type="d3p1:CodeSampleTypeString" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ProductRef_v2" name="Rank" type="d3p1:RankType"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ProductRef_v2" name="Start" type="d3p1:MarkNumberType"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ProductRef_v2" name="Last" type="d3p1:MarkNumberType"/>
+		<property name="QuantityRange" type="xs:integer" nillable="false"/>
+	</objectType>
+</package>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a70ed104-503c-46d8-975d-53f024150e03">
+  <producedTypes>
+    <selectionType typeId="4ef78297-a958-4951-b9ce-6f52d3b266e3" valueTypeId="3930ea4d-8a3b-41b5-a43e-7b99c20c0c8a"/>
+    <listType typeId="99e17034-62f7-4c5d-9d47-872c652d938f" valueTypeId="dacc147e-5d38-41d4-9c0e-f2b2a6c9d197"/>
+    <managerType typeId="e35e0608-0e6d-4c60-a989-e828402f5bed" valueTypeId="3b08473a-0a8f-49e0-8c1f-36dc58f0d8ba"/>
+    <recordSetType typeId="cf1584c4-5956-4550-a86d-a276a2166ac1" valueTypeId="e38fd72b-f96f-4678-be2c-6994c5aaa7cb"/>
+    <recordKeyType typeId="fe6fa9e9-9485-434c-a905-093e70980a2e" valueTypeId="5d9f7270-0f7b-4f5a-a922-9054c446c33e"/>
+    <recordType typeId="ad1bbb37-9038-491f-aaac-518af8bcdf0d" valueTypeId="4a1dd0bd-1b6c-4dbe-9623-123577cb353b"/>
+  </producedTypes>
+  <name>ПланыПродажПоКатегориям</name>
+  <synonym>
+    <key>ru</key>
+    <value>Планы продаж по категориям</value>
+  </synonym>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="ba51d886-d326-4679-9bdd-4d0e0a17086a">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество запланированных товаров</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="1d10072d-5192-48f4-b051-d09bd5bd91f4">
+    <name>Сценарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СценарииТоварногоПланирования</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сценарий, на который сформирован план.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="aaec3205-da33-4f0a-b904-6f46720d7612">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыПланов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Определяет текущий статус плана.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a7fc1a49-800c-4c8d-88b5-d7b1f8113570">
+    <name>ТоварнаяКатегория</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товарная категория</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТоварныеКатегории</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Товарная категория по которой планируется продажа.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d31c4231-cc95-436f-b141-fea9811cb1b8">
+    <name>ФорматМагазина</name>
+    <synonym>
+      <key>ru</key>
+      <value>Формат магазина</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФорматыМагазинов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Формат магазина, в котором планируется продажа номенклатуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="bf178a03-c200-445d-9620-9e0c52b89cc2">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Складская территория, на которую планируется продажа номенклатуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="6b118aaf-ec6a-4167-9976-ce1f33b1c646">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение, по которому запланированы продажи</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="31c5f68a-c6b9-44bb-a24f-0b17ba91cb6c">
+    <name>РейтингПродаж</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рейтинг продаж</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РейтингиПродажНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Рейтинг продаж номенклатуры, для которого планируются продажи в разрезе товарной категории.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="dd2abd70-769a-40d5-a251-b9bc07e476d5">
+    <name>ПланПродажПоКатегориям</name>
+    <synonym>
+      <key>ru</key>
+      <value>План продаж по категориям</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ПланПродажПоКатегориям</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Документ планирования</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="1d161014-41ae-4850-97ed-d11ac176599e">
+    <name>Назначение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Назначения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="afcc0207-e0eb-4df2-8f37-9f936b581ce4">
+    <name>ВидПлана</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид замещающего плана</value>
+    </synonym>
+    <comment>Вид замещающего плана</comment>
+    <type>
+      <types>CatalogRef.ВидыПланов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

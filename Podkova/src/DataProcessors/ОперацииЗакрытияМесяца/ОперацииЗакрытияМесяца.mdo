@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="579651ea-8eb9-490f-9ec1-41dc6ec72ae1">
+  <producedTypes>
+    <objectType typeId="749d5400-434c-4d62-b70b-8b9c111ed107" valueTypeId="c7f0e435-398a-4826-b4f6-e748dea9eae7"/>
+    <managerType typeId="0b45fc49-03c6-4953-8d52-16b6fe21d1e2" valueTypeId="084d0b42-084a-42c0-94b9-e3968960d307"/>
+  </producedTypes>
+  <name>ОперацииЗакрытияМесяца</name>
+  <synonym>
+    <key>ru</key>
+    <value>Операции закрытия месяца</value>
+  </synonym>
+  <defaultForm>DataProcessor.ОперацииЗакрытияМесяца.Form.ЗакрытиеМесяца</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <extendedPresentation>
+    <key>ru</key>
+    <value>Регламентные операции по закрытию месяца</value>
+  </extendedPresentation>
+  <attributes uuid="b96cb3df-b505-44cc-8883-e7122443e3a5">
+    <name>МассивОрганизаций</name>
+    <synonym>
+      <key>ru</key>
+      <value>Массив организаций</value>
+    </synonym>
+    <type/>
+    <toolTip>
+      <key>ru</key>
+      <value>Организации для закрытия месяца; пустой массив - закрывать по всем доступным организациям</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="70566219-f03d-4006-8b7d-ad12d29e3a9e">
+    <name>ВсеОрганизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Все организации</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1a5577ad-8f06-4e75-b1fa-30bbf77cb1da">
+    <name>ПериодРегистрации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период регистрации</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="2cbf782a-9378-49e7-bc8f-8b9934eecd90">
+    <name>ПериодРегистрацииРегламентный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период регистрации регламентный</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="dc2fb915-b96d-4e61-8f50-dc341e879aab">
+    <name>ПериодРегистрацииРегламентныйМУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период регистрации регламентный (международный учет)</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="529300de-2b64-4ffa-8849-74c46097be8e">
+    <name>ОстанавливатьсяПоОшибке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Останавливаться по ошибке</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1d008f8a-ade5-4670-abad-fcb850647aa0">
+    <name>СкрыватьЭтапыСоСтатусомНеТребуется</name>
+    <synonym>
+      <key>ru</key>
+      <value>Скрывать этапы не требующие выполнения</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ed68ab93-386b-4ec0-989d-d3ce5f2b8d66">
+    <name>СкрыватьЭтапыСоСтатусомВыполненоУспешно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Скрывать этапы выполненные успешно</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ebc1763f-d47c-4db9-b924-d28776cc019f">
+    <name>СкрыватьПоясненияКЭтапам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Скрывать пояснения к этапам</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="578ba37c-83f3-4446-91a4-a6c5efd0de84">
+    <name>АвтообновлениеПриЗакрытииПодчиненныхФорм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Автообновление при закрытии подчиненных форм</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выполнять обновление статусов этапов после закрытия подчиненных форм (открываемых по гиперссылкам из этой формы)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="024d5d02-015f-46b3-8cd8-294e7f10a7d7">
+    <name>ЗакрытиеМесяца</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регламентные операции по закрытию месяца</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="0d603e7d-9052-415d-98d7-d599e4070ec8">
+    <name>РезультатыПроверки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результаты проверки</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="05290a6e-bec7-4483-98ec-d3eeb5c83d00">
+    <name>АктивныеСеансы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Активные сеансы закрытия месяца</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="9b40fb3c-4f3b-4081-bab6-87b39c8cc03c">
+    <name>ПараметрыОпераций</name>
+    <synonym>
+      <key>ru</key>
+      <value>Параметры операций</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3c6761ce-d84c-4eef-9bc9-a9a9809a22d1">
+    <name>ЗапретыИзменения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Запреты изменения</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3cec3a55-b9dd-46af-81cb-a2a5a198e395">
+    <name>ВыборОрганизаций</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбор организаций</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="fbf606e0-7c63-4374-b030-055c7bd5ef26">
+    <name>ФормаСправкиПереходНаНовыеРежимыРаботы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Переход на новые режимы работы</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="2547109b-2519-4d5d-91f2-c19d1ac16c59">
+    <name>ОперацииЗакрытияМесяца</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закрытие месяца</value>
+    </synonym>
+    <group>NavigationPanelImportant</group>
+    <commandParameterType/>
+  </commands>
+</mdclass:DataProcessor>

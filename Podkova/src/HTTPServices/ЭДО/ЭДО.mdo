@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2c3b27e6-6a40-446b-9e8f-eab3e6309aed">
+  <name>ЭДО</name>
+  <synonym>
+    <key>ru</key>
+    <value>ЭДО</value>
+  </synonym>
+  <rootURL>edi</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="9f859b05-8d06-47bd-ac5b-b4f9ff1ebb03">
+    <name>ЕстьНовыеДокументы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Есть новые документы</value>
+    </synonym>
+    <template>/events/newdocs</template>
+    <methods uuid="a582f07a-8972-4b6a-a7d0-0a562937dce1">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>newDocPOST</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

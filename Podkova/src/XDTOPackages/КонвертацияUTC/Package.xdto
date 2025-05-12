@@ -1,0 +1,13 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://gosis.1c.ru/Convertor" elementFormQualified="true" attributeFormQualified="true">
+	<property name="query">
+		<typeDef xsi:type="ObjectType" ordered="false" sequenced="true">
+			<property xmlns:d4p1="http://gosis.1c.ru/Convertor" name="ХранилищеДаты" type="d4p1:ХранилищеДаты" lowerBound="0"/>
+		</typeDef>
+	</property>
+	<valueType name="datetimeoffset" base="xs:dateTime" minInclusive="0001-01-01T00:00:00Z">
+		<pattern>((000[1-9])|(00[1-9][0-9])|(0[1-9][0-9]{2})|([1-9][0-9]{3}))-((0[1-9])|(1[012]))-((0[1-9])|([12][0-9])|(3[01]))T(([01][0-9])|(2[0-3]))(:[0-5][0-9]){2}(\.[0-9]+)?(([+-]((((0[0-9])|(1[0-3]))(:[0-5][0-9]))|14:00))|Z)</pattern>
+	</valueType>
+	<objectType name="ХранилищеДаты">
+		<property xmlns:d3p1="http://gosis.1c.ru/Convertor" name="Значение" type="d3p1:datetimeoffset" lowerBound="0"/>
+	</objectType>
+</package>

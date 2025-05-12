@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9ffb951d-5d07-438f-8e0a-61d735ed4edd">
+  <producedTypes>
+    <selectionType typeId="74a428c7-0f2e-4fed-a92e-5e4642203b48" valueTypeId="53cf746c-3c71-41f1-a0a8-b061c55073a4"/>
+    <listType typeId="20661164-1e5f-4218-a45d-636fe7358d1c" valueTypeId="44e4545d-9c22-4330-87c2-104ed9974ff2"/>
+    <managerType typeId="fa7ab4e6-20e7-4a8d-b461-cdb0a808f2a9" valueTypeId="838b9bd6-f8a0-49ec-8096-98e72e6b774a"/>
+    <recordSetType typeId="e1df4188-a442-4e4a-b37c-ba174e2c692b" valueTypeId="bbb48f5d-b151-450f-a8e9-3b1ea4b14804"/>
+    <recordKeyType typeId="729ae021-4964-47b2-aca2-c359a784656d" valueTypeId="d933c5ba-b133-4bf5-869b-2c9b6d396df3"/>
+    <recordType typeId="f51a3dad-b1e1-455b-9acb-65bd908476d3" valueTypeId="b0fb1e37-5a4b-47dd-80c2-52813f9bcc71"/>
+    <recordManagerType typeId="f1adb3a5-bbe9-4356-b8cf-7cdf4743483d" valueTypeId="839ee5d8-7a17-4fa7-961b-100eec8f1f4a"/>
+  </producedTypes>
+  <name>ВариантыОбеспеченияРаботами</name>
+  <synonym>
+    <key>ru</key>
+    <value>Порядок применения способов обеспечения работами</value>
+  </synonym>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <attributes uuid="a2969f1a-572b-471a-a872-447840532577">
+    <name>РеквизитДопУпорядочивания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок применения</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Для транспортных ограничений определяет последовательность применения.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>IndexWithAdditionalOrder</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:NumberValue">
+      <value>0</value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="680e6d25-4961-4da7-a59d-39b4fe679fa4">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номенклатура, для которой определяются способы обеспечения потребностей.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ТипНоменклатуры</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ТипыНоменклатуры.EnumValue.Работа</value>
+      </value>
+    </choiceParameters>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Номенклатура.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="fe9a6501-0543-4adf-a7f3-6e344671b4cb">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Характеристика номенклатуры, для которой определяются способы обеспечения потребностей.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <changeMode>DontChange</changeMode>
+      <field>InformationRegister.ВариантыОбеспеченияРаботами.Dimension.Номенклатура</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.ХарактеристикиНоменклатуры.EmptyRef</value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d50e53ca-7b24-48f6-a419-fc67b8043669">
+    <name>СпособОбеспеченияПотребностей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ обеспечения потребностей</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СпособыОбеспеченияПотребностей</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Способ обеспечения потребностей, используемый для пополнения запаса товара на складе.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ТипОбеспечения</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыОбеспечения.EnumValue.Покупка</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыОбеспечения.EnumValue.Производство</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.СпособыОбеспеченияПотребностей.EmptyRef</value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

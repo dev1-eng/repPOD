@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="69fd119a-64c7-47c2-baaa-9b5b3d821953">
+  <producedTypes>
+    <objectType typeId="fcbe391d-09f5-45b4-a8e7-70441747450b" valueTypeId="3e844a54-e7e3-48b4-9b25-769838081818"/>
+    <managerType typeId="ffa662f5-4a40-461b-a268-1d39f37b843c" valueTypeId="029b476c-2e5b-484a-9d3f-83fed1aaf789"/>
+  </producedTypes>
+  <name>ВыгрузкаБазыТоваровВТСД</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выгрузка базы товаров в ТСД</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ВыгрузкаБазыТоваровВТСД.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <tabularSections uuid="b5f6377f-aec6-4864-9ae0-7e034769a4ca">
+    <producedTypes>
+      <objectType typeId="07b3f9ab-398c-42cb-a1e6-9ec24a76681c" valueTypeId="79ffe6ff-60d4-46ae-a017-6565281a021f"/>
+      <rowType typeId="02d955a4-8fab-455a-8cba-e5defc78eaf0" valueTypeId="e583f909-e153-4ad2-80b4-29745bd90913"/>
+    </producedTypes>
+    <name>Товары</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товары</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="76858240-71b9-4ab8-b072-c211bb45594b">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6a2db89a-7d52-4665-9de1-eb1920c60870">
+      <name>Характеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c688fa79-1e4b-430c-979f-7882e71d17e7">
+      <name>Упаковка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковка</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="745d22c8-9561-42e8-9417-12febaa886a6">
+      <name>Штрихкод</name>
+      <synonym>
+        <key>ru</key>
+        <value>Штрихкод</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="17e2f61d-9462-4f4e-8e12-97c03f94a4d2">
+      <name>Цена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Цена</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="3d2a70c3-f0af-4c9c-b8bc-91c9eeef012d">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="449e8e92-44d8-4173-8b96-c834daf10a8f">
+    <name>ПоляШаблонаБДТовары</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поля шаблона БД (Товары)</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:DataProcessor>

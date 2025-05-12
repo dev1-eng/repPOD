@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="27361ff1-25db-4312-ba47-fb4d767210b8">
+  <producedTypes>
+    <selectionType typeId="6aa0ec19-9608-4e7e-961f-9b1808c3bfe9" valueTypeId="d5cc3976-513f-4fe5-b6d7-91dc953a4b09"/>
+    <listType typeId="7cf8fcd9-016c-44c7-be99-10090edf1688" valueTypeId="0bce15f1-d6cf-416b-8089-89f1348db3e5"/>
+    <managerType typeId="43042254-1f2f-483d-a6a9-317305695f63" valueTypeId="a1b8e7b8-d823-4bde-b328-f46227c445fd"/>
+    <recordSetType typeId="e36ef928-843e-4003-8e4e-8aac5e95d997" valueTypeId="9b071954-0f1b-414f-a009-83d5c9f421af"/>
+    <recordKeyType typeId="398f7c91-a921-4f17-9308-305994f505af" valueTypeId="de34acda-28a6-4dd1-8552-4e98600e30e7"/>
+    <recordType typeId="bb792d18-1d8e-476f-bd45-69f723047edb" valueTypeId="0c495741-c351-42bd-a7b4-5a2dff0bb863"/>
+  </producedTypes>
+  <name>РасчетыСПоставщикамиПланПоставок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Плановые поставки</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultListForm>AccumulationRegister.РасчетыСПоставщикамиПланПоставок.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="9393b634-8b61-4c69-b517-76dd3934e528">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="5f9accba-1006-4ec1-848c-39e62a440f6e">
+    <name>ПорядокЗачета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок зачета</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>28</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="21e9f932-b8a9-49b1-aa3c-510b1a97470d">
+    <name>ПорядокОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок операции</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>28</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="33062517-d173-4bf1-9fd4-8d46bf6303b2">
+    <name>ДокументРегистратор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ регистратор</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ПриобретениеТоваровУслуг</types>
+      <types>DocumentRef.ЗаказПоставщику</types>
+      <types>DocumentRef.ВводОстатков</types>
+      <types>DocumentRef.КорректировкаРегистров</types>
+      <types>DocumentRef.ГрафикИсполненияДоговора</types>
+      <types>DocumentRef.ВзаимозачетЗадолженности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="0c3bec7d-ded3-4ac0-b51f-2c5a87c4557d">
+    <name>АналитикаУчетаПоПартнерам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика учета по партнерам</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиУчетаПоПартнерам</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="b20342e0-98b1-4cc8-b8a4-6c58e53db1aa">
+    <name>ОбъектРасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект расчетов</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОбъектРасчетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="2d13785e-3bbf-4cd0-8904-a88aa4777a40">
+    <name>Валюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Валюта расчетов. Должна совпадать с валютой расчетов объекта расчетов.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="fce5ee27-04e2-4215-a34b-9b6800572581">
+    <name>ДокументПлан</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ план</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ПервичныйДокумент</types>
+      <types>DocumentRef.ЗаказПоставщику</types>
+      <types>DocumentRef.КорректировкаРегистров</types>
+      <types>DocumentRef.ГрафикИсполненияДоговора</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="787ed224-18cb-47d7-8695-118dd0bee004">
+    <name>ДатаПлановогоПогашения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата планового погашения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="9369da1c-2620-4019-9cba-76c7fd1b904c">
+    <name>ДатаВозникновения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата возникновения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата возникновения задолженности/аванса</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <forms uuid="fe3f795e-08c5-4d7f-b02f-3a91dee78648">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,43 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://fsrar.ru/WEGAIS/ReportUsingFSM" elementFormQualified="true" attributeFormQualified="false">
+	<import namespace="http://fsrar.ru/WEGAIS/Common"/>
+	<import namespace="http://fsrar.ru/WEGAIS/CommonEnum"/>
+	<import namespace="http://fsrar.ru/WEGAIS/CommonV3"/>
+	<import namespace="http://fsrar.ru/WEGAIS/ClientRef_v2"/>
+	<import namespace="http://fsrar.ru/WEGAIS/ProductRef_v2"/>
+	<objectType name="PositionReportType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Identity" type="d3p1:IdentityType" nillable="false"/>
+		<property name="SampleFSM" type="xs:string" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="MarkType" type="d3p1:MarkGZTypeString" nillable="false"/>
+		<property name="RestYearFSM" type="xs:integer" nillable="false"/>
+		<property name="ReceivedTotalYearFSM" type="xs:integer" nillable="false"/>
+		<property name="ReceivedNoPaymentYearFSM" type="xs:integer" nillable="false"/>
+		<property name="AppliedFSM" type="xs:integer" nillable="false"/>
+		<property name="DestroyedYearFSM" type="xs:integer" nillable="false"/>
+		<property name="RestFSM" type="xs:integer" nillable="false"/>
+	</objectType>
+	<objectType name="ReportUsingFSMType">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Identity" type="d3p1:IdentityType" lowerBound="0" nillable="false"/>
+		<property name="Header">
+			<typeDef xsi:type="ObjectType" ordered="false" sequenced="true">
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="NUMBER" type="d5p1:NoEmptyString50"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="Date" type="d5p1:DateNoTime"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/ClientRef_v2" name="Client" type="d5p1:OrgInfoRus_ClaimIssue"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="RequestFSM" type="d5p1:NoEmptyString50" nillable="false"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="NUMBERClaimIssue" type="d5p1:NoEmptyString50" nillable="false"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="DateClaimIssue" type="d5p1:DateNoTime" nillable="false"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="PaidClaimIssueFSM" type="d5p1:NoNegativeDecimalType" nillable="false"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="SecurityAmountYear" type="d5p1:NoNegativeDecimalType" nillable="false"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="TotalPaidFSMYear" type="d5p1:NoNegativeDecimalType" nillable="false"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="VolumeProductionYear" type="d5p1:NoNegativeDecimalType" nillable="false"/>
+				<property name="Note" lowerBound="0">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="200"/>
+				</property>
+			</typeDef>
+		</property>
+		<property name="Content">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/ReportUsingFSM" name="Position" type="d5p1:PositionReportType" upperBound="-1" nillable="false"/>
+			</typeDef>
+		</property>
+	</objectType>
+</package>

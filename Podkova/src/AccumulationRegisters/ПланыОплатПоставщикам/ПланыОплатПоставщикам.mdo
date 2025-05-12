@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bf4699a7-3023-41fa-9edc-59d172566795">
+  <producedTypes>
+    <selectionType typeId="8f6ac649-2dcf-43d4-8a9f-15dcb66e62da" valueTypeId="0788bb5b-1e10-4d75-a03a-26ea9867c8bc"/>
+    <listType typeId="744c02c4-ca32-4004-b84d-1850a719c758" valueTypeId="736973e6-67d6-4e0e-b431-cf719ef48333"/>
+    <managerType typeId="46144cec-71a8-4ed7-974e-750d6f32fbaf" valueTypeId="7d1ed979-2d0a-4852-9c6e-fc93c3672fe4"/>
+    <recordSetType typeId="c2525c50-c34a-45d8-8e8b-8100dbeb46ff" valueTypeId="078d583c-a76d-4c61-8111-026a5483bd54"/>
+    <recordKeyType typeId="d00546a4-33b5-4829-8fcb-73e2c2f87f69" valueTypeId="e5bf7dcd-a818-4bff-a774-26a67ba44d28"/>
+    <recordType typeId="e471b48f-3700-4465-a7f6-4e5b3b3ed14e" valueTypeId="3e0008a6-f1ad-47da-b2de-18b6b20fe2ff"/>
+  </producedTypes>
+  <name>ПланыОплатПоставщикам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Планы оплат поставщикам</value>
+  </synonym>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="51afbc10-8e91-4ddd-a37d-c86c0bac54bd">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Запланированная сумма движения денежных средств</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="3127982e-3e62-47d6-b96f-5e036ec46c63">
+    <name>Сценарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СценарииТоварногоПланирования</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сценарий, на который сформирован план.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="784d2441-1098-48cb-8e89-7174c2dbc906">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыПланов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Определяет текущий статус плана.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="feefc8b5-edcb-4642-969b-46da14b04dd6">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поставщик</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Клиент, которому планируется продажа.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="30d62399-9777-43ef-911c-676ca1907cfd">
+    <name>План</name>
+    <synonym>
+      <key>ru</key>
+      <value>План</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ПланЗакупок</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Документ планирования</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

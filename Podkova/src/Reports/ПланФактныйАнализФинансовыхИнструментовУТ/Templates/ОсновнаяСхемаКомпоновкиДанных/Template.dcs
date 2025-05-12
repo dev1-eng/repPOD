@@ -1,0 +1,2970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<parameter>
+		<name>ДатаОтбора</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата (больше или равно)</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Договор</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Договор</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ДоговорыКредитовИДепозитов</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<nestedSchema>
+		<name>КредитыДепозиты</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Кредиты депозиты</v8:content>
+			</v8:item>
+		</title>
+		<schema>
+			<dataSource>
+				<name>ИсточникДанных1</name>
+				<dataSourceType>Local</dataSourceType>
+			</dataSource>
+			<dataSet xsi:type="DataSetUnion">
+				<name>СводГрафиков</name>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СуммаТраншаПлан</dataPath>
+					<field>СуммаТраншаПлан</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма транша план</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>КомиссияНачисленияФакт</dataPath>
+					<field>КомиссияНачисленияФакт</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комиссия начисления факт</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Период</dataPath>
+					<field>Период</field>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДЛФ=D</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Договор</dataPath>
+					<field>Договор</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Договор</v8:content>
+						</v8:item>
+					</title>
+					<valueType>
+						<v8:Type xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d7p1:CatalogRef.ДоговорыКредитовИДепозитов</v8:Type>
+					</valueType>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ИмяМесяца</dataPath>
+					<field>ИмяМесяца</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя месяца</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ=MMMM</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ТипГрафика</dataPath>
+					<field>ТипГрафика</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип графика</v8:content>
+						</v8:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НомерГода</dataPath>
+					<field>НомерГода</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер года</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧГ=0</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ПроцентОплатыПлан</dataPath>
+					<field>ПроцентОплатыПлан</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процент оплаты план</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СуммаДолгаПлан</dataPath>
+					<field>СуммаДолгаПлан</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма долга план</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>КомиссияОплатыПлан</dataPath>
+					<field>КомиссияОплатыПлан</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комиссия оплаты план</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ПроцентНачисленияПлан</dataPath>
+					<field>ПроцентНачисленияПлан</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процент начисления план</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>КомиссияНачисленияПлан</dataPath>
+					<field>КомиссияНачисленияПлан</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комиссия начисления план</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СуммаТраншаФакт</dataPath>
+					<field>СуммаТраншаФакт</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма транша факт</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СуммаДолгаФакт</dataPath>
+					<field>СуммаДолгаФакт</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма долга факт</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ПроцентОплатыФакт</dataPath>
+					<field>ПроцентОплатыФакт</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процент оплаты факт</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>КомиссияОплатыФакт</dataPath>
+					<field>КомиссияОплатыФакт</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комиссия оплаты факт</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ПроцентНачисленияФакт</dataPath>
+					<field>ПроцентНачисленияФакт</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процент начисления факт</v8:content>
+						</v8:item>
+					</title>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Регистратор</dataPath>
+					<field>Регистратор</field>
+					<role>
+						<dcscom:periodNumber>1</dcscom:periodNumber>
+						<dcscom:periodType>Main</dcscom:periodType>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ТипСуммы</dataPath>
+					<field>ТипСуммы</field>
+				</field>
+				<item xsi:type="DataSetQuery">
+					<name>План</name>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>СуммаТраншаПлан</dataPath>
+						<field>СуммаТраншаПлан</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма транша план</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>КомиссияНачисленияФакт</dataPath>
+						<field>КомиссияНачисленияФакт</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Комиссия начисления факт</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>Период</dataPath>
+						<field>Период</field>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>Договор</dataPath>
+						<field>Договор</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Договор</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>ИмяМесяца</dataPath>
+						<field>ИмяМесяца</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Имя месяца</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>ТипГрафика</dataPath>
+						<field>ТипГрафика</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Тип графика</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>НомерГода</dataPath>
+						<field>НомерГода</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Номер года</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>ПроцентОплатыПлан</dataPath>
+						<field>ПроцентОплатыПлан</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Процент оплаты план</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>СуммаДолгаПлан</dataPath>
+						<field>СуммаДолгаПлан</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма долга план</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>КомиссияОплатыПлан</dataPath>
+						<field>КомиссияОплатыПлан</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Комиссия оплаты план</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>ПроцентНачисленияПлан</dataPath>
+						<field>ПроцентНачисленияПлан</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Процент начисления план</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>КомиссияНачисленияПлан</dataPath>
+						<field>КомиссияНачисленияПлан</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Комиссия начисления план</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>СуммаТраншаФакт</dataPath>
+						<field>СуммаТраншаФакт</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма транша факт</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>СуммаДолгаФакт</dataPath>
+						<field>СуммаДолгаФакт</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма долга факт</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>ПроцентОплатыФакт</dataPath>
+						<field>ПроцентОплатыФакт</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Процент оплаты факт</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>КомиссияОплатыФакт</dataPath>
+						<field>КомиссияОплатыФакт</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Комиссия оплаты факт</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>ПроцентНачисленияФакт</dataPath>
+						<field>ПроцентНачисленияФакт</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Процент начисления факт</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<dataSource>ИсточникДанных1</dataSource>
+					<query>ВЫБРАТЬ
+	ГрафикТраншейКредитовИДепозитов.Период КАК Период,
+	ГрафикТраншейКредитовИДепозитов.ВариантГрафика.Владелец КАК Договор,
+	ЗНАЧЕНИЕ(Перечисление.ТипыГрафиковФинансовыхИнструментов.Транши) КАК ТипГрафика,
+	ГОД(ГрафикТраншейКредитовИДепозитов.Период) КАК НомерГода,
+	НАЧАЛОПЕРИОДА(ГрафикТраншейКредитовИДепозитов.Период, МЕСЯЦ) КАК ИмяМесяца,
+	ГрафикТраншейКредитовИДепозитов.Сумма КАК СуммаТраншаПлан,
+	0 КАК СуммаДолгаПлан,
+	0 КАК ПроцентОплатыПлан,
+	0 КАК КомиссияОплатыПлан,
+	0 КАК ПроцентНачисленияПлан,
+	0 КАК КомиссияНачисленияПлан,
+	0 КАК СуммаТраншаФакт,
+	0 КАК СуммаДолгаФакт,
+	0 КАК ПроцентОплатыФакт,
+	0 КАК КомиссияОплатыФакт,
+	0 КАК ПроцентНачисленияФакт,
+	0 КАК КомиссияНачисленияФакт
+ИЗ
+	РегистрСведений.ГрафикТраншейКредитовИДепозитов КАК ГрафикТраншейКредитовИДепозитов
+ГДЕ
+	ГрафикТраншейКредитовИДепозитов.ВариантГрафика.Используется
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ГрафикОплатКредитовИДепозитов.Период,
+	ГрафикОплатКредитовИДепозитов.ВариантГрафика.Владелец,
+	ЗНАЧЕНИЕ(Перечисление.ТипыГрафиковФинансовыхИнструментов.Оплаты),
+	ГОД(ГрафикОплатКредитовИДепозитов.Период),
+	НАЧАЛОПЕРИОДА(ГрафикОплатКредитовИДепозитов.Период, МЕСЯЦ),
+	0,
+	ГрафикОплатКредитовИДепозитов.Сумма,
+	ГрафикОплатКредитовИДепозитов.Проценты,
+	ГрафикОплатКредитовИДепозитов.Комиссия,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
+ИЗ
+	РегистрСведений.ГрафикОплатКредитовИДепозитов КАК ГрафикОплатКредитовИДепозитов
+ГДЕ
+	ГрафикОплатКредитовИДепозитов.ВариантГрафика.Используется
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ГрафикНачисленийКредитовИДепозитов.Период,
+	ГрафикНачисленийКредитовИДепозитов.ВариантГрафика.Владелец,
+	ЗНАЧЕНИЕ(Перечисление.ТипыГрафиковФинансовыхИнструментов.Начисления),
+	ГОД(ГрафикНачисленийКредитовИДепозитов.Период),
+	НАЧАЛОПЕРИОДА(ГрафикНачисленийКредитовИДепозитов.Период, МЕСЯЦ),
+	0,
+	0,
+	0,
+	0,
+	ГрафикНачисленийКредитовИДепозитов.Проценты,
+	ГрафикНачисленийКредитовИДепозитов.Комиссия,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
+ИЗ
+	РегистрСведений.ГрафикНачисленийКредитовИДепозитов КАК ГрафикНачисленийКредитовИДепозитов
+ГДЕ
+	ГрафикНачисленийКредитовИДепозитов.ВариантГрафика.Используется
+</query>
+				</item>
+				<item xsi:type="DataSetQuery">
+					<name>Факт</name>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>СуммаТраншаПлан</dataPath>
+						<field>СуммаТраншаПлан</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма транша план</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>КомиссияНачисленияФакт</dataPath>
+						<field>КомиссияНачисленияФакт</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Комиссия начисления факт</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>Период</dataPath>
+						<field>Период</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Период</v8:content>
+							</v8:item>
+						</title>
+						<role>
+							<dcscom:periodNumber>2</dcscom:periodNumber>
+							<dcscom:periodType>Main</dcscom:periodType>
+						</role>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>ИмяМесяца</dataPath>
+						<field>ИмяМесяца</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Имя месяца</v8:content>
+							</v8:item>
+						</title>
+						<role>
+							<dcscom:periodNumber>4</dcscom:periodNumber>
+							<dcscom:periodType>Main</dcscom:periodType>
+						</role>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>Регистратор</dataPath>
+						<field>Регистратор</field>
+						<role>
+							<dcscom:periodNumber>1</dcscom:periodNumber>
+							<dcscom:periodType>Main</dcscom:periodType>
+						</role>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>Договор</dataPath>
+						<field>Договор</field>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>ТипСуммы</dataPath>
+						<field>ТипСуммы</field>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>НомерГода</dataPath>
+						<field>НомерГода</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Номер года</v8:content>
+							</v8:item>
+						</title>
+						<role>
+							<dcscom:periodNumber>3</dcscom:periodNumber>
+							<dcscom:periodType>Main</dcscom:periodType>
+						</role>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>ПроцентОплатыПлан</dataPath>
+						<field>ПроцентОплатыПлан</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Процент оплаты план</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>СуммаДолгаПлан</dataPath>
+						<field>СуммаДолгаПлан</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма долга план</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>КомиссияОплатыПлан</dataPath>
+						<field>КомиссияОплатыПлан</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Комиссия оплаты план</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>ПроцентНачисленияПлан</dataPath>
+						<field>ПроцентНачисленияПлан</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Процент начисления план</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>КомиссияНачисленияПлан</dataPath>
+						<field>КомиссияНачисленияПлан</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Комиссия начисления план</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>СуммаТраншаФакт</dataPath>
+						<field>СуммаТраншаФакт</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма транша факт</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>СуммаДолгаФакт</dataPath>
+						<field>СуммаДолгаФакт</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма долга факт</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>ПроцентОплатыФакт</dataPath>
+						<field>ПроцентОплатыФакт</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Процент оплаты факт</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>КомиссияОплатыФакт</dataPath>
+						<field>КомиссияОплатыФакт</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Комиссия оплаты факт</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<field xsi:type="DataSetFieldField">
+						<dataPath>ПроцентНачисленияФакт</dataPath>
+						<field>ПроцентНачисленияФакт</field>
+						<title xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Процент начисления факт</v8:content>
+							</v8:item>
+						</title>
+					</field>
+					<dataSource>ИсточникДанных1</dataSource>
+					<query>ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(РасчетыПоКредитамДепозитам.Период, ДЕНЬ) КАК Период,
+	РасчетыПоКредитамДепозитам.Регистратор,
+	РасчетыПоКредитамДепозитам.Договор,
+	РасчетыПоКредитамДепозитам.ТипСуммы,
+	ГОД(РасчетыПоКредитамДепозитам.Период) КАК НомерГода,
+	НАЧАЛОПЕРИОДА(РасчетыПоКредитамДепозитам.Период, МЕСЯЦ) КАК ИмяМесяца,
+	0 КАК СуммаТраншаПлан,
+	0 КАК СуммаДолгаПлан,
+	0 КАК ПроцентОплатыПлан,
+	0 КАК КомиссияОплатыПлан,
+	0 КАК ПроцентНачисленияПлан,
+	0 КАК КомиссияНачисленияПлан,
+	РасчетыПоКредитамДепозитам.Сумма КАК СуммаТраншаФакт,
+	0 КАК СуммаДолгаФакт,
+	0 КАК ПроцентОплатыФакт,
+	0 КАК КомиссияОплатыФакт,
+	0 КАК ПроцентНачисленияФакт,
+	0 КАК КомиссияНачисленияФакт
+ИЗ
+	РегистрНакопления.РасчетыПоФинансовымИнструментам КАК РасчетыПоКредитамДепозитам
+ГДЕ
+	РасчетыПоКредитамДепозитам.ТипГрафика = ЗНАЧЕНИЕ(Перечисление.ТипыГрафиковФинансовыхИнструментов.Транши)
+	И РасчетыПоКредитамДепозитам.Договор ССЫЛКА Справочник.ДоговорыКредитовИДепозитов
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(РасчетыПоКредитамДепозитам.Период, ДЕНЬ),
+	РасчетыПоКредитамДепозитам.Регистратор,
+	РасчетыПоКредитамДепозитам.Договор,
+	РасчетыПоКредитамДепозитам.ТипСуммы,
+	ГОД(РасчетыПоКредитамДепозитам.Период),
+	НАЧАЛОПЕРИОДА(РасчетыПоКредитамДепозитам.Период, МЕСЯЦ),
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	ВЫБОР
+		КОГДА РасчетыПоКредитамДепозитам.ТипСуммы = ЗНАЧЕНИЕ(Перечисление.ТипыСуммГрафикаКредитовИДепозитов.ОсновнойДолг)
+			ТОГДА РасчетыПоКредитамДепозитам.Сумма
+		ИНАЧЕ 0
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА РасчетыПоКредитамДепозитам.ТипСуммы = ЗНАЧЕНИЕ(Перечисление.ТипыСуммГрафикаКредитовИДепозитов.Проценты)
+			ТОГДА РасчетыПоКредитамДепозитам.Сумма
+		ИНАЧЕ 0
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА РасчетыПоКредитамДепозитам.ТипСуммы = ЗНАЧЕНИЕ(Перечисление.ТипыСуммГрафикаКредитовИДепозитов.Комиссия)
+			ТОГДА РасчетыПоКредитамДепозитам.Сумма
+		ИНАЧЕ 0
+	КОНЕЦ,
+	0,
+	0
+ИЗ
+	РегистрНакопления.РасчетыПоФинансовымИнструментам КАК РасчетыПоКредитамДепозитам
+ГДЕ
+	РасчетыПоКредитамДепозитам.ТипГрафика = ЗНАЧЕНИЕ(Перечисление.ТипыГрафиковФинансовыхИнструментов.Оплаты)
+	И РасчетыПоКредитамДепозитам.Договор ССЫЛКА Справочник.ДоговорыКредитовИДепозитов
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(РасчетыПоКредитамДепозитам.Период, ДЕНЬ),
+	РасчетыПоКредитамДепозитам.Регистратор,
+	РасчетыПоКредитамДепозитам.Договор,
+	РасчетыПоКредитамДепозитам.ТипСуммы,
+	ГОД(РасчетыПоКредитамДепозитам.Период),
+	НАЧАЛОПЕРИОДА(РасчетыПоКредитамДепозитам.Период, МЕСЯЦ),
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	ВЫБОР
+		КОГДА РасчетыПоКредитамДепозитам.ТипСуммы = ЗНАЧЕНИЕ(Перечисление.ТипыСуммГрафикаКредитовИДепозитов.Проценты)
+			ТОГДА РасчетыПоКредитамДепозитам.Сумма
+		ИНАЧЕ 0
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА РасчетыПоКредитамДепозитам.ТипСуммы = ЗНАЧЕНИЕ(Перечисление.ТипыСуммГрафикаКредитовИДепозитов.Комиссия)
+			ТОГДА РасчетыПоКредитамДепозитам.Сумма
+		ИНАЧЕ 0
+	КОНЕЦ
+ИЗ
+	РегистрНакопления.РасчетыПоФинансовымИнструментам КАК РасчетыПоКредитамДепозитам
+ГДЕ
+	РасчетыПоКредитамДепозитам.ТипГрафика = ЗНАЧЕНИЕ(Перечисление.ТипыГрафиковФинансовыхИнструментов.Начисления)
+	И РасчетыПоКредитамДепозитам.Договор ССЫЛКА Справочник.ДоговорыКредитовИДепозитов</query>
+				</item>
+			</dataSet>
+			<calculatedField>
+				<dataPath>ОтклонениеТранши</dataPath>
+				<expression>ВЫБОР КОГДА Период &gt; ТекущаяДата() ТОГДА 0 ИНАЧЕ СуммаТраншаФакт - СуммаТраншаПлан КОНЕЦ</expression>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отклонение транши</v8:content>
+					</v8:item>
+				</title>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Формат</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ЧДЦ=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</calculatedField>
+			<calculatedField>
+				<dataPath>ОтклонениеДолга</dataPath>
+				<expression>ВЫБОР КОГДА Период &gt; ТекущаяДата() ТОГДА 0 ИНАЧЕ СуммаДолгаФакт - СуммаДолгаПлан КОНЕЦ</expression>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отклонение долга</v8:content>
+					</v8:item>
+				</title>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Формат</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ЧДЦ=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</calculatedField>
+			<calculatedField>
+				<dataPath>ОтклонениеПроцентОплаты</dataPath>
+				<expression>ВЫБОР КОГДА Период &gt; ТекущаяДата() ТОГДА 0 ИНАЧЕ  ПроцентОплатыФакт - ПроцентОплатыПлан КОНЕЦ</expression>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отклонение процент оплаты</v8:content>
+					</v8:item>
+				</title>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Формат</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ЧДЦ=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</calculatedField>
+			<calculatedField>
+				<dataPath>ОтклонениеКомиссияОплаты</dataPath>
+				<expression>ВЫБОР КОГДА Период &gt; ТекущаяДата() ТОГДА 0 ИНАЧЕ КомиссияОплатыФакт - КомиссияОплатыПлан КОНЕЦ</expression>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отклонение комиссия оплаты</v8:content>
+					</v8:item>
+				</title>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Формат</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ЧДЦ=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</calculatedField>
+			<calculatedField>
+				<dataPath>ОтклонениеПроцентНачисления</dataPath>
+				<expression>ВЫБОР КОГДА Период &gt; ТекущаяДата() ТОГДА 0 ИНАЧЕ ПроцентНачисленияФакт - ПроцентНачисленияПлан КОНЕЦ</expression>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отклонение процент начисления</v8:content>
+					</v8:item>
+				</title>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Формат</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ЧДЦ=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</calculatedField>
+			<calculatedField>
+				<dataPath>ОтклонениеКомиссияНачисления</dataPath>
+				<expression>ВЫБОР КОГДА Период &gt; ТекущаяДата() ТОГДА 0 ИНАЧЕ  КомиссияНачисленияФакт - КомиссияНачисленияПлан КОНЕЦ</expression>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отклонение комиссия начисления</v8:content>
+					</v8:item>
+				</title>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Формат</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ЧДЦ=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</calculatedField>
+			<totalField>
+				<dataPath>КомиссияНачисленияПлан</dataPath>
+				<expression>Сумма(КомиссияНачисленияПлан)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>КомиссияНачисленияФакт</dataPath>
+				<expression>Сумма(КомиссияНачисленияФакт)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>КомиссияОплатыПлан</dataPath>
+				<expression>Сумма(КомиссияОплатыПлан)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>КомиссияОплатыФакт</dataPath>
+				<expression>Сумма(КомиссияОплатыФакт)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>ОтклонениеДолга</dataPath>
+				<expression>Сумма(ОтклонениеДолга)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>ОтклонениеКомиссияНачисления</dataPath>
+				<expression>Сумма(ОтклонениеКомиссияНачисления)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>ОтклонениеКомиссияОплаты</dataPath>
+				<expression>Сумма(ОтклонениеКомиссияОплаты)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>ОтклонениеПроцентНачисления</dataPath>
+				<expression>Сумма(ОтклонениеПроцентНачисления)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>ОтклонениеПроцентОплаты</dataPath>
+				<expression>Сумма(ОтклонениеПроцентОплаты)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>ОтклонениеТранши</dataPath>
+				<expression>Сумма(ОтклонениеТранши)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>ПроцентНачисленияПлан</dataPath>
+				<expression>Сумма(ПроцентНачисленияПлан)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>ПроцентНачисленияФакт</dataPath>
+				<expression>Сумма(ПроцентНачисленияФакт)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>ПроцентОплатыПлан</dataPath>
+				<expression>Сумма(ПроцентОплатыПлан)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>ПроцентОплатыФакт</dataPath>
+				<expression>Сумма(ПроцентОплатыФакт)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>СуммаДолгаПлан</dataPath>
+				<expression>Сумма(СуммаДолгаПлан)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>СуммаДолгаФакт</dataPath>
+				<expression>Сумма(СуммаДолгаФакт)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>СуммаТраншаПлан</dataPath>
+				<expression>Сумма(СуммаТраншаПлан)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>СуммаТраншаФакт</dataPath>
+				<expression>Сумма(СуммаТраншаФакт)</expression>
+			</totalField>
+			<settingsVariant>
+				<dcsset:name>Основной</dcsset:name>
+				<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+				<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>План</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Транши</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>СуммаТраншаПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Оплаты</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>СуммаДолгаПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основной долг</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентОплатыПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КомиссияОплатыПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Начисления</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентНачисленияПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КомиссияНачисленияПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Факт</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Транши</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>СуммаТраншаФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Оплаты</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>СуммаДолгаФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основной долг</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентОплатыФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КомиссияОплатыФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Начисления</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентНачисленияФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КомиссияНачисленияФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отклонение</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Транши</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеТранши</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Оплаты</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеДолга</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основной долг</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеПроцентОплаты</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеКомиссияОплаты</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Начисления</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеПроцентНачисления</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеКомиссияНачисления</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>7f43547b-efaa-4469-be56-8f5eff208729</dcsset:userSettingID>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>e9e407cd-0efc-4afc-97b8-a2d6c5f7df54</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>85d3e4a6-2632-4293-baaa-8bd5fc7cfe0e</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>СуммаДолгаПлан</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>СуммаДолгаФакт</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>ОтклонениеДолга</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:FieldSelectionBackColor</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>КомиссияОплатыПлан</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>КомиссияОплатыФакт</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>ОтклонениеКомиссияОплаты</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:FieldSelectionBackColor</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>КомиссияНачисленияПлан</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>КомиссияНачисленияФакт</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>ОтклонениеКомиссияНачисления</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:FieldSelectionBackColor</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:conditionalAppearance>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Заголовок</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кредиты, депозиты, займы</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+				</dcsset:settings>
+			</settingsVariant>
+		</schema>
+		<settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows"/>
+	</nestedSchema>
+	<settingsVariant>
+		<dcsset:name>ПланФактныйАнализ</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>План-фактный анализ оплат и начислений по договорам</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>7f43547b-efaa-4469-be56-8f5eff208729</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>e9e407cd-0efc-4afc-97b8-a2d6c5f7df54</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаОтбора</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisYear</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>9859ecd5-c0a1-49a5-bcc7-aa8bc3fcb6dd</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>85d3e4a6-2632-4293-baaa-8bd5fc7cfe0e</dcsset:userSettingID>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>План-фактный анализ оплат и начислений</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemNestedObject">
+				<dcsset:objectID>КредитыДепозиты</dcsset:objectID>
+				<dcsset:settings>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>План</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Транши</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>СуммаТраншаПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Оплаты</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>СуммаДолгаПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основной долг</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентОплатыПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КомиссияОплатыПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Начисления</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентНачисленияПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КомиссияНачисленияПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Факт</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Транши</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>СуммаТраншаФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Оплаты</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>СуммаДолгаФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основной долг</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентОплатыФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КомиссияОплатыФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Начисления</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентНачисленияФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КомиссияНачисленияФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отклонение</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Транши</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеТранши</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Оплаты</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеДолга</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основной долг</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеПроцентОплаты</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеКомиссияОплаты</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Начисления</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеПроцентНачисления</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеКомиссияНачисления</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ОтклонениеДолга</dcsset:field>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Договор</dcsset:left>
+							<dcsset:comparisonType>InList</dcsset:comparisonType>
+							<dcsset:right xsi:type="v8:ValueListType">
+								<v8:valueType/>
+								<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+							</dcsset:right>
+							<dcsset:userSettingID>095b5caa-3574-436f-896b-f874c5e9caa8</dcsset:userSettingID>
+							<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Договор кредита / депозита</v8:content>
+								</v8:item>
+							</dcsset:userSettingPresentation>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Период</dcsset:left>
+							<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:Field">ОбъектНастройкиВладелец.ПараметрыДанных.ДатаОтбора</dcsset:right>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>СуммаДолгаПлан</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>СуммаДолгаФакт</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>ОтклонениеДолга</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:FieldSelectionBackColor</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>КомиссияОплатыПлан</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>КомиссияОплатыФакт</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>ОтклонениеКомиссияОплаты</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:FieldSelectionBackColor</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>КомиссияНачисленияПлан</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>КомиссияНачисленияФакт</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>ОтклонениеКомиссияНачисления</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:FieldSelectionBackColor</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:conditionalAppearance>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Заголовок</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кредиты, депозиты, займы</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Договор</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item xsi:type="dcsset:StructureItemGroup">
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>НомерГода</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+							<dcsset:item xsi:type="dcsset:StructureItemGroup">
+								<dcsset:groupItems>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>ИмяМесяца</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+								</dcsset:groupItems>
+								<dcsset:order>
+									<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								</dcsset:order>
+								<dcsset:selection>
+									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								</dcsset:selection>
+								<dcsset:item xsi:type="dcsset:StructureItemGroup">
+									<dcsset:groupItems>
+										<dcsset:item xsi:type="dcsset:GroupItemField">
+											<dcsset:field>Период</dcsset:field>
+											<dcsset:groupType>Items</dcsset:groupType>
+											<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+											<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+											<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+										</dcsset:item>
+									</dcsset:groupItems>
+									<dcsset:order>
+										<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+									</dcsset:order>
+									<dcsset:selection>
+										<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+									</dcsset:selection>
+									<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+								</dcsset:item>
+								<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+							</dcsset:item>
+							<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+						</dcsset:item>
+					</dcsset:item>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+				</dcsset:settings>
+				<dcsset:userSettingID>4a1fda42-da64-4d1c-a54b-63490a234438</dcsset:userSettingID>
+				<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Кредиты, депозиты, займы</v8:content>
+					</v8:item>
+				</dcsset:userSettingPresentation>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ПланФактныйАнализКредитыДепозитыКонтекст</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>План-фактный анализ оплат и начислений</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>7f43547b-efaa-4469-be56-8f5eff208729</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:filter>
+			<dcsset:order>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>85d3e4a6-2632-4293-baaa-8bd5fc7cfe0e</dcsset:userSettingID>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>План-фактный анализ оплат и начислений</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemNestedObject">
+				<dcsset:objectID>КредитыДепозиты</dcsset:objectID>
+				<dcsset:settings>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>План</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Транши</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>СуммаТраншаПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Оплаты</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>СуммаДолгаПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основной долг</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентОплатыПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КомиссияОплатыПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Начисления</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентНачисленияПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КомиссияНачисленияПлан</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Факт</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Транши</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>СуммаТраншаФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Оплаты</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>СуммаДолгаФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основной долг</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентОплатыФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КомиссияОплатыФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Начисления</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ПроцентНачисленияФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>КомиссияНачисленияФакт</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отклонение</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Транши</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеТранши</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Оплаты</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеДолга</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основной долг</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеПроцентОплаты</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеКомиссияОплаты</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Начисления</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеПроцентНачисления</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проценты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ОтклонениеКомиссияНачисления</dcsset:field>
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комиссия</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Договор</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:Field">ОбъектНастройкиВладелец.ПараметрыДанных.Договор</dcsset:right>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>СуммаДолгаПлан</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>СуммаДолгаФакт</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>ОтклонениеДолга</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:FieldSelectionBackColor</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>КомиссияОплатыПлан</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>КомиссияОплатыФакт</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>ОтклонениеКомиссияОплаты</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:FieldSelectionBackColor</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>КомиссияНачисленияПлан</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>КомиссияНачисленияФакт</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>ОтклонениеКомиссияНачисления</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:FieldSelectionBackColor</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:conditionalAppearance>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Заголовок</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кредиты, депозиты, займы</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>НомерГода</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>План</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Транши</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>СуммаТраншаПлан</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сумма</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:placement>Auto</dcsset:placement>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оплаты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>СуммаДолгаПлан</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Основной долг</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>ПроцентОплатыПлан</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Проценты</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>КомиссияОплатыПлан</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Комиссия</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:placement>Auto</dcsset:placement>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Начисления</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>ПроцентНачисленияПлан</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Проценты</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>КомиссияНачисленияПлан</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Комиссия</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:placement>Auto</dcsset:placement>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Факт</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Транши</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>СуммаТраншаФакт</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сумма</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:placement>Auto</dcsset:placement>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оплаты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>СуммаДолгаФакт</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Основной долг</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>ПроцентОплатыФакт</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Проценты</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>КомиссияОплатыФакт</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Комиссия</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:placement>Auto</dcsset:placement>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Начисления</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>ПроцентНачисленияФакт</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Проценты</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>КомиссияНачисленияФакт</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Комиссия</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:placement>Auto</dcsset:placement>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Отклонение</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+								<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Транши</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>ОтклонениеТранши</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сумма</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:placement>Auto</dcsset:placement>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оплаты</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>ОтклонениеДолга</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Основной долг</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>ОтклонениеПроцентОплаты</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Проценты</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>ОтклонениеКомиссияОплаты</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Комиссия</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:placement>Auto</dcsset:placement>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+									<dcsset:lwsTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Начисления</v8:content>
+										</v8:item>
+									</dcsset:lwsTitle>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>ОтклонениеПроцентНачисления</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Проценты</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:field>ОтклонениеКомиссияНачисления</dcsset:field>
+										<dcsset:lwsTitle>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Комиссия</v8:content>
+											</v8:item>
+										</dcsset:lwsTitle>
+									</dcsset:item>
+									<dcsset:placement>Auto</dcsset:placement>
+								</dcsset:item>
+								<dcsset:placement>Auto</dcsset:placement>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:item xsi:type="dcsset:StructureItemGroup">
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>ИмяМесяца</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+							<dcsset:item xsi:type="dcsset:StructureItemGroup">
+								<dcsset:groupItems>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>Период</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+								</dcsset:groupItems>
+								<dcsset:order>
+									<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								</dcsset:order>
+								<dcsset:selection>
+									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								</dcsset:selection>
+								<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+							</dcsset:item>
+							<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+						</dcsset:item>
+						<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					</dcsset:item>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+				</dcsset:settings>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d48560c8-2fe5-464f-8119-4a789324c4bb">
+  <producedTypes>
+    <selectionType typeId="c2583e76-9ded-4de0-b5f6-b3e95d2cf1a8" valueTypeId="d390b9f1-570d-45e4-b95c-78eb667e6567"/>
+    <listType typeId="5202cac2-9514-4b79-b4c1-a70ca229ff66" valueTypeId="04d0c585-d4b4-49b5-b76c-885b0d345811"/>
+    <managerType typeId="6c64cf71-a714-4684-8765-521b4ab55de2" valueTypeId="43d004c2-93be-4bfa-91cd-e8fa9b045c09"/>
+    <recordSetType typeId="1701d05f-a021-446e-953b-22322f96d495" valueTypeId="1ad8244e-a9e5-4104-afe9-23fab9899431"/>
+    <recordKeyType typeId="4a25e1e0-bdc7-4240-a6dd-f5180a9bd4dc" valueTypeId="af42e610-ff92-4c3e-b99f-12da20cbd647"/>
+    <recordType typeId="d100a9b6-3603-4dc0-a38b-478a9972f930" valueTypeId="b17da34b-785f-4c5b-85bc-65f7ebe331c8"/>
+    <recordManagerType typeId="9205eebc-4ab3-4e9c-9ffe-1fa2a99ee03c" valueTypeId="a51f427c-2420-4091-9a3b-1d642d6baa05"/>
+  </producedTypes>
+  <name>ПрогнозыРасходаУпаковок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Прогнозы расхода упаковок</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultRecordForm>InformationRegister.ПрогнозыРасходаУпаковок.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ПрогнозыРасходаУпаковок.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <resources uuid="ed1f2c49-4b5f-434d-a26e-036918a71f78">
+    <name>СреднедневноеПотребление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Среднедневное потребление</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Среднедневное потребление упаковок за период анализа. Учитываются только те дни, когда прогнозируемая упаковка могла быть на складе.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="32faffd0-7408-4384-98d8-db17c5e4415b">
+    <name>СреднеквадратическоеОтклонение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Среднеквадратическое отклонение</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Среднеквадратическое отклонение от среднедневного потребления.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e9219d80-0526-4922-92c1-506a2829983a">
+    <name>ВероятностьОтгрузкиВТечениеДня</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вероятность отгрузки в течение дня</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вероятность, что упаковка может быть отгружена в течение дня. Рассчитывается как количество дней, когда была отгрузка деленное на количество дней, когда был остаток упаковок.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="dbb774dc-f4c1-4845-9333-773ad11d3001">
+    <name>НормативноеКоличествоЗапаса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Нормативное количество запаса</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество упаковок, которое должно поддерживаться на складе. Назначается пользователем вручную. Рекомендуемое значение не хранится, а рассчитывается по исходным показателям и настройкам.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:NumberValue">
+      <value>0</value>
+    </fillValue>
+  </resources>
+  <resources uuid="32b5fca6-0fea-4dda-8e48-6d89f9ad8c9a">
+    <name>НазначеноПользователем</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначено пользователем</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Нормативное количество назначено пользователем. Если установлен флаг, то при подпитке берется значение из ресурса &quot;Нормативное количество запаса&quot;, ограничение по вероятности отгрузки при этом не учитывается.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5ba9ec0c-1692-4374-b4ca-9432769056e4">
+    <name>Класс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Класс</value>
+    </synonym>
+    <type>
+      <types>EnumRef.XYZКлассификация</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Класс упаковки. Влияет на расчет рекомендуемого нормативного запаса.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.XYZКлассификация.EmptyRef</value>
+    </fillValue>
+  </resources>
+  <attributes uuid="c754b13f-0a2c-4e30-b3a5-980c8b5164a0">
+    <name>СтатусУказанияСерий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус указания серий</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="ab5ec93a-3c95-403a-ac99-d2f91fd9845d">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Склад, по которому строится прогноз.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Склады.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7373a311-8179-47ac-8cc7-7c142303b9a0">
+    <name>Помещение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Помещение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СкладскиеПомещения</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Помещение, по которому строится прогноз.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.СкладскиеПомещения.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="06249a2c-f16f-4fba-b20d-4cfec18861ab">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Помещение, по упаковке которой строится прогноз.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ТипНоменклатуры</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыНоменклатуры.EnumValue.Товар</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыНоменклатуры.EnumValue.МногооборотнаяТара</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Номенклатура.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="642a6eff-aad4-4de8-acdf-0735efd061ee">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Характеристика номенклатуры, если ведется учет по характеристикам.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <changeMode>DontChange</changeMode>
+      <field>InformationRegister.ПрогнозыРасходаУпаковок.Dimension.Номенклатура</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.ХарактеристикиНоменклатуры.EmptyRef</value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c6679c57-1a52-41c3-98f9-893fac95e289">
+    <name>Серия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СерииНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Серия товара. Учитываются серии, которые указываются при планировании отгрузки.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <field>InformationRegister.ПрогнозыРасходаУпаковок.Dimension.Номенклатура</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.СерииНоменклатуры.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f439ecda-3516-4c09-9aae-6dd532e3fad9">
+    <name>Упаковка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Упаковка</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Упаковка, по которой строится прогноз.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <changeMode>DontChange</changeMode>
+      <field>InformationRegister.ПрогнозыРасходаУпаковок.Dimension.Номенклатура</field>
+    </choiceParameterLinks>
+    <choiceParameterLinks>
+      <name>Помещение</name>
+      <field>InformationRegister.ПрогнозыРасходаУпаковок.Dimension.Помещение</field>
+    </choiceParameterLinks>
+    <choiceParameterLinks>
+      <name>Склад</name>
+      <field>InformationRegister.ПрогнозыРасходаУпаковок.Dimension.Склад</field>
+    </choiceParameterLinks>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="ab23cd31-390c-4a10-b292-dca52804196a">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8ddd1cd5-984b-48d6-ad3c-258bfbfbb80e">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

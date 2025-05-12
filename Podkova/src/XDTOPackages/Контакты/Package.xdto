@@ -1,0 +1,99 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://api-invoice.taxcom.ru/contacts" elementFormQualified="true" attributeFormQualified="false">
+	<property xmlns:d2p1="http://api-invoice.taxcom.ru/contacts" name="Contacts" type="d2p1:Contacts"/>
+	<objectType name="Contacts" ordered="false" sequenced="true">
+		<property name="Asof" type="xs:dateTime" lowerBound="0" form="Attribute"/>
+		<property name="Contact" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType" ordered="false" sequenced="true">
+				<property name="State" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property name="Code" lowerBound="1" form="Attribute">
+							<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+								<enumeration>Sent</enumeration>
+								<enumeration>Incoming</enumeration>
+								<enumeration>Accepted</enumeration>
+								<enumeration>Rejected</enumeration>
+								<enumeration>Error</enumeration>
+							</typeDef>
+						</property>
+						<property name="ErrorCode" type="xs:string" lowerBound="0" form="Attribute"/>
+						<property name="Changed" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+						<property name="__content" type="xs:string" form="Text"/>
+					</typeDef>
+				</property>
+				<property name="Name" type="xs:string" lowerBound="0"/>
+				<property name="Inn" type="xs:string"/>
+				<property name="Kpp" type="xs:string" lowerBound="0"/>
+				<property name="Email" type="xs:string"/>
+				<property name="Login" type="xs:string" lowerBound="0"/>
+				<property name="EDXClientId" type="xs:string" lowerBound="0"/>
+				<property name="ExternalContactId" type="xs:string" lowerBound="0"/>
+				<property name="Comment" type="xs:string" lowerBound="0"/>
+				<property name="Agreements" lowerBound="0">
+					<typeDef xsi:type="ObjectType" ordered="false" sequenced="true">
+						<property name="Agreement" lowerBound="0" upperBound="-1">
+							<typeDef xsi:type="ObjectType">
+								<property name="Number" type="xs:string" lowerBound="1" form="Attribute"/>
+								<property name="Date" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+							</typeDef>
+						</property>
+					</typeDef>
+				</property>
+				<property xmlns:d5p1="http://api-invoice.taxcom.ru/contacts" name="OrganizationStructure" type="d5p1:OrganizationStructureType" lowerBound="0"/>
+				<property name="OperatorId" type="xs:string" lowerBound="0"/>
+				<property name="ScanFilename" type="xs:string" lowerBound="0"/>
+				<property name="Scan" type="xs:string" lowerBound="0"/>
+				<property name="SenderEmail" type="xs:string" lowerBound="0"/>
+			</typeDef>
+		</property>
+		<property name="TemplateID" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="DepartmentShortInfoType">
+		<property name="ID" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" length="36"/>
+		</property>
+		<property name="Name" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="255"/>
+		</property>
+	</objectType>
+	<objectType name="DepartmentStructuredInfoType">
+		<property name="ID" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" length="36"/>
+		</property>
+		<property name="Name" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="255"/>
+		</property>
+		<property name="SubDepartments">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://api-invoice.taxcom.ru/contacts" name="Department" type="d5p1:DepartmentStructuredInfoType" lowerBound="0" upperBound="-1"/>
+			</typeDef>
+		</property>
+		<property name="Employees">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://api-invoice.taxcom.ru/contacts" name="Employee" type="d5p1:EmployeeShortInfoType" lowerBound="0" upperBound="-1"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="EmployeeShortInfoType">
+		<property name="ID" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" length="36"/>
+		</property>
+		<property xmlns:d3p1="http://api-invoice.taxcom.ru/contacts" name="Name" type="d3p1:PersonNameType"/>
+		<property name="Position">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="0" maxLength="255"/>
+		</property>
+	</objectType>
+	<objectType name="OrganizationStructureType">
+		<property xmlns:d3p1="http://api-invoice.taxcom.ru/contacts" name="RootDepartment" type="d3p1:DepartmentStructuredInfoType"/>
+	</objectType>
+	<objectType name="PersonNameType">
+		<property name="LastName" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="60"/>
+		</property>
+		<property name="FirstName" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="60"/>
+		</property>
+		<property name="MiddleName" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="60"/>
+		</property>
+	</objectType>
+</package>

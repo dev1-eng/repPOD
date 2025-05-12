@@ -1,0 +1,1272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <title>
+    <key>ru</key>
+    <value>Отбор по статусам документов в 1С: EDI</value>
+  </title>
+  <items xsi:type="form:FormGroup">
+    <name>ПанельСервисEDI</name>
+    <id>1</id>
+    <items xsi:type="form:FormGroup">
+      <name>ГруппаСтатусыEDI</name>
+      <id>6</id>
+      <items xsi:type="form:FormField">
+        <name>ИспользоватьОтборПоСтатусамEDI</name>
+        <id>70</id>
+        <title>
+          <key>ru</key>
+          <value>Установить отбор по статусам EDI</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>ИспользоватьОтборПоСтатусамEDI</segments>
+        </dataPath>
+        <titleLocation>Right</titleLocation>
+        <handlers>
+          <event>OnChange</event>
+          <name>ИспользоватьОтборПоСтатусамEDIПриИзменении</name>
+        </handlers>
+        <extendedTooltip>
+          <name>ИспользоватьОтборПоСтатусамEDIРасширеннаяПодсказка</name>
+          <id>72</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ИспользоватьОтборПоСтатусамEDIКонтекстноеМеню</name>
+          <id>71</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>CheckBoxField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>ГруппаОтборыСтатусыEDI</name>
+        <id>11</id>
+        <items xsi:type="form:FormGroup">
+          <name>ГруппаСнятьУстановитьФлагиСтатусыEDI</name>
+          <id>13</id>
+          <items xsi:type="form:Button">
+            <name>УстановитьВсеСтатусы</name>
+            <id>15</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>УстановитьВсеСтатусыРасширеннаяПодсказка</name>
+              <id>16</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <type>Hyperlink</type>
+            <commandName>Form.Command.УстановитьВсеСтатусы</commandName>
+            <representation>Picture</representation>
+            <width>2</width>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <picture xsi:type="core:PictureRef">
+              <picture>StdPicture.CheckAll</picture>
+            </picture>
+            <representationInContextMenu>Auto</representationInContextMenu>
+            <shape>Usual</shape>
+            <shapeRepresentation>Always</shapeRepresentation>
+          </items>
+          <items xsi:type="form:Button">
+            <name>СнятьВсеСтатусы</name>
+            <id>17</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>СнятьВсеСтатусыРасширеннаяПодсказка</name>
+              <id>18</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <type>Hyperlink</type>
+            <commandName>Form.Command.СнятьВсеСтатусы</commandName>
+            <representation>Picture</representation>
+            <width>2</width>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <borderColor xsi:type="core:ColorRef">
+              <color>Style.FieldTextColor</color>
+            </borderColor>
+            <picture xsi:type="core:PictureRef">
+              <picture>StdPicture.UncheckAll</picture>
+            </picture>
+            <representationInContextMenu>Auto</representationInContextMenu>
+          </items>
+          <items xsi:type="form:Button">
+            <name>УстановитьОтборСтатусыНаНашейСтороне</name>
+            <id>19</id>
+            <title>
+              <key>ru</key>
+              <value>На нашей стороне</value>
+            </title>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>УстановитьОтборСтатусыНаНашейСторонеРасширеннаяПодсказка</name>
+              <id>20</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <type>Hyperlink</type>
+            <commandName>Form.Command.УстановитьОтборСтатусыНаНашейСтороне</commandName>
+            <representation>Auto</representation>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <representationInContextMenu>Auto</representationInContextMenu>
+          </items>
+          <items xsi:type="form:Button">
+            <name>УстановитьОтборСтатусыНаСторонеКонтрагента</name>
+            <id>21</id>
+            <title>
+              <key>ru</key>
+              <value>На стороне контрагента</value>
+            </title>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>УстановитьОтборСтатусыНаСторонеКонтрагентаРасширеннаяПодсказка</name>
+              <id>22</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <type>Hyperlink</type>
+            <commandName>Form.Command.УстановитьОтборСтатусыНаСторонеКонтрагента</commandName>
+            <representation>Auto</representation>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <representationInContextMenu>Auto</representationInContextMenu>
+          </items>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>ru</key>
+            <value>Группа снять или установить флаги по статусам EDI</value>
+          </title>
+          <toolTip>
+            <key>ru</key>
+            <value>Группа снять установить флаги статусы EDI</value>
+          </toolTip>
+          <extendedTooltip>
+            <name>ГруппаСнятьУстановитьФлагиСтатусыEDIРасширеннаяПодсказка</name>
+            <id>14</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>UsualGroup</type>
+          <extInfo xsi:type="form:UsualGroupExtInfo">
+            <group>AlwaysHorizontal</group>
+            <behavior>Auto</behavior>
+            <showLeftMargin>true</showLeftMargin>
+            <united>true</united>
+            <throughAlign>Auto</throughAlign>
+            <currentRowUse>Auto</currentRowUse>
+          </extInfo>
+        </items>
+        <items xsi:type="form:Table">
+          <name>ДеревоСтатусовEDI</name>
+          <id>23</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>ДеревоСтатусовEDI</segments>
+          </dataPath>
+          <titleLocation>None</titleLocation>
+          <excludedCommands>Add</excludedCommands>
+          <excludedCommands>Change</excludedCommands>
+          <excludedCommands>Copy</excludedCommands>
+          <excludedCommands>CopyToClipboard</excludedCommands>
+          <excludedCommands>Delete</excludedCommands>
+          <excludedCommands>EndEdit</excludedCommands>
+          <excludedCommands>HierarchicalList</excludedCommands>
+          <excludedCommands>List</excludedCommands>
+          <excludedCommands>MoveDown</excludedCommands>
+          <excludedCommands>MoveUp</excludedCommands>
+          <excludedCommands>OutputList</excludedCommands>
+          <excludedCommands>ShowRowRearrangement</excludedCommands>
+          <excludedCommands>SortListAsc</excludedCommands>
+          <excludedCommands>SortListDesc</excludedCommands>
+          <excludedCommands>Tree</excludedCommands>
+          <items xsi:type="form:FormGroup">
+            <name>ГруппаПометкаСтатус</name>
+            <id>36</id>
+            <items xsi:type="form:FormField">
+              <name>ДеревоСтатусовEDIВыбран</name>
+              <id>60</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>ДеревоСтатусовEDI.Выбран</segments>
+              </dataPath>
+              <handlers>
+                <event>OnChange</event>
+                <name>ДеревоСтатусовEDIВыбранПриИзменении</name>
+              </handlers>
+              <extendedTooltip>
+                <name>ДеревоСтатусовEDIВыбранРасширеннаяПодсказка</name>
+                <id>62</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>ДеревоСтатусовEDIВыбранКонтекстноеМеню</name>
+                <id>61</id>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>CheckBoxField</type>
+              <editMode>EnterOnInput</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:CheckBoxFieldExtInfo">
+                <threeState>true</threeState>
+              </extInfo>
+            </items>
+            <items xsi:type="form:FormField">
+              <name>ДеревоСтатусовEDIСтатусПредставление</name>
+              <id>63</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>ДеревоСтатусовEDI.СтатусПредставление</segments>
+              </dataPath>
+              <extendedTooltip>
+                <name>ДеревоСтатусовEDIСтатусПредставлениеРасширеннаяПодсказка</name>
+                <id>65</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>ДеревоСтатусовEDIСтатусПредставлениеКонтекстноеМеню</name>
+                <id>64</id>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>InputField</type>
+              <editMode>EnterOnInput</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:InputFieldExtInfo">
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <wrap>true</wrap>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
+              </extInfo>
+            </items>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <title>
+              <key>ru</key>
+              <value>Группа пометка статус</value>
+            </title>
+            <toolTip>
+              <key>ru</key>
+              <value>Группа пометка статус</value>
+            </toolTip>
+            <extendedTooltip>
+              <name>ГруппаПометкаСтатусРасширеннаяПодсказка</name>
+              <id>37</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <type>ColumnGroup</type>
+            <extInfo xsi:type="form:ColumnGroupExtInfo">
+              <group>InCell</group>
+              <showTitle>true</showTitle>
+            </extInfo>
+          </items>
+          <autoCommandBar>
+            <name>ДеревоСтатусовEDIКоманднаяПанель</name>
+            <id>25</id>
+            <horizontalAlign>Left</horizontalAlign>
+          </autoCommandBar>
+          <searchStringAddition>
+            <name>ДеревоСтатусовEDIСтрокаПоиска</name>
+            <id>27</id>
+            <extendedTooltip>
+              <name>ДеревоСтатусовEDIСтрокаПоискаРасширеннаяПодсказка</name>
+              <id>29</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>ДеревоСтатусовEDIСтрокаПоискаКонтекстноеМеню</name>
+              <id>28</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <source>ДеревоСтатусовEDI</source>
+            <extInfo xsi:type="form:SearchStringAdditionExtInfo">
+              <autoMaxWidth>true</autoMaxWidth>
+            </extInfo>
+          </searchStringAddition>
+          <viewStatusAddition>
+            <name>ДеревоСтатусовEDIСостояниеПросмотра</name>
+            <id>30</id>
+            <extendedTooltip>
+              <name>ДеревоСтатусовEDIСостояниеПросмотраРасширеннаяПодсказка</name>
+              <id>32</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>ДеревоСтатусовEDIСостояниеПросмотраКонтекстноеМеню</name>
+              <id>31</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>ViewStatusAddition</type>
+            <source>ДеревоСтатусовEDI</source>
+            <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
+              <autoMaxWidth>true</autoMaxWidth>
+            </extInfo>
+          </viewStatusAddition>
+          <searchControlAddition>
+            <name>ДеревоСтатусовEDIУправлениеПоиском</name>
+            <id>33</id>
+            <extendedTooltip>
+              <name>ДеревоСтатусовEDIУправлениеПоискомРасширеннаяПодсказка</name>
+              <id>35</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>ДеревоСтатусовEDIУправлениеПоискомКонтекстноеМеню</name>
+              <id>34</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>SearchControlAddition</type>
+            <source>ДеревоСтатусовEDI</source>
+            <extInfo xsi:type="form:SearchControlAdditionExtInfo">
+              <autoMaxWidth>true</autoMaxWidth>
+            </extInfo>
+          </searchControlAddition>
+          <extendedTooltip>
+            <name>ДеревоСтатусовEDIРасширеннаяПодсказка</name>
+            <id>26</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ДеревоСтатусовEDIКонтекстноеМеню</name>
+            <id>24</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <representation>Tree</representation>
+          <changeRowSet>true</changeRowSet>
+          <changeRowOrder>true</changeRowOrder>
+          <width>40</width>
+          <heightInTableRows>15</heightInTableRows>
+          <autoMaxRowsCount>true</autoMaxRowsCount>
+          <rowSelectionMode>Row</rowSelectionMode>
+          <headerHeight>1</headerHeight>
+          <footerHeight>1</footerHeight>
+          <horizontalScrollBar>AutoUse</horizontalScrollBar>
+          <verticalScrollBar>AutoUse</verticalScrollBar>
+          <autoInsertNewRow>true</autoInsertNewRow>
+          <searchOnInput>Auto</searchOnInput>
+          <initialListView>Auto</initialListView>
+          <initialTreeView>ExpandTopLevel</initialTreeView>
+          <horizontalStretch>true</horizontalStretch>
+          <enableStartDrag>true</enableStartDrag>
+          <enableDrag>true</enableDrag>
+          <fileDragMode>AsFileRef</fileDragMode>
+          <borderColor xsi:type="core:ColorRef">
+            <color>Style.FormBackColor</color>
+          </borderColor>
+          <currentRowUse>SelectionPresentationAndChoice</currentRowUse>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>ГруппаОтборПоАктуальнойВерсии</name>
+          <id>47</id>
+          <items xsi:type="form:FormField">
+            <name>ИспользоватьОтборПоНеактуальнойВерсииEDI</name>
+            <id>49</id>
+            <title>
+              <key>ru</key>
+              <value>Установить отбор по документам, с неактуальной версией по отношению к сервису 1С:EDI и документам не актуализированным в сервисе 1С:EDI</value>
+            </title>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>ИспользоватьОтборПоНеактуальнойВерсииEDI</segments>
+            </dataPath>
+            <titleLocation>Right</titleLocation>
+            <toolTipRepresentation>None</toolTipRepresentation>
+            <handlers>
+              <event>OnChange</event>
+              <name>ИспользоватьОтборПоНеактуальнойВерсииEDIПриИзменении</name>
+            </handlers>
+            <extendedTooltip>
+              <name>ИспользоватьОтборПоНеактуальнойВерсииEDIРасширеннаяПодсказка</name>
+              <id>51</id>
+              <title>
+                <key>ru</key>
+                <value>     Будут отображаться только те документы, для которых в сервисе &quot;1C: EDI&quot; есть более актуальная версия. Возможно потребуется сопоставить номенклатуру вручную.</value>
+              </title>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>ИспользоватьОтборПоНеактуальнойВерсииEDIКонтекстноеМеню</name>
+              <id>50</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>CheckBoxField</type>
+            <editMode>Enter</editMode>
+            <showInHeader>true</showInHeader>
+            <headerHorizontalAlign>Left</headerHorizontalAlign>
+            <showInFooter>true</showInFooter>
+            <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+          </items>
+          <items xsi:type="form:FormGroup">
+            <name>ГруппаОтборПоАктуальнойВерсииОтступ</name>
+            <id>52</id>
+            <items xsi:type="form:Decoration">
+              <name>ДекорацияПустаяОтборПоАктуальности</name>
+              <id>54</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <extendedTooltip>
+                <name>ДекорацияПустаяОтборПоАктуальностиРасширеннаяПодсказка</name>
+                <id>56</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>ДекорацияПустаяОтборПоАктуальностиКонтекстноеМеню</name>
+                <id>55</id>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>Label</type>
+              <width>1</width>
+              <autoMaxHeight>true</autoMaxHeight>
+              <horizontalStretch>false</horizontalStretch>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </items>
+            <items xsi:type="form:Decoration">
+              <name>ДекорацияПодсказкаОтборПоАктуальности</name>
+              <id>57</id>
+              <title>
+                <key>ru</key>
+                <value>&lt;colorstyle 0:a92d8a5c-b595-4c6c-9f1d-5e85b1c996b4>Будут отображаться только те документы, у которых версия в сервисе &quot;1C: EDI&quot; более поздняя. Возможно потребуется сопоставить номенклатуру вручную.&lt;/></value>
+              </title>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <extendedTooltip>
+                <name>ДекорацияПодсказкаОтборПоАктуальностиРасширеннаяПодсказка</name>
+                <id>59</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>ДекорацияПодсказкаОтборПоАктуальностиКонтекстноеМеню</name>
+                <id>58</id>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <formatted>true</formatted>
+              <type>Label</type>
+              <width>40</width>
+              <autoMaxHeight>true</autoMaxHeight>
+              <horizontalStretch>false</horizontalStretch>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </items>
+            <items xsi:type="form:FormGroup">
+              <name>ГруппаВариантыОтбораПоАктуальностиВерсии</name>
+              <id>79</id>
+              <items xsi:type="form:FormField">
+                <name>ВариантОтбораПоАктуальностиВерсииУчитыватьСтатус</name>
+                <id>73</id>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <dataPath xsi:type="form:DataPath">
+                  <segments>ВариантОтбораПоАктуальностиВерсииEDI</segments>
+                </dataPath>
+                <titleLocation>None</titleLocation>
+                <toolTip>
+                  <key>ru</key>
+                  <value>Будут отображаться неактуальные документы в выбранных статусах</value>
+                </toolTip>
+                <toolTipRepresentation>ShowBottom</toolTipRepresentation>
+                <extendedTooltip>
+                  <name>ВариантОтбораПоАктуальностиВерсииУчитыватьСтатусРасширеннаяПодсказка</name>
+                  <id>75</id>
+                  <type>Label</type>
+                  <autoMaxWidth>true</autoMaxWidth>
+                  <autoMaxHeight>true</autoMaxHeight>
+                  <extInfo xsi:type="form:LabelDecorationExtInfo">
+                    <horizontalAlign>Left</horizontalAlign>
+                  </extInfo>
+                </extendedTooltip>
+                <contextMenu>
+                  <name>ВариантОтбораПоАктуальностиВерсииУчитыватьСтатусКонтекстноеМеню</name>
+                  <id>74</id>
+                  <autoFill>true</autoFill>
+                </contextMenu>
+                <type>RadioButtonField</type>
+                <editMode>Enter</editMode>
+                <showInHeader>true</showInHeader>
+                <headerHorizontalAlign>Left</headerHorizontalAlign>
+                <showInFooter>true</showInFooter>
+                <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
+                  <choiceList>
+                    <presentation>
+                      <key>ru</key>
+                      <value>Как дополнительное ограничение</value>
+                    </presentation>
+                    <value xsi:type="core:ReferenceValue">
+                      <value>Enum.ВариантыОтбораПоНеактуальнойВерсииEDI.EnumValue.УчитыватьОтборПоСтатусам</value>
+                    </value>
+                  </choiceList>
+                </extInfo>
+              </items>
+              <items xsi:type="form:FormField">
+                <name>ВариантОтбораПоАктуальностиВерсииНеУчитыватьСтатус</name>
+                <id>76</id>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <dataPath xsi:type="form:DataPath">
+                  <segments>ВариантОтбораПоАктуальностиВерсииEDI</segments>
+                </dataPath>
+                <titleLocation>None</titleLocation>
+                <toolTip>
+                  <key>ru</key>
+                  <value>Будут отображаться документы в выбранных статусах и неактуальные документы в любых статусах</value>
+                </toolTip>
+                <toolTipRepresentation>ShowBottom</toolTipRepresentation>
+                <extendedTooltip>
+                  <name>ВариантОтбораПоАктуальностиВерсииНеУчитыватьСтатусРасширеннаяПодсказка</name>
+                  <id>78</id>
+                  <type>Label</type>
+                  <autoMaxWidth>true</autoMaxWidth>
+                  <autoMaxHeight>true</autoMaxHeight>
+                  <extInfo xsi:type="form:LabelDecorationExtInfo">
+                    <horizontalAlign>Left</horizontalAlign>
+                  </extInfo>
+                </extendedTooltip>
+                <contextMenu>
+                  <name>ВариантОтбораПоАктуальностиВерсииНеУчитыватьСтатусКонтекстноеМеню</name>
+                  <id>77</id>
+                  <autoFill>true</autoFill>
+                </contextMenu>
+                <type>RadioButtonField</type>
+                <editMode>Enter</editMode>
+                <showInHeader>true</showInHeader>
+                <headerHorizontalAlign>Left</headerHorizontalAlign>
+                <showInFooter>true</showInFooter>
+                <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
+                  <choiceList>
+                    <presentation>
+                      <key>ru</key>
+                      <value>Как расширение отбора по статусам</value>
+                    </presentation>
+                    <value xsi:type="core:ReferenceValue">
+                      <value>Enum.ВариантыОтбораПоНеактуальнойВерсииEDI.EnumValue.НеУчитыватьОтборПоСтатусам</value>
+                    </value>
+                  </choiceList>
+                </extInfo>
+              </items>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <title>
+                <key>ru</key>
+                <value>Группа варианты отбора по актуальности версии</value>
+              </title>
+              <toolTip>
+                <key>ru</key>
+                <value>Группа варианты отбора по актуальности версии</value>
+              </toolTip>
+              <extendedTooltip>
+                <name>ГруппаВариантыОтбораПоАктуальностиВерсииРасширеннаяПодсказка</name>
+                <id>80</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <type>UsualGroup</type>
+              <extInfo xsi:type="form:UsualGroupExtInfo">
+                <group>Vertical</group>
+                <behavior>Auto</behavior>
+                <representation>WeakSeparation</representation>
+                <showLeftMargin>true</showLeftMargin>
+                <united>true</united>
+                <throughAlign>Auto</throughAlign>
+                <currentRowUse>Auto</currentRowUse>
+              </extInfo>
+            </items>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <title>
+              <key>ru</key>
+              <value>Группа отбор по актуальной версии отступ</value>
+            </title>
+            <toolTip>
+              <key>ru</key>
+              <value>Группа отбор по актуальной версии отступ</value>
+            </toolTip>
+            <extendedTooltip>
+              <name>ГруппаОтборПоАктуальнойВерсииОтступРасширеннаяПодсказка</name>
+              <id>53</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <type>UsualGroup</type>
+            <extInfo xsi:type="form:UsualGroupExtInfo">
+              <group>AlwaysHorizontal</group>
+              <behavior>Auto</behavior>
+              <representation>WeakSeparation</representation>
+              <showLeftMargin>true</showLeftMargin>
+              <united>true</united>
+              <throughAlign>Auto</throughAlign>
+              <currentRowUse>Auto</currentRowUse>
+            </extInfo>
+          </items>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>ru</key>
+            <value>Группа отбор по актуальной версии</value>
+          </title>
+          <toolTip>
+            <key>ru</key>
+            <value>Группа отбор по актуальной версии</value>
+          </toolTip>
+          <extendedTooltip>
+            <name>ГруппаОтборПоАктуальнойВерсииРасширеннаяПодсказка</name>
+            <id>48</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>UsualGroup</type>
+          <extInfo xsi:type="form:UsualGroupExtInfo">
+            <group>Vertical</group>
+            <behavior>Auto</behavior>
+            <representation>WeakSeparation</representation>
+            <showLeftMargin>true</showLeftMargin>
+            <united>true</united>
+            <throughAlign>Auto</throughAlign>
+            <currentRowUse>Auto</currentRowUse>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>ru</key>
+          <value>Статусы в сервисе &quot;1С: EDI&quot;:</value>
+        </title>
+        <toolTip>
+          <key>ru</key>
+          <value>Группа отборы статусы EDI</value>
+        </toolTip>
+        <extendedTooltip>
+          <name>ГруппаОтборыСтатусыEDIРасширеннаяПодсказка</name>
+          <id>12</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <group>Vertical</group>
+          <behavior>Auto</behavior>
+          <representation>WeakSeparation</representation>
+          <showLeftMargin>true</showLeftMargin>
+          <united>true</united>
+          <throughAlign>Auto</throughAlign>
+          <currentRowUse>Auto</currentRowUse>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>ru</key>
+        <value>Группа статусы EDI</value>
+      </title>
+      <toolTip>
+        <key>ru</key>
+        <value>Группа статусы EDI</value>
+      </toolTip>
+      <extendedTooltip>
+        <name>ГруппаСтатусыEDIРасширеннаяПодсказка</name>
+        <id>7</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>UsualGroup</type>
+      <extInfo xsi:type="form:UsualGroupExtInfo">
+        <group>HorizontalIfPossible</group>
+        <behavior>Auto</behavior>
+        <representation>NormalSeparation</representation>
+        <showLeftMargin>true</showLeftMargin>
+        <united>true</united>
+        <throughAlign>Auto</throughAlign>
+        <currentRowUse>Auto</currentRowUse>
+      </extInfo>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Панель сервис EDI</value>
+    </title>
+    <toolTip>
+      <key>ru</key>
+      <value>Панель сервис EDI</value>
+    </toolTip>
+    <width>36</width>
+    <horizontalStretch>true</horizontalStretch>
+    <extendedTooltip>
+      <name>ПанельСервисEDIРасширеннаяПодсказка</name>
+      <id>2</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <group>HorizontalIfPossible</group>
+      <behavior>Auto</behavior>
+      <representation>WeakSeparation</representation>
+      <showLeftMargin>true</showLeftMargin>
+      <united>true</united>
+      <throughAlign>Auto</throughAlign>
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <autoCommandBar>
+    <name>ФормаКоманднаяПанель</name>
+    <id>-1</id>
+    <items xsi:type="form:Button">
+      <name>ФормаПеренести</name>
+      <id>68</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>ФормаПеренестиРасширеннаяПодсказка</name>
+        <id>69</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.УстановитьОтбор</commandName>
+      <representation>Auto</representation>
+      <defaultButton>true</defaultButton>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <items xsi:type="form:Button">
+      <name>Справка</name>
+      <id>66</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>СправкаРасширеннаяПодсказка</name>
+        <id>67</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.StandardCommand.Help</commandName>
+      <representation>Auto</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+      <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
+    </items>
+    <horizontalAlign>Left</horizontalAlign>
+    <autoFill>true</autoFill>
+  </autoCommandBar>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>ПриСозданииНаСервере</name>
+  </handlers>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>Объект</name>
+    <id>1</id>
+    <valueType>
+      <types>DataProcessorObject.СервисEDI</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <main>true</main>
+  </attributes>
+  <attributes>
+    <name>ДеревоСтатусовEDI</name>
+    <title>
+      <key>ru</key>
+      <value>Дерево статусов EDI</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>ValueTree</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Выбран</name>
+      <title>
+        <key>ru</key>
+        <value>Выбран</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>Number</types>
+        <numberQualifiers/>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>СтатусПредставление</name>
+      <title>
+        <key>ru</key>
+        <value>Статус представление</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>String</types>
+        <stringQualifiers/>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>КоличествоДокументов</name>
+      <title>
+        <key>ru</key>
+        <value>Количество</value>
+      </title>
+      <id>3</id>
+      <valueType>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>СтатусСсылка</name>
+      <title>
+        <key>ru</key>
+        <value>Статус ссылка</value>
+      </title>
+      <id>4</id>
+      <valueType>
+        <types>EnumRef.СтатусыЗаказаEDI</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Группировка</name>
+      <title>
+        <key>ru</key>
+        <value>Группировка</value>
+      </title>
+      <id>6</id>
+      <valueType>
+        <types>EnumRef.ГруппировкиСтатусовEDI</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ИспользоватьОтборПоСтатусамEDI</name>
+    <title>
+      <key>ru</key>
+      <value>Использовать отбор по статусам EDI</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ИспользоватьОтборПоНеактуальнойВерсииEDI</name>
+    <title>
+      <key>ru</key>
+      <value>Использовать отбор по неактуальной версии EDI</value>
+    </title>
+    <id>5</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ВариантОтбораПоАктуальностиВерсииEDI</name>
+    <title>
+      <key>ru</key>
+      <value>Вариант отбора по актуальности версии EDI</value>
+    </title>
+    <id>6</id>
+    <valueType>
+      <types>EnumRef.ВариантыОтбораПоНеактуальнойВерсииEDI</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <formCommands>
+    <name>УстановитьОтборСтатусыНаНашейСтороне</name>
+    <title>
+      <key>ru</key>
+      <value>Установить отбор статусы на нашей стороне</value>
+    </title>
+    <id>1</id>
+    <toolTip>
+      <key>ru</key>
+      <value>Установить отбор статусы на нашей стороне</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>УстановитьОтборСтатусыНаНашейСтороне</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>УстановитьОтборСтатусыНаСторонеКонтрагента</name>
+    <title>
+      <key>ru</key>
+      <value>Установить отбор статусы на стороне контрагента</value>
+    </title>
+    <id>2</id>
+    <toolTip>
+      <key>ru</key>
+      <value>Установить отбор статусы на стороне контрагента</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>УстановитьОтборСтатусыНаСторонеКонтрагента</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>УстановитьВсеСтатусы</name>
+    <title>
+      <key>ru</key>
+      <value>Установить все статусы</value>
+    </title>
+    <id>3</id>
+    <toolTip>
+      <key>ru</key>
+      <value>Установить все статусы</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>УстановитьВсеСтатусы</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>СнятьВсеСтатусы</name>
+    <title>
+      <key>ru</key>
+      <value>Снять все статусы</value>
+    </title>
+    <id>4</id>
+    <toolTip>
+      <key>ru</key>
+      <value>Снять все статусы</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>СнятьВсеСтатусы</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>УстановитьОтбор</name>
+    <title>
+      <key>ru</key>
+      <value>Установить отбор</value>
+    </title>
+    <id>5</id>
+    <toolTip>
+      <key>ru</key>
+      <value>Установить отбор</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>Перенести</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <parameters>
+    <name>ИспользоватьОтборПоСтатусамEDI</name>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>МассивВыбранныхСтатусовEDI</name>
+    <valueType/>
+  </parameters>
+  <parameters>
+    <name>ВариантОтбораПоАктуальностиВерсииEDI</name>
+    <valueType>
+      <types>EnumRef.ВариантыОтбораПоНеактуальнойВерсииEDI</types>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>ИспользоватьОтборПоНеактуальнойВерсииEDI</name>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+  </parameters>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+  <extInfo xsi:type="form:ObjectFormExtInfo"/>
+</form:Form>

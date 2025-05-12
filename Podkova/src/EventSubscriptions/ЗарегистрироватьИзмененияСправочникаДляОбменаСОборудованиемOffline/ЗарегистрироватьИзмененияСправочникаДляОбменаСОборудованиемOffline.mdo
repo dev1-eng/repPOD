@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3b911221-0adb-4203-9a35-7091c9557d15">
+  <name>ЗарегистрироватьИзмененияСправочникаДляОбменаСОборудованиемOffline</name>
+  <synonym>
+    <key>ru</key>
+    <value>Зарегистрировать изменения справочника для обмена с оборудованием offline</value>
+  </synonym>
+  <source>
+    <types>CatalogObject.ПодключаемоеОборудование</types>
+    <types>CatalogObject.УпаковкиЕдиницыИзмерения</types>
+    <types>CatalogObject.ХарактеристикиНоменклатуры</types>
+    <types>CatalogObject.Номенклатура</types>
+    <types>CatalogObject.ВидыНоменклатуры</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ОбменДаннымиПодключаемоеОборудованиеOfflineСобытия.ЗарегистрироватьИзмененияСправочника</handler>
+</mdclass:EventSubscription>

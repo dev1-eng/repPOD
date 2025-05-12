@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:WebService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="508a9aa9-8b3d-4128-9833-721f5c03226d">
+  <name>WMSMobileClientExchange</name>
+  <synonym>
+    <key>ru</key>
+    <value>WMSMobile client exchange</value>
+  </synonym>
+  <namespace>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</namespace>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.WMSMobileClientExchange</value>
+  </xdtoPackages>
+  <descriptorFileName>WMSMobileClientExchange.1cws</descriptorFileName>
+  <sessionMaxAge>20</sessionMaxAge>
+  <operations uuid="df11b1eb-ec09-4c7d-ac61-e6e2d1fdfc90">
+    <name>GetJobsCount</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get jobs count</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>int</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetJobsCount</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="496ca8e4-5cac-42ec-b3d4-5b63ccc10e49">
+      <name>IdWarehouse</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id warehouse</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="85e0d420-50aa-4c0f-a9a7-37308ed8074b">
+      <name>IdStorage</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id storage</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+    <parameters uuid="2806ac09-8dbc-40da-bcb2-4e4101b7efb0">
+      <name>JobType</name>
+      <synonym>
+        <key>ru</key>
+        <value>Job type</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ТипыЗаданий</name>
+        <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="ade8d682-1e65-4065-a29b-ebc9496293ff">
+      <name>IdExecutor</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id executor</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="2561e4a7-6786-4f69-b1d0-2032cd271c8c">
+      <name>JobsByWithoutIncluded</name>
+      <synonym>
+        <key>ru</key>
+        <value>Jobs by without included</value>
+      </synonym>
+      <xdtoValueType>
+        <name>boolean</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="3362de0c-82a8-48eb-8dc5-9f2653621aff">
+    <name>GetJobsTable</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get jobs table</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ТаблицаЗаданий</name>
+      <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetJobsTable</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="93b87964-72f0-4641-a86a-32acd28d6c09">
+      <name>IdWarehouse</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id warehouse</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="9ab9c242-f8f8-4c3c-832a-0b5663893b49">
+      <name>IdStorage</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id storage</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+    <parameters uuid="1da56541-f124-494e-9170-1f916ba7885d">
+      <name>JobType</name>
+      <synonym>
+        <key>ru</key>
+        <value>Job type</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ТипыЗаданий</name>
+        <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="72b4d921-efe4-482c-ba35-093f32f6f833">
+      <name>IdExecutor</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id executor</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="a4b77593-768c-46b0-a94c-e7fc60194202">
+      <name>JobsByWithoutIncluded</name>
+      <synonym>
+        <key>ru</key>
+        <value>Jobs by without included</value>
+      </synonym>
+      <xdtoValueType>
+        <name>boolean</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="72114416-f008-4e8a-bdbb-80a6e020d8e7">
+    <name>GetJobIDAndTypeByBarcode</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get job ID and type by barcode</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ПараметрыЗадания</name>
+      <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetJobIDAndTypeByBarcode</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="6ab6ac09-6e54-47a8-9998-dd7efcce127b">
+      <name>Barcode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Barcode</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="b73ddb82-4c79-4c18-85a2-c98ab508c950">
+      <name>IdWarehouse</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id warehouse</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="3b3f4009-3e58-4a2e-88bc-0712fed11bf1">
+      <name>IdStorage</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id storage</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+    <parameters uuid="6accaa06-2795-4fe1-a046-c55752a2319a">
+      <name>IdExecutor</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id executor</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="0b760709-63cd-45b4-8cf3-d5afa3294223">
+      <name>JobType</name>
+      <synonym>
+        <key>ru</key>
+        <value>Job type</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ТипыЗаданий</name>
+        <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+      </xdtoValueType>
+      <transferDirection>InOut</transferDirection>
+    </parameters>
+  </operations>
+  <operations uuid="e5674e74-7b17-4cdd-8303-94b9dfd6c9e1">
+    <name>GetAndTakeAllotmentPickJob</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get and take allotment pick job</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ПараметрыЗадания</name>
+      <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetAndTakeAllotmentPickJob</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="6931fed6-2f0e-44d6-ba95-4974d6b6c64b">
+      <name>IdJob</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id job</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="ddea4cf6-7243-4cef-bc38-d79c4a7237ec">
+      <name>IdExecutor</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id executor</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="b680b296-d2ae-4c38-bd3d-f94b5d63a639">
+      <name>JobType</name>
+      <synonym>
+        <key>ru</key>
+        <value>Job type</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ТипыЗаданий</name>
+        <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="02cc86f3-9359-44b2-afc3-d8ffa6a4a2aa">
+    <name>GetTableOfAcceptanceAreas</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get table of acceptance areas</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>СписокЯчеек</name>
+      <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetTableOfAcceptanceAreas</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="3d1306c7-8f05-4ce6-b2a0-38054b2f3f28">
+      <name>IdWarehouse</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id warehouse</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="eaf3df39-df03-43cb-8039-f9cffb8e8055">
+      <name>IdStorage</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id storage</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+  </operations>
+  <operations uuid="0bc96d10-82d7-4e90-8251-37478d63bd7e">
+    <name>GetGoodsOfCellStored</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get goods of cell stored</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ПараметрыТоваровЯчейки</name>
+      <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetGoodsOfCellStored</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="30e17f75-4642-4259-ada2-63921d91325d">
+      <name>IdCell</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id cell</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="3b2cc5fc-e83a-45d1-b6dd-8b8395711863">
+    <name>GetGoodsOfCellStoredByBarcode</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get goods of cell stored by barcode</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ПараметрыТоваровЯчейки</name>
+      <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetGoodsOfCellStoredByBarcode</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="9e147f52-fa6e-415c-b613-36141cf02a46">
+      <name>Barcode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Barcode</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="998c4282-6103-4522-a220-5865a70c0b01">
+      <name>IdWarehouse</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id warehouse</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="8c67489c-1790-4cf9-8408-87db5b0f6e92">
+      <name>IdStorage</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id storage</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+  </operations>
+  <operations uuid="c0cf4eed-e080-4ae4-a819-b3b0625d1a61">
+    <name>SetPickedGoodsInAllotmentPickJob</name>
+    <synonym>
+      <key>ru</key>
+      <value>Set picked goods in allotment pick job</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ПараметрыОбработкиОтсканированныхТоваров</name>
+      <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>SetPickedGoodsInAllotmentPickJob</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="f8565f4f-354d-4a28-99ed-1dd5a165e970">
+      <name>IdJob</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id job</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="86167b3b-935a-42d4-a1b0-d619656c85d1">
+      <name>ScannedGoods</name>
+      <synonym>
+        <key>ru</key>
+        <value>Scanned goods</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ТаблицаОтсканированныхТоваров</name>
+        <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="74835024-9e9f-41c4-866c-4a0b537b3bcd">
+    <name>CancelJob</name>
+    <synonym>
+      <key>ru</key>
+      <value>Cancel job</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ПараметрыОтменыВыполненияЗадания</name>
+      <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>CancelJob</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="a83f64ea-b0d0-4db4-92a8-7841e3e99081">
+      <name>IdJob</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id job</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="fc1b3ef4-9c05-472f-950f-73c3ed1f9f0d">
+      <name>IdExecutor</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id executor</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="26306548-2b29-4b6e-97af-58de67c6774d">
+      <name>JobType</name>
+      <synonym>
+        <key>ru</key>
+        <value>Job type</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ТипыЗаданий</name>
+        <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="6e8c3382-9149-44dc-aea3-187b4c619fc0">
+    <name>CompleteJob</name>
+    <synonym>
+      <key>ru</key>
+      <value>Complete job</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ПараметрыЗавершенияСкладскогоЗадания</name>
+      <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>CompleteJob</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="6d123b8c-933c-4205-bafd-93fabe3665ac">
+      <name>IdJob</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id job</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="c84e3b12-134a-4c57-8e0e-a5abcb42f9af">
+      <name>IdExecutor</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id executor</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="0c2e8bd5-630a-4929-81ed-7ed26268f7c3">
+      <name>ScannedGoods</name>
+      <synonym>
+        <key>ru</key>
+        <value>Scanned goods</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ТаблицаОтсканированныхТоваров</name>
+        <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="cd9a2cce-5114-44b0-a211-9bf268cc1839">
+      <name>JobType</name>
+      <synonym>
+        <key>ru</key>
+        <value>Job type</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ТипыЗаданий</name>
+        <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+      </xdtoValueType>
+      <transferDirection>InOut</transferDirection>
+    </parameters>
+    <parameters uuid="f448c465-0940-47eb-b585-eaad9fd1b225">
+      <name>AdditionalOptions</name>
+      <synonym>
+        <key>ru</key>
+        <value>Additional options</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ПараметрыЗавершенияПеремещения</name>
+        <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+  </operations>
+  <operations uuid="7175cf47-bb6d-4304-965b-faf4bf316f9c">
+    <name>CompleteJobNewLocation</name>
+    <synonym>
+      <key>ru</key>
+      <value>Complete job new location</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>ПараметрыЗавершенияСкладскогоЗадания</name>
+      <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>CompleteJobNewLocation</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="9ccf0cd3-7974-4b77-9834-5360fa6e20f0">
+      <name>IdWarehouse</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id warehouse</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="7c1fbc0a-0c74-4139-9dee-a844d85fb808">
+      <name>IdStorage</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id storage</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+    <parameters uuid="1009e772-4848-4123-940d-b7cc87514482">
+      <name>IdAcceptanceDock</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id acceptance dock</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="acd79a0c-a9f8-472b-a69c-616fa4dd7abb">
+      <name>IdExecutor</name>
+      <synonym>
+        <key>ru</key>
+        <value>Id executor</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="db2dfdfa-3469-4de2-8fb4-a89b56d7801f">
+      <name>ScannedGoods</name>
+      <synonym>
+        <key>ru</key>
+        <value>Scanned goods</value>
+      </synonym>
+      <xdtoValueType>
+        <name>ТаблицаОтсканированныхТоваров</name>
+        <nsUri>http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+</mdclass:WebService>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="430c536a-8aa3-44d4-9fb9-b6fbdc35764e">
+  <producedTypes>
+    <selectionType typeId="98158115-2850-4041-abf6-a58702f9b2df" valueTypeId="3130e4cc-866d-4fec-96bd-d950f09fc78e"/>
+    <listType typeId="3085935b-54d5-4d1b-b037-5c6e4dcd357e" valueTypeId="047d197c-e1ad-4f45-a47d-2212f44b4a37"/>
+    <managerType typeId="b18f15d8-e6d4-4ee3-b9af-b185832db5ef" valueTypeId="78360f4f-4eea-4fe4-806b-2f94d5f67c7d"/>
+    <recordSetType typeId="f4e61f26-f9c7-4a36-80f6-781169e621a9" valueTypeId="a43ee7db-d056-4802-b50a-3cd180e1473e"/>
+    <recordKeyType typeId="1fde5f4e-56d9-4895-b688-02cf47ed1f40" valueTypeId="05f6bc68-c8d0-4e83-b110-bc1c83ac94d6"/>
+    <recordType typeId="3c3775dd-7b99-41bb-9f48-7cad67e38d5d" valueTypeId="9c15377d-bbcb-45ce-868e-feb880ab32a5"/>
+    <recordManagerType typeId="d346919c-19ca-4000-8c6a-cf90a93312ca" valueTypeId="66f05ac5-3ce2-4730-b4a7-86b7511bb2f4"/>
+  </producedTypes>
+  <name>АналитикаУчетаНаборов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Аналитика учета наборов</value>
+  </synonym>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <resources uuid="2aa75364-c31f-49c8-88fb-6b7939957a0b">
+    <name>КлючАналитики</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ключ аналитики</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиУчетаНаборов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Ключ аналитики учета номенклатуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.КлючиАналитикиУчетаНаборов.EmptyRef</value>
+    </fillValue>
+    <indexing>Index</indexing>
+  </resources>
+  <dimensions uuid="9f1880b5-b638-4825-ac58-f848556d5d66">
+    <name>НоменклатураНабора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура набора</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Товары</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Номенклатура.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b951eb3a-4cc2-4641-9bb9-3f6cf86d393f">
+    <name>ХарактеристикаНабора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика набора</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Характеристики товаров</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.ХарактеристикиНоменклатуры.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

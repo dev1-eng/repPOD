@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="844b6eda-cd6c-418e-83ec-607b9c2605bb">
+  <producedTypes>
+    <objectType typeId="bc8ec866-db4d-408c-a649-af9562ebb8f7" valueTypeId="30528124-3246-4512-9fac-bcade9f25aac"/>
+    <managerType typeId="0ca3bd0c-915e-4252-850f-674d5703e66e" valueTypeId="ed90cf01-499c-4917-94f8-4791e9aeb180"/>
+  </producedTypes>
+  <name>ПроверкаКодовМаркировкиИСМП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверка кодов маркировки ГИС МТ</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ПроверкаКодовМаркировкиИСМП.Form.ФормаПроверки</defaultForm>
+  <attributes uuid="8df71377-76ff-4332-b83d-1b201731b314">
+    <name>ДеревоКодовМаркировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дерево кодов маркировки</value>
+    </synonym>
+    <type>
+      <types>ValueTree</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="f16b1be7-722f-4cde-95e5-acb8fddc3877">
+    <producedTypes>
+      <objectType typeId="ec990247-81a3-4c5b-9191-b940bf040bcb" valueTypeId="d682807b-353d-4373-b667-75be2bf1a390"/>
+      <rowType typeId="2a022c21-63b2-40bd-aa00-38ac8e894703" valueTypeId="cc174ca4-7a74-4b3e-906d-2a7f5b8e3c43"/>
+    </producedTypes>
+    <name>Штрихкоды</name>
+    <synonym>
+      <key>ru</key>
+      <value>Штрихкоды</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="a52b924d-eef0-4e93-9a4a-aafcc52a3c1a">
+      <name>Штрихкод</name>
+      <synonym>
+        <key>ru</key>
+        <value>Штрихкод</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="42ca7c20-5b84-4bce-9cd2-fbee8c3b5d8f">
+      <name>ШтрихкодBase64</name>
+      <synonym>
+        <key>ru</key>
+        <value>Штрихкод base64</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="1efd6242-9176-41f0-83b0-054eadcfd0ef">
+      <name>ИдентификаторСтроки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор строки</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="b5e66236-f544-4990-a429-8eea717c23ca">
+      <name>Порядок</name>
+      <synonym>
+        <key>ru</key>
+        <value>Порядок</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="31407f26-3681-42fa-ba96-2ff96f9d7b76">
+      <name>ШтрихкодУпаковки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Штрихкод упаковки</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ШтрихкодыУпаковокТоваров</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a6b90530-c432-4ecc-85f7-aa69c12e6ca7">
+      <name>ВидУпаковки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид упаковки</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ВидыУпаковокИС</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="cf53f0f0-418c-4f7b-8f8f-ec8de91a15fa">
+    <producedTypes>
+      <objectType typeId="a3fae477-4756-48f4-ab92-90e8ee22a26c" valueTypeId="e74916ee-84cf-42b0-b2c4-bd9359fec0e6"/>
+      <rowType typeId="a230249a-a4bd-47f4-b9b2-56fecbd2344e" valueTypeId="c5f26b19-62a5-423a-964e-b7e3759bd3a6"/>
+    </producedTypes>
+    <name>ЛогиЗапросов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Логи запросов</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="e469a2f4-3b89-49b6-a0ab-d215d698c8c9">
+      <name>ИдентификаторСтроки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор строки</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="1fbb2f38-3201-41b9-90ea-b0292b051376">
+      <name>Дата</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="56e67733-15b6-420b-8258-535c571f9faa">
+      <name>Лог</name>
+      <synonym>
+        <key>ru</key>
+        <value>Лог</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="259b51cc-9a8f-41d1-a90d-793b0f6c0567">
+    <producedTypes>
+      <objectType typeId="9235f3a5-e495-444b-ae59-859d3438b3fd" valueTypeId="f80898a6-c9e7-4419-9931-60a53f5a3c94"/>
+      <rowType typeId="8c5153b1-2aa4-441a-98ed-567fd29a4513" valueTypeId="2265687e-0741-4c37-95dd-f0bfa60165b8"/>
+    </producedTypes>
+    <name>Документы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документы</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="a28209da-a4e2-465a-b222-81f0a7f373c8">
+      <name>ИдентификаторСтроки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор строки</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="161c6f51-abda-4af2-8769-4da138ebe110">
+      <name>Документ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <type>
+        <types>AnyRef</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="a66e9f0d-b787-4148-9856-b594685d6892">
+    <name>ФормаПроверки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма проверки</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b33ba027-87cc-4377-9dd7-771dc19007a4">
+    <name>ФормаПросмотраЛога</name>
+    <synonym>
+      <key>ru</key>
+      <value>Лог запросов</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

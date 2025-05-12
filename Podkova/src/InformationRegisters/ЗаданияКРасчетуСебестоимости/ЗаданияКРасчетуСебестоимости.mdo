@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="656c9f48-8ef3-4e62-86bc-a00525920cf2">
+  <producedTypes>
+    <selectionType typeId="8ac58be7-175d-46bb-94ca-da76c610e8a5" valueTypeId="ebc14409-48fd-4e90-8735-12a5047e22f7"/>
+    <listType typeId="5ba71b88-528e-4995-8dd0-1ab6e7916833" valueTypeId="4691368d-aad4-43b2-b28b-4e4a76d39f77"/>
+    <managerType typeId="83858e7b-83ae-4d1b-9808-3dfc0b532c55" valueTypeId="97e168bf-8493-41ba-a9b0-f5a8aefe2163"/>
+    <recordSetType typeId="fb901e1d-453e-4d86-bb9f-bebfa27a498c" valueTypeId="5cf9f367-e2e2-49b7-8d1e-2188bf40ef78"/>
+    <recordKeyType typeId="dcfe723c-3930-43b0-b8b1-2f5a7195847e" valueTypeId="b3b1b179-1fdd-4577-828e-8201d38278a6"/>
+    <recordType typeId="8f701aed-68a8-45c6-ae02-174c6a18fc70" valueTypeId="964a85a8-be2c-41fb-ab59-20efd14d43cb"/>
+    <recordManagerType typeId="c586cb6b-07bf-4e0d-8edf-f9c5ff23e00a" valueTypeId="96b23dd3-f4ac-40a3-97d3-be4a440225c5"/>
+  </producedTypes>
+  <name>ЗаданияКРасчетуСебестоимости</name>
+  <synonym>
+    <key>ru</key>
+    <value>Задания к расчету себестоимости</value>
+  </synonym>
+  <comment>Технический регистр, содержит в себе данные о документах, которые необходимо пересчитать оффлайновому механизму расчета себестоимости.</comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="22dfc861-bc4d-488b-ae99-62018388beb5">
+    <name>Месяц</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ДФ=MM.yyyy</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДФ=MM.yyyy</value>
+    </editFormat>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b17e866a-e2bc-426c-ac59-e5d660493e8a">
+    <name>НомерЗадания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер задания</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3017f17e-458d-41c6-b328-e405ad595f45">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4c6e00ca-97d2-4508-aac2-e89843624156">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

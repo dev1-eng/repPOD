@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b4b77579-c0ca-4bef-8205-2185c2ba6bea">
+  <producedTypes>
+    <selectionType typeId="151138d2-6759-4afe-b4ff-7fa6d8aca71a" valueTypeId="d783f7e4-9429-4227-9156-5f91a7336424"/>
+    <listType typeId="d6e4e41d-9ed4-4393-827e-9b91bb78ffc4" valueTypeId="b5578b8c-c0ec-4711-8c03-e6f1a3b5bdea"/>
+    <managerType typeId="b764eb93-d732-4338-90ad-60790f2e4438" valueTypeId="d1b38138-19b1-421a-a1d2-3c1b3ec03326"/>
+    <recordSetType typeId="c50eb500-0099-4485-bb19-076dbb5213a2" valueTypeId="5a437763-0aff-42f0-bc25-1cda53635801"/>
+    <recordKeyType typeId="b4327d6b-9f7d-4191-ad8f-8b1f6aaf1478" valueTypeId="f13a53bd-9783-4674-8b1d-67dbeaef1cfd"/>
+    <recordType typeId="3d486604-f936-4255-9f3e-3b560404c725" valueTypeId="0f44667c-f464-48c9-a9e8-67098148c91e"/>
+    <recordManagerType typeId="674d8057-14f4-4ed0-8e15-9f80e4f71098" valueTypeId="375d378d-c7c8-4567-9d52-2e33b1012a14"/>
+  </producedTypes>
+  <name>ПорядокПлатежногоКалендаря</name>
+  <synonym>
+    <key>ru</key>
+    <value>Порядок платежного календаря</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="bf718f93-32c3-4965-babf-d6bee70d4121">
+    <name>ЗначениеПорядка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Значение порядка</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="12aca85c-6c76-482f-8095-021f48d044e1">
+    <name>БанковскийСчетКасса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Банковский счет касса</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.БанковскиеСчетаОрганизаций</types>
+      <types>CatalogRef.Кассы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5f8f33f0-6a1b-4727-bab8-42953c08c531">
+    <name>УдалитьОрганизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+  <dimensions uuid="f9cb2e3c-d9d4-4427-8a92-269be1787955">
+    <name>УдалитьВалюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Валюта</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+  <dimensions uuid="28c44f05-9a33-4a7e-b191-7df12e5cdfef">
+    <name>УдалитьЗначениеГруппировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Значение группировки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатьиДвиженияДенежныхСредств</types>
+      <types>CatalogRef.Партнеры</types>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </dimensions>
+</mdclass:InformationRegister>

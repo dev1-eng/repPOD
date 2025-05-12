@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6e6056d7-8a80-41e6-9c9f-d37514cd1988">
+  <producedTypes>
+    <selectionType typeId="7219675f-0362-4d3d-bb54-02c5dad73b7d" valueTypeId="0ab93a56-6aaf-4edd-960e-6086feefdd4b"/>
+    <listType typeId="369d4971-e55f-42d2-94f1-68e82733e64f" valueTypeId="f37ea439-5b91-4c70-9ff3-e5831cd8b2f8"/>
+    <managerType typeId="b36046a3-f589-4ff6-a4f8-f5b7458dd3f3" valueTypeId="e54feb67-f94c-4a02-b3fe-bc84e4aa3867"/>
+    <recordSetType typeId="e4b212d7-8839-40f5-a094-9b7f7d7e8688" valueTypeId="9aed8f3e-fe3b-4d0b-92a4-2082a0a619f5"/>
+    <recordKeyType typeId="3eed17d4-e55e-4675-9937-fa04fae8ab4e" valueTypeId="9e2c36cf-97d4-434e-beeb-134fd5c03281"/>
+    <recordType typeId="17ae055a-bc0e-49c5-8080-5fbcf9342cc1" valueTypeId="eef93eff-dae4-4704-b36c-e8d4e4a54d74"/>
+    <recordManagerType typeId="6a008108-d80a-4628-8331-de19be29f166" valueTypeId="4c251980-cdfa-41e7-a608-63548173d9b9"/>
+  </producedTypes>
+  <name>ШМ_НедостачиМатериалов</name>
+  <synonym>
+    <key>ru</key>
+    <value>ШМ_НедостачиМатериалов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <resources uuid="a6d46d08-18ab-4fa9-afa1-0e63eff9f4f7">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="2bf8c00e-54e2-4cc4-9e24-69d5fbb1ed57">
+    <name>Должность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должность</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ШМ_Должности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4c531d9c-ab69-4986-b3e4-8b9b9a12b975">
+    <name>Недостача</name>
+    <synonym>
+      <key>ru</key>
+      <value>Недостача</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="031c8bba-79f6-4707-9efc-bea63a1f8684">
+    <name>ДископравныйТип</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дископравный тип</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ШМ_Дископравка</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

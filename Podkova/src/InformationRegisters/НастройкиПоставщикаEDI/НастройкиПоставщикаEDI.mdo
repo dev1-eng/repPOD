@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f10c544a-60d7-412c-afee-3a052a63196d">
+  <producedTypes>
+    <selectionType typeId="2d3ef3cf-472e-4331-9a16-0eda914dcc4e" valueTypeId="2d145daa-19f0-456f-b4b7-1cc071e38f4c"/>
+    <listType typeId="68d4bd12-4ca6-4e30-aa5e-bfba4b8d1ea1" valueTypeId="dd635dec-f2c2-4bb7-881e-6ddfb28263b1"/>
+    <managerType typeId="9ac1b364-76be-4aab-9c88-990f6dd66d5f" valueTypeId="66247202-077d-42a6-acd1-5f68e45716b0"/>
+    <recordSetType typeId="5fb0f696-154f-41c4-a9ff-0f71d67f5d3d" valueTypeId="76642562-8150-4c05-9afa-1e8d1e4bd4e8"/>
+    <recordKeyType typeId="a9304ec2-0bb2-4a78-bfd6-238e207f09ec" valueTypeId="29685033-4070-4f2f-9649-e9223f9bfb67"/>
+    <recordType typeId="49ec5c50-5053-4364-8d6b-48e814d9b635" valueTypeId="001cfc5a-fdc5-4d32-8b12-bdc5a012b16b"/>
+    <recordManagerType typeId="5f56fffa-219b-4f41-a1fa-c7cf2b045ce6" valueTypeId="d3032080-0b42-4ca1-bebe-2da05cb05bff"/>
+  </producedTypes>
+  <name>НастройкиПоставщикаEDI</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройки поставщика EDI</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.НастройкиПоставщикаEDI.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <explanation>
+    <key>ru</key>
+    <value>Хранит настройки обмена продавцов, продавцом может быть как сама организация в этом случае тут хранятся ее настройки обмена с покупателями, так и контрагент, в этом случае тут будет указаны настройки обмена с организацией как с покупателем</value>
+  </explanation>
+  <resources uuid="817cc245-c832-47cf-9f97-f7e3a6f9a554">
+    <name>РежимРаботыСЗаказамиКлиентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Режим работы с заказами клиентов</value>
+    </synonym>
+    <type>
+      <types>EnumRef.РежимыРаботыСЗаказамиКлиентаEDI</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="43618180-1c2c-41bf-8acc-9eebf3eac194">
+    <name>ИдентификаторОбновленияВСервисе</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор обновления в сервисе</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>36</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="212acfd5-c933-4130-a767-1e7b11a85ce3">
+    <name>Поставщик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поставщик</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОрганизацияКонтрагентEDI</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="75e16de7-4057-4586-ae25-d92195d24198">
+    <name>Покупатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Покупатель</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОрганизацияКонтрагентEDI</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="4e885474-e922-4feb-b374-285efadc158f">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

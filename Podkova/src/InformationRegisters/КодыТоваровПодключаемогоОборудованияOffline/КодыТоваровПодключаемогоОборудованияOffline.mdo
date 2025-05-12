@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8397d76b-3f4e-4f77-afa6-07176bfc32ed">
+  <producedTypes>
+    <selectionType typeId="e2ed4fad-2ac8-4929-8d73-519b2af6f0fb" valueTypeId="25c82c2e-2fc1-4853-b5bc-8e26e7a8ed50"/>
+    <listType typeId="83f72748-c8f0-4b55-bfa3-b4fde2870ba0" valueTypeId="f34c5ef4-6205-4cfc-9baf-c4a1c4d069ef"/>
+    <managerType typeId="16c74876-7611-4620-ab00-f0faa3f68437" valueTypeId="a8122d90-b6af-40d0-8b0b-8977c9f6b727"/>
+    <recordSetType typeId="94505b82-a5b0-476a-b504-7fa7cbd628dc" valueTypeId="d761f107-8faa-43af-bff4-f8bade037811"/>
+    <recordKeyType typeId="2f151349-d546-4340-92dc-04719ecd2d21" valueTypeId="563a2e09-2610-44ba-9b7a-16ea366f39ec"/>
+    <recordType typeId="7732823f-a7e5-48c5-9434-a6cac38390aa" valueTypeId="2292d041-b2b6-4f6f-b50b-4d2c494cf957"/>
+    <recordManagerType typeId="23a649d6-936b-45bc-9e6c-cb607209e376" valueTypeId="660e8d98-6965-4010-940d-8ecf8f8a3356"/>
+  </producedTypes>
+  <name>КодыТоваровПодключаемогоОборудованияOffline</name>
+  <synonym>
+    <key>ru</key>
+    <value>Коды товаров подключаемого оборудования offline</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultRecordForm>InformationRegister.КодыТоваровПодключаемогоОборудованияOffline.Form.ФормаЗаписи</defaultRecordForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:DateValue">
+      <value>0001-01-01T00:00:00</value>
+    </fillValue>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <resources uuid="976f99c4-7b89-43ee-9e6a-a2273d9cbd13">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номенклатура для которой задается код товара.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ТипНоменклатуры</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыНоменклатуры.EnumValue.Товар</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыНоменклатуры.EnumValue.МногооборотнаяТара</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Номенклатура.EmptyRef</value>
+    </fillValue>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="7713b323-3519-480f-a749-8ffc8fe67400">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Если у выбранной номенклатуры используются характеристики, то в данном поле указывается  характеристика номенклатуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <changeMode>DontChange</changeMode>
+      <field>InformationRegister.КодыТоваровПодключаемогоОборудованияOffline.Resource.Номенклатура</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.ХарактеристикиНоменклатуры.EmptyRef</value>
+    </fillValue>
+  </resources>
+  <resources uuid="e83dc929-2f83-4a86-ab4e-8898c435df94">
+    <name>Упаковка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Упаковка</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Если у выбранной номенклатуры используются упаковки, то в данном поле указывается упаковка номенклатуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <changeMode>DontChange</changeMode>
+      <field>InformationRegister.КодыТоваровПодключаемогоОборудованияOffline.Resource.Номенклатура</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.УпаковкиЕдиницыИзмерения.EmptyRef</value>
+    </fillValue>
+  </resources>
+  <resources uuid="a1a90378-c341-4944-b8e4-8f3d5a2aa9ae">
+    <name>Используется</name>
+    <synonym>
+      <key>ru</key>
+      <value>Используется</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак, указывающий что данная запись соответствует отбору, заданному в правиле обмена.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="3695e4db-5ff4-4182-beb7-926fdd2b3622">
+    <name>ПравилоОбмена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Правило обмена</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПравилаОбменаСПодключаемымОборудованиемOffline</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Правило обмена с подключаемым оборудованием Offline.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="1cba7dcd-3ecf-4c36-b420-8e42a8985d7c">
+    <name>Код</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Код товара по правилу обмена с подключаемым оборудованием.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="831f5d17-0474-4a79-9165-253783047312">
+    <name>СписокТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список товаров</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="db013621-875f-4458-9294-e3eca6635c8a">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

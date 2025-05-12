@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c8f7b056-fc53-42ea-984e-86dc20c8554e">
+  <name>ОчиститьОчередьЗаказовККорректировкеСтрокМерныхТоваровПередУдалениемДокумента</name>
+  <synonym>
+    <key>ru</key>
+    <value>Очистить очередь заказов к корректировке строк мерных товаров перед удалением документа</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.ЗаказПоставщику</types>
+    <types>DocumentObject.ЗаказНаПеремещение</types>
+    <types>DocumentObject.ЗаказНаСборку</types>
+    <types>DocumentObject.ЗаказКлиента</types>
+    <types>DocumentObject.ЗаявкаНаВозвратТоваровОтКлиента</types>
+    <types>DocumentObject.ЗаказНаВнутреннееПотребление</types>
+  </source>
+  <event>BeforeDelete</event>
+  <handler>CommonModule.ЗаказыСервер.ОчиститьОчередьЗаказовККорректировкеСтрокМерныхТоваровПередУдалениемДокументаПередУдалением</handler>
+</mdclass:EventSubscription>

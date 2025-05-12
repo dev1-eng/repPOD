@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e869face-d4f4-4fed-8f3b-165e09d0961d">
+  <name>НазначитьНовуюВерсиюЭДПриЗаписиВладельца</name>
+  <synonym>
+    <key>ru</key>
+    <value>Назначить новую версию электронного документа при записи владельца.</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.ЗаказПоставщику</types>
+    <types>DocumentObject.СчетФактураВыданныйАванс</types>
+    <types>DocumentObject.ПередачаТоваровМеждуОрганизациями</types>
+    <types>DocumentObject.ВнутреннееПотреблениеТоваров</types>
+    <types>DocumentObject.ВозвратТоваровОтКлиента</types>
+    <types>DocumentObject.ВозвратТоваровПоставщику</types>
+    <types>DocumentObject.ПересортицаТоваров</types>
+    <types>DocumentObject.АктВыполненныхРабот</types>
+    <types>DocumentObject.СчетНаОплатуКлиенту</types>
+    <types>DocumentObject.КорректировкаРеализации</types>
+    <types>DocumentObject.СписаниеНедостачТоваров</types>
+    <types>DocumentObject.ДоверенностьВыданная</types>
+    <types>DocumentObject.РасходныйКассовыйОрдер</types>
+    <types>DocumentObject.ИнвентаризационнаяОпись</types>
+    <types>DocumentObject.ИнвентаризацияНаличныхДенежныхСредств</types>
+    <types>DocumentObject.ЛистКассовойКниги</types>
+    <types>CatalogObject.УдалитьСоглашенияОбИспользованииЭД</types>
+    <types>DocumentObject.ПриходныйКассовыйОрдер</types>
+    <types>DocumentObject.ПеремещениеТоваров</types>
+    <types>DocumentObject.ОтчетКомитенту</types>
+    <types>DocumentObject.ОприходованиеИзлишковТоваров</types>
+    <types>DocumentObject.СчетФактураКомиссионеру</types>
+    <types>DocumentObject.РеализацияТоваровУслуг</types>
+    <types>DocumentObject.ЗаказКлиента</types>
+    <types>DocumentObject.КоммерческоеПредложениеКлиенту</types>
+    <types>DocumentObject.ВозвратТоваровМеждуОрганизациями</types>
+    <types>DocumentObject.СчетФактураВыданный</types>
+    <types>DocumentObject.АктОРасхожденияхПослеПриемки</types>
+    <types>DocumentObject.ОтчетКомитентуОСписании</types>
+    <types>DocumentObject.АвансовыйОтчет</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.ОбменСКонтрагентамиСлужебный.ОбменСКонтрагентамиВладелецПриЗаписи</handler>
+</mdclass:EventSubscription>

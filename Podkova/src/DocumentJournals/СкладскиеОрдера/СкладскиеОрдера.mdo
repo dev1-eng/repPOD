@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DocumentJournal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4740ae5d-b3d7-4432-9f4f-90cbcdf4b446">
+  <producedTypes>
+    <selectionType typeId="f3f3b6d3-bc24-4bb9-a60f-61f157c4d755" valueTypeId="a0922a67-b779-4032-b45d-624f0d274dbc"/>
+    <listType typeId="de3d1496-fa43-4fe2-93e2-8d93aae2a30e" valueTypeId="60db7ea3-c0ff-4bc9-9a33-fce5b0a0bb4f"/>
+    <managerType typeId="9935c103-c1d3-4eef-b852-351b2ddcb4fb" valueTypeId="db5f1f3d-9a00-4053-99d6-c0fad3f6028e"/>
+  </producedTypes>
+  <name>СкладскиеОрдера</name>
+  <synonym>
+    <key>ru</key>
+    <value>Складские ордера</value>
+  </synonym>
+  <defaultForm>DocumentJournal.СкладскиеОрдера.Form.ФормаСписка</defaultForm>
+  <useStandardCommands>true</useStandardCommands>
+  <registeredDocuments>Document.ПриходныйОрдерНаТовары</registeredDocuments>
+  <registeredDocuments>Document.РасходныйОрдерНаТовары</registeredDocuments>
+  <registeredDocuments>Document.ОрдерНаПеремещениеТоваров</registeredDocuments>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Type</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <columns uuid="76cc8e0c-2feb-4aa4-9c19-74bbdf2c7de2">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <indexing>Index</indexing>
+    <references>Document.ПриходныйОрдерНаТовары.Attribute.Склад</references>
+    <references>Document.РасходныйОрдерНаТовары.Attribute.Склад</references>
+    <references>Document.ОрдерНаПеремещениеТоваров.Attribute.Склад</references>
+  </columns>
+  <columns uuid="e7c05ced-f401-4195-85da-6ee93fdc30d3">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <references>Document.ПриходныйОрдерНаТовары.Attribute.Статус</references>
+    <references>Document.РасходныйОрдерНаТовары.Attribute.Статус</references>
+    <references>Document.ОрдерНаПеремещениеТоваров.Attribute.Статус</references>
+  </columns>
+  <columns uuid="202ef6d8-0ce5-43c9-a806-ba4c3079aefa">
+    <name>ПомещениеОтправитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Помещение-отправитель</value>
+    </synonym>
+    <references>Document.РасходныйОрдерНаТовары.Attribute.Помещение</references>
+    <references>Document.ОрдерНаПеремещениеТоваров.Attribute.ПомещениеОтправитель</references>
+  </columns>
+  <columns uuid="cd995586-b4d3-49d1-b4b9-ab768a3a119c">
+    <name>ПомещениеПолучатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Помещение-получатель</value>
+    </synonym>
+    <references>Document.ОрдерНаПеремещениеТоваров.Attribute.ПомещениеПолучатель</references>
+    <references>Document.ПриходныйОрдерНаТовары.Attribute.Помещение</references>
+  </columns>
+  <columns uuid="48666997-3382-48d7-8aef-c282ae715f41">
+    <name>Приоритет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Приоритет</value>
+    </synonym>
+    <references>Document.ОрдерНаПеремещениеТоваров.Attribute.Приоритет</references>
+    <references>Document.РасходныйОрдерНаТовары.Attribute.Приоритет</references>
+  </columns>
+  <columns uuid="708fb4aa-df52-43b6-a2fa-0edf4aba5419">
+    <name>ДатаОтгрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата отгрузки</value>
+    </synonym>
+    <references>Document.ОрдерНаПеремещениеТоваров.Attribute.ДатаОтгрузки</references>
+    <references>Document.РасходныйОрдерНаТовары.Attribute.ДатаОтгрузки</references>
+  </columns>
+  <columns uuid="3db2faef-481d-4e47-85d8-ffc54f2fb36d">
+    <name>ЗаданиеНаПеревозку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Задание на перевозку</value>
+    </synonym>
+    <references>Document.РасходныйОрдерНаТовары.Attribute.ЗаданиеНаПеревозку</references>
+  </columns>
+  <columns uuid="c4930b14-20fe-4a62-a811-0b3642a8a16d">
+    <name>ОтгрузкаПоЗаданиюНаПеревозку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отгрузка по заданию на перевозку</value>
+    </synonym>
+    <references>Document.РасходныйОрдерНаТовары.Attribute.ОтгрузкаПоЗаданиюНаПеревозку</references>
+  </columns>
+  <columns uuid="1855b849-2319-4051-84f7-00151b08dc83">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <references>Document.ОрдерНаПеремещениеТоваров.Attribute.Комментарий</references>
+    <references>Document.ПриходныйОрдерНаТовары.Attribute.Комментарий</references>
+    <references>Document.РасходныйОрдерНаТовары.Attribute.Комментарий</references>
+  </columns>
+  <columns uuid="eab1d3df-8d2b-4c20-81d9-dde5d864571a">
+    <name>ПолучательОтправитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получатель/Отправитель</value>
+    </synonym>
+    <references>Document.ОрдерНаПеремещениеТоваров.Attribute.ПомещениеПолучатель</references>
+    <references>Document.РасходныйОрдерНаТовары.Attribute.Получатель</references>
+    <references>Document.ПриходныйОрдерНаТовары.Attribute.Отправитель</references>
+  </columns>
+  <columns uuid="3ef4949f-07f5-46c8-9ea5-870e991abab2">
+    <name>ПорядокДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок доставки</value>
+    </synonym>
+    <references>Document.РасходныйОрдерНаТовары.Attribute.ПорядокДоставки</references>
+  </columns>
+  <forms uuid="f0052125-bac5-4eab-99fd-7250abfaa8ed">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DocumentJournal>

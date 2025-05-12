@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Исполнитель</dataPath>
+			<field>Исполнитель</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Помощник</dataPath>
+			<field>Помощник</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОстаток</dataPath>
+			<field>СуммаОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма остаток</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Оклад</dataPath>
+			<field>Оклад</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оклад</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Зарплата_без_оклада</dataPath>
+			<field>Зарплата_без_оклада</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зарплата без оклада</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоСмен</dataPath>
+			<field>КоличествоСмен</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество смен</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Должность</dataPath>
+			<field>Должность</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Зарплата_с_окладом</dataPath>
+			<field>Зарплата_с_окладом</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зарплата с окладом</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Получил</dataPath>
+			<field>Получил</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получил</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Приход</dataPath>
+			<field>Приход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Приход</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Расход</dataPath>
+			<field>Расход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расход</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Поле1</dataPath>
+			<field>Поле1</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поле1</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ШМ_Бригады.Должность КАК Должность,
+	ШМ_Бригады.Помощник КАК Помощник,
+	ШМ_ЗПРаботникамОстатки.Исполнитель КАК Исполнитель,
+	ШМ_ЗПРаботникамОстатки.СуммаОстаток КАК СуммаОстаток
+ПОМЕСТИТЬ Ост_дол
+ИЗ
+	Документ.КассоваяСмена КАК КассоваяСмена
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ШМ_Бригады КАК ШМ_Бригады
+			ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ШМ_ЗПРаботникам.Остатки КАК ШМ_ЗПРаботникамОстатки
+			ПО (ШМ_ЗПРаботникамОстатки.Исполнитель = ШМ_Бригады.Сотрудник)
+		ПО (ШМ_Бригады.Период МЕЖДУ КассоваяСмена.НачалоКассовойСмены И КассоваяСмена.ОкончаниеКассовойСмены)
+ГДЕ
+	НЕ ШМ_ЗПРаботникамОстатки.Исполнитель = &amp;Исполнитель
+	И КассоваяСмена.Статус = &amp;Статус
+	И КассоваяСмена.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Ост_дол.Исполнитель КАК Исполнитель,
+	Ост_дол.Должность КАК Должность,
+	ВложенныйЗапрос1.КоличествоСмен КАК КоличествоСмен,
+	ВЫБОР
+		КОГДА Ост_дол.Должность.Наименование = "Шиномонтажник"
+			ТОГДА ШМ_СменныйОкладШиномонтажникаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен
+		КОГДА Ост_дол.Должность.Наименование = "Съемщик"
+			ТОГДА ШМ_СменныйОкладСъемщикаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен
+		КОГДА Ост_дол.Должность.Наименование = "Правщик дисков"
+			ТОГДА ШМ_СменныйОкладДископравщикаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен
+		ИНАЧЕ 0
+	КОНЕЦ КАК Оклад,
+	ЕСТЬNULL(ВложенныйЗапрос.Приход, 0) КАК Зарплата_без_оклада,
+	ВЫБОР
+		КОГДА Ост_дол.Должность.Наименование = "Шиномонтажник"
+			ТОГДА ШМ_СменныйОкладШиномонтажникаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен + ЕСТЬNULL(ВложенныйЗапрос.Приход, 0)
+		КОГДА Ост_дол.Должность.Наименование = "Съемщик"
+			ТОГДА ШМ_СменныйОкладСъемщикаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен + ЕСТЬNULL(ВложенныйЗапрос.Приход, 0)
+		КОГДА Ост_дол.Должность.Наименование = "Правщик дисков"
+			ТОГДА ШМ_СменныйОкладДископравщикаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен + ЕСТЬNULL(ВложенныйЗапрос.Приход, 0)
+		ИНАЧЕ ЕСТЬNULL(ВложенныйЗапрос.Приход, 0)
+	КОНЕЦ КАК Зарплата_с_окладом,
+	ЕСТЬNULL(ВложенныйЗапрос.Расход, 0) КАК Получил,
+	ВЫБОР
+		КОГДА Ост_дол.Должность.Наименование = "Шиномонтажник"
+			ТОГДА ШМ_СменныйОкладШиномонтажникаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен + Ост_дол.СуммаОстаток
+		КОГДА Ост_дол.Должность.Наименование = "Съемщик"
+			ТОГДА ШМ_СменныйОкладСъемщикаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен + Ост_дол.СуммаОстаток
+		КОГДА Ост_дол.Должность.Наименование = "Правщик дисков"
+			ТОГДА ШМ_СменныйОкладДископравщикаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен + Ост_дол.СуммаОстаток
+		ИНАЧЕ Ост_дол.СуммаОстаток
+	КОНЕЦ КАК СуммаОстаток
+ИЗ
+	Ост_дол КАК Ост_дол
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ШМ_СменныйОкладШиномонтажника.СрезПоследних КАК ШМ_СменныйОкладШиномонтажникаСрезПоследних
+		ПО (ИСТИНА)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ШМ_СменныйОкладСъемщика.СрезПоследних КАК ШМ_СменныйОкладСъемщикаСрезПоследних
+		ПО (ИСТИНА)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ШМ_СменныйОкладДископравщика.СрезПоследних КАК ШМ_СменныйОкладДископравщикаСрезПоследних
+		ПО (ИСТИНА)
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ШМ_ЗПРаботникам.Исполнитель КАК Исполнитель,
+			СУММА(ВЫБОР
+					КОГДА ШМ_ЗПРаботникам.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+						ТОГДА ШМ_ЗПРаботникам.Сумма
+				КОНЕЦ) КАК Приход,
+			СУММА(ВЫБОР
+					КОГДА ШМ_ЗПРаботникам.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+						ТОГДА ШМ_ЗПРаботникам.Сумма
+				КОНЕЦ) КАК Расход
+		ИЗ
+			РегистрНакопления.ШМ_ЗПРаботникам КАК ШМ_ЗПРаботникам
+		
+		СГРУППИРОВАТЬ ПО
+			ШМ_ЗПРаботникам.Исполнитель) КАК ВложенныйЗапрос
+		ПО (Ост_дол.Исполнитель = ВложенныйЗапрос.Исполнитель)
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ВложенныйЗапрос.Сотрудник КАК Сотрудник,
+			СУММА(ВЫБОР
+					КОГДА ВложенныйЗапрос.Период = ВложенныйЗапрос1.Поле1
+							И ВложенныйЗапрос.Сотрудник = ВложенныйЗапрос1.Сотрудник
+						ТОГДА 1
+					ИНАЧЕ 0
+				КОНЕЦ) КАК КоличествоСмен
+		ИЗ
+			(ВЫБРАТЬ
+				НАЧАЛОПЕРИОДА(ШМ_Бригады.Период, ДЕНЬ) КАК Период,
+				ШМ_Бригады.Сотрудник КАК Сотрудник
+			ИЗ
+				РегистрСведений.ШМ_Бригады КАК ШМ_Бригады
+					ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ШМ_Смены КАК ШМ_Смены
+					ПО (НАЧАЛОПЕРИОДА(ШМ_Смены.Период, ДЕНЬ) = НАЧАЛОПЕРИОДА(ШМ_Бригады.Период, ДЕНЬ))
+			ГДЕ
+				ШМ_Смены.Период МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+				И ШМ_Смены.СменаЗакрыта = ИСТИНА
+			
+			СГРУППИРОВАТЬ ПО
+				НАЧАЛОПЕРИОДА(ШМ_Бригады.Период, ДЕНЬ),
+				ШМ_Бригады.Сотрудник) КАК ВложенныйЗапрос
+				ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+					НАЧАЛОПЕРИОДА(ШМ_Бригады.Период, ДЕНЬ) КАК Поле1,
+					ШМ_Бригады.Сотрудник КАК Сотрудник
+				ИЗ
+					РегистрСведений.ШМ_Бригады КАК ШМ_Бригады
+				
+				СГРУППИРОВАТЬ ПО
+					НАЧАЛОПЕРИОДА(ШМ_Бригады.Период, ДЕНЬ),
+					ШМ_Бригады.Сотрудник) КАК ВложенныйЗапрос1
+				ПО ВложенныйЗапрос.Период = ВложенныйЗапрос1.Поле1
+		
+		СГРУППИРОВАТЬ ПО
+			ВложенныйЗапрос.Сотрудник) КАК ВложенныйЗапрос1
+		ПО (ВложенныйЗапрос1.Сотрудник = Ост_дол.Исполнитель)
+
+СГРУППИРОВАТЬ ПО
+	Ост_дол.Исполнитель,
+	Ост_дол.Должность,
+	ЕСТЬNULL(ВложенныйЗапрос.Приход, 0),
+	ЕСТЬNULL(ВложенныйЗапрос.Расход, 0),
+	ВложенныйЗапрос1.КоличествоСмен,
+	ВЫБОР
+		КОГДА Ост_дол.Должность.Наименование = "Шиномонтажник"
+			ТОГДА ШМ_СменныйОкладШиномонтажникаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен
+		КОГДА Ост_дол.Должность.Наименование = "Съемщик"
+			ТОГДА ШМ_СменныйОкладСъемщикаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен
+		КОГДА Ост_дол.Должность.Наименование = "Правщик дисков"
+			ТОГДА ШМ_СменныйОкладДископравщикаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен
+		ИНАЧЕ 0
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА Ост_дол.Должность.Наименование = "Шиномонтажник"
+			ТОГДА ШМ_СменныйОкладШиномонтажникаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен + ЕСТЬNULL(ВложенныйЗапрос.Приход, 0)
+		КОГДА Ост_дол.Должность.Наименование = "Съемщик"
+			ТОГДА ШМ_СменныйОкладСъемщикаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен + ЕСТЬNULL(ВложенныйЗапрос.Приход, 0)
+		КОГДА Ост_дол.Должность.Наименование = "Правщик дисков"
+			ТОГДА ШМ_СменныйОкладДископравщикаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен + ЕСТЬNULL(ВложенныйЗапрос.Приход, 0)
+		ИНАЧЕ ЕСТЬNULL(ВложенныйЗапрос.Приход, 0)
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА Ост_дол.Должность.Наименование = "Шиномонтажник"
+			ТОГДА ШМ_СменныйОкладШиномонтажникаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен + Ост_дол.СуммаОстаток
+		КОГДА Ост_дол.Должность.Наименование = "Съемщик"
+			ТОГДА ШМ_СменныйОкладСъемщикаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен + Ост_дол.СуммаОстаток
+		КОГДА Ост_дол.Должность.Наименование = "Правщик дисков"
+			ТОГДА ШМ_СменныйОкладДископравщикаСрезПоследних.Оклад * ВложенныйЗапрос1.КоличествоСмен + Ост_дол.СуммаОстаток
+		ИНАЧЕ Ост_дол.СуммаОстаток
+	КОНЕЦ</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных2</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<role>
+				<dcscom:periodNumber>2</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регистратор</dataPath>
+			<field>Регистратор</field>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ШМ_ЗПРаботникам.Период КАК Период,
+	ШМ_ЗПРаботникам.Регистратор КАК Регистратор,
+	ШМ_ЗПРаботникам.Исполнитель КАК Сотрудник,
+	СУММА(ВЫБОР
+			КОГДА ШМ_ЗПРаботникам.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+				ТОГДА ШМ_ЗПРаботникам.Сумма
+			КОГДА ШМ_ЗПРаботникам.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				ТОГДА -1 * ШМ_ЗПРаботникам.Сумма
+		КОНЕЦ) КАК Сумма
+ИЗ
+	РегистрНакопления.ШМ_ЗПРаботникам КАК ШМ_ЗПРаботникам
+ГДЕ
+	ШМ_ЗПРаботникам.Сумма &lt;&gt; 0
+
+СГРУППИРОВАТЬ ПО
+	ШМ_ЗПРаботникам.Регистратор,
+	ШМ_ЗПРаботникам.Исполнитель,
+	ШМ_ЗПРаботникам.Период
+
+УПОРЯДОЧИТЬ ПО
+	Период</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Зарплата_без_оклада</dataPath>
+		<expression>Сумма(Зарплата_без_оклада)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Зарплата_с_окладом</dataPath>
+		<expression>Сумма(Зарплата_с_окладом)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Оклад</dataPath>
+		<expression>Сумма(Оклад)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Получил</dataPath>
+		<expression>Сумма(Получил)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Сумма</dataPath>
+		<expression>Сумма(Сумма)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаОстаток</dataPath>
+		<expression>Сумма(СуммаОстаток)</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Исполнитель</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Исполнитель</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Пользователи</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.Пользователи.ПустаяСсылка</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Статус</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Статус</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.СтатусыКассовойСмены</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыКассовойСмены.Закрыта</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Исполнитель</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоСмен</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Оклад</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Зарплата_без_оклада</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Зарплата_с_окладом</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Получил</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаОстаток</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

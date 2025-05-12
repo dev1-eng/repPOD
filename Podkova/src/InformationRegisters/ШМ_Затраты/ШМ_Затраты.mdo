@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c4b80036-508c-442f-934f-923cf6d02375">
+  <producedTypes>
+    <selectionType typeId="098c0cdc-3866-43f3-9428-3152e0887d6b" valueTypeId="587af9a4-3e07-4676-90e7-91f7ab944d6a"/>
+    <listType typeId="112bb335-cdec-4283-869d-70d3ba6a4f2c" valueTypeId="a9ae3723-787e-4b17-828f-d92807e9f744"/>
+    <managerType typeId="6f2638a8-0e7d-4615-864d-9694da0a8791" valueTypeId="2657b435-57ab-4525-a237-249e5f411c08"/>
+    <recordSetType typeId="df580d0b-de1a-4fea-8f83-0e898a37ed1a" valueTypeId="1312bfd9-4587-4a5d-9c36-8450eb43acf3"/>
+    <recordKeyType typeId="2101dd84-b772-48e8-aa62-7beea02cade6" valueTypeId="5cad339c-ae19-4ac3-bfa5-d2d21526ef46"/>
+    <recordType typeId="65fc5feb-3f21-434c-b700-28df2547000f" valueTypeId="ceba50d4-fceb-47f2-8509-66c4b5f4b276"/>
+    <recordManagerType typeId="ea7d004d-ecd1-49c6-8bb5-95617c5f021f" valueTypeId="62b23224-4553-403c-904c-b2ea5d8a26a7"/>
+  </producedTypes>
+  <name>ШМ_Затраты</name>
+  <synonym>
+    <key>ru</key>
+    <value>ШМ затраты</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="e1f09045-5dd5-4e25-b61f-08e9e6b249ae">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="5a314196-e5fb-40f3-b5e6-cc884e39ab67">
+    <name>Затрата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Затрата</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ШМ_Затраты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3c90c530-0d4e-4aa2-be54-e2ad723ab31a">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="26061dc6-94ec-4329-8aa1-417e19523075">
+    <name>Профессия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Профессия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ШМ_Должности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Планы</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СегментНоменклатуры</dataPath>
+			<field>СегментНоменклатуры</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Соглашение</dataPath>
+			<field>Соглашение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партнер</dataPath>
+			<field>Партнер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Характеристика</dataPath>
+			<field>Характеристика</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сценарий</dataPath>
+			<field>Сценарий</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПланЗакупок</dataPath>
+			<field>ПланЗакупок</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПоставщикВПлане</dataPath>
+			<field>ПоставщикВПлане</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поставщик в плане</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СкладВПлане</dataPath>
+			<field>СкладВПлане</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склад в плане</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СоглашениеВПлане</dataPath>
+			<field>СоглашениеВПлане</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Соглашение в плане</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Статус</dataPath>
+			<field>Статус</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Назначение</dataPath>
+			<field>Назначение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидПлана</dataPath>
+			<field>ВидПлана</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МоментВремени</dataPath>
+			<field>МоментВремени</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Момент времени</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Документ</dataPath>
+			<field>Документ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерДокумента</dataPath>
+			<field>НомерДокумента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер документа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаДокумента</dataPath>
+			<field>ДатаДокумента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата документа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	НоменклатураСегмента.Номенклатура КАК Номенклатура,
+	НоменклатураСегмента.Характеристика КАК Характеристика,
+	ИСТИНА КАК ИспользуетсяОтборПоСегментуНоменклатуры
+ПОМЕСТИТЬ ОтборПоСегментуНоменклатуры
+ИЗ
+	РегистрСведений.НоменклатураСегмента КАК НоменклатураСегмента
+{ГДЕ
+	НоменклатураСегмента.Сегмент.* КАК СегментНоменклатуры,
+	НоменклатураСегмента.Номенклатура.*,
+	НоменклатураСегмента.Характеристика.*}
+
+ИНДЕКСИРОВАТЬ ПО
+	Номенклатура,
+	Характеристика
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫБОР &amp;Периодичность
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Неделя)
+			ТОГДА КОНЕЦПЕРИОДА(ПланыЗакупокОбороты.ПериодНеделя, НЕДЕЛЯ)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Декада)
+			ТОГДА КОНЕЦПЕРИОДА(ПланыЗакупокОбороты.ПериодДекада, ДЕКАДА)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Месяц)
+			ТОГДА КОНЕЦПЕРИОДА(ПланыЗакупокОбороты.ПериодМесяц, МЕСЯЦ)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Квартал)
+			ТОГДА КОНЕЦПЕРИОДА(ПланыЗакупокОбороты.ПериодКвартал, КВАРТАЛ)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Полугодие)
+			ТОГДА КОНЕЦПЕРИОДА(ПланыЗакупокОбороты.ПериодПолугодие, ПОЛУГОДИЕ)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Год)
+			ТОГДА КОНЕЦПЕРИОДА(ПланыЗакупокОбороты.ПериодГод, ГОД)
+		ИНАЧЕ КОНЕЦПЕРИОДА(ПланыЗакупокОбороты.ПериодДень, ДЕНЬ)
+	КОНЕЦ КАК ОкончаниеПериодаПоступления,
+	ВЫБОР &amp;Периодичность
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Неделя)
+			ТОГДА ПланыЗакупокОбороты.ПериодНеделя
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Декада)
+			ТОГДА ПланыЗакупокОбороты.ПериодДекада
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Месяц)
+			ТОГДА ПланыЗакупокОбороты.ПериодМесяц
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Квартал)
+			ТОГДА ПланыЗакупокОбороты.ПериодКвартал
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Полугодие)
+			ТОГДА ПланыЗакупокОбороты.ПериодПолугодие
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Год)
+			ТОГДА ПланыЗакупокОбороты.ПериодГод
+		ИНАЧЕ ПланыЗакупокОбороты.ПериодДень
+	КОНЕЦ КАК ДатаПоступления,
+	ПланыЗакупокОбороты.Подразделение КАК Подразделение,
+	ВЫБОР
+		КОГДА ПланыЗакупокОбороты.Партнер = ЗНАЧЕНИЕ(Справочник.Партнеры.ПустаяСсылка)
+			ТОГДА ЕСТЬNULL(ВЫРАЗИТЬ(Способы.ИсточникОбеспеченияПотребностей КАК Справочник.Партнеры), ЗНАЧЕНИЕ(Справочник.Партнеры.ПустаяСсылка))
+		ИНАЧЕ ПланыЗакупокОбороты.Партнер
+	КОНЕЦ КАК Партнер,
+	ВЫБОР
+		КОГДА ПланыЗакупокОбороты.Соглашение = ЗНАЧЕНИЕ(Справочник.СоглашенияСПоставщиками.ПустаяСсылка)
+			ТОГДА ЕСТЬNULL(Способы.Соглашение, ЗНАЧЕНИЕ(Справочник.СоглашенияСПоставщиками.ПустаяСсылка))
+		ИНАЧЕ ПланыЗакупокОбороты.Соглашение
+	КОНЕЦ КАК Соглашение,
+	ПланыЗакупокОбороты.Партнер КАК ПартнерПлан,
+	ПланыЗакупокОбороты.Соглашение КАК СоглашениеПлан,
+	ПланыЗакупокОбороты.Номенклатура КАК Номенклатура,
+	ПланыЗакупокОбороты.Характеристика КАК Характеристика,
+	ПланыЗакупокОбороты.Назначение КАК Назначение,
+	ПланыЗакупокОбороты.Склад КАК Склад,
+	СУММА(ПланыЗакупокОбороты.КоличествоОборот) КАК КоличествоВПланах,
+	ВЫБОР
+		КОГДА ПланыЗакупокОбороты.КоличествоОборот = 0
+			ТОГДА 0
+		ИНАЧЕ ВЫРАЗИТЬ(ПланыЗакупокОбороты.СуммаОборот / ПланыЗакупокОбороты.КоличествоОборот КАК ЧИСЛО(15, 2))
+	КОНЕЦ КАК ЦенаПлан,
+	ЕСТЬNULL(Способы.СрокИсполненияЗаказа, 0) КАК ДнейДоЗаказа,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(Склады.Календарь, ЗНАЧЕНИЕ(Справочник.Календари.ПустаяСсылка)) = ЗНАЧЕНИЕ(Справочник.Календари.ПустаяСсылка)
+			ТОГДА ОсновнойКалендарьПредприятия.Значение
+		ИНАЧЕ ЕСТЬNULL(Склады.Календарь, ЗНАЧЕНИЕ(Справочник.Календари.ПустаяСсылка))
+	КОНЕЦ КАК Календарь,
+	ПланыЗакупокОбороты.ПланЗакупок КАК ПланЗакупок
+ПОМЕСТИТЬ ТаблицаПланов
+ИЗ
+	РегистрНакопления.ПланыЗакупок.Обороты(
+			&amp;НачалоПериода,
+			&amp;ОкончаниеПериода,
+			Авто,
+			Сценарий = &amp;Сценарий
+				И Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыПланов.Утвержден)
+				И Номенклатура = &amp;Номенклатура
+				И Характеристика = &amp;Характеристика
+				И Подразделение = &amp;Подразделение
+				И Назначение = &amp;Назначение
+				И Партнер = &amp;Партнер
+				И Склад = &amp;Склад
+				И Соглашение = &amp;Соглашение {(Номенклатура).* КАК Номенклатура, (Партнер).* КАК ПоставщикВПлане, (Соглашение).* КАК СоглашениеВПлане, (Склад).* КАК СкладВПлане, ((Номенклатура, Характеристика) В
+			    (ВЫБРАТЬ
+			        ОтборПоСегментуНоменклатуры.Номенклатура,
+			        ОтборПоСегментуНоменклатуры.Характеристика
+			    ИЗ
+			        ОтборПоСегментуНоменклатуры
+			    ГДЕ
+			        ОтборПоСегментуНоменклатуры.ИспользуетсяОтборПоСегментуНоменклатуры = &amp;ИспользуетсяОтборПоСегментуНоменклатуры))}) КАК ПланыЗакупокОбороты
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.СпособыОбеспеченияПотребностей КАК Способы
+		ПО &amp;ПодстановкаОсновногоСпособаОбеспечения
+			И (Способы.ТипОбеспечения = ЗНАЧЕНИЕ(Перечисление.ТипыОбеспечения.Покупка))
+			И (ВЫБОР
+				КОГДА ПланыЗакупокОбороты.Партнер = ЗНАЧЕНИЕ(Справочник.Партнеры.ПустаяСсылка)
+					ТОГДА ИСТИНА
+				КОГДА ПланыЗакупокОбороты.Соглашение = ЗНАЧЕНИЕ(Справочник.СоглашенияСПоставщиками.ПустаяСсылка)
+					ТОГДА ПланыЗакупокОбороты.Партнер = Способы.ИсточникОбеспеченияПотребностей
+				ИНАЧЕ ПланыЗакупокОбороты.Партнер = Способы.ИсточникОбеспеченияПотребностей
+						И ПланыЗакупокОбороты.Соглашение = Способы.Соглашение
+			КОНЕЦ)
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Склады КАК Склады
+		ПО ПланыЗакупокОбороты.Склад = Склады.Ссылка,
+	Константа.ОсновнойКалендарьПредприятия КАК ОсновнойКалендарьПредприятия
+
+СГРУППИРОВАТЬ ПО
+	ВЫБОР
+		КОГДА ПланыЗакупокОбороты.КоличествоОборот = 0
+			ТОГДА 0
+		ИНАЧЕ ВЫРАЗИТЬ(ПланыЗакупокОбороты.СуммаОборот / ПланыЗакупокОбороты.КоличествоОборот КАК ЧИСЛО(15, 2))
+	КОНЕЦ,
+	ВЫБОР &amp;Периодичность
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Неделя)
+			ТОГДА КОНЕЦПЕРИОДА(ПланыЗакупокОбороты.ПериодНеделя, НЕДЕЛЯ)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Декада)
+			ТОГДА КОНЕЦПЕРИОДА(ПланыЗакупокОбороты.ПериодДекада, ДЕКАДА)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Месяц)
+			ТОГДА КОНЕЦПЕРИОДА(ПланыЗакупокОбороты.ПериодМесяц, МЕСЯЦ)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Квартал)
+			ТОГДА КОНЕЦПЕРИОДА(ПланыЗакупокОбороты.ПериодКвартал, КВАРТАЛ)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Полугодие)
+			ТОГДА КОНЕЦПЕРИОДА(ПланыЗакупокОбороты.ПериодПолугодие, ПОЛУГОДИЕ)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Год)
+			ТОГДА КОНЕЦПЕРИОДА(ПланыЗакупокОбороты.ПериодГод, ГОД)
+		ИНАЧЕ КОНЕЦПЕРИОДА(ПланыЗакупокОбороты.ПериодДень, ДЕНЬ)
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА ПланыЗакупокОбороты.Партнер = ЗНАЧЕНИЕ(Справочник.Партнеры.ПустаяСсылка)
+			ТОГДА ЕСТЬNULL(ВЫРАЗИТЬ(Способы.ИсточникОбеспеченияПотребностей КАК Справочник.Партнеры), ЗНАЧЕНИЕ(Справочник.Партнеры.ПустаяСсылка))
+		ИНАЧЕ ПланыЗакупокОбороты.Партнер
+	КОНЕЦ,
+	ПланыЗакупокОбороты.Соглашение,
+	ВЫБОР &amp;Периодичность
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Неделя)
+			ТОГДА ПланыЗакупокОбороты.ПериодНеделя
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Декада)
+			ТОГДА ПланыЗакупокОбороты.ПериодДекада
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Месяц)
+			ТОГДА ПланыЗакупокОбороты.ПериодМесяц
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Квартал)
+			ТОГДА ПланыЗакупокОбороты.ПериодКвартал
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Полугодие)
+			ТОГДА ПланыЗакупокОбороты.ПериодПолугодие
+		КОГДА ЗНАЧЕНИЕ(Перечисление.Периодичность.Год)
+			ТОГДА ПланыЗакупокОбороты.ПериодГод
+		ИНАЧЕ ПланыЗакупокОбороты.ПериодДень
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА ПланыЗакупокОбороты.Соглашение = ЗНАЧЕНИЕ(Справочник.СоглашенияСПоставщиками.ПустаяСсылка)
+			ТОГДА ЕСТЬNULL(Способы.Соглашение, ЗНАЧЕНИЕ(Справочник.СоглашенияСПоставщиками.ПустаяСсылка))
+		ИНАЧЕ ПланыЗакупокОбороты.Соглашение
+	КОНЕЦ,
+	ПланыЗакупокОбороты.Подразделение,
+	ПланыЗакупокОбороты.Номенклатура,
+	ПланыЗакупокОбороты.Характеристика,
+	ПланыЗакупокОбороты.Назначение,
+	ПланыЗакупокОбороты.Склад,
+	ПланыЗакупокОбороты.Партнер,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(Склады.Календарь, ЗНАЧЕНИЕ(Справочник.Календари.ПустаяСсылка)) = ЗНАЧЕНИЕ(Справочник.Календари.ПустаяСсылка)
+			ТОГДА ОсновнойКалендарьПредприятия.Значение
+		ИНАЧЕ ЕСТЬNULL(Склады.Календарь, ЗНАЧЕНИЕ(Справочник.Календари.ПустаяСсылка))
+	КОНЕЦ,
+	ЕСТЬNULL(Способы.СрокИсполненияЗаказа, 0),
+	ПланыЗакупокОбороты.ПланЗакупок
+
+ИНДЕКСИРОВАТЬ ПО
+	ДатаПоступления,
+	Номенклатура,
+	Характеристика,
+	Назначение,
+	Склад,
+	ПартнерПлан,
+	СоглашениеПлан,
+	Подразделение
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТаблицаПланов.ОкончаниеПериодаПоступления КАК ОкончаниеПериодаПоступления,
+	ТаблицаПланов.ДатаПоступления КАК ДатаПоступления,
+	ТаблицаПланов.Подразделение КАК Подразделение,
+	ТаблицаПланов.Партнер КАК Партнер,
+	ТаблицаПланов.Соглашение КАК Соглашение,
+	ТаблицаПланов.Номенклатура КАК Номенклатура,
+	ТаблицаПланов.Характеристика КАК Характеристика,
+	ТаблицаПланов.Назначение КАК Назначение,
+	ТаблицаПланов.Склад КАК Склад,
+	МАКСИМУМ(ТаблицаПланов.КоличествоВПланах) КАК КоличествоВПланах,
+	ТаблицаПланов.ЦенаПлан КАК ЦенаПлан,
+	МАКСИМУМ(ТаблицаПланов.ДнейДоЗаказа) КАК ДнейДоЗаказа,
+	ТаблицаПланов.Календарь КАК Календарь,
+	ЕСТЬNULL(СУММА(ЗаказПоставщикуТовары.Количество), 0) КАК КоличествоВЗаказах,
+	ТаблицаПланов.ПланЗакупок КАК ПланЗакупок
+ПОМЕСТИТЬ ТаблицаПланыЗаказы
+ИЗ
+	ТаблицаПланов КАК ТаблицаПланов
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ЗаказПоставщику.Товары КАК ЗаказПоставщикуТовары
+		ПО (ЗаказПоставщикуТовары.ДатаПоступления МЕЖДУ ТаблицаПланов.ДатаПоступления И ТаблицаПланов.ОкончаниеПериодаПоступления)
+			И ТаблицаПланов.Номенклатура = ЗаказПоставщикуТовары.Номенклатура
+			И (ЗаказПоставщикуТовары.Ссылка.Проведен)
+			И (НЕ ЗаказПоставщикуТовары.Отменено)
+			И ТаблицаПланов.Характеристика = ЗаказПоставщикуТовары.Характеристика
+			И (ВЫБОР
+				КОГДА ТаблицаПланов.Склад = ЗНАЧЕНИЕ(Справочник.Склады.ПустаяСсылка)
+					ТОГДА ИСТИНА
+				ИНАЧЕ ТаблицаПланов.Склад = ЗаказПоставщикуТовары.Склад
+			КОНЕЦ)
+			И (ВЫБОР
+				КОГДА НЕ &amp;ПланированиеПоНазначениям
+					ТОГДА ИСТИНА
+				ИНАЧЕ ТаблицаПланов.Назначение = ЗаказПоставщикуТовары.Назначение
+			КОНЕЦ)
+			И (ВЫБОР
+				КОГДА ТаблицаПланов.Подразделение = ЗНАЧЕНИЕ(Справочник.СтруктураПредприятия.ПустаяСсылка)
+					ТОГДА ИСТИНА
+				ИНАЧЕ ТаблицаПланов.Подразделение = ЗаказПоставщикуТовары.Ссылка.Подразделение
+			КОНЕЦ)
+			И (ВЫБОР
+				КОГДА ТаблицаПланов.ПартнерПлан = ЗНАЧЕНИЕ(Справочник.Партнеры.ПустаяСсылка)
+					ТОГДА ИСТИНА
+				ИНАЧЕ ТаблицаПланов.ПартнерПлан = ЗаказПоставщикуТовары.Ссылка.Партнер
+			КОНЕЦ)
+			И (ВЫБОР
+				КОГДА ТаблицаПланов.СоглашениеПлан = ЗНАЧЕНИЕ(Справочник.СоглашенияСПоставщиками.ПустаяСсылка)
+					ТОГДА ИСТИНА
+				ИНАЧЕ ТаблицаПланов.Соглашение = ЗаказПоставщикуТовары.Ссылка.Соглашение
+			КОНЕЦ)
+
+СГРУППИРОВАТЬ ПО
+	ТаблицаПланов.Партнер,
+	ТаблицаПланов.Номенклатура,
+	ТаблицаПланов.Склад,
+	ТаблицаПланов.ДатаПоступления,
+	ТаблицаПланов.Календарь,
+	ТаблицаПланов.Соглашение,
+	ТаблицаПланов.ОкончаниеПериодаПоступления,
+	ТаблицаПланов.Характеристика,
+	ТаблицаПланов.Назначение,
+	ТаблицаПланов.Подразделение,
+	ТаблицаПланов.ЦенаПлан,
+	ТаблицаПланов.ПланЗакупок
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ ТаблицаПланов
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ТаблицаПланов.Партнер КАК Партнер,
+	МАКСИМУМ(СоглашенияСПоставщиками.Ссылка) КАК Соглашение
+ПОМЕСТИТЬ СоглашенияПоУмолчанию
+ИЗ
+	ТаблицаПланыЗаказы КАК ТаблицаПланов
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.СоглашенияСПоставщиками КАК СоглашенияСПоставщиками
+		ПО ТаблицаПланов.Партнер = СоглашенияСПоставщиками.Партнер
+			И (НЕ СоглашенияСПоставщиками.ПометкаУдаления)
+			И (СоглашенияСПоставщиками.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыСоглашенийСПоставщиками.Действует))
+ГДЕ
+	ТаблицаПланов.Соглашение = ЗНАЧЕНИЕ(Справочник.СоглашенияСПоставщиками.ПустаяСсылка)
+	И ТаблицаПланов.Партнер &lt;&gt; ЗНАЧЕНИЕ(Справочник.Партнеры.ПустаяСсылка)
+
+СГРУППИРОВАТЬ ПО
+	ТаблицаПланов.Партнер
+
+ИМЕЮЩИЕ
+	СУММА(1) = 1
+
+ИНДЕКСИРОВАТЬ ПО
+	Партнер
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТаблицаПланов.Календарь КАК Календарь,
+	КалендарныеГрафики.Год КАК Год,
+	МАКСИМУМ(КалендарныеГрафики.КоличествоДнейВГрафикеСНачалаГода) КАК КоличествоДнейВГрафикеСНачалаГода
+ПОМЕСТИТЬ ГрафикиКоличествоДнейВПрошломГоду
+ИЗ
+	ТаблицаПланыЗаказы КАК ТаблицаПланов
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КалендарныеГрафики КАК КалендарныеГрафики
+		ПО ТаблицаПланов.Календарь = КалендарныеГрафики.Календарь
+			И (ГОД(ТаблицаПланов.ДатаПоступления) - 1 = КалендарныеГрафики.Год)
+ГДЕ
+	КалендарныеГрафики.Год &gt; 0
+
+СГРУППИРОВАТЬ ПО
+	ТаблицаПланов.Календарь,
+	КалендарныеГрафики.Год
+
+ИНДЕКСИРОВАТЬ ПО
+	Календарь,
+	Год,
+	КоличествоДнейВГрафикеСНачалаГода
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(ТаблицаПланов.КоличествоВПланах) КАК Количество,
+	ТаблицаПланов.ПланЗакупок КАК Документ,
+	ТаблицаПланов.ПланЗакупок.МоментВремени КАК МоментВремени,
+	ТаблицаПланов.ПланЗакупок.Дата КАК ДатаДокумента,
+	ТаблицаПланов.ПланЗакупок.Номер КАК НомерДокумента,
+	ТаблицаПланов.ПланЗакупок.Партнер КАК Партнер,
+	ТаблицаПланов.ПланЗакупок.Соглашение КАК Соглашение
+ИЗ
+	ТаблицаПланыЗаказы КАК ТаблицаПланов
+		ЛЕВОЕ СОЕДИНЕНИЕ СоглашенияПоУмолчанию КАК СоглашенияПоУмолчанию
+		ПО ТаблицаПланов.Партнер = СоглашенияПоУмолчанию.Партнер
+			И (ТаблицаПланов.Соглашение = ЗНАЧЕНИЕ(Справочник.СоглашенияСПоставщиками.ПустаяСсылка))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КалендарныеГрафики КАК ГрафикДатаПоступления
+		ПО ТаблицаПланов.Календарь = ГрафикДатаПоступления.Календарь
+			И (ГОД(ТаблицаПланов.ДатаПоступления) = ГрафикДатаПоступления.Год)
+			И ТаблицаПланов.ДатаПоступления = ГрафикДатаПоступления.ДатаГрафика
+		ЛЕВОЕ СОЕДИНЕНИЕ ГрафикиКоличествоДнейВПрошломГоду КАК ГрафикиПрошлыйГод
+		ПО ТаблицаПланов.Календарь = ГрафикиПрошлыйГод.Календарь
+			И (ГОД(ТаблицаПланов.ДатаПоступления) - 1 = ГрафикиПрошлыйГод.Год)
+			И (ВЫБОР
+				КОГДА НЕ ГрафикДатаПоступления.ДатаГрафика ЕСТЬ NULL
+						И (ЕСТЬNULL(ГрафикДатаПоступления.КоличествоДнейВГрафикеСНачалаГода, 0) &lt; ТаблицаПланов.ДнейДоЗаказа
+							ИЛИ ЕСТЬNULL(ГрафикДатаПоступления.КоличествоДнейВГрафикеСНачалаГода, 0) = 0)
+					ТОГДА ИСТИНА
+				ИНАЧЕ ЛОЖЬ
+			КОНЕЦ)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КалендарныеГрафики КАК ГрафикДатаЗаказа
+		ПО ТаблицаПланов.Календарь = ГрафикДатаЗаказа.Календарь
+			И (ГрафикДатаЗаказа.ДеньВключенВГрафик)
+			И (ВЫБОР
+				КОГДА НЕ ГрафикДатаПоступления.ДатаГрафика ЕСТЬ NULL
+						И (ЕСТЬNULL(ГрафикДатаПоступления.КоличествоДнейВГрафикеСНачалаГода, 0) &lt; ТаблицаПланов.ДнейДоЗаказа
+							ИЛИ ЕСТЬNULL(ГрафикДатаПоступления.КоличествоДнейВГрафикеСНачалаГода, 0) = 0)
+					ТОГДА ГОД(ТаблицаПланов.ДатаПоступления) - 1 = ГрафикДатаЗаказа.Год
+				ИНАЧЕ ГОД(ТаблицаПланов.ДатаПоступления) = ГрафикДатаЗаказа.Год
+			КОНЕЦ)
+			И (ВЫБОР
+				КОГДА НЕ ГрафикДатаПоступления.ДатаГрафика ЕСТЬ NULL
+						И (ЕСТЬNULL(ГрафикДатаПоступления.КоличествоДнейВГрафикеСНачалаГода, 0) &lt; ТаблицаПланов.ДнейДоЗаказа
+							ИЛИ ЕСТЬNULL(ГрафикДатаПоступления.КоличествоДнейВГрафикеСНачалаГода, 0) = 0)
+					ТОГДА ВЫБОР
+							КОГДА ЕСТЬNULL(ГрафикиПрошлыйГод.КоличествоДнейВГрафикеСНачалаГода, 0) - (ТаблицаПланов.ДнейДоЗаказа - ЕСТЬNULL(ГрафикДатаПоступления.КоличествоДнейВГрафикеСНачалаГода, 0)) &lt;= 0
+								ТОГДА ГрафикДатаЗаказа.КоличествоДнейВГрафикеСНачалаГода = 1
+							ИНАЧЕ ЕСТЬNULL(ГрафикиПрошлыйГод.КоличествоДнейВГрафикеСНачалаГода, 0) - (ТаблицаПланов.ДнейДоЗаказа - ЕСТЬNULL(ГрафикДатаПоступления.КоличествоДнейВГрафикеСНачалаГода, 0)) = ГрафикДатаЗаказа.КоличествоДнейВГрафикеСНачалаГода
+						КОНЕЦ
+				ИНАЧЕ ЕСТЬNULL(ГрафикДатаПоступления.КоличествоДнейВГрафикеСНачалаГода, 0) - ТаблицаПланов.ДнейДоЗаказа = ГрафикДатаЗаказа.КоличествоДнейВГрафикеСНачалаГода
+			КОНЕЦ)
+ГДЕ
+	ВЫБОР
+			КОГДА &amp;ДатаНачалаЗаказа = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА ИСТИНА
+			ИНАЧЕ ВЫБОР
+					КОГДА ГрафикДатаПоступления.ДатаГрафика ЕСТЬ NULL
+						ТОГДА ДОБАВИТЬКДАТЕ(ТаблицаПланов.ДатаПоступления, ДЕНЬ, -ТаблицаПланов.ДнейДоЗаказа)
+					ИНАЧЕ ГрафикДатаЗаказа.ДатаГрафика
+				КОНЕЦ &gt;= &amp;ДатаНачалаЗаказа
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;ДатаОкончанияЗаказа = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА ИСТИНА
+			ИНАЧЕ ВЫБОР
+					КОГДА ГрафикДатаПоступления.ДатаГрафика ЕСТЬ NULL
+						ТОГДА ДОБАВИТЬКДАТЕ(ТаблицаПланов.ДатаПоступления, ДЕНЬ, -ТаблицаПланов.ДнейДоЗаказа)
+					ИНАЧЕ ГрафикДатаЗаказа.ДатаГрафика
+				КОНЕЦ &lt;= &amp;ДатаОкончанияЗаказа
+		КОНЕЦ
+
+СГРУППИРОВАТЬ ПО
+	ТаблицаПланов.ПланЗакупок,
+	ТаблицаПланов.ПланЗакупок.МоментВремени,
+	ТаблицаПланов.ПланЗакупок.Дата,
+	ТаблицаПланов.ПланЗакупок.Номер,
+	ТаблицаПланов.ПланЗакупок.Партнер,
+	ТаблицаПланов.ПланЗакупок.Соглашение</query>
+	</dataSet>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ОкончаниеПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Окончание периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Сценарий</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сценарий</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СценарииТоварногоПланирования</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.СценарииТоварногоПланирования.ПустаяСсылка</value>
+		<useRestriction>false</useRestriction>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>ПараметрыВыбора</dcscor:parameter>
+				<dcscor:value xsi:type="dcscor:ChoiceParameters">
+					<dcscor:item>
+						<dcscor:choiceParameter>Отбор.ИспользоватьДляЗаказовПоставщику</dcscor:choiceParameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ДатаНачалаЗаказа</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала заказа</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончанияЗаказа</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания заказа</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Периодичность</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Периодичность</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.Периодичность</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Назначение</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Назначение</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Назначения</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПланированиеПоНазначениям</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Планирование по назначениям</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Номенклатура</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номенклатура</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Номенклатура</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Подразделение</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Подразделение</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СтруктураПредприятия</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Характеристика</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Характеристика</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Партнер</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Партнер</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Партнеры</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Склад</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Склад</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Склады</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Соглашение</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Соглашение</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СоглашенияСПоставщиками</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПодстановкаОсновногоСпособаОбеспечения</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Подстановка основного способа обеспечения</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ИспользуетсяОтборПоСегментуНоменклатуры</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Используется отбор по сегменту номенклатуры</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаДокумента</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Документ</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>МоментВремени</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерДокумента</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Партнер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Соглашение</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Номенклатура</dcsset:left>
+					<dcsset:comparisonType>InHierarchy</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Номенклатура.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>b8263109-47fc-4ade-90d1-31facd9e7f14</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">СегментНоменклатуры</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.СегментыНоменклатуры.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>8786fd2b-143e-4cbe-87fc-cd1f8134ab97</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:userSettingID>8d3cf343-e5d2-4767-846c-333115db71cb</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Сценарий</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.СценарииТоварногоПланирования.ПустаяСсылка</dcscor:value>
+					<dcsset:userSettingID>1412e058-fc70-4a42-aa43-a5a3ce3de097</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДатаДокумента</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Документ</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Количество</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>МоментВремени</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>НомерДокумента</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Партнер</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Соглашение</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

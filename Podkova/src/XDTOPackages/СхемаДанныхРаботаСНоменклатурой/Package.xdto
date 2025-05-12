@@ -1,0 +1,958 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://catalog-api.1c.ru/XMLSchema" elementFormQualified="true" attributeFormQualified="false">
+	<valueType name="IDType" base="xs:string" variety="Atomic" maxLength="12"/>
+	<objectType name="Advert">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d3p1:IDType" lowerBound="1" form="Attribute"/>
+		<property name="name" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="site" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="bannerImageLink" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="logoIconLink" type="xs:string" lowerBound="0" form="Attribute"/>
+	</objectType>
+	<objectType name="AdvertRequest">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="ids" type="d3p1:IDType" upperBound="-1"/>
+	</objectType>
+	<objectType name="AdvertResponse">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="adverts" type="d3p1:Advert" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Attribute">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d3p1:IDType" lowerBound="1" form="Attribute"/>
+		<property name="name" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="type" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+				<enumeration>string</enumeration>
+				<enumeration>number</enumeration>
+				<enumeration>boolean</enumeration>
+				<enumeration>date</enumeration>
+				<enumeration>enumeration</enumeration>
+				<enumeration>classifier</enumeration>
+			</typeDef>
+		</property>
+		<property name="modified" type="xs:dateTime" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="categoryIds" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property name="unit" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="okei" lowerBound="0" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+				</property>
+				<property name="name" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+				</property>
+				<property name="fullName" lowerBound="0" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+				</property>
+				<property name="interName" lowerBound="0" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="3"/>
+				</property>
+				<property name="type" lowerBound="0" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+						<enumeration>Вес</enumeration>
+						<enumeration>Объем</enumeration>
+						<enumeration>Площадь</enumeration>
+						<enumeration>Длина</enumeration>
+						<enumeration>Количество штук</enumeration>
+						<enumeration>Упаковка</enumeration>
+						<enumeration>Мощность</enumeration>
+						<enumeration>Энергия</enumeration>
+						<enumeration>Электрический заряд</enumeration>
+						<enumeration/>
+					</typeDef>
+				</property>
+				<property name="baseOKEI" lowerBound="0" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+				</property>
+				<property name="baseUnitCount" type="xs:float" lowerBound="0" form="Attribute"/>
+				<property name="unitCount" type="xs:float" lowerBound="0" form="Attribute"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="AttributeRequest" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="ids" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="categoryIds" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="nomenclatureId" type="d3p1:IDType" lowerBound="0"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="featureId" type="d3p1:IDType" lowerBound="0"/>
+	</objectType>
+	<objectType name="AttributeResponse">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="attributes" type="d3p1:Attribute" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="AttributeValue">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d3p1:IDType" lowerBound="1" form="Attribute"/>
+		<property name="value" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="modified" type="xs:dateTime" lowerBound="0" form="Attribute"/>
+	</objectType>
+	<objectType name="AttributeValueRequest" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="ids" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property name="search" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="categoryId" type="d5p1:IDType" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="attributeId" type="d5p1:IDType" lowerBound="1" form="Attribute"/>
+				<property name="value" type="xs:string" lowerBound="1" form="Attribute"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="AttributeValueResponse" ordered="false" sequenced="true">
+		<property name="attributeValues" lowerBound="0" upperBound="-1">
+			<typeDef xmlns:d4p1="http://catalog-api.1c.ru/XMLSchema" xsi:type="ObjectType" base="d4p1:AttributeValue">
+				<property name="reference" lowerBound="0" upperBound="-1">
+					<typeDef xsi:type="ObjectType">
+						<property name="categoryId" type="d4p1:IDType" lowerBound="1" form="Attribute"/>
+						<property name="categoryName" type="xs:string" lowerBound="1" form="Attribute"/>
+						<property name="attributeId" type="d4p1:IDType" lowerBound="1" form="Attribute"/>
+						<property name="attributeName" type="xs:string" lowerBound="1" form="Attribute"/>
+					</typeDef>
+				</property>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="AttributeValuesByCategoriesRequest" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="categoryIds" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property name="search" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="categoryId" type="d5p1:IDType" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="attributeId" type="d5p1:IDType" lowerBound="1" form="Attribute"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="AttributeValuesByCategoriesResponse" ordered="false" sequenced="true">
+		<property name="attributeValuesByCategories" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="categoryId" type="d5p1:IDType" lowerBound="1" form="Attribute"/>
+				<property name="categoryName" type="xs:string" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="attributeId" type="d5p1:IDType" lowerBound="1" form="Attribute"/>
+				<property name="attributeName" type="xs:string" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="values" type="d5p1:AttributeValue" lowerBound="0" upperBound="-1"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="BalanceResponse">
+		<property name="balance" type="xs:int" lowerBound="1" form="Attribute"/>
+	</objectType>
+	<objectType name="Brand">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d3p1:IDType" lowerBound="1" form="Attribute"/>
+		<property name="name" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="site" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="manufacturerId" type="d3p1:IDType" lowerBound="0" form="Attribute"/>
+		<property name="manufacturerName" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="modified" type="xs:dateTime" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="images" type="d3p1:Image" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="BrandRequest" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="ids" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="manufacturerIds" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="categoryIds" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="BrandResponse">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="brands" type="d3p1:Brand" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Category">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d3p1:IDType" lowerBound="1" form="Attribute"/>
+		<property name="name" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="parentId" type="d3p1:IDType" lowerBound="0" form="Attribute"/>
+		<property name="parentName" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="childrenCount" type="xs:int" lowerBound="0" form="Attribute"/>
+		<property name="rank" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:int" variety="Atomic" minInclusive="0" maxInclusive="100" totalDigits="3" fractionDigits="0"/>
+		</property>
+		<property name="vat" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+				<enumeration>-</enumeration>
+				<enumeration>10</enumeration>
+				<enumeration>18</enumeration>
+				<enumeration>20</enumeration>
+			</typeDef>
+		</property>
+		<property name="type" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+				<enumeration>Service</enumeration>
+				<enumeration>Product</enumeration>
+			</typeDef>
+		</property>
+		<property name="alcoholContaining" type="xs:boolean" lowerBound="0" form="Attribute"/>
+		<property name="requiredGISM" type="xs:boolean" lowerBound="0" form="Attribute"/>
+		<property name="description" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="referenceId" type="d3p1:IDType" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="advertId" type="d3p1:IDType" lowerBound="0" form="Attribute"/>
+		<property name="modified" type="xs:dateTime" lowerBound="0" form="Attribute"/>
+		<property name="attributes" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="attributeId" type="d5p1:IDType" lowerBound="1" form="Attribute"/>
+				<property name="name" type="xs:string" lowerBound="0" form="Attribute"/>
+				<property name="required" type="xs:boolean" lowerBound="0" form="Attribute"/>
+				<property name="min" lowerBound="0" form="Attribute">
+					<typeDef xsi:type="ValueType" variety="Union" memberTypes="{http://www.w3.org/2001/XMLSchema}dateTime {http://www.w3.org/2001/XMLSchema}float"/>
+				</property>
+				<property name="max" lowerBound="0" form="Attribute">
+					<typeDef xsi:type="ValueType" variety="Union" memberTypes="{http://www.w3.org/2001/XMLSchema}dateTime {http://www.w3.org/2001/XMLSchema}float"/>
+				</property>
+				<property name="rank" lowerBound="0" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:int" variety="Atomic" minInclusive="0" maxInclusive="100" totalDigits="3" fractionDigits="0"/>
+				</property>
+				<property name="modified" type="xs:dateTime" lowerBound="0" form="Attribute"/>
+				<property name="type" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+						<enumeration>string</enumeration>
+						<enumeration>number</enumeration>
+						<enumeration>boolean</enumeration>
+						<enumeration>date</enumeration>
+						<enumeration>enumeration</enumeration>
+						<enumeration>classifier</enumeration>
+					</typeDef>
+				</property>
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="valueIds" type="d5p1:IDType" lowerBound="0" upperBound="-1"/>
+			</typeDef>
+		</property>
+		<property name="features" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="name" type="xs:string" lowerBound="1" form="Attribute"/>
+				<property name="attributes" upperBound="-1">
+					<typeDef xsi:type="ObjectType">
+						<property xmlns:d7p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d7p1:IDType" lowerBound="1" form="Attribute"/>
+						<property name="name" type="xs:string" lowerBound="0" form="Attribute"/>
+						<property name="type" lowerBound="1" form="Attribute">
+							<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+								<enumeration>string</enumeration>
+								<enumeration>number</enumeration>
+								<enumeration>boolean</enumeration>
+								<enumeration>date</enumeration>
+								<enumeration>enumeration</enumeration>
+								<enumeration>classifier</enumeration>
+							</typeDef>
+						</property>
+					</typeDef>
+				</property>
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="featureIds" type="d5p1:IDType" upperBound="-1"/>
+			</typeDef>
+		</property>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="images" type="d3p1:Image" lowerBound="0" upperBound="-1"/>
+		<property name="classifiers" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType">
+				<property name="name" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="3" maxLength="6">
+						<enumeration>OKPD2</enumeration>
+						<enumeration>TNVED</enumeration>
+						<enumeration>EGAIS</enumeration>
+						<enumeration>OKVED2</enumeration>
+					</typeDef>
+				</property>
+				<property name="code" type="xs:string" lowerBound="1" form="Attribute"/>
+				<property name="description" type="xs:string" lowerBound="0" form="Attribute"/>
+			</typeDef>
+		</property>
+		<property name="metrics" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="weight" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property name="min" type="xs:float" lowerBound="0" form="Attribute"/>
+						<property name="max" type="xs:float" lowerBound="0" form="Attribute"/>
+						<property name="unit" lowerBound="0">
+							<typeDef xsi:type="ObjectType">
+								<property name="okei" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+								</property>
+								<property name="name" lowerBound="1" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+								</property>
+								<property name="fullName" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+								</property>
+								<property name="interName" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="3"/>
+								</property>
+								<property name="type" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+										<enumeration>Вес</enumeration>
+										<enumeration>Объем</enumeration>
+										<enumeration>Площадь</enumeration>
+										<enumeration>Длина</enumeration>
+										<enumeration>Количество штук</enumeration>
+										<enumeration>Упаковка</enumeration>
+										<enumeration>Мощность</enumeration>
+										<enumeration>Энергия</enumeration>
+										<enumeration>Электрический заряд</enumeration>
+										<enumeration/>
+									</typeDef>
+								</property>
+								<property name="baseOKEI" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+								</property>
+								<property name="baseUnitCount" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="unitCount" type="xs:float" lowerBound="0" form="Attribute"/>
+							</typeDef>
+						</property>
+					</typeDef>
+				</property>
+				<property name="volume" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property name="min" type="xs:float" lowerBound="0" form="Attribute"/>
+						<property name="max" type="xs:float" lowerBound="0" form="Attribute"/>
+						<property name="unit" lowerBound="0">
+							<typeDef xsi:type="ObjectType">
+								<property name="okei" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+								</property>
+								<property name="name" lowerBound="1" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+								</property>
+								<property name="fullName" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+								</property>
+								<property name="interName" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="3"/>
+								</property>
+								<property name="type" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+										<enumeration>Вес</enumeration>
+										<enumeration>Объем</enumeration>
+										<enumeration>Площадь</enumeration>
+										<enumeration>Длина</enumeration>
+										<enumeration>Количество штук</enumeration>
+										<enumeration>Упаковка</enumeration>
+										<enumeration>Мощность</enumeration>
+										<enumeration>Энергия</enumeration>
+										<enumeration>Электрический заряд</enumeration>
+										<enumeration/>
+									</typeDef>
+								</property>
+								<property name="baseOKEI" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+								</property>
+								<property name="baseUnitCount" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="unitCount" type="xs:float" lowerBound="0" form="Attribute"/>
+							</typeDef>
+						</property>
+					</typeDef>
+				</property>
+				<property name="area" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property name="min" type="xs:float" lowerBound="0" form="Attribute"/>
+						<property name="max" type="xs:float" lowerBound="0" form="Attribute"/>
+						<property name="unit" lowerBound="0">
+							<typeDef xsi:type="ObjectType">
+								<property name="okei" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+								</property>
+								<property name="name" lowerBound="1" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+								</property>
+								<property name="fullName" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+								</property>
+								<property name="interName" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="3"/>
+								</property>
+								<property name="type" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+										<enumeration>Вес</enumeration>
+										<enumeration>Объем</enumeration>
+										<enumeration>Площадь</enumeration>
+										<enumeration>Длина</enumeration>
+										<enumeration>Количество штук</enumeration>
+										<enumeration>Упаковка</enumeration>
+										<enumeration>Мощность</enumeration>
+										<enumeration>Энергия</enumeration>
+										<enumeration>Электрический заряд</enumeration>
+										<enumeration/>
+									</typeDef>
+								</property>
+								<property name="baseOKEI" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+								</property>
+								<property name="baseUnitCount" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="unitCount" type="xs:float" lowerBound="0" form="Attribute"/>
+							</typeDef>
+						</property>
+					</typeDef>
+				</property>
+				<property name="length" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property name="min" type="xs:float" lowerBound="0" form="Attribute"/>
+						<property name="max" type="xs:float" lowerBound="0" form="Attribute"/>
+						<property name="unit" lowerBound="0">
+							<typeDef xsi:type="ObjectType">
+								<property name="okei" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+								</property>
+								<property name="name" lowerBound="1" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+								</property>
+								<property name="fullName" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+								</property>
+								<property name="interName" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="3"/>
+								</property>
+								<property name="type" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+										<enumeration>Вес</enumeration>
+										<enumeration>Объем</enumeration>
+										<enumeration>Площадь</enumeration>
+										<enumeration>Длина</enumeration>
+										<enumeration>Количество штук</enumeration>
+										<enumeration>Упаковка</enumeration>
+										<enumeration>Мощность</enumeration>
+										<enumeration>Энергия</enumeration>
+										<enumeration>Электрический заряд</enumeration>
+										<enumeration/>
+									</typeDef>
+								</property>
+								<property name="baseOKEI" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+								</property>
+								<property name="baseUnitCount" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="unitCount" type="xs:float" lowerBound="0" form="Attribute"/>
+							</typeDef>
+						</property>
+					</typeDef>
+				</property>
+				<property name="itemCount" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property name="min" type="xs:float" lowerBound="0" form="Attribute"/>
+						<property name="max" type="xs:float" lowerBound="0" form="Attribute"/>
+						<property name="unit" lowerBound="0">
+							<typeDef xsi:type="ObjectType">
+								<property name="okei" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+								</property>
+								<property name="name" lowerBound="1" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+								</property>
+								<property name="fullName" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+								</property>
+								<property name="interName" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="3"/>
+								</property>
+								<property name="type" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+										<enumeration>Вес</enumeration>
+										<enumeration>Объем</enumeration>
+										<enumeration>Площадь</enumeration>
+										<enumeration>Длина</enumeration>
+										<enumeration>Количество штук</enumeration>
+										<enumeration>Упаковка</enumeration>
+										<enumeration>Мощность</enumeration>
+										<enumeration>Энергия</enumeration>
+										<enumeration>Электрический заряд</enumeration>
+										<enumeration/>
+									</typeDef>
+								</property>
+								<property name="baseOKEI" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+								</property>
+								<property name="baseUnitCount" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="unitCount" type="xs:float" lowerBound="0" form="Attribute"/>
+							</typeDef>
+						</property>
+					</typeDef>
+				</property>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="CategoryPathToRootRequest">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="ids" type="d3p1:IDType" upperBound="-1"/>
+	</objectType>
+	<objectType name="CategoryPathToRootResponse">
+		<property name="pathToRoot" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="categories" type="d5p1:Category" lowerBound="0" upperBound="-1"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="CategoryRequest" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="ids" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property name="all" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="root" type="xs:boolean" lowerBound="1" form="Attribute"/>
+			</typeDef>
+		</property>
+		<property name="parents" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="onlyLeaves" type="xs:boolean" lowerBound="1" form="Attribute"/>
+				<property name="onlyDirect" type="xs:boolean" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="ids" type="d5p1:IDType" upperBound="-1"/>
+			</typeDef>
+		</property>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="manufacturerIds" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="featureIds" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="nomenclatureIds" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property name="search" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="text" type="xs:string" lowerBound="0" form="Attribute"/>
+				<property name="onlyLeaves" type="xs:boolean" lowerBound="0" form="Attribute"/>
+				<property name="attributes" lowerBound="0" upperBound="-1">
+					<typeDef xsi:type="ObjectType" ordered="false" sequenced="true">
+						<property xmlns:d7p1="http://catalog-api.1c.ru/XMLSchema" name="attributeId" type="d7p1:IDType" lowerBound="0"/>
+						<property name="value" lowerBound="0">
+							<typeDef xsi:type="ValueType" variety="Union" memberTypes="{http://www.w3.org/2001/XMLSchema}boolean {http://www.w3.org/2001/XMLSchema}string {http://www.w3.org/2001/XMLSchema}dateTime {http://www.w3.org/2001/XMLSchema}float"/>
+						</property>
+						<property xmlns:d7p1="http://catalog-api.1c.ru/XMLSchema" name="valueId" type="d7p1:IDType" lowerBound="0"/>
+						<property name="range" lowerBound="0">
+							<typeDef xsi:type="ObjectType">
+								<property name="min" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" variety="Union" memberTypes="{http://www.w3.org/2001/XMLSchema}dateTime {http://www.w3.org/2001/XMLSchema}float"/>
+								</property>
+								<property name="max" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" variety="Union" memberTypes="{http://www.w3.org/2001/XMLSchema}dateTime {http://www.w3.org/2001/XMLSchema}float"/>
+								</property>
+							</typeDef>
+						</property>
+						<property name="classifier" lowerBound="0">
+							<typeDef xsi:type="ObjectType">
+								<property name="code" type="xs:string" lowerBound="1" form="Attribute"/>
+								<property name="name" lowerBound="1" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+										<enumeration>OKCM</enumeration>
+										<enumeration>OKV</enumeration>
+									</typeDef>
+								</property>
+							</typeDef>
+						</property>
+						<property name="attributeName" type="xs:string" lowerBound="0"/>
+						<property name="searchValue" lowerBound="0">
+							<typeDef xsi:type="ValueType" variety="Union" memberTypes="{http://www.w3.org/2001/XMLSchema}boolean {http://www.w3.org/2001/XMLSchema}string {http://www.w3.org/2001/XMLSchema}dateTime {http://www.w3.org/2001/XMLSchema}float"/>
+						</property>
+					</typeDef>
+				</property>
+			</typeDef>
+		</property>
+		<property name="update" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d5p1:IDType" lowerBound="1" form="Attribute"/>
+				<property name="modified" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="CategoryResponse">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="categories" type="d3p1:Category" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Feature">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d3p1:IDType" lowerBound="1" form="Attribute"/>
+		<property name="value" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="modified" type="xs:dateTime" lowerBound="0" form="Attribute"/>
+		<property name="attributes" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType" ordered="false" sequenced="true">
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="attributeId" type="d5p1:IDType" lowerBound="1" form="Attribute"/>
+				<property name="name" type="xs:string" lowerBound="0" form="Attribute"/>
+				<property name="value" lowerBound="0">
+					<typeDef xsi:type="ValueType" variety="Union" memberTypes="{http://www.w3.org/2001/XMLSchema}boolean {http://www.w3.org/2001/XMLSchema}string {http://www.w3.org/2001/XMLSchema}dateTime {http://www.w3.org/2001/XMLSchema}float"/>
+				</property>
+				<property name="valueId" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property xmlns:d7p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d7p1:IDType" lowerBound="1" form="Attribute"/>
+						<property name="value" type="xs:string" lowerBound="0" form="Attribute"/>
+					</typeDef>
+				</property>
+				<property name="classifier" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property name="code" type="xs:string" lowerBound="1" form="Attribute"/>
+						<property name="name" lowerBound="1" form="Attribute">
+							<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+								<enumeration>OKCM</enumeration>
+								<enumeration>OKV</enumeration>
+							</typeDef>
+						</property>
+						<property name="description" type="xs:string" lowerBound="0" form="Attribute"/>
+					</typeDef>
+				</property>
+			</typeDef>
+		</property>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="categoryIds" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="FeatureRequest" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="ids" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="categoryIds" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="nomenclatureId" type="d3p1:IDType" lowerBound="0"/>
+	</objectType>
+	<objectType name="FeatureResponse">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="features" type="d3p1:Feature" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Image">
+		<property name="link" type="xs:string"/>
+	</objectType>
+	<objectType name="Manufacturer">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d3p1:IDType" lowerBound="1" form="Attribute"/>
+		<property name="name" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="gln" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="13"/>
+		</property>
+		<property name="inn" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="12"/>
+		</property>
+		<property name="kpp" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="9"/>
+		</property>
+		<property name="site" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="address" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="fax" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="modified" type="xs:dateTime" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="images" type="d3p1:Image" lowerBound="0" upperBound="-1"/>
+		<property name="phones" type="xs:string" lowerBound="0" upperBound="-1"/>
+		<property name="emails" type="xs:string" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ManufacturerRequest" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="ids" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property name="search" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="name" type="xs:string" lowerBound="0" form="Attribute"/>
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="categoryIds" type="d5p1:IDType" lowerBound="0" upperBound="-1"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="ManufacturerResponse">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="manufacturers" type="d3p1:Manufacturer" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Nomenclature">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d3p1:IDType" lowerBound="1" form="Attribute"/>
+		<property name="name" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="512"/>
+		</property>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="categoryId" type="d3p1:IDType" lowerBound="0" form="Attribute"/>
+		<property name="categoryName" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="vat" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+				<enumeration>-</enumeration>
+				<enumeration>10</enumeration>
+				<enumeration>18</enumeration>
+				<enumeration>20</enumeration>
+			</typeDef>
+		</property>
+		<property name="type" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+				<enumeration>Service</enumeration>
+				<enumeration>Product</enumeration>
+			</typeDef>
+		</property>
+		<property name="requiredGTD" type="xs:boolean" lowerBound="0" form="Attribute"/>
+		<property name="alcoholContaining" type="xs:boolean" lowerBound="0" form="Attribute"/>
+		<property name="requiredGISM" type="xs:boolean" lowerBound="0" form="Attribute"/>
+		<property name="excisable" type="xs:boolean" lowerBound="0" form="Attribute"/>
+		<property name="nameShort" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="128"/>
+		</property>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="brandId" type="d3p1:IDType" lowerBound="0" form="Attribute"/>
+		<property name="brandName" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="manufacturerId" type="d3p1:IDType" lowerBound="0" form="Attribute"/>
+		<property name="manufacturerName" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="manufacturerCode" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+		</property>
+		<property name="description" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="advertId" type="d3p1:IDType" lowerBound="0" form="Attribute"/>
+		<property name="modified" type="xs:dateTime" lowerBound="0" form="Attribute"/>
+		<property name="featureCount" type="xs:int" lowerBound="0" form="Attribute"/>
+		<property name="propertiesHavingValue" type="xs:string" lowerBound="0" upperBound="-1"/>
+		<property name="featuresAttributes" type="xs:string" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="unit" type="d3p1:Unit"/>
+		<property name="barcodes" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="200"/>
+		</property>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="images" type="d3p1:Image" lowerBound="0" upperBound="-1"/>
+		<property name="classifiers" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType">
+				<property name="name" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="3" maxLength="6">
+						<enumeration>OKPD2</enumeration>
+						<enumeration>TNVED</enumeration>
+						<enumeration>EGAIS</enumeration>
+						<enumeration>OKVED2</enumeration>
+					</typeDef>
+				</property>
+				<property name="code" type="xs:string" lowerBound="1" form="Attribute"/>
+				<property name="description" type="xs:string" lowerBound="0" form="Attribute"/>
+			</typeDef>
+		</property>
+		<property name="attributes" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType" ordered="false" sequenced="true">
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="attributeId" type="d5p1:IDType" lowerBound="0" form="Attribute"/>
+				<property name="name" type="xs:string" lowerBound="0" form="Attribute"/>
+				<property name="value" lowerBound="0">
+					<typeDef xsi:type="ValueType" variety="Union" memberTypes="{http://www.w3.org/2001/XMLSchema}boolean {http://www.w3.org/2001/XMLSchema}string {http://www.w3.org/2001/XMLSchema}dateTime {http://www.w3.org/2001/XMLSchema}float"/>
+				</property>
+				<property name="valueId" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property xmlns:d7p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d7p1:IDType" lowerBound="0" form="Attribute"/>
+						<property name="value" type="xs:string" lowerBound="0" form="Attribute"/>
+					</typeDef>
+				</property>
+				<property name="classifier" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property name="code" type="xs:string" lowerBound="1" form="Attribute"/>
+						<property name="name" lowerBound="1" form="Attribute">
+							<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+								<enumeration>OKCM</enumeration>
+								<enumeration>OKV</enumeration>
+							</typeDef>
+						</property>
+						<property name="description" type="xs:string" lowerBound="0" form="Attribute"/>
+					</typeDef>
+				</property>
+			</typeDef>
+		</property>
+		<property name="features" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="featureId" type="d5p1:IDType" lowerBound="0" form="Attribute"/>
+				<property name="name" type="xs:string" lowerBound="0" form="Attribute"/>
+				<property name="barcodes" lowerBound="0" upperBound="-1">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="200"/>
+				</property>
+			</typeDef>
+		</property>
+		<property name="weight" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="unitCount" type="xs:float" lowerBound="1" form="Attribute"/>
+				<property name="baseUnitCount" type="xs:float" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="unit" type="d5p1:Unit"/>
+			</typeDef>
+		</property>
+		<property name="volume" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="unitCount" type="xs:float" lowerBound="1" form="Attribute"/>
+				<property name="baseUnitCount" type="xs:float" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="unit" type="d5p1:Unit"/>
+			</typeDef>
+		</property>
+		<property name="area" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="unitCount" type="xs:float" lowerBound="1" form="Attribute"/>
+				<property name="baseUnitCount" type="xs:float" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="unit" type="d5p1:Unit"/>
+			</typeDef>
+		</property>
+		<property name="length" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="unitCount" type="xs:float" lowerBound="1" form="Attribute"/>
+				<property name="baseUnitCount" type="xs:float" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="unit" type="d5p1:Unit"/>
+			</typeDef>
+		</property>
+		<property name="itemCount" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="unitCount" type="xs:float" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="unit" type="d5p1:Unit"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="NomenclatureByBarcodes">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d3p1:IDType" lowerBound="1" form="Attribute"/>
+		<property name="name" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="512"/>
+		</property>
+		<property name="unitName" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+		</property>
+		<property name="barcodes" upperBound="-1">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="200"/>
+		</property>
+		<property name="features" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="featureId" type="d5p1:IDType" lowerBound="0" form="Attribute"/>
+				<property name="name" type="xs:string" lowerBound="0" form="Attribute"/>
+				<property name="barcodes" lowerBound="0" upperBound="-1">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="200"/>
+				</property>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="NomenclatureByBarcodesRequest">
+		<property name="barcodes" type="xs:string" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="NomenclatureByBarcodesResponse">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="nomenclatures" type="d3p1:NomenclatureByBarcodes" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="NomenclaturePurchaseRequest">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="ids" type="d3p1:IDType" upperBound="-1"/>
+	</objectType>
+	<objectType name="NomenclatureRequest" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="ids" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property name="barcodes" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="200"/>
+		</property>
+		<property name="search" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="text" type="xs:string" lowerBound="0" form="Attribute"/>
+				<property name="attributes" lowerBound="0" upperBound="-1">
+					<typeDef xsi:type="ObjectType" ordered="false" sequenced="true">
+						<property xmlns:d7p1="http://catalog-api.1c.ru/XMLSchema" name="attributeId" type="d7p1:IDType" lowerBound="1" form="Attribute"/>
+						<property name="value" lowerBound="0">
+							<typeDef xsi:type="ValueType" variety="Union" memberTypes="{http://www.w3.org/2001/XMLSchema}boolean {http://www.w3.org/2001/XMLSchema}string {http://www.w3.org/2001/XMLSchema}dateTime {http://www.w3.org/2001/XMLSchema}float"/>
+						</property>
+						<property xmlns:d7p1="http://catalog-api.1c.ru/XMLSchema" name="valueIds" type="d7p1:IDType" lowerBound="0" upperBound="-1"/>
+						<property name="range" lowerBound="0">
+							<typeDef xsi:type="ObjectType">
+								<property name="min" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" variety="Union" memberTypes="{http://www.w3.org/2001/XMLSchema}dateTime {http://www.w3.org/2001/XMLSchema}float"/>
+								</property>
+								<property name="max" lowerBound="0" form="Attribute">
+									<typeDef xsi:type="ValueType" variety="Union" memberTypes="{http://www.w3.org/2001/XMLSchema}dateTime {http://www.w3.org/2001/XMLSchema}float"/>
+								</property>
+							</typeDef>
+						</property>
+						<property name="classifier" lowerBound="0">
+							<typeDef xsi:type="ObjectType">
+								<property name="code" type="xs:string" lowerBound="1" form="Attribute"/>
+								<property name="name" lowerBound="1" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+										<enumeration>OKCM</enumeration>
+										<enumeration>OKV</enumeration>
+									</typeDef>
+								</property>
+							</typeDef>
+						</property>
+					</typeDef>
+				</property>
+				<property name="metrics" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property name="weight" lowerBound="0">
+							<typeDef xsi:type="ObjectType">
+								<property name="min" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="max" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="unit" lowerBound="0">
+									<typeDef xsi:type="ObjectType">
+										<property name="okei" lowerBound="0" form="Attribute">
+											<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+										</property>
+										<property name="name" lowerBound="1" form="Attribute">
+											<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+										</property>
+									</typeDef>
+								</property>
+							</typeDef>
+						</property>
+						<property name="volume" lowerBound="0">
+							<typeDef xsi:type="ObjectType">
+								<property name="min" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="max" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="unit" lowerBound="0">
+									<typeDef xsi:type="ObjectType">
+										<property name="okei" lowerBound="0" form="Attribute">
+											<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+										</property>
+										<property name="name" lowerBound="1" form="Attribute">
+											<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+										</property>
+									</typeDef>
+								</property>
+							</typeDef>
+						</property>
+						<property name="area" lowerBound="0">
+							<typeDef xsi:type="ObjectType">
+								<property name="min" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="max" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="unit" lowerBound="0">
+									<typeDef xsi:type="ObjectType">
+										<property name="okei" lowerBound="0" form="Attribute">
+											<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+										</property>
+										<property name="name" lowerBound="1" form="Attribute">
+											<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+										</property>
+									</typeDef>
+								</property>
+							</typeDef>
+						</property>
+						<property name="length" lowerBound="0">
+							<typeDef xsi:type="ObjectType">
+								<property name="min" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="max" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="unit" lowerBound="0">
+									<typeDef xsi:type="ObjectType">
+										<property name="okei" lowerBound="0" form="Attribute">
+											<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+										</property>
+										<property name="name" lowerBound="1" form="Attribute">
+											<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+										</property>
+									</typeDef>
+								</property>
+							</typeDef>
+						</property>
+						<property name="itemCount" lowerBound="0">
+							<typeDef xsi:type="ObjectType">
+								<property name="min" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="max" type="xs:float" lowerBound="0" form="Attribute"/>
+								<property name="unit" lowerBound="0">
+									<typeDef xsi:type="ObjectType">
+										<property name="okei" lowerBound="0" form="Attribute">
+											<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+										</property>
+										<property name="name" lowerBound="1" form="Attribute">
+											<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+										</property>
+									</typeDef>
+								</property>
+							</typeDef>
+						</property>
+					</typeDef>
+				</property>
+			</typeDef>
+		</property>
+		<property name="update" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d5p1:IDType" lowerBound="1" form="Attribute"/>
+				<property name="modified" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+			</typeDef>
+		</property>
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="manufacturerIds" type="d3p1:IDType" lowerBound="0" upperBound="-1"/>
+		<property name="category" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="id" type="d5p1:IDType" lowerBound="1" form="Attribute"/>
+				<property name="subcategoriesSearch" type="xs:boolean" lowerBound="1" form="Attribute"/>
+			</typeDef>
+		</property>
+		<property name="featuresAttributes" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType" ordered="false" sequenced="true">
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="attributeId" type="d5p1:IDType" lowerBound="1" form="Attribute"/>
+				<property name="value" lowerBound="0">
+					<typeDef xsi:type="ValueType" variety="Union" memberTypes="{http://www.w3.org/2001/XMLSchema}boolean {http://www.w3.org/2001/XMLSchema}string {http://www.w3.org/2001/XMLSchema}dateTime {http://www.w3.org/2001/XMLSchema}float"/>
+				</property>
+				<property xmlns:d5p1="http://catalog-api.1c.ru/XMLSchema" name="valueIds" type="d5p1:IDType" lowerBound="0" upperBound="-1"/>
+				<property name="range" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property name="min" lowerBound="0" form="Attribute"/>
+						<property name="max" lowerBound="0" form="Attribute"/>
+					</typeDef>
+				</property>
+				<property name="classifier" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property name="code" type="xs:string" lowerBound="1" form="Attribute"/>
+						<property name="name" type="xs:string" lowerBound="1" form="Attribute"/>
+					</typeDef>
+				</property>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="NomenclatureResponse">
+		<property xmlns:d3p1="http://catalog-api.1c.ru/XMLSchema" name="nomenclatures" type="d3p1:Nomenclature" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Unit">
+		<property name="okei" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+		</property>
+		<property name="name" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+		</property>
+		<property name="fullName" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+		</property>
+		<property name="interName" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="3"/>
+		</property>
+		<property name="type" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+				<enumeration>Вес</enumeration>
+				<enumeration>Объем</enumeration>
+				<enumeration>Площадь</enumeration>
+				<enumeration>Длина</enumeration>
+				<enumeration>Количество штук</enumeration>
+				<enumeration>Упаковка</enumeration>
+				<enumeration>Мощность</enumeration>
+				<enumeration>Энергия</enumeration>
+				<enumeration>Электрический заряд</enumeration>
+				<enumeration/>
+			</typeDef>
+		</property>
+		<property name="baseOKEI" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="4"/>
+		</property>
+		<property name="baseUnitCount" type="xs:float" lowerBound="0" form="Attribute"/>
+		<property name="unitCount" type="xs:float" lowerBound="0" form="Attribute"/>
+	</objectType>
+</package>

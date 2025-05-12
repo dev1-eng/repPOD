@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cc6d899d-4bb0-41f0-89f7-c79ab22d4e8f">
+  <producedTypes>
+    <objectType typeId="aeec61d2-6a81-4c76-8605-fad0d27980d2" valueTypeId="c92f7705-7ae9-495f-a2af-e582084445a9"/>
+    <managerType typeId="468c46dc-793d-4b9d-9956-7023dadb3cbd" valueTypeId="c77bc1a9-d116-4103-9c0e-686f7324ac86"/>
+  </producedTypes>
+  <name>ПлатежныйКалендарь</name>
+  <synonym>
+    <key>ru</key>
+    <value>Платежный календарь</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ПлатежныйКалендарь.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="cafacdb7-188d-43af-97d1-95dabd027e0e">
+    <name>ДнейПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дней планирования</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Число дней, на которые требуется распределить заявки</value>
+    </toolTip>
+    <minValue xsi:type="core:StringValue">
+      <value>1</value>
+    </minValue>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1402784b-574b-4be3-9164-f2617272314f">
+    <name>ПланироватьСДаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Планировать с даты</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="90adcf34-9df8-4401-97c8-5350f10c36b1">
+    <name>СкрыватьВыходные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Скрывать выходные</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a4168e21-03b0-4bdc-a2a0-3f2884c46de9">
+    <name>ДеревоПлатежей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дерево платежей</value>
+    </synonym>
+    <type>
+      <types>ValueTree</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4cb673a1-d7fa-4974-960b-30b495d67999">
+    <name>НесогласованныеЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Несогласованные заявки на расходование денежных средств</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="be4e5e40-8296-44c6-ae94-d78227bad405">
+    <name>ЗаказыКлиентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы клиентов</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>График платежей согласно условиям оплаты</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="21d92f63-f911-4994-84ae-5b5cacf712b5">
+    <name>ЗаказыПоставщикам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы поставщикам</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>График платежей согласно условиям оплаты</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9fa63624-c16b-46fd-87e1-c5f7ca8c29e3">
+    <name>ВозвратыКлиентам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Возвраты клиентам</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Плановые платежи по возвратам клиентам</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="537332c4-17ee-41db-9d4d-33f6959064ef">
+    <name>ВозвратыОтПоставщиков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Возвраты от поставщиков</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Плановые платежи по возвратам от поставщиков</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0d2a8234-8f46-4f06-b434-3fc623dd5f40">
+    <name>ВалютаИтогов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта итогов</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6a7cf547-0b27-4d96-8ab8-fe38c53a5fc4">
+    <name>ГруппироватьПоВалютам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группировать по валютам</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="81889a70-d1b8-4620-a889-045cb933cacb">
+    <name>ОтборОрганизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отбор организации</value>
+    </synonym>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f65ad1ce-3b34-4900-9833-1348197a5b75">
+    <name>ОтборВалюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5c6afd8b-af20-4e66-b6ba-77b32801d463">
+    <name>ОтборБанковскиеСчетаКассы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отбор банковские счета кассы</value>
+    </synonym>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c3b0b59a-f66b-4ef2-8e6a-8fc2d3002042">
+    <name>ОтображатьНераспределенныеПоСчетам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отображать нераспределенные поступления и списания</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1040cfe8-3e91-4604-8067-4c1625d2fd2d">
+    <name>ФильтрСчетовКалендаря</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр счетов календаря</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3271388c-c2e6-4942-b637-fa6c6092edc6">
+    <name>АдресХранилищаМакета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес хранилища макета</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d580a7e5-3d64-4e23-963e-9fa2ccc78f0c">
+    <name>КредитыИлиЗаймыПолученные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кредиты или займы полученные</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Графики траншей и оплат по полученным кредитам и займам</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a427d5ea-8455-4fbb-843a-57fef37a284b">
+    <name>Депозиты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Депозиты</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Графики траншей и оплат по депозитам</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="65018dc5-1100-4321-95bd-9871fc657806">
+    <name>ЗаймыВыданные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Займы выданные</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Графики траншей и оплат по выданным займам</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="cea71c36-8e79-4bcf-ae6b-3d6089ac03dc">
+    <name>Лизинг</name>
+    <synonym>
+      <key>ru</key>
+      <value>Лизинг</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Графики лизинговых платежей</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="d9a05cd5-38c0-4222-8462-32590dbff583">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="36454dc5-ab04-4773-85cf-f634b17dfc4f">
+    <name>Настройки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройки</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="69295e09-8cc2-4b62-9891-30f8a63aa5e2">
+    <name>РазбиениеОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Разбиение оплаты</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="1cd06d60-0776-4e8f-a679-5dd37c87c53f">
+    <name>ДеревоПлатежей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дерево платежей</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="c7d03eb9-88b4-4c44-9ba4-c89c6e30ad98">
+    <name>ПлатежныйКалендарь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Платежный календарь</value>
+    </synonym>
+    <group>NavigationPanelImportant</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

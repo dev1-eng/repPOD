@@ -1,0 +1,354 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://1cbn.ru/bn-commerce-offering/XMLSchema" elementFormQualified="true" attributeFormQualified="false">
+	<valueType name="BarcodeType" base="xs:string" variety="Atomic" maxLength="200"/>
+	<valueType name="CurrencyType" base="xs:int" variety="Atomic" totalDigits="3" fractionDigits="0"/>
+	<valueType name="ExternalCodeType" base="xs:string" variety="Atomic" maxLength="200"/>
+	<valueType name="GuidType" base="xs:string" variety="Atomic" minLength="36" maxLength="36"/>
+	<valueType name="MoneyType" base="xs:decimal" variety="Atomic" minInclusive="0" totalDigits="15" fractionDigits="2"/>
+	<valueType name="OKEIType" base="xs:string" variety="Atomic" maxLength="4"/>
+	<valueType name="VATType" base="xs:string" variety="Atomic">
+		<enumeration>VAT_Without</enumeration>
+		<enumeration>VAT_0</enumeration>
+		<enumeration>VAT_10</enumeration>
+		<enumeration>VAT_18</enumeration>
+		<enumeration>VAT_20</enumeration>
+	</valueType>
+	<objectType name="Address">
+		<property name="name" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="255"/>
+		</property>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="code" type="d3p1:GuidType" lowerBound="0" form="Attribute"/>
+	</objectType>
+	<objectType name="AttachedFile">
+		<property name="fileName" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="fileExtension" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="fileSize" type="xs:integer" lowerBound="1" form="Attribute"/>
+		<property name="fileData" type="xs:string" lowerBound="1" form="Attribute"/>
+	</objectType>
+	<objectType name="CommerceOffer">
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="id" type="d3p1:GuidType" lowerBound="1" form="Attribute"/>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="requestId" type="d3p1:GuidType" lowerBound="0" form="Attribute"/>
+		<property name="number" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="date" type="xs:dateTime" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="products" type="d3p1:ProductLineOffer" upperBound="-1"/>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="supplier" type="d3p1:Organization"/>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="customer" type="d3p1:Organization"/>
+		<property name="TermsAndConditions">
+			<typeDef xmlns:d4p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" xsi:type="ObjectType" base="d4p1:TermsAndConditions">
+				<property name="simplifiedTaxation" type="xs:boolean" lowerBound="1" form="Attribute"/>
+				<property name="dateOfferActualTo" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+				<property name="priceIncludesVat" type="xs:boolean" lowerBound="1" form="Attribute"/>
+			</typeDef>
+		</property>
+		<property name="refCommerceOfferRequest" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="id" type="d5p1:GuidType" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="externalCode" type="d5p1:ExternalCodeType" lowerBound="0" form="Attribute"/>
+				<property name="number" type="xs:string" lowerBound="0" form="Attribute"/>
+				<property name="date" type="xs:dateTime" lowerBound="0" form="Attribute"/>
+			</typeDef>
+		</property>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="signatories" type="d3p1:Signer" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="attachedFiles" type="d3p1:AttachedFile" lowerBound="0" upperBound="-1"/>
+		<property name="additionalInformation" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="text" type="xs:string" lowerBound="0" form="Attribute"/>
+				<property name="htmlText" type="xs:string" lowerBound="0" form="Attribute"/>
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="htmlAttachedFiles" type="d5p1:htmlAttachedFile" lowerBound="0" upperBound="-1"/>
+			</typeDef>
+		</property>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="Contacts" type="d3p1:Contacts"/>
+	</objectType>
+	<objectType name="CommerceOfferRequest">
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="id" type="d3p1:GuidType" lowerBound="1" form="Attribute"/>
+		<property name="number" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="date" type="xs:dateTime" lowerBound="0" form="Attribute"/>
+		<property name="description" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="modified" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="products" type="d3p1:ProductLineOfferRequest" upperBound="-1"/>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="customer" type="d3p1:Organization"/>
+		<property name="recipients">
+			<typeDef xsi:type="ObjectType">
+				<property name="isBlackList" type="xs:boolean" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="supplier" type="d5p1:Organization" upperBound="-1"/>
+			</typeDef>
+		</property>
+		<property name="TermsAndConditions">
+			<typeDef xmlns:d4p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" xsi:type="ObjectType" base="d4p1:TermsAndConditions">
+				<property name="vatDeductable" type="xs:boolean" lowerBound="1" form="Attribute"/>
+				<property name="dateOffersCollectFrom" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+				<property name="dateOffersCollectTo" type="xs:dateTime" lowerBound="1" form="Attribute"/>
+				<property name="dateOffersConsiderTo" type="xs:dateTime" lowerBound="0" form="Attribute"/>
+			</typeDef>
+		</property>
+		<property name="deliveryAddress" lowerBound="0">
+			<typeDef xmlns:d4p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" xsi:type="ObjectType" base="d4p1:Address">
+				<property name="countryCode" type="xs:string" lowerBound="0" form="Attribute"/>
+			</typeDef>
+		</property>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="attachedFiles" type="d3p1:AttachedFile" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="signatories" type="d3p1:Signer" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="Contacts" type="d3p1:Contacts"/>
+	</objectType>
+	<objectType name="Contacts">
+		<property name="contactName" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="200"/>
+		</property>
+		<property name="phone" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+		</property>
+		<property name="email" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1" maxLength="100"/>
+		</property>
+	</objectType>
+	<objectType name="ExternalClientNomenclatureSpecification">
+		<property name="productDescription" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="500"/>
+		</property>
+		<property name="vendorCode" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+		</property>
+		<property name="partNumber" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+		</property>
+		<property name="manufacturer" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="name" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+				</property>
+				<property name="tradeMark" lowerBound="0" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+				</property>
+			</typeDef>
+		</property>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="barcodes" type="d3p1:BarcodeType" lowerBound="0" upperBound="-1"/>
+		<property name="requisiteValues" lowerBound="0" upperBound="-1">
+			<typeDef xsi:type="ObjectType">
+				<property name="name" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+				</property>
+				<property name="value" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="500"/>
+				</property>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="Organization" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="id" type="d3p1:GuidType" lowerBound="0" form="Attribute"/>
+		<property name="name" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="255"/>
+		</property>
+		<property name="individualEntrepreneur" lowerBound="0">
+			<typeDef xmlns:d4p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" xsi:type="ObjectType" base="d4p1:Person">
+				<property name="inn" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" length="12"/>
+				</property>
+			</typeDef>
+		</property>
+		<property name="entity" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="inn" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" length="10"/>
+				</property>
+				<property name="kpp" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" length="9"/>
+				</property>
+			</typeDef>
+		</property>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="address" type="d3p1:Address" lowerBound="0"/>
+	</objectType>
+	<objectType name="Person">
+		<property name="name" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="255"/>
+		</property>
+		<property name="surname" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="255"/>
+		</property>
+		<property name="patronymic" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="255"/>
+		</property>
+	</objectType>
+	<objectType name="Product" ordered="false" sequenced="true">
+		<property name="productName" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="250"/>
+		</property>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="baseUnitOkeiCode" type="d3p1:OKEIType" lowerBound="1" form="Attribute"/>
+		<property name="baseUnitName" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+		</property>
+		<property name="characteristicName" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="250"/>
+		</property>
+		<property name="matchId" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" minLength="1"/>
+		</property>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="supplierNomenclature" type="d3p1:ExternalClientNomenclatureSpecification" lowerBound="0"/>
+		<property name="ref1cNomenclature" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property name="id" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="36"/>
+				</property>
+				<property name="characteristicId" lowerBound="0" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="36"/>
+				</property>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="ProductLineOffer" ordered="false" sequenced="true">
+		<property name="count" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="18" fractionDigits="3"/>
+		</property>
+		<property name="comment" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="packaging">
+			<typeDef xsi:type="ObjectType">
+				<property name="description" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+				</property>
+				<property name="unitsNumerator" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:integer" variety="Atomic" minInclusive="1"/>
+				</property>
+				<property name="unitsDenominator" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:integer" variety="Atomic" minInclusive="1"/>
+				</property>
+			</typeDef>
+		</property>
+		<property name="deliveryDate" type="xs:date" lowerBound="0"/>
+		<property name="maxDeliveryDaysAfterOrder" lowerBound="0">
+			<typeDef xsi:type="ValueType" base="xs:integer" variety="Atomic" minInclusive="0"/>
+		</property>
+		<property name="priceAndTaxes">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="price" type="d5p1:MoneyType" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="vat" type="d5p1:VATType" lowerBound="0" form="Attribute"/>
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="amountIncVat" type="d5p1:MoneyType" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="amountExcVat" type="d5p1:MoneyType" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="VatAmount" type="d5p1:MoneyType" lowerBound="1" form="Attribute"/>
+				<property name="discountPercent" type="xs:float" lowerBound="0" form="Attribute"/>
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="discountTotal" type="d5p1:MoneyType" lowerBound="0" form="Attribute"/>
+			</typeDef>
+		</property>
+		<property name="refCommerceOfferRequest" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="requestId" type="d5p1:GuidType" lowerBound="1" form="Attribute"/>
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="Id" type="d5p1:GuidType" lowerBound="0" form="Attribute"/>
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="externalCode" type="d5p1:ExternalCodeType" lowerBound="0" form="Attribute"/>
+			</typeDef>
+		</property>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="product" type="d3p1:Product"/>
+	</objectType>
+	<objectType name="ProductLineOfferRequest" ordered="false" sequenced="true">
+		<property name="count" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="18" fractionDigits="3"/>
+		</property>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="product" type="d3p1:RequestProduct"/>
+		<property name="packaging">
+			<typeDef xsi:type="ObjectType">
+				<property name="description" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+				</property>
+				<property name="unitsNumerator" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:integer" variety="Atomic" minInclusive="1"/>
+				</property>
+				<property name="unitsDenominator" lowerBound="1" form="Attribute">
+					<typeDef xsi:type="ValueType" base="xs:integer" variety="Atomic" minInclusive="1"/>
+				</property>
+			</typeDef>
+		</property>
+		<property name="deliveryDate" type="xs:date" lowerBound="0"/>
+		<property name="maxDeliveryDaysAfterOrder" lowerBound="0">
+			<typeDef xsi:type="ValueType" base="xs:integer" variety="Atomic" minInclusive="0"/>
+		</property>
+		<property name="priceAndTaxes" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="maxPrice" type="d5p1:MoneyType" lowerBound="0" form="Attribute"/>
+			</typeDef>
+		</property>
+		<property name="matching">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="matchId" type="d5p1:GuidType" lowerBound="1" form="Attribute"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="RequestProduct">
+		<property name="productName" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="250"/>
+		</property>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="baseUnitOkeiCode" type="d3p1:OKEIType" lowerBound="1" form="Attribute"/>
+		<property name="baseUnitName" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+		</property>
+		<property name="characteristicName" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="250"/>
+		</property>
+		<property name="matchId" lowerBound="0" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic"/>
+		</property>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="customerNomenclature" type="d3p1:ExternalClientNomenclatureSpecification" lowerBound="0"/>
+		<property name="ref1cNomenclature">
+			<typeDef xsi:type="ObjectType" ordered="false" sequenced="true">
+				<property name="productSpecification" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property name="id" lowerBound="1" form="Attribute">
+							<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="36"/>
+						</property>
+						<property name="characteristicId" lowerBound="0" form="Attribute">
+							<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="36"/>
+						</property>
+					</typeDef>
+				</property>
+				<property name="categorySpecification" lowerBound="0">
+					<typeDef xsi:type="ObjectType">
+						<property name="categoryId" lowerBound="1" form="Attribute">
+							<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="12"/>
+						</property>
+						<property name="categoryName" lowerBound="1" form="Attribute">
+							<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="150"/>
+						</property>
+						<property xmlns:d7p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="manufacturerId" type="d7p1:GuidType" lowerBound="0" form="Attribute"/>
+						<property name="manufacturerName" lowerBound="0" form="Attribute">
+							<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="150"/>
+						</property>
+						<property xmlns:d7p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="tradeMarkId" type="d7p1:GuidType" lowerBound="0" form="Attribute"/>
+						<property name="tradeMarkName" lowerBound="0" form="Attribute">
+							<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="150"/>
+						</property>
+						<property name="requisiteValues" lowerBound="0" upperBound="-1">
+							<typeDef xsi:type="ObjectType">
+								<property xmlns:d9p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="requisiteId" type="d9p1:GuidType" lowerBound="1" form="Attribute"/>
+								<property name="requisiteName" lowerBound="1" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="150"/>
+								</property>
+								<property name="value" lowerBound="1" form="Attribute">
+									<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="200"/>
+								</property>
+							</typeDef>
+						</property>
+					</typeDef>
+				</property>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType xmlns:d2p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="Signer" base="d2p1:Person">
+		<property name="post" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="255"/>
+		</property>
+		<property name="organization" type="d2p1:Organization"/>
+	</objectType>
+	<objectType name="TermsAndConditions">
+		<property name="termsOfDelivery" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="termsOfPayment" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="otherConditions" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="commissionTransaction" type="xs:boolean" lowerBound="1" form="Attribute"/>
+		<property name="allOrNothing" type="xs:boolean" lowerBound="1" form="Attribute"/>
+		<property xmlns:d3p1="http://1cbn.ru/bn-commerce-offering/XMLSchema" name="currencyCode" type="d3p1:CurrencyType" lowerBound="1" form="Attribute"/>
+		<property name="currencyName" type="xs:string" lowerBound="1" form="Attribute"/>
+	</objectType>
+	<objectType name="htmlAttachedFile">
+		<property name="contentID" lowerBound="1" form="Attribute">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="150"/>
+		</property>
+		<property name="fileName" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property name="fileExtension" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="fileSize" type="xs:integer" lowerBound="1" form="Attribute"/>
+		<property name="fileData" type="xs:string" lowerBound="1" form="Attribute"/>
+	</objectType>
+</package>

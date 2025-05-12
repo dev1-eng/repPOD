@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1e31b557-69eb-4c19-9012-77c6f417e878">
+  <name>КонтрольСозданияУзлаПланаОбмена</name>
+  <synonym>
+    <key>ru</key>
+    <value>Контроль создания узла плана обмена</value>
+  </synonym>
+  <source>
+    <types>ExchangePlanObject.Полный</types>
+    <types>ExchangePlanObject.ОбменУправлениеТорговлейБухгалтерияПредприятияКОРП</types>
+    <types>ExchangePlanObject.ОбменУправлениеТорговлейРозница</types>
+    <types>ExchangePlanObject.СОтборами</types>
+    <types>ExchangePlanObject.ОбменУправлениеТорговлейБухгалтерияПредприятия30</types>
+    <types>ExchangePlanObject.ОбменУправлениеТорговлейБухгалтерияПредприятияКОРП30</types>
+    <types>ExchangePlanObject.ОбменУправлениеТорговлейБухгалтерияПредприятия</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ОбменДаннымиСобытияУТУП.КонтрольСозданияУзлаПланаОбменаПередЗаписью</handler>
+</mdclass:EventSubscription>

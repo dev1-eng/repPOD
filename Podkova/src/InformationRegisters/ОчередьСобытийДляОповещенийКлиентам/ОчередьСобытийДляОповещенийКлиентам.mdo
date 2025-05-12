@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="118925da-8b9a-4e47-8e70-842d8ccba011">
+  <producedTypes>
+    <selectionType typeId="7ac650aa-f62a-4ecb-a207-a25debf1923a" valueTypeId="f72eefc1-d535-4b46-a72d-5e98e9b4fdaa"/>
+    <listType typeId="ddd9003e-747d-44c8-a6d3-3a484a611558" valueTypeId="7f4c8c2e-00c6-4b2f-9115-bc5c40e76043"/>
+    <managerType typeId="5c5f7295-dccb-46e0-b0fb-ac02aaf176fb" valueTypeId="e9b603fd-b88d-4166-b370-4f36c927293d"/>
+    <recordSetType typeId="64ec034d-3664-45e3-b6ed-33c8cbaf6bf5" valueTypeId="911ea937-0f23-43bf-9f49-88254494c016"/>
+    <recordKeyType typeId="4c486d29-ee19-44d1-a34f-b94f36720c89" valueTypeId="db05d130-2026-4f6c-be5d-f999a27012af"/>
+    <recordType typeId="85c3c48f-df02-4a3d-aae3-fa84e2e0c2d7" valueTypeId="10fd8440-4845-4a96-a89b-d60cbbdd50fe"/>
+    <recordManagerType typeId="ce66253a-0667-4f7d-8901-9b50432e6f18" valueTypeId="02639a6f-cde5-4335-a7e3-78e6a72a35a1"/>
+  </producedTypes>
+  <name>ОчередьСобытийДляОповещенийКлиентам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Очередь событий для оповещений клиентам</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="c589c6c2-519f-4718-9d94-8f1ce39a9e64">
+    <name>ДатаОтправки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата отправки</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата, когда оповещение должно быть отправлено</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5b9d3af2-dfb4-40be-b3b4-7e0e8e58d525">
+    <name>ДатаАктуальностиОтправки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата актуальности отправки</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="263b3441-f583-424e-bc99-93b8099cbcb4">
+    <name>ВидОповещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид оповещения</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыОповещенийКлиентам</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d69d2585-7cbf-4e6a-bde5-9d13f89b6938">
+    <name>ИсточникОповещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник оповещения</value>
+    </synonym>
+    <type>
+      <types>AnyRef</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c25178c2-b987-4700-99cd-ce284e04a8f2">
+    <name>Подписчик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подписчик</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

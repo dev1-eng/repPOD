@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2c95c52b-594b-41e1-8203-f1a3f9e7b056">
+  <producedTypes>
+    <objectType typeId="05cfe28e-6f2c-4153-8023-3fcb23c7e1d2" valueTypeId="a3b25884-1096-491b-bc79-3b83fde8bc4a"/>
+    <refType typeId="198a0f05-22ca-4d9b-944a-784abb326704" valueTypeId="fd574dc6-0f2c-4716-9bf2-f35403f1496f"/>
+    <selectionType typeId="9e36773b-5e05-46ae-8bc3-da4b752dc16d" valueTypeId="1cb7ff8a-90e9-4da5-a97b-30ce00c22f5b"/>
+    <listType typeId="31aa9af1-0a8f-4aaf-a9d1-84470f7ef476" valueTypeId="b2b6d772-08a7-4a88-be38-ae30b775840d"/>
+    <managerType typeId="fb0858b9-c0b9-455d-95e5-81ba38592634" valueTypeId="fc10229f-8573-4969-8e08-08bd323ac02c"/>
+  </producedTypes>
+  <name>СчетФактураПолученныйАванс</name>
+  <synonym>
+    <key>ru</key>
+    <value>Счет-фактура полученный (аванс)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.СчетФактураПолученныйАванс.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <toolTip>
+      <key>ru</key>
+      <value>Номер полученного счета-фактуры.</value>
+    </toolTip>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:StringValue">
+      <value>                                                  </value>
+    </fillValue>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <basedOn>Document.СписаниеБезналичныхДенежныхСредств</basedOn>
+  <basedOn>Document.РасходныйКассовыйОрдер</basedOn>
+  <basedOn>Document.АвансовыйОтчет</basedOn>
+  <createOnInput>Use</createOnInput>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Счет-фактура полученный (аванс)</value>
+  </objectPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Счета-фактуры полученные (аванс)</value>
+  </listPresentation>
+  <explanation>
+    <key>ru</key>
+    <value>Полученные предприятием счета-фактуры (аванс)</value>
+  </explanation>
+  <numberType>String</numberType>
+  <numberLength>50</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <defaultObjectForm>Document.СчетФактураПолученныйАванс.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.СчетФактураПолученныйАванс.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Document.СчетФактураПолученныйАванс.Form.ФормаВыбора</defaultChoiceForm>
+  <registerRecordsDeletion>AutoDeleteOff</registerRecordsDeletion>
+  <registerRecords>AccumulationRegister.НДСЗаписиКнигиПродаж</registerRecords>
+  <registerRecords>AccumulationRegister.НДСЗаписиКнигиПокупок</registerRecords>
+  <registerRecords>InformationRegister.ЖурналУчетаСчетовФактур</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <choiceHistoryOnInput>DontUse</choiceHistoryOnInput>
+  <attributes uuid="7a565e0e-c61a-4881-8c88-f994ab67ae65">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация предприятия, от имени которой оформляется документ</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>ВыборУправленческойОрганизации</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Организации.EmptyRef</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="aa95b682-481b-4625-bd10-8e6174bd4576">
+    <name>ДокументОснование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОснованиеСчетФактураПолученныйАванс</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Документ, которым соответствует счет-фактура</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Отбор.Организация</name>
+      <field>Document.СчетФактураПолученныйАванс.Attribute.Организация</field>
+    </choiceParameterLinks>
+    <choiceParameters>
+      <name>Отбор.ТипОперации</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыОперацийВводаОстатков.EnumValue.ОстаткиПоАвансамПоставщикам</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыОперацийВводаОстатков.EnumValue.ОстаткиРасчетовМеждуОрганизациямиПоАвансам</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="67536032-6767-4bba-8277-7577ed3d29c4">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Поставщик, выдавший документ</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Контрагенты.EmptyRef</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3145a1c6-7f51-4eb2-b9fd-a47c7550eecf">
+    <name>ДатаСоставления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата полученного счета-фактуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:DateValue">
+      <value>0001-01-01T00:00:00</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b5214afc-ab33-4bcb-baa5-649faa055448">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Общая сумма документа</value>
+    </toolTip>
+    <markNegatives>true</markNegatives>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="264b1b6d-160b-43ef-b8d9-4b64fd157dee">
+    <name>СуммаНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма НДС</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Общая сумма НДС документа</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fb099ad0-a417-43b4-807d-51219918950b">
+    <name>ПолученВЭлектронномВиде</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получен в электронном виде</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>В электронном виде</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="adee175f-705a-41d0-aca2-9162c75d5ab3">
+    <name>КодВидаОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код вида операции</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:StringValue">
+      <value>02</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e0b7fdfd-40e9-4c46-8837-733372431fe4">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Произвольный текст</value>
+    </toolTip>
+    <extendedEdit>true</extendedEdit>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5e21e416-394e-44bc-957a-21034baea6dd">
+    <name>Исправление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исправление</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Исправление счета-фактуры</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0f4c4106-3c5f-48a4-92b1-5a5c81dca4ee">
+    <name>НомерИсправления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер исправления</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>3</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номер исправления</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="86d43612-28c3-4522-86cb-f579572e3eb9">
+    <name>ДатаИсправления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата исправления</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата исправления</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f9c452ce-e7db-4048-9486-d5a5d219135d">
+    <name>СчетФактураОснование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет-фактура основание</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.СчетФактураПолученныйАванс</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Счет-фактура, исправление которого регистрируется</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.Исправление</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Отбор.Проведен</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8093ce0d-7ce1-4bec-a623-2b4bcf15df45">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Используется в качестве дополнительной аналитики закупок</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.СтруктураПредприятия.EmptyRef</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d59fee17-34a8-418c-9715-cc7f4a22807d">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Пользователь, оформивший документ  и ответственный за его обработку.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fe29c0e7-7ab3-4451-b7e6-5cb5a8b6512a">
+    <name>СоставленКомиссионеромОтИмениПродавца</name>
+    <synonym>
+      <key>ru</key>
+      <value>Составлен комиссионером (агентом) от имени продавца</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак того, что счет-фактура выставлен комиссионером (агентом) от имени продавца.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c8623853-76ab-42ab-9181-7052588e9dda">
+    <name>СводныйКомиссионный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сводный комиссионный</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2a067dce-1bb9-46a5-8269-417a9387d9e3">
+    <name>ИННКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>ИНН контрагента</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>12</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Если заполнено, то при подаче отчетности по НДС используется данное значение ИНН, если нет, то значение, указанное в справочнике Контрагенты.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="06322f44-03f0-4fb2-b054-ce638f393c31">
+    <name>КППКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>КПП контрагента</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>9</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Если заполнено, то при подаче отчетности по НДС используется данное значение КПП, если нет, то значение, указанное в справочнике Контрагенты.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b8da4ae8-b2d0-40d2-8b92-5c4e59d9705e">
+    <name>НалогообложениеНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налогообложение</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыНалогообложенияНДС</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Тип налогообложения операции приобретения, под которую выдан аванс, налогом на добавленную стоимость</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ТипыНалогообложенияНДС.EnumValue.ПродажаОблагаетсяНДС</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d92c1c2e-8583-454d-b37a-83213bf820c5">
+    <name>ДатаОтраженияВРеглУчете</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата отражения в регл учете</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Служебный реквизит для контроля дат запрета изменения.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="85b77287-e671-4a2b-86d0-bfb35e3d779e">
+    <name>Корректировочный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировочный</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="9a86b94f-565b-4bc9-9044-8021ac7038f8">
+    <name>СводныйКорректировочный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сводный корректировочный</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="90e401ea-7524-455e-937c-6aea299a7c7d">
+    <name>РучнаяКорректировкаЖурналаСФ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ручная корректировка журнала СФ</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Движения по регистру сведений &quot;Журнал учета счетов-фактур&quot; изменены вручную</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="6b595203-82a9-4eb3-81ff-d3126b5f6d11">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="61caad4c-1fa5-40b3-926c-9f932697c4a4">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="4d6a68d0-1887-43e8-a1c9-ceb9700ecfb2">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8dcf30a6-bdb2-47d4-8448-b0248311b3c8">
+    <name>ФормаРабочееМесто</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма рабочее место</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="8ec036d9-675b-43de-aec7-8126561a41f3">
+    <producedTypes>
+      <objectType typeId="80091252-4922-434c-b43f-9fba35596026" valueTypeId="96ec9acb-d1c8-410e-95d0-5f227467b6a9"/>
+      <rowType typeId="f4d0d6a1-bc8b-4979-82ee-d96b12a54a21" valueTypeId="8c96d522-d4d1-4aa8-a577-b60e3658294b"/>
+    </producedTypes>
+    <name>Авансы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Авансы</value>
+    </synonym>
+    <fillChecking>ShowError</fillChecking>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="731a7fbd-a68a-48cf-8318-e3d60b129701">
+      <name>НаправлениеДеятельности</name>
+      <synonym>
+        <key>ru</key>
+        <value>Направление деятельности</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.НаправленияДеятельности</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="50f4487a-2b44-4aa6-a3b4-c0ca65d9be82">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма с НДС</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>14</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Сумма аванса</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="63cef422-d7bd-4549-8475-c43fe863476e">
+      <name>СтавкаНДС</name>
+      <synonym>
+        <key>ru</key>
+        <value>% НДС</value>
+      </synonym>
+      <type>
+        <types>EnumRef.СтавкиНДС</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Ставка НДС</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>ТолькоДробныеСтавки</name>
+        <value xsi:type="core:BooleanValue">
+          <value>true</value>
+        </value>
+      </choiceParameters>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="78ff9d95-2a9f-44fe-8002-694d7131577f">
+      <name>СуммаНДС</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма НДС</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>14</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Сумма НДС с аванса</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="314a9cf4-ba36-440b-a579-491d757ad74b">
+      <name>ИсходныйСчетФактура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Исходный счет-фактура</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.СчетФактураПолученныйАванс</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Счет-фактура основания корректировочного документа</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Отбор.Контрагент</name>
+        <field>Document.СчетФактураПолученныйАванс.Attribute.Контрагент</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.НалогообложениеНДС</name>
+        <field>Document.СчетФактураПолученныйАванс.Attribute.НалогообложениеНДС</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Организация</name>
+        <field>Document.СчетФактураПолученныйАванс.Attribute.Организация</field>
+      </choiceParameterLinks>
+      <choiceParameters>
+        <name>Отбор.Проведен</name>
+        <value xsi:type="core:BooleanValue">
+          <value>true</value>
+        </value>
+      </choiceParameters>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="9edbf8ae-645c-412a-b77a-682a7342b178">
+    <producedTypes>
+      <objectType typeId="fca473b6-efc0-4a13-81b8-e0a0d65bfce6" valueTypeId="183304c6-f60f-41f6-a8e0-7c61c4b065e1"/>
+      <rowType typeId="9c262df8-8dae-4bd4-bede-de211b21b987" valueTypeId="17efa60e-87bc-45e8-9546-20d9ca3ddf08"/>
+    </producedTypes>
+    <name>Продавцы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Продавцы</value>
+    </synonym>
+    <fillChecking>ShowError</fillChecking>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="d3a14a6d-a86f-4464-a830-dc6817f34884">
+      <name>Продавец</name>
+      <synonym>
+        <key>ru</key>
+        <value>Продавец</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Контрагенты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="75bb67cf-68c0-4856-8c05-318d7916544e">
+      <name>ИННПродавца</name>
+      <synonym>
+        <key>ru</key>
+        <value>ИНН продавца</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>12</length>
+        </stringQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Если заполнено, то при подаче отчетности по НДС используется данное значение ИНН, если нет, то значение, указанное в справочнике Контрагенты.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d1aeb99d-352a-4238-bc85-f5b39cbaf91e">
+      <name>КПППродавца</name>
+      <synonym>
+        <key>ru</key>
+        <value>КПП продавца</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>9</length>
+        </stringQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Если заполнено, то при подаче отчетности по НДС используется данное значение КПП, если нет, то значение, указанное в справочнике Контрагенты.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <commands uuid="0db1f0a3-4502-4648-8976-c90b238e26ea">
+    <name>АвансыВыплаченные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Авансы выплаченные</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Document>

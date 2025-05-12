@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b49f7d82-815f-47b4-91fd-bfc982d74d69">
+  <producedTypes>
+    <selectionType typeId="4acc41fb-f194-427f-b69f-181d70235c79" valueTypeId="00412375-14e4-4bd4-9a52-fa663e898d11"/>
+    <listType typeId="37b81f69-2ec2-478e-a111-46c4cc533a21" valueTypeId="428af858-186e-40be-9e77-aa20d949fcc2"/>
+    <managerType typeId="79ff6166-566b-4d61-93fc-b06ebc40f156" valueTypeId="26314aa2-d986-4346-afed-eeab2fa9a4c9"/>
+    <recordSetType typeId="83152226-3656-446e-9cca-1c8cb0bd4c83" valueTypeId="0d307502-eba7-4905-9b30-9b4c070a6148"/>
+    <recordKeyType typeId="29032bf4-e099-46be-a3f4-2182c5977bf8" valueTypeId="657ab36e-8889-4a41-8c5c-714103808015"/>
+    <recordType typeId="05d27a28-a81f-41f0-9be2-c18b36751d00" valueTypeId="4efa0fa4-629d-4d63-b1d4-62e10ddcf677"/>
+    <recordManagerType typeId="5715a026-4891-40f8-b924-45ac12b7258f" valueTypeId="d0ccdf16-f7e5-4114-833a-46226ab96a25"/>
+  </producedTypes>
+  <name>ВыполнениеПроверокСостоянияСистемы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выполнение проверок состояния учета</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="2df2eed1-e2c7-4583-8989-a4ed7ade4274">
+    <name>ДатаВыполнения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата выполнения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата последнего выполнения проверки</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c13c1bb5-89c0-411c-9a5f-f93860cec3f5">
+    <name>ВыявленыПроблемы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выявлены проблемы</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак того, что при выполнении проверки были выявлены проблемы</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ccd9d60b-a75d-4bbd-972a-c847711eeb0b">
+    <name>ПричинаОтказаОтПроверки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина отказа от проверки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="bbdf9c64-e824-4da7-a63b-8c39f8611a0c">
+    <name>Проверка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проверка</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПроверкиСостоянияСистемы</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выполненная проверка</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b4a8383e-37a6-4d32-a605-5695c5dfc363">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация, по которой выполнялась проверка</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="94d665d2-7ee1-449b-bc70-10fa9bfab875">
+    <name>ПроверяемыйПериод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проверяемый период</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Период, за который выполнялась проверка</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

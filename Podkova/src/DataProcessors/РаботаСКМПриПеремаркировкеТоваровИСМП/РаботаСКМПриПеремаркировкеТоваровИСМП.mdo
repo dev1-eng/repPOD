@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="52780857-1a40-4c09-90e1-8bfbfac85772">
+  <producedTypes>
+    <objectType typeId="3d4f1014-296a-4a93-a798-bbd9016e16ce" valueTypeId="6627abb8-6f4d-48ee-9229-ecd99b54a48c"/>
+    <managerType typeId="1cc70050-e9ef-4d3c-ae5c-7320352f0ae5" valueTypeId="aee96004-3df8-49e1-a905-9af03c0be55c"/>
+  </producedTypes>
+  <name>РаботаСКМПриПеремаркировкеТоваровИСМП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверки и подбор кодов маркировки ИС МП</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.РаботаСКМПриПеремаркировкеТоваровИСМП.Form.ФормаВводаКодовМаркировки</defaultForm>
+  <attributes uuid="191d3f42-7c04-4123-b066-895b62702eda">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>DefinedType.Организация</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="d7a5c143-3113-4448-b3e3-b083412840c0">
+    <name>ВидПродукции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид продукции</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыПродукцииИС</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="9c1b7adb-c2ba-4b9e-a08b-5352dfc309c1">
+    <name>ВыбранныйКодМаркировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбранный код маркировки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ШтрихкодыУпаковокТоваров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Номенклатура</name>
+      <field>DataProcessor.РаботаСКМПриПеремаркировкеТоваровИСМП.Attribute.Номенклатура</field>
+    </choiceParameterLinks>
+    <choiceParameterLinks>
+      <name>Отбор.Характеристика</name>
+      <field>DataProcessor.РаботаСКМПриПеремаркировкеТоваровИСМП.Attribute.Характеристика</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="2b0c844c-f4ed-462b-af26-a428d78e7a6c">
+    <name>ВыбранныйНовыйКодМаркировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбранный новый код маркировки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ШтрихкодыУпаковокТоваров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Номенклатура</name>
+      <field>DataProcessor.РаботаСКМПриПеремаркировкеТоваровИСМП.Attribute.Номенклатура</field>
+    </choiceParameterLinks>
+    <choiceParameterLinks>
+      <name>Отбор.Характеристика</name>
+      <field>DataProcessor.РаботаСКМПриПеремаркировкеТоваровИСМП.Attribute.Характеристика</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="1a6b6653-2f54-4ed8-8fc6-72c460d0f5c5">
+    <name>КодМаркировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код маркировки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ШтрихкодыУпаковокТоваров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Номенклатура</name>
+      <field>DataProcessor.РаботаСКМПриПеремаркировкеТоваровИСМП.Attribute.Номенклатура</field>
+    </choiceParameterLinks>
+    <choiceParameterLinks>
+      <name>Отбор.Характеристика</name>
+      <field>DataProcessor.РаботаСКМПриПеремаркировкеТоваровИСМП.Attribute.Характеристика</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="384ac80b-1691-45ae-acbb-998360804945">
+    <name>НоваяНоменклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Новая номенклатура</value>
+    </synonym>
+    <type>
+      <types>DefinedType.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="14538c7c-fb7e-4a14-9b05-50e0f4a510fe">
+    <name>НоваяСерия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Новая серия</value>
+    </synonym>
+    <type>
+      <types>DefinedType.СерияНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="55266a57-bf3e-41cc-b7d3-3981b0e6d534">
+    <name>НоваяХарактеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Новая характеристика</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ХарактеристикаНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4268803a-3358-4f59-9f4f-4665f0b46203">
+    <name>НоваяХарактеристикаИспользуется</name>
+    <synonym>
+      <key>ru</key>
+      <value>Новая характеристики используются</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="525be4ca-a249-4dee-828e-325f63b7f657">
+    <name>НовыйКодМаркировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Новый код маркировки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ШтрихкодыУпаковокТоваров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Номенклатура</name>
+      <field>DataProcessor.РаботаСКМПриПеремаркировкеТоваровИСМП.Attribute.Номенклатура</field>
+    </choiceParameterLinks>
+    <choiceParameterLinks>
+      <name>Отбор.Характеристика</name>
+      <field>DataProcessor.РаботаСКМПриПеремаркировкеТоваровИСМП.Attribute.Характеристика</field>
+    </choiceParameterLinks>
+    <choiceParameterLinks>
+      <name>Отбор.НоваяНоменклатура</name>
+      <field>DataProcessor.РаботаСКМПриПеремаркировкеТоваровИСМП.Attribute.Номенклатура</field>
+    </choiceParameterLinks>
+    <choiceParameterLinks>
+      <name>Отбор.НоваяХарактеристика</name>
+      <field>DataProcessor.РаботаСКМПриПеремаркировкеТоваровИСМП.Attribute.Характеристика</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="1175edd0-969d-4402-9e56-1dbbfbc6e41b">
+    <name>НовыйСпособВводаВОборот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Новый способ ввода в оборот</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СпособыВводаВОборотСУЗ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="44fa60f6-3633-4f1c-bb11-0c6eb3d9f6ca">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>DefinedType.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4fa481bd-d322-408a-ad38-104bfc7ee605">
+    <name>ПричинаПеремаркировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина перемаркировки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ПричиныПеремаркировкиТоваровИСМП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="3a0172f3-678b-4471-b6cc-8f0dc6319923">
+    <name>РезультатВзятьИзПула</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат взять из пула</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="39701c86-a5f0-4f54-9e7e-a8b06aa5bb50">
+    <name>Серия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серия</value>
+    </synonym>
+    <type>
+      <types>DefinedType.СерияНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a490d632-5acb-47cd-b44a-880dd389b687">
+    <name>СпособВводаВОборот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ ввода в оборот</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СпособыВводаВОборотСУЗ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6d3f096b-2280-4b6b-bbb9-5ed5b1b848fd">
+    <name>СразуНаПринтер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сразу на принтер</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5488dfab-f5de-44ba-bd4c-01c73080f768">
+    <name>СтатусИСМП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус ИСМП</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыОбработкиПеремаркировкиТоваровИСМП</types>
+      <types>EnumRef.СтатусыОбработкиСписанияКодовМаркировкиИСМП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f0bf4aef-b961-4f37-971e-eb13ba0b0c68">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ХарактеристикаНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>DataProcessor.РаботаСКМПриПеремаркировкеТоваровИСМП.Attribute.Номенклатура</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="afa6e873-5aa9-49e2-88bd-61bc935f11f7">
+    <name>ХарактеристикиИспользуются</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристики используются</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2dcac077-8871-4f75-b389-ae90dd613eea">
+    <name>Шаблон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ШаблоныКодовМаркировкиСУЗ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="84093194-7c00-46f4-bc78-7a1c01a12954">
+    <name>ШаблонЭтикетки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон этикетки</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ШаблонЭтикеткиИС</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="566cdb21-3b71-4f11-84f1-0cac9a05d9aa">
+    <name>МаркировкаОстатков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Маркировка остатков</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f09d5d41-6d31-4455-83e9-21cef92449e6">
+    <name>БлокировкаРедактированияНовогоКода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Блокировка редактирования нового кода</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8179a3ff-039e-4865-aa73-b39c46c2c65a">
+    <name>БлокировкаРедактированияСтарогоКода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Блокировка редактирования старого кода</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="132ca961-a673-4ae8-87ce-46759e6ef47b">
+    <name>ВидДокументаСертификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид документа сертификации</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыДокументовОбязательнойСертификацииИСМП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a4e6818e-f0f7-4d2c-b37c-50b5fd6ae3af">
+    <name>НомерДокументаСертификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер документа сертификации</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1000</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="464929f5-33a4-41a5-a6b7-fb9d042dc845">
+    <name>ДатаДокументаСертификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата документа сертификации</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="df17351c-53ee-4abd-bbe8-beaac162d8db">
+    <name>Сертификация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сертификация</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3c8adc63-8574-4349-8207-229913229923">
+    <name>ВидПервичногоДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид первичного документа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыПервичныхДокументовИСМП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4a4c23d2-5191-4775-9f2e-6276883b6f75">
+    <name>НаименованиеПервичногоДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование документа</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6bb19bec-0126-46ad-87c0-dbdecf4f5cc7">
+    <name>НомерПервичногоДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>№</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="764bd8cf-0ebd-48e8-be0b-2818ce73b19c">
+    <name>ДатаПервичногоДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>от</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="fc0d0752-f2ae-47a4-a4b7-68a41265e95d">
+    <name>ПервичныйДокумент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Первичный документ</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДокументПродажиИСМП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d8fe59a4-1a52-413e-9960-829194e515a2">
+    <name>ПредставлениеПервичногоДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ продажи</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7acaba0a-6520-44ea-8230-2f54e6e1441f">
+    <name>КодТНВЭД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код ТНВЭД</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <mask>9999999999</mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="43a266e2-85b8-42dc-885e-aad6652c41ef">
+    <name>СтранаПроизводства</name>
+    <synonym>
+      <key>ru</key>
+      <value>Страна производства</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтраныМира</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="48038969-7606-465b-ae0a-4de707d24263">
+    <name>Цвет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цвет</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="86192540-1ee5-4af6-816f-e0f7e48dc52a">
+    <name>Размер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Размер</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="75cebab6-77cb-42cf-8682-a2aed443b15c">
+    <producedTypes>
+      <objectType typeId="342b5978-eecf-4d8a-8b6c-2fcd0f5cc2c2" valueTypeId="91afab3e-9345-47f1-9a69-e37703d72f7d"/>
+      <rowType typeId="597a5825-9373-4df7-8f78-b120c73d7086" valueTypeId="8aa5177f-8a6b-4c75-9393-8dad643ad289"/>
+    </producedTypes>
+    <name>ТоварыИсточник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товары источник</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="9a097012-3cdc-4397-afab-da0610125ceb">
+      <name>КодМаркировки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код маркировки</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ШтрихкодыУпаковокТоваров</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="39aa761b-5154-47d5-b15f-7296e82c2a7d">
+      <name>НовыйКодМаркировки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Новый код маркировки</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ШтрихкодыУпаковокТоваров</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0384b738-5db8-405d-9bf3-99a5b561ce90">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <type>
+        <types>DefinedType.Номенклатура</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Наименование номенклатурной позиции.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="542ed32c-38a6-4a33-87a3-d8ec90197cf5">
+      <name>Характеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ХарактеристикаНоменклатуры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="0803be48-ad04-418f-bde4-8c7548350e8e">
+    <name>ФормаВводаКодовМаркировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма ввода кодов маркировки</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

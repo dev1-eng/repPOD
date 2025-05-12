@@ -1,0 +1,1259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="642d1ac9-63b1-4b94-9871-5b02fd12709f">
+  <producedTypes>
+    <objectType typeId="7a684bc4-2070-4311-a1c1-6b52f7b6f34e" valueTypeId="b914cf02-504c-4651-beac-58f1e5069226"/>
+    <managerType typeId="80c69fbf-12c7-4280-adef-448867bdb587" valueTypeId="9b06c3a4-b3ba-4828-8ccd-eb3602ae3434"/>
+  </producedTypes>
+  <name>ПодборСерийВДокументы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Подбор серий в документы</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ПодборСерийВДокументы.Form.РегистрацияИПодборСерийПоОднойСтрокеТоваров</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="444e1ea0-08f2-4db5-aaba-1960e35752c3">
+    <name>ПараметрыПроверки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Параметры проверки</value>
+    </synonym>
+    <type/>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="4267461f-42ba-4ac4-b0a6-e8940bde9aa8">
+    <producedTypes>
+      <objectType typeId="e404c780-8346-4e90-bf0c-26c267140f77" valueTypeId="db3ade8d-ae72-451b-b980-bcc6f2460e81"/>
+      <rowType typeId="17732fbf-8794-409c-b39b-5d35e745feeb" valueTypeId="4a4757ef-f287-47c7-b210-dbf280758409"/>
+    </producedTypes>
+    <name>Серии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серии</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="c02c468b-bbe4-467e-97a6-043f342469f8">
+      <name>Серия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Серия</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СерииНоменклатуры</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Серия товара</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="812b579d-f1ae-4912-9532-176e5d34f05c">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество товара по указанной серии в единицах хранения товаров</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:NumberValue">
+        <value>1</value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="877f383b-9571-4d47-b0bc-e709751697af">
+      <name>ГоденДо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Годен до</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Дата окончания срока годности серии</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="07513d7e-27d6-4f51-b4ff-321d4f55f034">
+      <name>Номер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер</value>
+      </synonym>
+      <type>
+        <types>DefinedType.НомерСерии</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Номер серии</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="aeaae03a-8144-4331-bcbc-5719d15b99bc">
+      <name>ГоденДоСтрока</name>
+      <synonym>
+        <key>ru</key>
+        <value>Годен до</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>11</length>
+        </stringQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Строковое представление даты окончания срока годности серии</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="d815867d-ebe1-4e8e-93be-6c3066643822">
+      <name>СвободныйОстаток</name>
+      <synonym>
+        <key>ru</key>
+        <value>Свободный остаток</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Свободный остаток серии на складе</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="258e1dcf-0ffc-47d0-905f-c22ad8e1defe">
+      <name>КоличествоУпаковок</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество товара по указанной серии в упаковках товаров</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:NumberValue">
+        <value>1</value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="38f0a5ad-fc32-47ec-a276-79a3c7b05351">
+      <name>КоличествоУпаковокНеОтгружать</name>
+      <synonym>
+        <key>ru</key>
+        <value>Не отгружать</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество упаковок проверяемого товара, которое не нужно отгружать</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1023c74f-4e83-41a1-b08e-36d67afa7d03">
+      <name>КоличествоНеОтгружать</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество не отгружать</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f06ca865-0f62-41a5-904d-d4e9082d566c">
+      <name>КоличествоВДокументе</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество в документе</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество проверяемого товара указанное в ордере (в единицах хранения)</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b59dd3b8-8627-4ec6-bfa5-e23766d6288a">
+      <name>КоличествоУпаковокВДокументе</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество (в ордере)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество проверяемого товара указанное в ордере (в упаковках)</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2a485f81-1dcf-4a14-854f-9d954d287bb5">
+      <name>НеОтгружать</name>
+      <synonym>
+        <key>ru</key>
+        <value>Не отгружать</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>1</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Признак, что тара отобрана сверх распоряжения на отгрузку. Необходимо эту тару оставить в зоне отгрузки.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c190ae8a-67ac-40e7-8123-9a583bcc0db0">
+      <name>КоличествоВДокументеНеотгружаемые</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество в документе неотгружаемые</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество проверяемого неотгружаемого товара указанное в ордере (в единицах хранения)</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="cd9f08df-aa13-44d3-b96c-c3c3b1b0c632">
+      <name>КоличествоУпаковокВДокументеНеотгружаемые</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество неотгружаемого (в ордере)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество проверяемого неотгружаемого товара указанное в ордере (в упаковках)</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9c63be3e-251c-4a1c-8e0b-09cd23191d2d">
+      <name>Действие</name>
+      <synonym>
+        <key>ru</key>
+        <value>Действие</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ДействияСоСтрокамиОрдеровНаОтгрузку</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="36b1a3b0-844d-46b9-8acb-e9d32aa66511">
+      <name>УпаковочныйЛистРодитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковочный лист родитель</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.УпаковочныйЛист</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="17b3da4b-2fdf-4a0f-8277-1bb52dac4b24">
+      <name>НомерКИЗГИСМ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер контрольного идентификационного знака ГИСМ</value>
+      </synonym>
+      <type>
+        <types>DefinedType.НомерКиЗГИСМ</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:StringValue">
+        <value>                    </value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="8f13632d-d875-4346-87f2-0f227a9df80b">
+      <name>RFIDTID</name>
+      <synonym>
+        <key>ru</key>
+        <value>RFID TID</value>
+      </synonym>
+      <type>
+        <types>DefinedType.RFIDTID</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Tag identificator - идентификатор RFID-метки</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="50d41576-f1a2-4440-9e3a-5f1b2da6b3a3">
+      <name>RFIDUser</name>
+      <synonym>
+        <key>ru</key>
+        <value>RFID User</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="6b18aff2-63a2-45f7-8997-ea3e4aed2728">
+      <name>RFIDEPC</name>
+      <synonym>
+        <key>ru</key>
+        <value>RFID EPC</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Electronic Product Code - электронный код продукта</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="1b0444a0-9a15-4b30-aeb5-1d43c6ff6290">
+      <name>EPCGTIN</name>
+      <synonym>
+        <key>ru</key>
+        <value>EPC: GTIN</value>
+      </synonym>
+      <type>
+        <types>DefinedType.GTIN</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>GTIN извлеченный из EPC (или предназначенный для записи в EPC)</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value>              </value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="c013e135-7d27-4071-9ccd-26e76eb7e74a">
+      <name>ЗаполненRFIDTID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заполнен RFIDTID</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2e44b536-3db9-44d1-946b-ae70e87cfc6e">
+      <name>НужноЗаписатьМетку</name>
+      <synonym>
+        <key>ru</key>
+        <value>Нужно записать метку</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3f6b4965-5f1a-4770-9778-8b86644e74ad">
+      <name>СтатусРаботыRFID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статус работы RFID</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>1</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="705639b0-5996-466f-82c2-0900d7922587">
+      <name>ДатаПроизводства</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата производства</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1539dc8a-9c2d-4132-b4eb-186a0a094d06">
+      <name>ПроизводительЕГАИС</name>
+      <synonym>
+        <key>ru</key>
+        <value>Производитель (ЕГАИС)</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.КлассификаторОрганизацийЕГАИС</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="07a0c7d4-39ab-4b2e-8cc6-b1bf83e8c6d3">
+      <name>Справка2ЕГАИС</name>
+      <synonym>
+        <key>ru</key>
+        <value>Справка 2 (ЕГАИС)</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Справки2ЕГАИС</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f31656dc-be3b-4795-81db-5d3ff6840d14">
+      <name>ПроизводительВЕТИС</name>
+      <synonym>
+        <key>ru</key>
+        <value>Производитель (ВетИС)</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПредприятияВЕТИС</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c2632280-b6bc-4c75-92c2-37c7d0bac946">
+      <name>ЗаписьСкладскогоЖурналаВЕТИС</name>
+      <synonym>
+        <key>ru</key>
+        <value>Запись складского журнала (ВетИС)</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ЗаписиСкладскогоЖурналаВЕТИС</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2d360c6f-17dc-4a4b-b081-0cfc782f0755">
+      <name>ИдентификаторПартииВЕТИС</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор партии (ВетИС)</value>
+      </synonym>
+      <type>
+        <types>DefinedType.СтрокаВЕТИС</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9281bd08-3610-42d0-85a2-0b1c9913f4cb">
+      <name>МаксимальнаяРозничнаяЦенаМОТП</name>
+      <synonym>
+        <key>ru</key>
+        <value>МРЦ (МОТП)</value>
+      </synonym>
+      <comment>Максимальная розничная цена (МОТП)</comment>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="f11c8202-3982-499a-9002-c6b4f54bb83a">
+    <producedTypes>
+      <objectType typeId="dbd13275-ca1f-4a5c-bb46-4883f43dfe6e" valueTypeId="7ec67b34-7b1c-4ffa-9604-51f5c43f5f39"/>
+      <rowType typeId="43cf4f44-d759-4853-9760-3ff1df5e94cd" valueTypeId="f8c944e8-32bb-4c22-8d43-afca03eb6d4e"/>
+    </producedTypes>
+    <name>ТоварыКешДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товары кеш документа</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="e9e3fd41-72b8-4c4e-a361-5ff4cd43a109">
+      <name>НомераСтрокДокумента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номера строк документа</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7fdc7709-3770-452d-9296-49d19d580df9">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e769aada-19c5-4706-b0e0-d71abc21c783">
+      <name>КоличествоУпаковок</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество упаковок</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f84af34c-fcaa-4afe-b12f-9b4f79e67c3d">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f3baab8a-e72b-4afb-a1da-070f61ff617c">
+      <name>НоменклатураОприходование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура оприходование</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="03b473a9-b400-4421-ad8f-c3495fa4c640">
+      <name>Назначение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Назначение</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Назначения</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5b8bf216-ad1d-450b-9a0f-e9ad00586308">
+      <name>Склад</name>
+      <synonym>
+        <key>ru</key>
+        <value>Склад</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Склады</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4ac715ff-6cef-4bcd-9688-8ce81a0d69ff">
+      <name>УказыватьСерии</name>
+      <synonym>
+        <key>ru</key>
+        <value>Указывать серии</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0d60cfd1-bbe5-4db2-82f4-e8c5c8fcd865">
+      <name>Упаковка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковка</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6a6e3d92-721c-42cd-a867-75f65ed2b3e9">
+      <name>Характеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c2c622b8-a26c-4c38-b619-97b0ca0559e9">
+      <name>ХарактеристикаОприходование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика оприходование</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="54e1dc79-66c9-4279-91d7-09ee778e585c">
+      <name>ВариантОформления</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вариант оформления</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ВариантыОформленияДокументовПродажи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c70e2201-3df5-4936-b164-ac9fad9fe25b">
+      <name>НеОтгружать</name>
+      <synonym>
+        <key>ru</key>
+        <value>Не отгружать</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>1</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Признак, что тара отобрана сверх распоряжения на отгрузку. Необходимо эту тару оставить в зоне отгрузки.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b16a6ebe-24b9-42b0-a795-285193d42801">
+      <name>Помещение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Помещение</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СкладскиеПомещения</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3e555511-bfb6-44e7-994d-80a81226686b">
+      <name>Действие</name>
+      <synonym>
+        <key>ru</key>
+        <value>Действие</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ДействияСоСтрокамиОрдеровНаОтгрузку</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="225386ec-8197-4e39-bc31-2dfc12e25040">
+      <name>УпаковочныйЛистРодитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковочный лист родитель</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.УпаковочныйЛист</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="daf19eb7-717d-46f2-924f-0f5c24d6ad3d">
+      <name>НазначениеОтправителя</name>
+      <synonym>
+        <key>ru</key>
+        <value>Назначение отправителя</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Назначения</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Назначение обособленной потребности, обеспечиваемой перемещением.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>РежимВыбораНазначений</name>
+        <value xsi:type="core:StringValue">
+          <value>Все</value>
+        </value>
+      </choiceParameters>
+      <choiceParameters>
+        <name>Отбор.ДвиженияПоСкладскимРегистрам</name>
+        <value xsi:type="core:BooleanValue">
+          <value>true</value>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3bda1bde-14ca-4405-841d-9d68998b3f73">
+      <name>ВариантОбеспечения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вариант обеспечения</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ВариантыОбеспечения</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Вариант обеспечения потребности.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="1a419c23-b3fa-4b81-98d0-6aebe53a19ca">
+    <producedTypes>
+      <objectType typeId="cd5cc8b7-2478-4149-8c02-f195643d718f" valueTypeId="1f03ebb7-0f96-4314-bfac-df7f19ef80e4"/>
+      <rowType typeId="c5f6f675-e5c1-4bab-8080-daaa2c6fabcf" valueTypeId="95061ff7-dcae-4ae6-81bd-d2713e08db4f"/>
+    </producedTypes>
+    <name>СерииКешДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серии кеш документа</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="b7eb7634-c306-431b-b72c-bd81cfb96362">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8d47cfa6-4e0a-4065-87a7-3822c8c0c2c7">
+      <name>Характеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6b17c26d-5a57-4039-bed6-92230481f8e5">
+      <name>Назначение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Назначение</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Назначения</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="42202978-edfb-4d9f-8914-961cf4f84898">
+      <name>Упаковка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковка</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5b82f23c-13be-4f5d-8f18-f0c70c4ae86d">
+      <name>Склад</name>
+      <synonym>
+        <key>ru</key>
+        <value>Склад</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Склады</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="cfe91739-2072-48c2-aed7-56876f048042">
+      <name>НоменклатураОприходование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура оприходование</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a1e42279-0ca8-4e60-969d-87729481fa89">
+      <name>ХарактеристикаОприходование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика оприходование</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e0fb5fad-4411-4c3e-8a06-7f60c3945485">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="830e6771-41c6-406f-9ec1-8cbb1808f881">
+      <name>КоличествоУпаковок</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество упаковок</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a0e63e4b-27a0-48f5-8e54-cbe7957ac1a9">
+      <name>Серия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Серия</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СерииНоменклатуры</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Серия товара</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9f0b530c-182a-4675-a264-1afeb6fe8578">
+      <name>УказыватьСерии</name>
+      <synonym>
+        <key>ru</key>
+        <value>Указывать серии</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="08f3e8eb-11d6-42b9-afa6-0a9a8c6b93ae">
+      <name>ВариантОформления</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вариант оформления</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ВариантыОформленияДокументовПродажи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0acca544-90a1-493f-9169-b1fde40c20a6">
+      <name>НеОтгружать</name>
+      <synonym>
+        <key>ru</key>
+        <value>Не отгружать</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>1</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Признак, что тара отобрана сверх распоряжения на отгрузку. Необходимо эту тару оставить в зоне отгрузки.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2a2d8ab4-b2ed-4402-abe4-0df2b3608def">
+      <name>Помещение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Помещение</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СкладскиеПомещения</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="618df209-071e-4e30-ac00-bd9237c27ab3">
+      <name>Коэффициент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Коэффициент</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество номенклатуры в одной упаковке. Указывается в той единице измерения, которая выбрана в номенклатуре.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:NumberValue">
+        <value>1</value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="de6bb716-2ca1-4673-825d-82da44081016">
+      <name>Действие</name>
+      <synonym>
+        <key>ru</key>
+        <value>Действие</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ДействияСоСтрокамиОрдеровНаОтгрузку</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="beb2e385-96f1-4d61-aac6-476448e593f4">
+      <name>УпаковочныйЛистРодитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковочный лист родитель</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.УпаковочныйЛист</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3c149ba9-4cfc-433f-ab99-1ffbc621e416">
+      <name>НазначениеОтправителя</name>
+      <synonym>
+        <key>ru</key>
+        <value>Назначение отправителя</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Назначения</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Назначение обособленной потребности, обеспечиваемой перемещением.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>РежимВыбораНазначений</name>
+        <value xsi:type="core:StringValue">
+          <value>Все</value>
+        </value>
+      </choiceParameters>
+      <choiceParameters>
+        <name>Отбор.ДвиженияПоСкладскимРегистрам</name>
+        <value xsi:type="core:BooleanValue">
+          <value>true</value>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="501a865c-fa0e-4110-afa1-6cf946add592">
+    <name>РегистрацияИПодборСерийПоОднойСтрокеТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регистрация и подбор серий по одной строке товаров</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d94c9ad9-e072-4e4c-8f37-6ab7ab5f6db5">
+    <name>ПодборСерийПоОстаткамДляВсехСтрокТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подбор серий по остаткам для всех строк товаров</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="ea5b3594-143a-4930-96ef-8d04f0c1be43">
+    <name>УказаниеСерииВСтрокеТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Указание серии в строке товаров</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="30d93c09-f311-4b87-9af7-6d6c0fbc440f">
+    <name>УказаниеДаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Указание даты</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8aa006eb-cf94-45ba-963d-db8fd9125ff4">
+    <name>НастройкиСканированияИПечатиЭтикеток</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройки сканирования и печати этикеток</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e6b95116-6b59-4da3-b41d-997f3504c9b7">
+    <name>НастройкиЗаполненияНомеров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка заполнения номеров серий</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

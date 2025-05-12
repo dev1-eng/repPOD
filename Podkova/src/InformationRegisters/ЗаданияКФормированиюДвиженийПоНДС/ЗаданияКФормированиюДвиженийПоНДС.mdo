@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7d33be16-2313-4d33-8f1d-4bc49e0c8d34">
+  <producedTypes>
+    <selectionType typeId="8d0263b1-7f77-4d85-a2d6-c0aad349ce9d" valueTypeId="d2de7c02-e409-4750-9637-a9f14861dc7d"/>
+    <listType typeId="feaecdf7-e195-4fce-95a7-4116f09db120" valueTypeId="9f8c3ec4-480c-47c8-9349-d7fced5e7b08"/>
+    <managerType typeId="fe140a4e-789b-426f-9e9c-c0452e222874" valueTypeId="237d9dad-5e9e-4f35-841d-4f8277306fbb"/>
+    <recordSetType typeId="77c26e1c-9fd6-4a65-9208-eb3a9ff09807" valueTypeId="ba4a6c2b-09d4-48e1-8fd5-b64a22fac6ea"/>
+    <recordKeyType typeId="4dbdde16-c7fc-4234-bb30-f819d370973d" valueTypeId="6d335c70-665a-431a-87e7-09ecc6780f53"/>
+    <recordType typeId="179820dd-1b22-4e1f-833c-6642dc635c41" valueTypeId="15ebeedd-d720-4563-a514-5b6aa1dedece"/>
+    <recordManagerType typeId="390d11d1-16b7-4517-b0fe-e5f535b264bd" valueTypeId="1983e858-8810-4d1f-b0c2-17822a80327f"/>
+  </producedTypes>
+  <name>ЗаданияКФормированиюДвиженийПоНДС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Задания к формированию движений по НДС</value>
+  </synonym>
+  <comment>Технический регистр. Содержит в себе данные о документах,  по которым необходимо сформировать отложенные движения по НДС</comment>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.ЗаданияКФормированиюДвиженийПоНДС.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="2a8527dd-a5aa-4ec9-99a9-a5d5e87048b6">
+    <name>Месяц</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ДФ=MM.yyyy</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДФ=MM.yyyy</value>
+    </editFormat>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6189b412-05d8-432b-93d3-e1687a86a274">
+    <name>НомерЗадания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер задания</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8942de75-107e-42c1-af30-4919d7bb675f">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b9874b93-80d0-49ae-ad74-e16298c7ab51">
+    <name>СчетФактура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет фактура</value>
+    </synonym>
+    <type>
+      <types>DocumentRef</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="6d40be9b-8c80-432a-bc7a-fde04861eeef">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c803d62c-207d-4f90-967b-f95658ec7482">
+    <name>ВыполнениеЗаданийРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выполнение заданий расчета</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

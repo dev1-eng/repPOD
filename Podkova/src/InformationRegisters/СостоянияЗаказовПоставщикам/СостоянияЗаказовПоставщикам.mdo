@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="68dc1454-631b-45f1-aaa5-388c0b6f5913">
+  <producedTypes>
+    <selectionType typeId="c5cd86a2-3848-4ac0-b760-df3eaf9f92a9" valueTypeId="54c36828-8b1e-474e-88af-6c874066f887"/>
+    <listType typeId="f4fffbfe-f632-4767-ba11-6fbd51e27266" valueTypeId="b8ca958b-cd66-4f5d-abfa-a89b856ae8d5"/>
+    <managerType typeId="1b6fe471-d722-4c6c-a48a-bb19f01dadaf" valueTypeId="9ff23b47-f929-4bf0-97a1-792c806f185b"/>
+    <recordSetType typeId="3671d617-72ac-4a42-af71-5500dadcf639" valueTypeId="1ba83c99-a127-4ee0-90cb-02d2652b296f"/>
+    <recordKeyType typeId="11c590dc-3060-44cb-a3b5-0a224e5a10dc" valueTypeId="896d1ab2-a8b9-4101-80c4-eae548b47306"/>
+    <recordType typeId="e94bf3bc-5a5b-498b-9227-fce103da0559" valueTypeId="9dc59e04-cf78-45c4-877e-264c0c990868"/>
+    <recordManagerType typeId="cd45a9c2-a1bb-447e-aed2-58909c90f34f" valueTypeId="e842e5fc-e961-4f66-a442-00de3033f95e"/>
+  </producedTypes>
+  <name>СостоянияЗаказовПоставщикам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состояния заказов поставщикам</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="9d88bd0a-b752-4b33-a63b-f7ae021c65c9">
+    <name>Состояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СостоянияЗаказовПоставщикам</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Текущее состояние заказа</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d8024eb9-9268-4cfc-b4ec-7a9cae7de3d5">
+    <name>ДатаСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата события</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата, на которую заказ считается просроченным</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="fd6f0b6c-5275-4dc4-a976-6c0e9c921341">
+    <name>СуммаОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма оплаты</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a59b1e74-f439-45cb-82f0-8cab30b7fbaf">
+    <name>ПроцентОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент оплаты</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9766197e-8fc6-458c-a124-2647f9f827f0">
+    <name>СуммаПоступления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма поступления заказа</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0a2df38a-e025-455e-a10a-a56186efa225">
+    <name>ПроцентПоступления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент поступления заказа</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="aadffa09-94f8-4995-bc4c-261e59202cca">
+    <name>СуммаДолга</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма долга</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="60d99f29-117a-4b5f-9f37-7c81f69e1ac5">
+    <name>ПроцентДолга</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент долга</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b7241faf-4eee-447f-84ec-cf375c94e4b1">
+    <name>ЕстьРасхожденияОрдерНакладная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Есть расхождения ордер накладная</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак расхождения между накладной/ордером в случае, когда распоряжением на приемку является заказ.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="470c0639-596b-4723-ab1a-f7f71938b7f3">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказПоставщику</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

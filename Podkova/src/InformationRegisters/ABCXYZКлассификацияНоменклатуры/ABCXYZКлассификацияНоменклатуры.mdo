@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1e379b3a-29cf-495b-b213-0930eccbcbf6">
+  <producedTypes>
+    <selectionType typeId="f919069b-cddc-4ba1-9098-9c5e619740b5" valueTypeId="52f8e224-b55c-4392-ab17-9b83b2ea2187"/>
+    <listType typeId="40490310-2e06-44a2-a5c8-b92997173607" valueTypeId="92e6dcfd-caa2-4440-8796-0b0241b74d1f"/>
+    <managerType typeId="06f8f511-c041-470a-a838-e08e7efb34b7" valueTypeId="f083a608-ab41-4794-952e-fa48654d3f93"/>
+    <recordSetType typeId="93fd353e-3e8d-462d-b65f-5a7ffaf5a670" valueTypeId="f7bdd3b2-3929-4d66-a27e-9d98e7472821"/>
+    <recordKeyType typeId="7e6491d5-7c38-4c08-a69c-5e286683565a" valueTypeId="5115c514-5714-457e-9ec7-1bccd2c94846"/>
+    <recordType typeId="538e051d-cdb5-4551-9ccc-d5f27703dd44" valueTypeId="d1585a7c-323b-47b7-a220-ae0b1c04bc73"/>
+    <recordManagerType typeId="e84ddfbb-8bf4-42cd-909a-7e31ddf6bbe9" valueTypeId="612ea9d6-c43e-45af-abc6-8b2b583a12a8"/>
+  </producedTypes>
+  <name>ABCXYZКлассификацияНоменклатуры</name>
+  <synonym>
+    <key>ru</key>
+    <value>ABC/XYZ классификация номенклатуры</value>
+  </synonym>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата классификации</value>
+    </synonym>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата проведения классификации.</value>
+    </toolTip>
+    <fillValue xsi:type="core:DateValue">
+      <value>0001-01-01T00:00:00</value>
+    </fillValue>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <resources uuid="66d4993c-f7b1-4f6a-94e7-f0cb3906bdd0">
+    <name>Класс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Класс</value>
+    </synonym>
+    <type>
+      <types>EnumRef.XYZКлассификация</types>
+      <types>EnumRef.ABCКлассификация</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Класс номенклатуры на дату классификации.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ABCКлассификация.EmptyRef</value>
+    </fillValue>
+  </resources>
+  <resources uuid="7d5f9500-3fe3-471b-ac61-5d3698ab9ba0">
+    <name>ЗначениеПараметраКлассификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Значение параметра классификации</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Значение параметра, по которому выполнена классификации.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="1f898d71-2c91-4e04-b75b-346b64825ac6">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Классифицируемая номенклатура.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Номенклатура.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ff6ba052-e4c5-430e-b13c-8cbf07b6a94a">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Классифицируемая характеристика номенклатуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.ХарактеристикиНоменклатуры.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8701797d-bf8f-4157-af0a-c1e7e06269c2">
+    <name>РазделКлассификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Раздел классификации</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+      <types>CatalogRef.СтруктураПредприятия</types>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Раздел, для которого выполнена классификация.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3d18abe6-86f5-4966-ad97-9f39d2f92d72">
+    <name>ТипПараметраКлассификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип параметра классификации</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыПараметровКлассификации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Параметр, по которому выполнена классификация.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ТипыПараметровКлассификации.EmptyRef</value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="eb064ba0-47cb-4d07-b223-10f3c32a4f95">
+    <name>ТипКлассификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип классификации</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыКлассификации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Тип выполненной классификации.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="bc18da6f-b781-4566-a3d9-9922ef1bcccb">
+    <name>ABCXYZКлассификация</name>
+    <synonym>
+      <key>ru</key>
+      <value>ABC/XYZ классификация</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="6a97b142-4a1e-4de6-9519-4b6bdd55bcbc">
+    <name>ABCXYZКлассификация</name>
+    <synonym>
+      <key>ru</key>
+      <value>ABC/XYZ классификация</value>
+    </synonym>
+    <group>FormNavigationPanelSeeAlso</group>
+    <commandParameterType>
+      <types>CatalogRef.Номенклатура</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:InformationRegister>

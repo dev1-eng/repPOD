@@ -1,0 +1,4438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetObject">
+		<name>ТаблицаПериодов</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Period</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<objectName>ТаблицаПериодов</objectName>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ЦелевыеЗначения</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦелевоеЗначение</dataPath>
+			<field>ЦелевоеЗначение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цель</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Target value</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидОтклоненияОтЦелевогоЗначения</dataPath>
+			<field>ВидОтклоненияОтЦелевогоЗначения</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЦелевогоЗначения</dataPath>
+			<field>ВидЦелевогоЗначения</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦелевойДиапазонМаксимум</dataPath>
+			<field>ЦелевойДиапазонМаксимум</field>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦелевойДиапазонМинимум</dataPath>
+			<field>ЦелевойДиапазонМинимум</field>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГраничноеНегативноеОтклонение</dataPath>
+			<field>ГраничноеНегативноеОтклонение</field>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГраничноеПозитивноеОтклонение</dataPath>
+			<field>ГраничноеПозитивноеОтклонение</field>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПриведенноеГраничноеНегативноеОтклонение</dataPath>
+			<field>ПриведенноеГраничноеНегативноеОтклонение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Граница негативных отклонений</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Negative variance border</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПриведенноеГраничноеПозитивноеОтклонение</dataPath>
+			<field>ПриведенноеГраничноеПозитивноеОтклонение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Граница позитивных отклонений</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Positive variance border</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаРасчета</dataPath>
+			<field>ДатаРасчета</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата расчета</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Settlement date</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВариантАнализа</dataPath>
+			<field>ВариантАнализа</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	&amp;ДатаРасчета КАК ДатаРасчета,
+	ЦелевыеЗначенияВариантовАнализаСрезПоследних.ВидЦелевогоЗначения,
+	ЦелевыеЗначенияВариантовАнализаСрезПоследних.ЦелевоеЗначение,
+	ЦелевыеЗначенияВариантовАнализаСрезПоследних.ЦелевойДиапазонМинимум,
+	ЦелевыеЗначенияВариантовАнализаСрезПоследних.ЦелевойДиапазонМаксимум,
+	ЦелевыеЗначенияВариантовАнализаСрезПоследних.ВидОтклоненияОтЦелевогоЗначения,
+	ЦелевыеЗначенияВариантовАнализаСрезПоследних.ГраничноеНегативноеОтклонение,
+	ЦелевыеЗначенияВариантовАнализаСрезПоследних.ГраничноеПозитивноеОтклонение,
+	ЦелевыеЗначенияВариантовАнализаСрезПоследних.ПриведенноеГраничноеНегативноеОтклонение,
+	ЦелевыеЗначенияВариантовАнализаСрезПоследних.ПриведенноеГраничноеПозитивноеОтклонение
+ИЗ
+	РегистрСведений.ЦелевыеЗначенияВариантовАнализа.СрезПоследних(&amp;ДатаРасчета, ВариантАнализа = &amp;ВариантАнализа) КАК ЦелевыеЗначенияВариантовАнализаСрезПоследних</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetUnion">
+		<name>ДанныеДляАнализа</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодНеделя</dataPath>
+			<field>ПериодНеделя</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:periodNumber>2</dcscom:periodNumber>
+				<dcscom:periodType>Additional</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партнер</dataPath>
+			<field>Партнер</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодПолугодие</dataPath>
+			<field>ПериодПолугодие</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:periodNumber>6</dcscom:periodNumber>
+				<dcscom:periodType>Additional</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ХозяйственнаяОперация</dataPath>
+			<field>ХозяйственнаяОперация</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодДень</dataPath>
+			<field>ПериодДень</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Additional</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасчетныйДокумент</dataPath>
+			<field>РасчетныйДокумент</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодГод</dataPath>
+			<field>ПериодГод</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:periodNumber>7</dcscom:periodNumber>
+				<dcscom:periodType>Additional</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодМесяц</dataPath>
+			<field>ПериодМесяц</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:periodNumber>4</dcscom:periodNumber>
+				<dcscom:periodType>Additional</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатьяДвиженияДенежныхСредств</dataPath>
+			<field>СтатьяДвиженияДенежныхСредств</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МестоХраненияДенежныхСредств</dataPath>
+			<field>МестоХраненияДенежныхСредств</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Место хранения денежных средств</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Cash storage location</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договор</dataPath>
+			<field>Договор</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипДенежныхСредств</dataPath>
+			<field>ТипДенежныхСредств</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодКвартал</dataPath>
+			<field>ПериодКвартал</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:periodNumber>5</dcscom:periodNumber>
+				<dcscom:periodType>Additional</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Department</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПоступлениеФакт</dataPath>
+			<field>ПоступлениеФакт</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поступление (факт)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Receipt (actual)</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СписаниеФакт</dataPath>
+			<field>СписаниеФакт</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Списание (факт)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Write-off (actual)</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодДекада</dataPath>
+			<field>ПериодДекада</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:periodNumber>3</dcscom:periodNumber>
+				<dcscom:periodType>Additional</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектРасчетов</dataPath>
+			<field>ОбъектРасчетов</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорТипДенежныхСредств</dataPath>
+			<field>КорТипДенежныхСредств</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПоступлениеПлан</dataPath>
+			<field>ПоступлениеПлан</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поступление (план)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Receipt (plan)</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СписаниеПлан</dataPath>
+			<field>СписаниеПлан</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Списание (план)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Write-off (plan)</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорДенежныеСредства</dataPath>
+			<field>КорДенежныеСредства</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаРасчета</dataPath>
+			<field>ДатаРасчета</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата расчета</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Settlement date</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипПлатежаФЗ275</dataPath>
+			<field>ТипПлатежаФЗ275</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатьяКалькуляции</dataPath>
+			<field>СтатьяКалькуляции</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорВалюта</dataPath>
+			<field>КорВалюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаправлениеДеятельностиДС</dataPath>
+			<field>НаправлениеДеятельностиДС</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаправлениеДеятельности</dataPath>
+			<field>НаправлениеДеятельности</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регистратор</dataPath>
+			<field>Регистратор</field>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодСекунда</dataPath>
+			<field>ПериодСекунда</field>
+			<role>
+				<dcscom:periodNumber>2</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипДвижения</dataPath>
+			<field>ТипДвижения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип движения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорАналитика</dataPath>
+			<field>КорАналитика</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кор аналитика</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатьяДоходовРасходов</dataPath>
+			<field>СтатьяДоходовРасходов</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АналитикаРасходов</dataPath>
+			<field>АналитикаРасходов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АналитикаДоходовРасходов</dataPath>
+			<field>АналитикаДоходовРасходов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Аналитика доходов расходов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Dimension of income/expense</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АналитикаАктивовПассивов</dataPath>
+			<field>АналитикаАктивовПассивов</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодразделениеДоходовРасходов</dataPath>
+			<field>ПодразделениеДоходовРасходов</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АналитикаДоходов</dataPath>
+			<field>АналитикаДоходов</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорМестоХраненияДенежныхСредств</dataPath>
+			<field>КорМестоХраненияДенежныхСредств</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кор место хранения денежных средств</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Cor cash storage location</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбластьПланирования</dataPath>
+			<field>ОбластьПланирования</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПлательщикПолучатель</dataPath>
+			<field>ПлательщикПолучатель</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектОплаты</dataPath>
+			<field>ОбъектОплаты</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<item xsi:type="DataSetQuery">
+			<name>ДенежныеСредстваКонтрагент</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодНеделя</dataPath>
+				<field>ПериодНеделя</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:periodNumber>4</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Контрагент</dataPath>
+				<field>Контрагент</field>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Партнер</dataPath>
+				<field>Партнер</field>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодПолугодие</dataPath>
+				<field>ПериодПолугодие</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:periodNumber>8</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ХозяйственнаяОперация</dataPath>
+				<field>ХозяйственнаяОперация</field>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодДень</dataPath>
+				<field>ПериодДень</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:periodNumber>3</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>РасчетныйДокумент</dataPath>
+				<field>РасчетныйДокумент</field>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодГод</dataPath>
+				<field>ПериодГод</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:periodNumber>9</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодМесяц</dataPath>
+				<field>ПериодМесяц</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:periodNumber>6</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтатьяДвиженияДенежныхСредств</dataPath>
+				<field>СтатьяДвиженияДенежныхСредств</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Валюта</dataPath>
+				<field>Валюта</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>МестоХраненияДенежныхСредств</dataPath>
+				<field>МестоХраненияДенежныхСредств</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Место хранения денежных средств</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Cash storage location</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Договор</dataPath>
+				<field>Договор</field>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ТипДенежныхСредств</dataPath>
+				<field>ТипДенежныхСредств</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодКвартал</dataPath>
+				<field>ПериодКвартал</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:periodNumber>7</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Подразделение</dataPath>
+				<field>Подразделение</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подразделение</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Department</v8:content>
+					</v8:item>
+				</title>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПоступлениеФакт</dataPath>
+				<field>ПоступлениеФакт</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Поступление факт</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Receipt actual</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Организация</dataPath>
+				<field>Организация</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СписаниеФакт</dataPath>
+				<field>СписаниеФакт</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Списание факт</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Write-off actual</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодДекада</dataPath>
+				<field>ПериодДекада</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:periodNumber>5</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОбъектРасчетов</dataPath>
+				<field>ОбъектРасчетов</field>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДатаРасчета</dataPath>
+				<field>ДатаРасчета</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дата расчета</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Settlement date</v8:content>
+					</v8:item>
+				</title>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ТипПлатежаФЗ275</dataPath>
+				<field>ТипПлатежаФЗ275</field>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтатьяКалькуляции</dataPath>
+				<field>СтатьяКалькуляции</field>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НаправлениеДеятельностиДС</dataPath>
+				<field>НаправлениеДеятельностиДС</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НаправлениеДеятельности</dataPath>
+				<field>НаправлениеДеятельности</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Регистратор</dataPath>
+				<field>Регистратор</field>
+				<role>
+					<dcscom:periodNumber>1</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодСекунда</dataPath>
+				<field>ПериодСекунда</field>
+				<role>
+					<dcscom:periodNumber>2</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ТипДвижения</dataPath>
+				<field>ТипДвижения</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Тип движения</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорАналитика</dataPath>
+				<field>КорАналитика</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Кор аналитика</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ
+	НастройкиХозяйственныхОпераций.ХозяйственнаяОперация КАК ХозяйственнаяОперация
+ПОМЕСТИТЬ ОперацииПриход
+ИЗ
+	Справочник.НастройкиХозяйственныхОпераций КАК НастройкиХозяйственныхОпераций
+ГДЕ
+	НастройкиХозяйственныхОпераций.ИсточникДанных = "ДвиженияДенежныеСредстваКонтрагент"
+	И НастройкиХозяйственныхОпераций.Приход = ЗНАЧЕНИЕ(Перечисление.ТипыДанныхУчета.ДенежныеСредства)
+;
+////////////////////////////////////////////////////////////////////////////////
+
+ВЫБРАТЬ
+	НастройкиХозяйственныхОпераций.ХозяйственнаяОперация КАК ХозяйственнаяОперация
+ПОМЕСТИТЬ ОперацииРасход
+ИЗ
+	Справочник.НастройкиХозяйственныхОпераций КАК НастройкиХозяйственныхОпераций
+ГДЕ
+	НастройкиХозяйственныхОпераций.ИсточникДанных = "ДвиженияДенежныеСредстваКонтрагент"
+	И НастройкиХозяйственныхОпераций.Расход = ЗНАЧЕНИЕ(Перечисление.ТипыДанныхУчета.ДенежныеСредства)
+;
+////////////////////////////////////////////////////////////////////////////////
+
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	&amp;ДатаРасчета                                       КАК ДатаРасчета,
+	ДанныеРегистра.Регистратор                         КАК Регистратор,
+	
+	ДанныеРегистра.ПериодСекунда                       КАК ПериодСекунда,
+	ДанныеРегистра.ПериодДень                          КАК ПериодДень,
+	ДанныеРегистра.ПериодНеделя                        КАК ПериодНеделя,
+	ДанныеРегистра.ПериодДекада                        КАК ПериодДекада,
+	ДанныеРегистра.ПериодМесяц                         КАК ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал                       КАК ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие                     КАК ПериодПолугодие,
+	ДанныеРегистра.ПериодГод                           КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.НаправлениеДеятельностиДС           КАК НаправлениеДеятельностиДС,
+	ДанныеРегистра.ДенежныеСредства                    КАК МестоХраненияДенежныхСредств,
+	ДанныеРегистра.ТипДенежныхСредств                  КАК ТипДенежныхСредств,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	ДанныеРегистра.ВалютаПлатежа                       КАК Валюта,
+	
+	ДанныеРегистра.Контрагент                          КАК КорАналитика,
+	
+	ДанныеРегистра.НаправлениеДеятельностиКонтрагента  КАК НаправлениеДеятельности,
+	ДанныеРегистра.Партнер                             КАК Партнер,
+	ДанныеРегистра.Контрагент                          КАК Контрагент,
+	ДанныеРегистра.Договор                             КАК Договор,
+	ДанныеРегистра.ОбъектРасчетов                      КАК ОбъектРасчетов,
+	
+	ВЫБОР &amp;ДанныеОтчета
+		КОГДА 2 ТОГДА
+			ДанныеРегистра.СуммаОплатыОборот
+		КОГДА 3 ТОГДА
+			ДанныеРегистра.СуммаОплатыРеглОборот
+	КОНЕЦ КАК ПоступлениеФакт,
+	
+	0                                                  КАК СписаниеФакт,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Поступление) КАК ТипДвижения
+	
+{ВЫБРАТЬ
+	Регистратор,
+	ПериодСекунда,
+	ПериодДень,
+	ПериодНеделя,
+	ПериодДекада,
+	ПериодМесяц,
+	ПериодКвартал,
+	ПериодПолугодие,
+	ПериодГод,
+	ХозяйственнаяОперация.*,
+	Организация.*,
+	Подразделение.*,
+	НаправлениеДеятельностиДС.*,
+	МестоХраненияДенежныхСредств.*,
+	ТипДенежныхСредств.*,
+	СтатьяДвиженияДенежныхСредств.*,
+	Валюта.*,
+	КорАналитика.*,
+	НаправлениеДеятельности.*,
+	Партнер.*,
+	Контрагент.*,
+	Договор.*,
+	ОбъектРасчетов.*,
+	ПоступлениеФакт,
+	СписаниеФакт}
+ИЗ
+	РегистрНакопления.ДвиженияДенежныеСредстваКонтрагент.Обороты({(&amp;ПриведенноеНачалоПериода)}, {(&amp;КонецПериода)}, Авто,
+		ХозяйственнаяОперация В (ВЫБРАТЬ ОперацииПриход.ХозяйственнаяОперация ИЗ ОперацииПриход)
+		И ТипДенежныхСредств В (
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Наличные),
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Безналичные)
+			)
+		{ХозяйственнаяОперация.*}
+		{Организация.*}
+		{Подразделение.*}
+		{НаправлениеДеятельностиДС.*}
+		{ДенежныеСредства.* КАК МестоХраненияДенежныхСредств}
+		{ТипДенежныхСредств.*}
+		{СтатьяДвиженияДенежныхСредств.*}
+		{ВалютаПлатежа.* КАК Валюта}
+		{НаправлениеДеятельностиКонтрагента.* КАК НаправлениеДеятельности}
+		{Партнер.*}
+		{Контрагент.*}
+		{Контрагент.* КАК КорАналитика}
+		{Договор.*}
+		{ОбъектРасчетов.*}
+		) КАК ДанныеРегистра
+{ГДЕ
+	ДанныеРегистра.Регистратор,
+	ДанныеРегистра.ПериодСекунда,
+	ДанныеРегистра.ПериодДень,
+	ДанныеРегистра.ПериодНеделя,
+	ДанныеРегистра.ПериодДекада,
+	ДанныеРегистра.ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие,
+	ДанныеРегистра.ПериодГод
+}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	&amp;ДатаРасчета                                       КАК ДатаРасчета,
+	ДанныеРегистра.Регистратор                         КАК Регистратор,
+	
+	ДанныеРегистра.ПериодСекунда                       КАК ПериодСекунда,
+	ДанныеРегистра.ПериодДень                          КАК ПериодДень,
+	ДанныеРегистра.ПериодНеделя                        КАК ПериодНеделя,
+	ДанныеРегистра.ПериодДекада                        КАК ПериодДекада,
+	ДанныеРегистра.ПериодМесяц                         КАК ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал                       КАК ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие                     КАК ПериодПолугодие,
+	ДанныеРегистра.ПериодГод                           КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.НаправлениеДеятельностиДС           КАК НаправлениеДеятельностиДС,
+	ДанныеРегистра.ДенежныеСредства                    КАК МестоХраненияДенежныхСредств,
+	ДанныеРегистра.ТипДенежныхСредств                  КАК ТипДенежныхСредств,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	ДанныеРегистра.ВалютаПлатежа                       КАК Валюта,
+	
+	ДанныеРегистра.Контрагент                          КАК КорАналитика,
+	
+	ДанныеРегистра.НаправлениеДеятельностиКонтрагента  КАК НаправлениеДеятельности,
+	ДанныеРегистра.Партнер                             КАК Партнер,
+	ДанныеРегистра.Контрагент                          КАК Контрагент,
+	ДанныеРегистра.Договор                             КАК Договор,
+	ДанныеРегистра.ОбъектРасчетов                      КАК ОбъектРасчетов,
+	
+	0                                                  КАК ПоступлениеФакт,
+	
+	ВЫБОР &amp;ДанныеОтчета
+		КОГДА 2 ТОГДА
+			-ДанныеРегистра.СуммаОплатыОборот
+		КОГДА 3 ТОГДА
+			-ДанныеРегистра.СуммаОплатыРеглОборот
+	КОНЕЦ КАК СписаниеФакт,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Списание) КАК ТипДвижения
+	
+ИЗ
+	РегистрНакопления.ДвиженияДенежныеСредстваКонтрагент.Обороты({(&amp;ПриведенноеНачалоПериода)}, {(&amp;КонецПериода)}, Авто,
+		ХозяйственнаяОперация В (ВЫБРАТЬ ОперацииРасход.ХозяйственнаяОперация ИЗ ОперацииРасход)
+		И ТипДенежныхСредств В (
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Наличные),
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Безналичные)
+			)
+		{ХозяйственнаяОперация.*}
+		{Организация.*}
+		{Подразделение.*}
+		{НаправлениеДеятельностиДС.*}
+		{ДенежныеСредства.* КАК МестоХраненияДенежныхСредств}
+		{ТипДенежныхСредств.*}
+		{СтатьяДвиженияДенежныхСредств.*}
+		{ВалютаПлатежа.* КАК Валюта}
+		{НаправлениеДеятельностиКонтрагента.* КАК НаправлениеДеятельности}
+		{Партнер.*}
+		{Контрагент.*}
+		{Контрагент.* КАК КорАналитика}
+		{Договор.*}
+		{ОбъектРасчетов.*}
+		) КАК ДанныеРегистра
+{ГДЕ
+	ДанныеРегистра.Регистратор,
+	ДанныеРегистра.ПериодСекунда,
+	ДанныеРегистра.ПериодДень,
+	ДанныеРегистра.ПериодНеделя,
+	ДанныеРегистра.ПериодДекада,
+	ДанныеРегистра.ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие,
+	ДанныеРегистра.ПериодГод
+}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ // Эквайринг
+	&amp;ДатаРасчета                                       КАК ДатаРасчета,
+	ДанныеРегистра.Регистратор                         КАК Регистратор,
+	
+	ДанныеРегистра.ПериодСекунда                       КАК ПериодСекунда,
+	ДанныеРегистра.ПериодДень                          КАК ПериодДень,
+	ДанныеРегистра.ПериодНеделя                        КАК ПериодНеделя,
+	ДанныеРегистра.ПериодДекада                        КАК ПериодДекада,
+	ДанныеРегистра.ПериодМесяц                         КАК ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал                       КАК ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие                     КАК ПериодПолугодие,
+	ДанныеРегистра.ПериодГод                           КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.НаправлениеДеятельностиДС           КАК НаправлениеДеятельностиДС,
+	НЕОПРЕДЕЛЕНО                                       КАК МестоХраненияДенежныхСредств,
+	ДанныеРегистра.ТипДенежныхСредств                  КАК ТипДенежныхСредств,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	ДанныеРегистра.ВалютаПлатежа                       КАК Валюта,
+	
+	ДанныеРегистра.Контрагент                          КАК КорАналитика,
+	
+	ДанныеРегистра.НаправлениеДеятельностиКонтрагента  КАК НаправлениеДеятельности,
+	ДанныеРегистра.Партнер                             КАК Партнер,
+	ДанныеРегистра.Контрагент                          КАК Контрагент,
+	ДанныеРегистра.Договор                             КАК Договор,
+	ДанныеРегистра.ОбъектРасчетов                      КАК ОбъектРасчетов,
+	
+	ВЫБОР &amp;ДанныеОтчета
+		КОГДА 2 ТОГДА
+			ДанныеРегистра.СуммаОплатыОборот
+		КОГДА 3 ТОГДА
+			ДанныеРегистра.СуммаОплатыРеглОборот
+	КОНЕЦ КАК ПоступлениеФакт,
+	
+	0                                                  КАК СписаниеФакт,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Поступление) КАК ТипДвижения
+	
+ИЗ
+	РегистрНакопления.ДвиженияДенежныеСредстваКонтрагент.Обороты({(&amp;ПриведенноеНачалоПериода)}, {(&amp;КонецПериода)}, Авто,
+		ХозяйственнаяОперация В (ВЫБРАТЬ ОперацииПриход.ХозяйственнаяОперация ИЗ ОперацииПриход)
+		И ТипДенежныхСредств В (
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера)
+			)
+		И &amp;ВыводитьДСВПути
+		{ХозяйственнаяОперация.*}
+		{Организация.*}
+		{Подразделение.*}
+		{НаправлениеДеятельностиДС.*}
+		{ДенежныеСредства.* КАК МестоХраненияДенежныхСредств}
+		{ТипДенежныхСредств.*}
+		{СтатьяДвиженияДенежныхСредств.*}
+		{ВалютаПлатежа.* КАК Валюта}
+		{НаправлениеДеятельностиКонтрагента.* КАК НаправлениеДеятельности}
+		{Партнер.*}
+		{Контрагент.*}
+		{Контрагент.* КАК КорАналитика}
+		{Договор.*}
+		{ОбъектРасчетов.*}
+		) КАК ДанныеРегистра
+{ГДЕ
+	ДанныеРегистра.Регистратор,
+	ДанныеРегистра.ПериодСекунда,
+	ДанныеРегистра.ПериодДень,
+	ДанныеРегистра.ПериодНеделя,
+	ДанныеРегистра.ПериодДекада,
+	ДанныеРегистра.ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие,
+	ДанныеРегистра.ПериодГод
+}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	&amp;ДатаРасчета                                       КАК ДатаРасчета,
+	ДанныеРегистра.Регистратор                         КАК Регистратор,
+	
+	ДанныеРегистра.ПериодСекунда                       КАК ПериодСекунда,
+	ДанныеРегистра.ПериодДень                          КАК ПериодДень,
+	ДанныеРегистра.ПериодНеделя                        КАК ПериодНеделя,
+	ДанныеРегистра.ПериодДекада                        КАК ПериодДекада,
+	ДанныеРегистра.ПериодМесяц                         КАК ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал                       КАК ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие                     КАК ПериодПолугодие,
+	ДанныеРегистра.ПериодГод                           КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.НаправлениеДеятельностиДС           КАК НаправлениеДеятельностиДС,
+	НЕОПРЕДЕЛЕНО                                       КАК МестоХраненияДенежныхСредств,
+	ДанныеРегистра.ТипДенежныхСредств                  КАК ТипДенежныхСредств,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	ДанныеРегистра.ВалютаПлатежа                       КАК Валюта,
+	
+	ДанныеРегистра.Контрагент                          КАК КорАналитика,
+	
+	ДанныеРегистра.НаправлениеДеятельностиКонтрагента  КАК НаправлениеДеятельности,
+	ДанныеРегистра.Партнер                             КАК Партнер,
+	ДанныеРегистра.Контрагент                          КАК Контрагент,
+	ДанныеРегистра.Договор                             КАК Договор,
+	ДанныеРегистра.ОбъектРасчетов                      КАК ОбъектРасчетов,
+	
+	0                                                  КАК ПоступлениеФакт,
+	
+	ВЫБОР &amp;ДанныеОтчета
+		КОГДА 1 ТОГДА
+			-ДанныеРегистра.СуммаОплатыВВалютеПлатежаОборот
+		КОГДА 2 ТОГДА
+			-ДанныеРегистра.СуммаОплатыОборот
+		КОГДА 3 ТОГДА
+			-ДанныеРегистра.СуммаОплатыРеглОборот
+	КОНЕЦ КАК СписаниеФакт,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Списание) КАК ТипДвижения
+	
+ИЗ
+	РегистрНакопления.ДвиженияДенежныеСредстваКонтрагент.Обороты({(&amp;ПриведенноеНачалоПериода)}, {(&amp;КонецПериода)}, Авто,
+		ХозяйственнаяОперация В (ВЫБРАТЬ ОперацииРасход.ХозяйственнаяОперация ИЗ ОперацииРасход)
+		И ТипДенежныхСредств В (
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера)
+			)
+		И &amp;ВыводитьДСВПути
+		{ХозяйственнаяОперация.*}
+		{Организация.*}
+		{Подразделение.*}
+		{НаправлениеДеятельностиДС.*}
+		{ДенежныеСредства.* КАК МестоХраненияДенежныхСредств}
+		{ТипДенежныхСредств.*}
+		{СтатьяДвиженияДенежныхСредств.*}
+		{ВалютаПлатежа.* КАК Валюта}
+		{НаправлениеДеятельностиКонтрагента.* КАК НаправлениеДеятельности}
+		{Партнер.*}
+		{Контрагент.*}
+		{Контрагент.* КАК КорАналитика}
+		{Договор.*}
+		{ОбъектРасчетов.*}
+		) КАК ДанныеРегистра
+{ГДЕ
+	ДанныеРегистра.Регистратор,
+	ДанныеРегистра.ПериодСекунда,
+	ДанныеРегистра.ПериодДень,
+	ДанныеРегистра.ПериодНеделя,
+	ДанныеРегистра.ПериодДекада,
+	ДанныеРегистра.ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие,
+	ДанныеРегистра.ПериодГод
+}</query>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>ДенежныеСредстваДоходыРасходы</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодНеделя</dataPath>
+				<field>ПериодНеделя</field>
+				<role>
+					<dcscom:periodNumber>4</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодГод</dataPath>
+				<field>ПериодГод</field>
+				<role>
+					<dcscom:periodNumber>9</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Подразделение</dataPath>
+				<field>Подразделение</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Регистратор</dataPath>
+				<field>Регистратор</field>
+				<role>
+					<dcscom:periodNumber>1</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодДень</dataPath>
+				<field>ПериодДень</field>
+				<role>
+					<dcscom:periodNumber>3</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодДекада</dataPath>
+				<field>ПериодДекада</field>
+				<role>
+					<dcscom:periodNumber>5</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодМесяц</dataPath>
+				<field>ПериодМесяц</field>
+				<role>
+					<dcscom:periodNumber>6</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодКвартал</dataPath>
+				<field>ПериодКвартал</field>
+				<role>
+					<dcscom:periodNumber>7</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодПолугодие</dataPath>
+				<field>ПериодПолугодие</field>
+				<role>
+					<dcscom:periodNumber>8</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ХозяйственнаяОперация</dataPath>
+				<field>ХозяйственнаяОперация</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Организация</dataPath>
+				<field>Организация</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НаправлениеДеятельностиДС</dataPath>
+				<field>НаправлениеДеятельностиДС</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>МестоХраненияДенежныхСредств</dataPath>
+				<field>МестоХраненияДенежныхСредств</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Место хранения денежных средств</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Cash storage location</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ТипДенежныхСредств</dataPath>
+				<field>ТипДенежныхСредств</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтатьяДвиженияДенежныхСредств</dataPath>
+				<field>СтатьяДвиженияДенежныхСредств</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Валюта</dataPath>
+				<field>Валюта</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Валюта</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Currency</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорАналитика</dataPath>
+				<field>КорАналитика</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Кор аналитика</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Cor dimension</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтатьяКалькуляции</dataPath>
+				<field>СтатьяКалькуляции</field>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ТипПлатежаФЗ275</dataPath>
+				<field>ТипПлатежаФЗ275</field>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтатьяДоходовРасходов</dataPath>
+				<field>СтатьяДоходовРасходов</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>АналитикаРасходов</dataPath>
+				<field>АналитикаРасходов</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НаправлениеДеятельности</dataPath>
+				<field>НаправлениеДеятельности</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Направление деятельности</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Line of business</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>АналитикаДоходовРасходов</dataPath>
+				<field>АналитикаДоходовРасходов</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Аналитика доходов расходов</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Dimension of income/expense</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>АналитикаАктивовПассивов</dataPath>
+				<field>АналитикаАктивовПассивов</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПодразделениеДоходовРасходов</dataPath>
+				<field>ПодразделениеДоходовРасходов</field>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>АналитикаДоходов</dataPath>
+				<field>АналитикаДоходов</field>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодСекунда</dataPath>
+				<field>ПериодСекунда</field>
+				<role>
+					<dcscom:periodNumber>2</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ТипДвижения</dataPath>
+				<field>ТипДвижения</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Тип движения</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Movement type</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДатаРасчета</dataPath>
+				<field>ДатаРасчета</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дата расчета</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПоступлениеФакт</dataPath>
+				<field>ПоступлениеФакт</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Поступление факт</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СписаниеФакт</dataPath>
+				<field>СписаниеФакт</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Списание факт</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ
+	НастройкиХозяйственныхОпераций.ХозяйственнаяОперация КАК ХозяйственнаяОперация
+ПОМЕСТИТЬ ОперацииПриход
+ИЗ
+	Справочник.НастройкиХозяйственныхОпераций КАК НастройкиХозяйственныхОпераций
+ГДЕ
+	НастройкиХозяйственныхОпераций.ИсточникДанных = "ДвиженияДенежныеСредстваДоходыРасходы"
+	И НастройкиХозяйственныхОпераций.Приход = ЗНАЧЕНИЕ(Перечисление.ТипыДанныхУчета.ДенежныеСредства)
+;
+////////////////////////////////////////////////////////////////////////////////
+
+ВЫБРАТЬ
+	НастройкиХозяйственныхОпераций.ХозяйственнаяОперация КАК ХозяйственнаяОперация
+ПОМЕСТИТЬ ОперацииРасход
+ИЗ
+	Справочник.НастройкиХозяйственныхОпераций КАК НастройкиХозяйственныхОпераций
+ГДЕ
+	НастройкиХозяйственныхОпераций.ИсточникДанных = "ДвиженияДенежныеСредстваДоходыРасходы"
+	И НастройкиХозяйственныхОпераций.Расход = ЗНАЧЕНИЕ(Перечисление.ТипыДанныхУчета.ДенежныеСредства)
+;
+////////////////////////////////////////////////////////////////////////////////
+
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	&amp;ДатаРасчета                                       КАК ДатаРасчета,
+	ДанныеРегистра.Регистратор                         КАК Регистратор,
+	
+	ДанныеРегистра.ПериодСекунда                       КАК ПериодСекунда,
+	ДанныеРегистра.ПериодДень                          КАК ПериодДень,
+	ДанныеРегистра.ПериодНеделя                        КАК ПериодНеделя,
+	ДанныеРегистра.ПериодДекада                        КАК ПериодДекада,
+	ДанныеРегистра.ПериодМесяц                         КАК ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал                       КАК ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие                     КАК ПериодПолугодие,
+	ДанныеРегистра.ПериодГод                           КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.НаправлениеДеятельностиДС           КАК НаправлениеДеятельностиДС,
+	ДанныеРегистра.ДенежныеСредства                    КАК МестоХраненияДенежныхСредств,
+	ДанныеРегистра.ТипДенежныхСредств                  КАК ТипДенежныхСредств,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	ДанныеРегистра.Валюта                              КАК Валюта,
+	
+	ДанныеРегистра.СтатьяДоходовРасходов               КАК КорАналитика,
+	
+	ДанныеРегистра.НаправлениеДеятельностиСтатьи       КАК НаправлениеДеятельности,
+	ДанныеРегистра.ПодразделениеДоходовРасходов        КАК ПодразделениеДоходовРасходов,
+	ДанныеРегистра.СтатьяДоходовРасходов               КАК СтатьяДоходовРасходов,
+	ДанныеРегистра.АналитикаДоходов                    КАК АналитикаДоходовРасходов,
+	ДанныеРегистра.АналитикаАктивовПассивов            КАК АналитикаАктивовПассивов,
+	
+	ВЫБОР &amp;ДанныеОтчета
+		КОГДА 2 ТОГДА
+			ДанныеРегистра.СуммаОборот
+		КОГДА 3 ТОГДА
+			ДанныеРегистра.СуммаРеглОборот
+	КОНЕЦ КАК ПоступлениеФакт,
+	
+	0                                                  КАК СписаниеФакт,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Поступление) КАК ТипДвижения
+	
+{ВЫБРАТЬ
+	Регистратор,
+	ПериодСекунда,
+	ПериодДень,
+	ПериодНеделя,
+	ПериодДекада,
+	ПериодМесяц,
+	ПериодКвартал,
+	ПериодПолугодие,
+	ПериодГод,
+	ХозяйственнаяОперация.*,
+	Организация.*,
+	Подразделение.*,
+	НаправлениеДеятельностиДС.*,
+	МестоХраненияДенежныхСредств.*,
+	ТипДенежныхСредств.*,
+	СтатьяДвиженияДенежныхСредств.*,
+	Валюта.*,
+	КорАналитика.*,
+	НаправлениеДеятельности.*,
+	ПодразделениеДоходовРасходов.*,
+	СтатьяДоходовРасходов.*,
+	АналитикаДоходовРасходов.*,
+	АналитикаАктивовПассивов,
+	ПоступлениеФакт,
+	СписаниеФакт
+}
+ИЗ
+	РегистрНакопления.ДвиженияДенежныеСредстваДоходыРасходы.Обороты({(&amp;ПриведенноеНачалоПериода)}, {(&amp;КонецПериода)}, Авто,
+		ХозяйственнаяОперация В (ВЫБРАТЬ ОперацииПриход.ХозяйственнаяОперация ИЗ ОперацииПриход)
+		И ТипДенежныхСредств В (
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Наличные),
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Безналичные)
+			)
+		{ХозяйственнаяОперация.*}
+		{Организация.*}
+		{Подразделение.*}
+		{НаправлениеДеятельностиДС.*}
+		{ДенежныеСредства.* КАК МестоХраненияДенежныхСредств}
+		{ТипДенежныхСредств.*}
+		{СтатьяДвиженияДенежныхСредств.*}
+		{Валюта.*}
+		{ПодразделениеДоходовРасходов.* КАК ПодразделениеДоходовРасходов}
+		{НаправлениеДеятельностиСтатьи.* КАК НаправлениеДеятельности}
+		{СтатьяДоходовРасходов.* КАК КорАналитика}
+		{СтатьяДоходовРасходов.*}
+		{АналитикаДоходов.*}
+		{АналитикаАктивовПассивов.*}
+		) КАК ДанныеРегистра
+{ГДЕ
+	ДанныеРегистра.Регистратор,
+	ДанныеРегистра.ПериодСекунда,
+	ДанныеРегистра.ПериодДень,
+	ДанныеРегистра.ПериодНеделя,
+	ДанныеРегистра.ПериодДекада,
+	ДанныеРегистра.ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие,
+	ДанныеРегистра.ПериодГод
+}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	&amp;ДатаРасчета                                       КАК ДатаРасчета,
+	ДанныеРегистра.Регистратор                         КАК Регистратор,
+	
+	ДанныеРегистра.ПериодСекунда                       КАК ПериодСекунда,
+	ДанныеРегистра.ПериодДень                          КАК ПериодДень,
+	ДанныеРегистра.ПериодНеделя                        КАК ПериодНеделя,
+	ДанныеРегистра.ПериодДекада                        КАК ПериодДекада,
+	ДанныеРегистра.ПериодМесяц                         КАК ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал                       КАК ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие                     КАК ПериодПолугодие,
+	ДанныеРегистра.ПериодГод                           КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.НаправлениеДеятельностиДС           КАК НаправлениеДеятельностиДС,
+	ДанныеРегистра.ДенежныеСредства                    КАК МестоХраненияДенежныхСредств,
+	ДанныеРегистра.ТипДенежныхСредств                  КАК ТипДенежныхСредств,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	ДанныеРегистра.Валюта                              КАК Валюта,
+	
+	ДанныеРегистра.СтатьяДоходовРасходов               КАК КорАналитика,
+	
+	ДанныеРегистра.НаправлениеДеятельностиСтатьи       КАК НаправлениеДеятельности,
+	ДанныеРегистра.ПодразделениеДоходовРасходов        КАК ПодразделениеДоходовРасходов,
+	ДанныеРегистра.СтатьяДоходовРасходов               КАК СтатьяДоходовРасходов,
+	ДанныеРегистра.АналитикаРасходов                   КАК АналитикаДоходовРасходов,
+	ДанныеРегистра.АналитикаАктивовПассивов            КАК АналитикаАктивовПассивов,
+	
+	0                                                  КАК ПоступлениеФакт,
+	
+	ВЫБОР &amp;ДанныеОтчета
+		КОГДА 2 ТОГДА
+			-ДанныеРегистра.СуммаОборот
+		КОГДА 3 ТОГДА
+			-ДанныеРегистра.СуммаРеглОборот
+	КОНЕЦ КАК СписаниеФакт,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Списание) КАК ТипДвижения
+	
+ИЗ
+	РегистрНакопления.ДвиженияДенежныеСредстваДоходыРасходы.Обороты({(&amp;ПриведенноеНачалоПериода)}, {(&amp;КонецПериода)}, Авто,
+		ХозяйственнаяОперация В (ВЫБРАТЬ ОперацииРасход.ХозяйственнаяОперация ИЗ ОперацииРасход)
+		И ТипДенежныхСредств В (
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Наличные),
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Безналичные)
+			)
+		{ХозяйственнаяОперация.*}
+		{Организация.*}
+		{Подразделение.*}
+		{НаправлениеДеятельностиДС.*}
+		{ДенежныеСредства.* КАК МестоХраненияДенежныхСредств}
+		{ТипДенежныхСредств.*}
+		{СтатьяДвиженияДенежныхСредств.*}
+		{Валюта.*}
+		{НаправлениеДеятельностиСтатьи.* КАК НаправлениеДеятельности}
+		{ПодразделениеДоходовРасходов.* КАК ПодразделениеДоходовРасходов}
+		{СтатьяДоходовРасходов.* КАК КорАналитика}
+		{СтатьяДоходовРасходов.*}
+		{АналитикаДоходов.*}
+		{АналитикаАктивовПассивов.*}
+	) КАК ДанныеРегистра
+{ГДЕ
+	ДанныеРегистра.Регистратор,
+	ДанныеРегистра.ПериодСекунда,
+	ДанныеРегистра.ПериодДень,
+	ДанныеРегистра.ПериодНеделя,
+	ДанныеРегистра.ПериодДекада,
+	ДанныеРегистра.ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие,
+	ДанныеРегистра.ПериодГод
+}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ // Эквайринг
+	&amp;ДатаРасчета                                       КАК ДатаРасчета,
+	ДанныеРегистра.Регистратор                         КАК Регистратор,
+	
+	ДанныеРегистра.ПериодСекунда                       КАК ПериодСекунда,
+	ДанныеРегистра.ПериодДень                          КАК ПериодДень,
+	ДанныеРегистра.ПериодНеделя                        КАК ПериодНеделя,
+	ДанныеРегистра.ПериодДекада                        КАК ПериодДекада,
+	ДанныеРегистра.ПериодМесяц                         КАК ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал                       КАК ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие                     КАК ПериодПолугодие,
+	ДанныеРегистра.ПериодГод                           КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.НаправлениеДеятельностиДС           КАК НаправлениеДеятельностиДС,
+	НЕОПРЕДЕЛЕНО                                       КАК МестоХраненияДенежныхСредств,
+	ДанныеРегистра.ТипДенежныхСредств                  КАК ТипДенежныхСредств,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	ДанныеРегистра.Валюта                              КАК Валюта,
+	
+	ДанныеРегистра.СтатьяДоходовРасходов               КАК КорАналитика,
+	
+	ДанныеРегистра.НаправлениеДеятельностиСтатьи       КАК НаправлениеДеятельности,
+	ДанныеРегистра.ПодразделениеДоходовРасходов        КАК ПодразделениеДоходовРасходов,
+	ДанныеРегистра.СтатьяДоходовРасходов               КАК СтатьяДоходовРасходов,
+	ДанныеРегистра.АналитикаДоходов                    КАК АналитикаДоходовРасходов,
+	ДанныеРегистра.АналитикаАктивовПассивов            КАК АналитикаАктивовПассивов,
+	
+	ВЫБОР &amp;ДанныеОтчета
+		КОГДА 2 ТОГДА
+			ДанныеРегистра.СуммаОборот
+		КОГДА 3 ТОГДА
+			ДанныеРегистра.СуммаРеглОборот
+	КОНЕЦ КАК ПоступлениеФакт,
+	
+	0                                                  КАК СписаниеФакт,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Поступление) КАК ТипДвижения
+	
+ИЗ
+	РегистрНакопления.ДвиженияДенежныеСредстваДоходыРасходы.Обороты({(&amp;ПриведенноеНачалоПериода)}, {(&amp;КонецПериода)}, Авто,
+		ХозяйственнаяОперация В (ВЫБРАТЬ ОперацииПриход.ХозяйственнаяОперация ИЗ ОперацииПриход)
+		И ТипДенежныхСредств В (
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера)
+			)
+		И &amp;ВыводитьДСВПути
+		{ХозяйственнаяОперация.*}
+		{Организация.*}
+		{Подразделение.*}
+		{НаправлениеДеятельностиДС.*}
+		{ДенежныеСредства.* КАК МестоХраненияДенежныхСредств}
+		{ТипДенежныхСредств.*}
+		{СтатьяДвиженияДенежныхСредств.*}
+		{Валюта.*}
+		{НаправлениеДеятельностиСтатьи.* КАК НаправлениеДеятельности}
+		{ПодразделениеДоходовРасходов.* КАК ПодразделениеДоходовРасходов}
+		{СтатьяДоходовРасходов.* КАК КорАналитика}
+		{СтатьяДоходовРасходов.*}
+		{АналитикаДоходов.*}
+		{АналитикаАктивовПассивов.*}
+		) КАК ДанныеРегистра
+{ГДЕ
+	ДанныеРегистра.Регистратор,
+	ДанныеРегистра.ПериодСекунда,
+	ДанныеРегистра.ПериодДень,
+	ДанныеРегистра.ПериодНеделя,
+	ДанныеРегистра.ПериодДекада,
+	ДанныеРегистра.ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие,
+	ДанныеРегистра.ПериодГод
+}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	&amp;ДатаРасчета                                       КАК ДатаРасчета,
+	ДанныеРегистра.Регистратор                         КАК Регистратор,
+	
+	ДанныеРегистра.ПериодСекунда                       КАК ПериодСекунда,
+	ДанныеРегистра.ПериодДень                          КАК ПериодДень,
+	ДанныеРегистра.ПериодНеделя                        КАК ПериодНеделя,
+	ДанныеРегистра.ПериодДекада                        КАК ПериодДекада,
+	ДанныеРегистра.ПериодМесяц                         КАК ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал                       КАК ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие                     КАК ПериодПолугодие,
+	ДанныеРегистра.ПериодГод                           КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.НаправлениеДеятельностиДС           КАК НаправлениеДеятельностиДС,
+	НЕОПРЕДЕЛЕНО                                       КАК МестоХраненияДенежныхСредств,
+	ДанныеРегистра.ТипДенежныхСредств                  КАК ТипДенежныхСредств,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	ДанныеРегистра.Валюта                              КАК Валюта,
+	
+	ДанныеРегистра.СтатьяДоходовРасходов               КАК КорАналитика,
+	
+	ДанныеРегистра.НаправлениеДеятельностиСтатьи       КАК НаправлениеДеятельности,
+	ДанныеРегистра.ПодразделениеДоходовРасходов        КАК ПодразделениеДоходовРасходов,
+	ДанныеРегистра.СтатьяДоходовРасходов               КАК СтатьяДоходовРасходов,
+	ДанныеРегистра.АналитикаРасходов                   КАК АналитикаДоходовРасходов,
+	ДанныеРегистра.АналитикаАктивовПассивов            КАК АналитикаАктивовПассивов,
+	
+	0                                                  КАК ПоступлениеФакт,
+	
+	ВЫБОР &amp;ДанныеОтчета
+		КОГДА 2 ТОГДА
+			-ДанныеРегистра.СуммаОборот
+		КОГДА 3 ТОГДА
+			-ДанныеРегистра.СуммаРеглОборот
+	КОНЕЦ КАК СписаниеФакт,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Списание) КАК ТипДвижения
+	
+ИЗ
+	РегистрНакопления.ДвиженияДенежныеСредстваДоходыРасходы.Обороты({(&amp;ПриведенноеНачалоПериода)}, {(&amp;КонецПериода)}, Авто,
+		ХозяйственнаяОперация В (ВЫБРАТЬ ОперацииРасход.ХозяйственнаяОперация ИЗ ОперацииРасход)
+		И ТипДенежныхСредств В (
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера)
+			)
+		И &amp;ВыводитьДСВПути
+		{ХозяйственнаяОперация.*}
+		{Организация.*}
+		{Подразделение.*}
+		{НаправлениеДеятельностиДС.*}
+		{ДенежныеСредства.* КАК МестоХраненияДенежныхСредств}
+		{ТипДенежныхСредств.*}
+		{СтатьяДвиженияДенежныхСредств.*}
+		{Валюта.*}
+		{НаправлениеДеятельностиСтатьи.* КАК НаправлениеДеятельности}
+		{ПодразделениеДоходовРасходов.* КАК ПодразделениеДоходовРасходов}
+		{СтатьяДоходовРасходов.* КАК КорАналитика}
+		{СтатьяДоходовРасходов.*}
+		{АналитикаДоходов.*}
+		{АналитикаАктивовПассивов.*}
+		) КАК ДанныеРегистра
+{ГДЕ
+	ДанныеРегистра.Регистратор,
+	ДанныеРегистра.ПериодСекунда,
+	ДанныеРегистра.ПериодДень,
+	ДанныеРегистра.ПериодНеделя,
+	ДанныеРегистра.ПериодДекада,
+	ДанныеРегистра.ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие,
+	ДанныеРегистра.ПериодГод
+}</query>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>ДенежныеСредства</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ХозяйственнаяОперация</dataPath>
+				<field>ХозяйственнаяОперация</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодНеделя</dataPath>
+				<field>ПериодНеделя</field>
+				<role>
+					<dcscom:periodNumber>4</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодГод</dataPath>
+				<field>ПериодГод</field>
+				<role>
+					<dcscom:periodNumber>9</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Подразделение</dataPath>
+				<field>Подразделение</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Регистратор</dataPath>
+				<field>Регистратор</field>
+				<role>
+					<dcscom:periodNumber>1</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодСекунда</dataPath>
+				<field>ПериодСекунда</field>
+				<role>
+					<dcscom:periodNumber>2</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодДень</dataPath>
+				<field>ПериодДень</field>
+				<role>
+					<dcscom:periodNumber>3</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодДекада</dataPath>
+				<field>ПериодДекада</field>
+				<role>
+					<dcscom:periodNumber>5</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодМесяц</dataPath>
+				<field>ПериодМесяц</field>
+				<role>
+					<dcscom:periodNumber>6</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодКвартал</dataPath>
+				<field>ПериодКвартал</field>
+				<role>
+					<dcscom:periodNumber>7</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодПолугодие</dataPath>
+				<field>ПериодПолугодие</field>
+				<role>
+					<dcscom:periodNumber>8</dcscom:periodNumber>
+					<dcscom:periodType>Additional</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Организация</dataPath>
+				<field>Организация</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НаправлениеДеятельностиДС</dataPath>
+				<field>НаправлениеДеятельностиДС</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Направление деятельности ДС</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Line of business cash</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>МестоХраненияДенежныхСредств</dataPath>
+				<field>МестоХраненияДенежныхСредств</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Место хранения денежных средств</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Cash storage location</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ТипДенежныхСредств</dataPath>
+				<field>ТипДенежныхСредств</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтатьяДвиженияДенежныхСредств</dataPath>
+				<field>СтатьяДвиженияДенежныхСредств</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Валюта</dataPath>
+				<field>Валюта</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорАналитика</dataPath>
+				<field>КорАналитика</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Кор аналитика</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Cor dimension</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорДенежныеСредства</dataPath>
+				<field>КорДенежныеСредства</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорТипДенежныхСредств</dataPath>
+				<field>КорТипДенежныхСредств</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорВалюта</dataPath>
+				<field>КорВалюта</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НаправлениеДеятельности</dataPath>
+				<field>НаправлениеДеятельности</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтатьяКалькуляции</dataPath>
+				<field>СтатьяКалькуляции</field>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ТипПлатежаФЗ275</dataPath>
+				<field>ТипПлатежаФЗ275</field>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ТипДвижения</dataPath>
+				<field>ТипДвижения</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Тип движения</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Movement type</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорМестоХраненияДенежныхСредств</dataPath>
+				<field>КорМестоХраненияДенежныхСредств</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Кор место хранения денежных средств</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Cor cash storage location</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДатаРасчета</dataPath>
+				<field>ДатаРасчета</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дата расчета</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПоступлениеФакт</dataPath>
+				<field>ПоступлениеФакт</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Поступление факт</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СписаниеФакт</dataPath>
+				<field>СписаниеФакт</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Списание факт</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ // Списания
+	&amp;ДатаРасчета                                       КАК ДатаРасчета,
+	ДанныеРегистра.Регистратор                         КАК Регистратор,
+	
+	ДанныеРегистра.ПериодСекунда                       КАК ПериодСекунда,
+	ДанныеРегистра.ПериодДень                          КАК ПериодДень,
+	ДанныеРегистра.ПериодНеделя                        КАК ПериодНеделя,
+	ДанныеРегистра.ПериодДекада                        КАК ПериодДекада,
+	ДанныеРегистра.ПериодМесяц                         КАК ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал                       КАК ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие                     КАК ПериодПолугодие,
+	ДанныеРегистра.ПериодГод                           КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	
+	ВЫБОР ДанныеРегистра.ТипДенежныхСредств
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Депозиты) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		ИНАЧЕ
+			ДанныеРегистра.ДенежныеСредства
+	КОНЕЦ                                              КАК МестоХраненияДенежныхСредств,
+	ДанныеРегистра.ТипДенежныхСредств                  КАК ТипДенежныхСредств,
+	ДанныеРегистра.НаправлениеДеятельности             КАК НаправлениеДеятельностиДС,
+	ДанныеРегистра.Валюта                              КАК Валюта,
+	
+	ДанныеРегистра.КорДенежныеСредства                 КАК КорАналитика,
+	
+	ВЫБОР ДанныеРегистра.КорТипДенежныхСредств
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Депозиты) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		ИНАЧЕ
+			ДанныеРегистра.КорДенежныеСредства
+	КОНЕЦ                                              КАК КорМестоХраненияДенежныхСредств,
+	ДанныеРегистра.КорТипДенежныхСредств               КАК КорТипДенежныхСредств,
+	ДанныеРегистра.КорНаправлениеДеятельности          КАК НаправлениеДеятельности,
+	ДанныеРегистра.КорВалюта                           КАК КорВалюта,
+	
+	0                                                  КАК ПоступлениеФакт,
+	
+	ВЫБОР &amp;ДанныеОтчета
+		КОГДА 2 ТОГДА
+			-ДанныеРегистра.СуммаОборот
+		КОГДА 3 ТОГДА
+			-ДанныеРегистра.СуммаРеглОборот
+	КОНЕЦ КАК СписаниеФакт,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Списание) КАК ТипДвижения
+{ВЫБРАТЬ
+	Регистратор,
+	ПериодСекунда,
+	ПериодДень,
+	ПериодНеделя,
+	ПериодДекада,
+	ПериодМесяц,
+	ПериодКвартал,
+	ПериодПолугодие,
+	ПериодГод,
+	ХозяйственнаяОперация.*,
+	Организация.*,
+	Подразделение.*,
+	НаправлениеДеятельностиДС.*,
+	МестоХраненияДенежныхСредств.*,
+	ТипДенежныхСредств.*,
+	СтатьяДвиженияДенежныхСредств.*,
+	Валюта.*,
+	КорАналитика.*,
+	НаправлениеДеятельности.*,
+	ПоступлениеФакт,
+	СписаниеФакт
+}
+ИЗ
+	РегистрНакопления.ДвиженияДенежныхСредств.Обороты({(&amp;ПриведенноеНачалоПериода)}, {(&amp;КонецПериода)}, Авто,
+		ХозяйственнаяОперация В (
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВыдачаДенежныхСредствВКассуККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзКассыККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВыемкаДенежныхСредствИзКассыККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВнесениеДенежныхСредствВКассуККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВыдачаДенежныхСредствВДругуюКассу),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзДругойКассы),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПеречислениеДенежныхСредствНаДругойСчет),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствСДругогоСчета),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.СдачаДенежныхСредствВБанк),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзБанка),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ИнкассацияДенежныхСредствВБанк),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзКассыНаРасчетныйСчет),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.СнятиеНаличныхДенежныхСредств),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ИнкассацияДенежныхСредствИзБанка),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.КонвертацияВалюты),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствОтКонвертацииВалюты),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеОплатыПоПлатежнойКарте),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВыдачаДенежныхСредствПодотчетнику),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПеречислениеНаДепозиты)
+		)
+		И ТипДенежныхСредств В (
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Наличные),
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Безналичные)
+			)
+		{ХозяйственнаяОперация.*}
+		{Организация.*}
+		{Подразделение.*}
+		{НаправлениеДеятельности.* КАК НаправлениеДеятельностиДС}
+		{ДенежныеСредства.* КАК МестоХраненияДенежныхСредств}
+		{ТипДенежныхСредств.*}
+		{СтатьяДвиженияДенежныхСредств.*}
+		{Валюта.*}
+		{КорНаправлениеДеятельности.* КАК НаправлениеДеятельности}
+		{КорДенежныеСредства.*}
+		{КорДенежныеСредства.* КАК КорАналитика}
+		{КорТипДенежныхСредств.*}
+		{КорВалюта.*}
+		) КАК ДанныеРегистра
+{ГДЕ
+	ДанныеРегистра.Регистратор,
+	ДанныеРегистра.ПериодСекунда,
+	ДанныеРегистра.ПериодДень,
+	ДанныеРегистра.ПериодНеделя,
+	ДанныеРегистра.ПериодДекада,
+	ДанныеРегистра.ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие,
+	ДанныеРегистра.ПериодГод
+}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ // Списания
+	&amp;ДатаРасчета                                       КАК ДатаРасчета,
+	ДанныеРегистра.Регистратор                         КАК Регистратор,
+	
+	ДанныеРегистра.ПериодСекунда                       КАК ПериодСекунда,
+	ДанныеРегистра.ПериодДень                          КАК ПериодДень,
+	ДанныеРегистра.ПериодНеделя                        КАК ПериодНеделя,
+	ДанныеРегистра.ПериодДекада                        КАК ПериодДекада,
+	ДанныеРегистра.ПериодМесяц                         КАК ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал                       КАК ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие                     КАК ПериодПолугодие,
+	ДанныеРегистра.ПериодГод                           КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	
+	ВЫБОР ДанныеРегистра.ТипДенежныхСредств
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		ИНАЧЕ
+			ДанныеРегистра.ДенежныеСредства
+	КОНЕЦ                                              КАК МестоХраненияДенежныхСредств,
+	ДанныеРегистра.ТипДенежныхСредств                  КАК ТипДенежныхСредств,
+	ДанныеРегистра.НаправлениеДеятельности             КАК НаправлениеДеятельностиДС,
+	ДанныеРегистра.Валюта                              КАК Валюта,
+	
+	ДанныеРегистра.КорДенежныеСредства                 КАК КорАналитика,
+	
+	ВЫБОР ДанныеРегистра.КорТипДенежныхСредств
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		ИНАЧЕ
+			ДанныеРегистра.КорДенежныеСредства
+	КОНЕЦ                                              КАК КорМестоХраненияДенежныхСредств,
+	ДанныеРегистра.КорТипДенежныхСредств               КАК КорТипДенежныхСредств,
+	ДанныеРегистра.КорНаправлениеДеятельности          КАК НаправлениеДеятельности,
+	ДанныеРегистра.КорВалюта                           КАК КорВалюта,
+	
+	0                                                  КАК ПоступлениеФакт,
+	
+	ВЫБОР &amp;ДанныеОтчета
+		КОГДА 2 ТОГДА
+			-ДанныеРегистра.СуммаОборот
+		КОГДА 3 ТОГДА
+			-ДанныеРегистра.СуммаРеглОборот
+	КОНЕЦ КАК СписаниеФакт,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Списание) КАК ТипДвижения
+ИЗ
+	РегистрНакопления.ДвиженияДенежныхСредств.Обороты({(&amp;ПриведенноеНачалоПериода)}, {(&amp;КонецПериода)}, Авто,
+		ХозяйственнаяОперация В (
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВыдачаДенежныхСредствВКассуККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзКассыККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВыемкаДенежныхСредствИзКассыККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВнесениеДенежныхСредствВКассуККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВыдачаДенежныхСредствВДругуюКассу),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзДругойКассы),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПеречислениеДенежныхСредствНаДругойСчет),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствСДругогоСчета),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.СдачаДенежныхСредствВБанк),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзБанка),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ИнкассацияДенежныхСредствВБанк),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзКассыНаРасчетныйСчет),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.СнятиеНаличныхДенежныхСредств),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ИнкассацияДенежныхСредствИзБанка),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.КонвертацияВалюты),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствОтКонвертацииВалюты),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеОплатыПоПлатежнойКарте)
+		)
+		И ТипДенежныхСредств В (
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути),
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера)
+			)
+		И &amp;ВыводитьДСВПути
+		{ХозяйственнаяОперация.*}
+		{Организация.*}
+		{Подразделение.*}
+		{НаправлениеДеятельности.* КАК НаправлениеДеятельностиДС}
+		{ДенежныеСредства.* КАК МестоХраненияДенежныхСредств}
+		{ТипДенежныхСредств.*}
+		{СтатьяДвиженияДенежныхСредств.*}
+		{Валюта.*}
+		{КорНаправлениеДеятельности.* КАК НаправлениеДеятельности}
+		{КорДенежныеСредства.*}
+		{КорДенежныеСредства.* КАК КорАналитика}
+		{КорТипДенежныхСредств.*}
+		{КорВалюта.*}
+		) КАК ДанныеРегистра
+{ГДЕ
+	ДанныеРегистра.Регистратор,
+	ДанныеРегистра.ПериодСекунда,
+	ДанныеРегистра.ПериодДень,
+	ДанныеРегистра.ПериодНеделя,
+	ДанныеРегистра.ПериодДекада,
+	ДанныеРегистра.ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие,
+	ДанныеРегистра.ПериодГод
+}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ // Поступления
+	&amp;ДатаРасчета                                       КАК ДатаРасчета,
+	ДанныеРегистра.Регистратор                         КАК Регистратор,
+	
+	ДанныеРегистра.ПериодСекунда                       КАК ПериодСекунда,
+	ДанныеРегистра.ПериодДень                          КАК ПериодДень,
+	ДанныеРегистра.ПериодНеделя                        КАК ПериодНеделя,
+	ДанныеРегистра.ПериодДекада                        КАК ПериодДекада,
+	ДанныеРегистра.ПериодМесяц                         КАК ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал                       КАК ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие                     КАК ПериодПолугодие,
+	ДанныеРегистра.ПериодГод                           КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	
+	ВЫБОР ДанныеРегистра.КорТипДенежныхСредств
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Депозиты) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		ИНАЧЕ
+			ДанныеРегистра.КорДенежныеСредства
+	КОНЕЦ                                              КАК МестоХраненияДенежныхСредств,
+	ДанныеРегистра.КорТипДенежныхСредств               КАК ТипДенежныхСредств,
+	ДанныеРегистра.КорНаправлениеДеятельности          КАК НаправлениеДеятельностиДС,
+	ДанныеРегистра.КорВалюта                           КАК Валюта,
+	
+	ДанныеРегистра.ДенежныеСредства                    КАК КорАналитика,
+	
+	ВЫБОР ДанныеРегистра.ТипДенежныхСредств
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Депозиты) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		ИНАЧЕ
+			ДанныеРегистра.ДенежныеСредства
+	КОНЕЦ                                              КАК КорМестоХраненияДенежныхСредств,
+	ДанныеРегистра.ТипДенежныхСредств                  КАК КорТипДенежныхСредств,
+	ДанныеРегистра.НаправлениеДеятельности             КАК НаправлениеДеятельности,
+	ДанныеРегистра.Валюта                              КАК КорВалюта,
+	
+	ВЫБОР &amp;ДанныеОтчета
+		КОГДА 2 ТОГДА
+			ДанныеРегистра.СуммаОборот
+		КОГДА 3 ТОГДА
+			ДанныеРегистра.СуммаРеглОборот
+	КОНЕЦ КАК ПоступлениеФакт,
+	
+	0                                                  КАК СписаниеФакт,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Поступление) КАК ТипДвижения
+	
+ИЗ
+	РегистрНакопления.ДвиженияДенежныхСредств.Обороты({(&amp;ПриведенноеНачалоПериода)}, {(&amp;КонецПериода)}, Авто,
+		ХозяйственнаяОперация В (
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВыдачаДенежныхСредствВКассуККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзКассыККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВыемкаДенежныхСредствИзКассыККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВнесениеДенежныхСредствВКассуККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВыдачаДенежныхСредствВДругуюКассу),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзДругойКассы),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПеречислениеДенежныхСредствНаДругойСчет),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствСДругогоСчета),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.СдачаДенежныхСредствВБанк),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзБанка),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ИнкассацияДенежныхСредствВБанк),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзКассыНаРасчетныйСчет),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.СнятиеНаличныхДенежныхСредств),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ИнкассацияДенежныхСредствИзБанка),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.КонвертацияВалюты),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеОплатыПоПлатежнойКарте),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВозвратДенежныхСредствОтПодотчетника),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствПоДепозитам)
+		)
+		И КорТипДенежныхСредств В (
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Наличные),
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Безналичные),
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУПодотчетногоЛица)
+			)
+		{ХозяйственнаяОперация.*}
+		{Организация.*}
+		{Подразделение.*}
+		{НаправлениеДеятельности.* КАК НаправлениеДеятельности}
+		{КорДенежныеСредства.* КАК МестоХраненияДенежныхСредств}
+		{ТипДенежныхСредств.* КАК КорТипДенежныхСредств}
+		{СтатьяДвиженияДенежныхСредств.*}
+		{Валюта.* КАК КорВалюта}
+		{КорНаправлениеДеятельности.* КАК НаправлениеДеятельностиДС}
+		{ДенежныеСредства.* КАК КорМестоХраненияДенежныхСредств}
+		{ДенежныеСредства.* КАК КорАналитика}
+		{КорТипДенежныхСредств.* КАК ТипДенежныхСредств}
+		{КорВалюта.* КАК Валюта}
+		) КАК ДанныеРегистра
+{ГДЕ
+	ДанныеРегистра.Регистратор,
+	ДанныеРегистра.ПериодСекунда,
+	ДанныеРегистра.ПериодДень,
+	ДанныеРегистра.ПериодНеделя,
+	ДанныеРегистра.ПериодДекада,
+	ДанныеРегистра.ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие,
+	ДанныеРегистра.ПериодГод
+}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ // Поступления
+	&amp;ДатаРасчета                                       КАК ДатаРасчета,
+	ДанныеРегистра.Регистратор                         КАК Регистратор,
+	
+	ДанныеРегистра.ПериодСекунда                       КАК ПериодСекунда,
+	ДанныеРегистра.ПериодДень                          КАК ПериодДень,
+	ДанныеРегистра.ПериодНеделя                        КАК ПериодНеделя,
+	ДанныеРегистра.ПериодДекада                        КАК ПериодДекада,
+	ДанныеРегистра.ПериодМесяц                         КАК ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал                       КАК ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие                     КАК ПериодПолугодие,
+	ДанныеРегистра.ПериодГод                           КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	
+	ВЫБОР ДанныеРегистра.КорТипДенежныхСредств
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		ИНАЧЕ
+			ДанныеРегистра.КорДенежныеСредства
+	КОНЕЦ                                              КАК МестоХраненияДенежныхСредств,
+	ДанныеРегистра.КорТипДенежныхСредств               КАК ТипДенежныхСредств,
+	ДанныеРегистра.КорНаправлениеДеятельности          КАК НаправлениеДеятельностиДС,
+	ДанныеРегистра.КорВалюта                           КАК Валюта,
+	
+	ДанныеРегистра.ДенежныеСредства                    КАК КорАналитика,
+	
+	ВЫБОР ДанныеРегистра.ТипДенежныхСредств
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		ИНАЧЕ
+			ДанныеРегистра.ДенежныеСредства
+	КОНЕЦ                                              КАК КорМестоХраненияДенежныхСредств,
+	ДанныеРегистра.ТипДенежныхСредств                  КАК КорТипДенежныхСредств,
+	ДанныеРегистра.НаправлениеДеятельности             КАК НаправлениеДеятельности,
+	ДанныеРегистра.Валюта                              КАК КорВалюта,
+	
+	ВЫБОР &amp;ДанныеОтчета
+		КОГДА 2 ТОГДА
+			ДанныеРегистра.СуммаОборот
+		КОГДА 3 ТОГДА
+			ДанныеРегистра.СуммаРеглОборот
+	КОНЕЦ КАК ПоступлениеФакт,
+	
+	0                                                  КАК СписаниеФакт,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Поступление) КАК ТипДвижения
+	
+ИЗ
+	РегистрНакопления.ДвиженияДенежныхСредств.Обороты({(&amp;ПриведенноеНачалоПериода)}, {(&amp;КонецПериода)}, Авто,
+		ХозяйственнаяОперация В (
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВыдачаДенежныхСредствВКассуККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзКассыККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВыемкаДенежныхСредствИзКассыККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВнесениеДенежныхСредствВКассуККМ),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ВыдачаДенежныхСредствВДругуюКассу),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзДругойКассы),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПеречислениеДенежныхСредствНаДругойСчет),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствСДругогоСчета),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.СдачаДенежныхСредствВБанк),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзБанка),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ИнкассацияДенежныхСредствВБанк),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствИзКассыНаРасчетныйСчет),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.СнятиеНаличныхДенежныхСредств),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ИнкассацияДенежныхСредствИзБанка),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.КонвертацияВалюты),
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеОплатыПоПлатежнойКарте)
+		)
+		И КорТипДенежныхСредств В (
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути),
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера)
+			)
+		И &amp;ВыводитьДСВПути
+		{ХозяйственнаяОперация.*}
+		{Организация.*}
+		{Подразделение.*}
+		{НаправлениеДеятельности.* КАК НаправлениеДеятельности}
+		{КорДенежныеСредства.* КАК МестоХраненияДенежныхСредств}
+		{ТипДенежныхСредств.* КАК КорТипДенежныхСредств}
+		{СтатьяДвиженияДенежныхСредств.*}
+		{Валюта.* КАК КорВалюта}
+		{КорНаправлениеДеятельности.* КАК НаправлениеДеятельностиДС}
+		{ДенежныеСредства.* КАК КорМестоХраненияДенежныхСредств}
+		{ДенежныеСредства.* КАК КорАналитика}
+		{КорТипДенежныхСредств.* КАК ТипДенежныхСредств}
+		{КорВалюта.* КАК Валюта}
+		) КАК ДанныеРегистра
+{ГДЕ
+	ДанныеРегистра.Регистратор,
+	ДанныеРегистра.ПериодСекунда,
+	ДанныеРегистра.ПериодДень,
+	ДанныеРегистра.ПериодНеделя,
+	ДанныеРегистра.ПериодДекада,
+	ДанныеРегистра.ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие,
+	ДанныеРегистра.ПериодГод
+}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ // Поступления конвертация
+	&amp;ДатаРасчета                                       КАК ДатаРасчета,
+	ДанныеРегистра.Регистратор                         КАК Регистратор,
+	
+	ДанныеРегистра.ПериодСекунда                       КАК ПериодСекунда,
+	ДанныеРегистра.ПериодДень                          КАК ПериодДень,
+	ДанныеРегистра.ПериодНеделя                        КАК ПериодНеделя,
+	ДанныеРегистра.ПериодДекада                        КАК ПериодДекада,
+	ДанныеРегистра.ПериодМесяц                         КАК ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал                       КАК ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие                     КАК ПериодПолугодие,
+	ДанныеРегистра.ПериодГод                           КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	
+	ВЫБОР ДанныеРегистра.КорТипДенежныхСредств
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		ИНАЧЕ
+			ДанныеРегистра.КорДенежныеСредства
+	КОНЕЦ                                              КАК МестоХраненияДенежныхСредств,
+	ДанныеРегистра.КорТипДенежныхСредств               КАК ТипДенежныхСредств,
+	ДанныеРегистра.КорНаправлениеДеятельности          КАК НаправлениеДеятельностиДС,
+	ДанныеРегистра.КорВалюта                           КАК Валюта,
+	
+	ДанныеРегистра.ДенежныеСредства                    КАК КорАналитика,
+	
+	ВЫБОР ДанныеРегистра.ТипДенежныхСредств
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		ИНАЧЕ
+			ДанныеРегистра.ДенежныеСредства
+	КОНЕЦ                                              КАК КорМестоХраненияДенежныхСредств,
+	ДанныеРегистра.ТипДенежныхСредств                  КАК КорТипДенежныхСредств,
+	ДанныеРегистра.НаправлениеДеятельности             КАК НаправлениеДеятельности,
+	ДанныеРегистра.Валюта                              КАК КорВалюта,
+	
+	ВЫБОР &amp;ДанныеОтчета
+		КОГДА 2 ТОГДА
+			ДанныеРегистра.СуммаОборот
+		КОГДА 3 ТОГДА
+			ДанныеРегистра.СуммаРеглОборот
+	КОНЕЦ КАК ПоступлениеФакт,
+	
+	0                                                  КАК СписаниеФакт,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Поступление) КАК ТипДвижения
+	
+ИЗ
+	РегистрНакопления.ДвиженияДенежныхСредств.Обороты({(&amp;ПриведенноеНачалоПериода)}, {(&amp;КонецПериода)}, Авто,
+		ХозяйственнаяОперация В (
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствОтКонвертацииВалюты)
+		)
+		И КорТипДенежныхСредств В (
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Наличные),
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Безналичные)
+			)
+		{ХозяйственнаяОперация.*}
+		{Организация.*}
+		{Подразделение.*}
+		{НаправлениеДеятельности.* КАК НаправлениеДеятельности}
+		{ДенежныеСредства.* КАК КорМестоХраненияДенежныхСредств}
+		{ТипДенежныхСредств.* КАК КорТипДенежныхСредств}
+		{СтатьяДвиженияДенежныхСредств.*}
+		{Валюта.* КАК КорВалюта}
+		{КорНаправлениеДеятельности.* КАК НаправлениеДеятельностиДС}
+		{КорДенежныеСредства.* КАК МестоХраненияДенежныхСредств}
+		{ДенежныеСредства.* КАК КорАналитика}
+		{КорТипДенежныхСредств.* КАК ТипДенежныхСредств}
+		{КорВалюта.* КАК Валюта}
+		) КАК ДанныеРегистра
+{ГДЕ
+	ДанныеРегистра.Регистратор,
+	ДанныеРегистра.ПериодСекунда,
+	ДанныеРегистра.ПериодДень,
+	ДанныеРегистра.ПериодНеделя,
+	ДанныеРегистра.ПериодДекада,
+	ДанныеРегистра.ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие,
+	ДанныеРегистра.ПериодГод
+}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ // Поступления конвертация
+	&amp;ДатаРасчета                                       КАК ДатаРасчета,
+	ДанныеРегистра.Регистратор                         КАК Регистратор,
+	
+	ДанныеРегистра.ПериодСекунда                       КАК ПериодСекунда,
+	ДанныеРегистра.ПериодДень                          КАК ПериодДень,
+	ДанныеРегистра.ПериодНеделя                        КАК ПериодНеделя,
+	ДанныеРегистра.ПериодДекада                        КАК ПериодДекада,
+	ДанныеРегистра.ПериодМесяц                         КАК ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал                       КАК ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие                     КАК ПериодПолугодие,
+	ДанныеРегистра.ПериодГод                           КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	
+	ВЫБОР ДанныеРегистра.КорТипДенежныхСредств
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		ИНАЧЕ
+			ДанныеРегистра.КорДенежныеСредства
+	КОНЕЦ                                              КАК МестоХраненияДенежныхСредств,
+	ДанныеРегистра.КорТипДенежныхСредств               КАК ТипДенежныхСредств,
+	ДанныеРегистра.КорНаправлениеДеятельности          КАК НаправлениеДеятельностиДС,
+	ДанныеРегистра.КорВалюта                           КАК Валюта,
+	
+	ДанныеРегистра.ДенежныеСредства                    КАК КорАналитика,
+	
+	ВЫБОР ДанныеРегистра.ТипДенежныхСредств
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути) ТОГДА
+			НЕОПРЕДЕЛЕНО
+		ИНАЧЕ
+			ДанныеРегистра.ДенежныеСредства
+	КОНЕЦ                                              КАК КорМестоХраненияДенежныхСредств,
+	ДанныеРегистра.ТипДенежныхСредств                  КАК КорТипДенежныхСредств,
+	ДанныеРегистра.НаправлениеДеятельности             КАК НаправлениеДеятельности,
+	ДанныеРегистра.Валюта                              КАК КорВалюта,
+	
+	ВЫБОР &amp;ДанныеОтчета
+		КОГДА 2 ТОГДА
+			ДанныеРегистра.СуммаОборот
+		КОГДА 3 ТОГДА
+			ДанныеРегистра.СуммаРеглОборот
+	КОНЕЦ КАК ПоступлениеФакт,
+	
+	0                                                  КАК СписаниеФакт,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Поступление) КАК ТипДвижения
+	
+ИЗ
+	РегистрНакопления.ДвиженияДенежныхСредств.Обороты({(&amp;ПриведенноеНачалоПериода)}, {(&amp;КонецПериода)}, Авто,
+		ХозяйственнаяОперация В (
+			ЗНАЧЕНИЕ(Перечисление.ХозяйственныеОперации.ПоступлениеДенежныхСредствОтКонвертацииВалюты)
+		)
+		И КорТипДенежныхСредств = ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваВПути)
+		И &amp;ВыводитьДСВПути
+		{ХозяйственнаяОперация.*}
+		{Организация.*}
+		{Подразделение.*}
+		{НаправлениеДеятельности.* КАК НаправлениеДеятельности}
+		{ДенежныеСредства.* КАК КорМестоХраненияДенежныхСредств}
+		{ТипДенежныхСредств.* КАК КорТипДенежныхСредств}
+		{СтатьяДвиженияДенежныхСредств.*}
+		{Валюта.* КАК КорВалюта}
+		{КорНаправлениеДеятельности.* КАК НаправлениеДеятельностиДС}
+		{КорДенежныеСредства.* КАК МестоХраненияДенежныхСредств}
+		{ДенежныеСредства.* КАК КорАналитика}
+		{КорТипДенежныхСредств.* КАК ТипДенежныхСредств}
+		{КорВалюта.* КАК Валюта}
+		) КАК ДанныеРегистра
+{ГДЕ
+	ДанныеРегистра.Регистратор,
+	ДанныеРегистра.ПериодСекунда,
+	ДанныеРегистра.ПериодДень,
+	ДанныеРегистра.ПериодНеделя,
+	ДанныеРегистра.ПериодДекада,
+	ДанныеРегистра.ПериодМесяц,
+	ДанныеРегистра.ПериодКвартал,
+	ДанныеРегистра.ПериодПолугодие,
+	ДанныеРегистра.ПериодГод
+}</query>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>ГрафикПлатежей</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ХозяйственнаяОперация</dataPath>
+				<field>ХозяйственнаяОперация</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОбластьПланирования</dataPath>
+				<field>ОбластьПланирования</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтатьяДвиженияДенежныхСредств</dataPath>
+				<field>СтатьяДвиженияДенежныхСредств</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Организация</dataPath>
+				<field>Организация</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Подразделение</dataPath>
+				<field>Подразделение</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НаправлениеДеятельности</dataPath>
+				<field>НаправлениеДеятельности</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Валюта</dataPath>
+				<field>Валюта</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодМесяц</dataPath>
+				<field>ПериодМесяц</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период месяц</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Period month</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>МестоХраненияДенежныхСредств</dataPath>
+				<field>МестоХраненияДенежныхСредств</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Место хранения денежных средств</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Cash storage location</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НаправлениеДеятельностиДС</dataPath>
+				<field>НаправлениеДеятельностиДС</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Направление деятельности ДС</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Line of business cash</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорАналитика</dataPath>
+				<field>КорАналитика</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Кор аналитика</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Cor dimension</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Регистратор</dataPath>
+				<field>Регистратор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Регистратор</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Recorder</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодНеделя</dataPath>
+				<field>ПериодНеделя</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период неделя</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Period week</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодГод</dataPath>
+				<field>ПериодГод</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период год</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Period year</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодДень</dataPath>
+				<field>ПериодДень</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период день</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Period day</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодДекада</dataPath>
+				<field>ПериодДекада</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период декада</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Period ten-day</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодКвартал</dataPath>
+				<field>ПериодКвартал</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период квартал</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Period quarter</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодПолугодие</dataPath>
+				<field>ПериодПолугодие</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период полугодие</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Period half-year</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ТипДенежныхСредств</dataPath>
+				<field>ТипДенежныхСредств</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Тип денежных средств</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Cash type</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодСекунда</dataPath>
+				<field>ПериодСекунда</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период секунда</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Period second</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПлательщикПолучатель</dataPath>
+				<field>ПлательщикПолучатель</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОбъектОплаты</dataPath>
+				<field>ОбъектОплаты</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ТипДвижения</dataPath>
+				<field>ТипДвижения</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Тип движения</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Movement type</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПоступлениеПлан</dataPath>
+				<field>ПоступлениеПлан</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Поступление план</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СписаниеПлан</dataPath>
+				<field>СписаниеПлан</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Списание план</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	КурсВалюты.Валюта КАК Валюта,
+	КурсВалюты.Курс * КурсВалютыОтчета.Кратность / (КурсВалюты.Кратность * КурсВалютыОтчета.Курс) КАК Коэффициент
+ПОМЕСТИТЬ КурсыВалют
+ИЗ
+	РегистрСведений.КурсыВалют.СрезПоследних({&amp;ДатаРасчета}, ) КАК КурсВалюты
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.КурсыВалют.СрезПоследних({&amp;ДатаРасчета},
+			Валюта В (
+				ВЫБРАТЬ ВалютаУправленческогоУчета.Значение
+				ИЗ Константа.ВалютаУправленческогоУчета КАК ВалютаУправленческогоУчета
+				ГДЕ &amp;ДанныеОтчета = 2
+				ОБЪЕДИНИТЬ ВСЕ
+				ВЫБРАТЬ ВалютаРегламентированногоУчета.Значение
+				ИЗ Константа.ВалютаРегламентированногоУчета КАК ВалютаРегламентированногоУчета
+				ГДЕ &amp;ДанныеОтчета = 3
+				)) КАК КурсВалютыОтчета
+		ПО (ИСТИНА)
+ГДЕ
+	КурсВалюты.Кратность &lt;&gt; 0
+	И КурсВалютыОтчета.Курс &lt;&gt; 0
+;
+
+ВЫБРАТЬ
+	ДанныеРегистра.ОбъектОплаты                        КАК Регистратор,
+	
+	ВЫБОР
+		КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+	КОНЕЦ КАК ПериодСекунда,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ДЕНЬ) КАК ПериодДень,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, НЕДЕЛЯ) КАК ПериодНеделя,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ДЕКАДА) КАК ПериодДекада,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, МЕСЯЦ) КАК ПериодМесяц,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, КВАРТАЛ) КАК ПериодКвартал,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ПОЛУГОДИЕ) КАК ПериодПолугодие,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ГОД) КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	ДанныеРегистра.БанковскийСчетКасса.НаправлениеДеятельности КАК НаправлениеДеятельностиДС,
+	ДанныеРегистра.БанковскийСчетКасса                 КАК МестоХраненияДенежныхСредств,
+	ВЫБОР ДанныеРегистра.ФормаОплаты
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.Безналичная) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Безналичные)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.Наличная) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Наличные)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.ПлатежнаяКарта) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера)
+	КОНЕЦ КАК ТипДенежныхСредств,
+	
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	ДанныеРегистра.Валюта                              КАК Валюта,
+	
+	ДанныеРегистра.ПлательщикПолучатель                КАК КорАналитика,
+	
+	ДанныеРегистра.ОбъектОплаты                        КАК ОбъектОплаты,
+	ДанныеРегистра.НаправлениеДеятельности             КАК НаправлениеДеятельности,
+	ДанныеРегистра.ОбластьПланирования                 КАК ОбластьПланирования,
+	
+	ВЫБОР
+		КОГДА ДанныеРегистра.ПоступлениеСписание = ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Поступление) ТОГДА
+			ДанныеРегистра.Сумма * ЕСТЬNULL(КурсыВалют.Коэффициент, 1)
+		ИНАЧЕ
+			0
+	КОНЕЦ КАК ПоступлениеПлан,
+	ВЫБОР
+		КОГДА ДанныеРегистра.ПоступлениеСписание = ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Списание) ТОГДА
+			-ДанныеРегистра.Сумма * ЕСТЬNULL(КурсыВалют.Коэффициент, 1)
+		ИНАЧЕ
+			0
+	КОНЕЦ КАК СписаниеПлан,
+	
+	ДанныеРегистра.ПоступлениеСписание                 КАК ТипДвижения
+	
+{ВЫБРАТЬ
+	Регистратор,
+	ПериодСекунда,
+	ПериодДень,
+	ПериодНеделя,
+	ПериодДекада,
+	ПериодМесяц,
+	ПериодКвартал,
+	ПериодПолугодие,
+	ПериодГод,
+	ХозяйственнаяОперация.*,
+	Организация.*,
+	Подразделение.*,
+	НаправлениеДеятельностиДС.*,
+	МестоХраненияДенежныхСредств.*,
+	ТипДенежныхСредств.*,
+	СтатьяДвиженияДенежныхСредств.*,
+	Валюта.*,
+	КорАналитика.*,
+	НаправлениеДеятельности.*,
+	ОбластьПланирования.*,
+	ПоступлениеПлан,
+	СписаниеПлан
+}
+ИЗ
+	РегистрСведений.ГрафикПлатежей КАК ДанныеРегистра
+	
+	ЛЕВОЕ СОЕДИНЕНИЕ
+		КурсыВалют КАК КурсыВалют
+	ПО
+		КурсыВалют.Валюта = ДанныеРегистра.Валюта
+	
+ГДЕ
+	ДанныеРегистра.ДатаПлатежа &lt;= &amp;КонецПериода
+{ГДЕ
+	ДанныеРегистра.ХозяйственнаяОперация.*,
+	ДанныеРегистра.Организация.*,
+	ДанныеРегистра.Подразделение.*,
+	ДанныеРегистра.БанковскийСчетКасса.НаправлениеДеятельности.* КАК НаправлениеДеятельностиДС,
+	ДанныеРегистра.БанковскийСчетКасса.* КАК МестоХраненияДенежныхСредств,
+	(ВЫБОР ДанныеРегистра.ФормаОплаты
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.Безналичная) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Безналичные)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.Наличная) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Наличные)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.ПлатежнаяКарта) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера)
+	КОНЕЦ).* КАК ТипДенежныхСредств,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств.*,
+	ДанныеРегистра.Валюта.*,
+	ДанныеРегистра.НаправлениеДеятельности.*,
+	ДанныеРегистра.ПлательщикПолучатель.*,
+	ДанныеРегистра.ПлательщикПолучатель.* КАК КорАналитика,
+	ДанныеРегистра.ОбъектОплаты.*,
+	ДанныеРегистра.ОбластьПланирования.*,
+	ДанныеРегистра.ОбъектОплаты КАК Регистратор,
+	ВЫБОР
+		КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+	КОНЕЦ КАК ПериодСекунда,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ДЕНЬ) КАК ПериодДень,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, НЕДЕЛЯ) КАК ПериодНеделя,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ДЕКАДА) КАК ПериодДекада,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, МЕСЯЦ) КАК ПериодМесяц,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, КВАРТАЛ) КАК ПериодКвартал,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ПОЛУГОДИЕ) КАК ПериодПолугодие,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ГОД)
+}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ // ДС в пути
+	ДанныеРегистра.ОбъектОплаты                        КАК Регистратор,
+	
+	ВЫБОР
+		КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+	КОНЕЦ КАК ПериодСекунда,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ДЕНЬ) КАК ПериодДень,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, НЕДЕЛЯ) КАК ПериодНеделя,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ДЕКАДА) КАК ПериодДекада,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, МЕСЯЦ) КАК ПериодМесяц,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, КВАРТАЛ) КАК ПериодКвартал,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ПОЛУГОДИЕ) КАК ПериодПолугодие,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ГОД) КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	НЕОПРЕДЕЛЕНО                                       КАК НаправлениеДеятельностиДС,
+	НЕОПРЕДЕЛЕНО                                       КАК МестоХраненияДенежныхСредств,
+	ВЫБОР ДанныеРегистра.ФормаОплаты
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.Безналичная) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Безналичные)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.Наличная) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Наличные)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.ПлатежнаяКарта) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера)
+	КОНЕЦ КАК ТипДенежныхСредств,
+	
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	ДанныеРегистра.Валюта                              КАК Валюта,
+	
+	ДанныеРегистра.ПлательщикПолучатель                КАК КорАналитика,
+	
+	ДанныеРегистра.ОбъектОплаты                        КАК ОбъектОплаты,
+	ДанныеРегистра.НаправлениеДеятельности             КАК НаправлениеДеятельности,
+	ДанныеРегистра.ОбластьПланирования                 КАК ОбластьПланирования,
+	
+	0 КАК ПоступлениеПлан,
+	-ДанныеРегистра.Сумма * ЕСТЬNULL(КурсыВалют.Коэффициент, 1) КАК СписаниеПлан,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Списание) КАК ТипДвижения
+	
+ИЗ
+	РегистрСведений.ГрафикПлатежей КАК ДанныеРегистра
+	
+	ЛЕВОЕ СОЕДИНЕНИЕ
+		КурсыВалют КАК КурсыВалют
+	ПО
+		КурсыВалют.Валюта = ДанныеРегистра.Валюта
+	
+ГДЕ
+	ДанныеРегистра.ДатаПлатежа &lt;= &amp;КонецПериода
+	И &amp;ВыводитьДСВПути
+	И ДанныеРегистра.ТипСуммы В (
+		ЗНАЧЕНИЕ(Перечисление.ВидыПереводовДенежныхСредств.ИнкассацияВБанк),
+		ЗНАЧЕНИЕ(Перечисление.ВидыПереводовДенежныхСредств.ПеречислениеНаДругойСчет),
+		ЗНАЧЕНИЕ(Перечисление.ВидыПереводовДенежныхСредств.ИнкассацияИзБанка),
+		ЗНАЧЕНИЕ(Перечисление.ВидыПереводовДенежныхСредств.ПеремещениеВДругуюКассу),
+		ЗНАЧЕНИЕ(Перечисление.ВидыПереводовДенежныхСредств.ПоступлениеОтБанкаПоЭквайрингу)
+	)
+{ГДЕ
+	ДанныеРегистра.ХозяйственнаяОперация.*,
+	ДанныеРегистра.Организация.*,
+	ДанныеРегистра.Подразделение.*,
+	ДанныеРегистра.БанковскийСчетКасса.НаправлениеДеятельности.* КАК НаправлениеДеятельностиДС,
+	ДанныеРегистра.БанковскийСчетКасса.* КАК МестоХраненияДенежныхСредств,
+	(ВЫБОР ДанныеРегистра.ФормаОплаты
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.Безналичная) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Безналичные)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.Наличная) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Наличные)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.ПлатежнаяКарта) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера)
+	КОНЕЦ).* КАК ТипДенежныхСредств,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств.*,
+	ДанныеРегистра.Валюта.*,
+	ДанныеРегистра.НаправлениеДеятельности.*,
+	ДанныеРегистра.ПлательщикПолучатель.*,
+	ДанныеРегистра.ПлательщикПолучатель.* КАК КорАналитика,
+	ДанныеРегистра.ОбъектОплаты.*,
+	ДанныеРегистра.ОбластьПланирования.*,
+	ДанныеРегистра.ОбъектОплаты КАК Регистратор,
+	ВЫБОР
+		КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+	КОНЕЦ КАК ПериодСекунда,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ДЕНЬ) КАК ПериодДень,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, НЕДЕЛЯ) КАК ПериодНеделя,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ДЕКАДА) КАК ПериодДекада,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, МЕСЯЦ) КАК ПериодМесяц,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, КВАРТАЛ) КАК ПериодКвартал,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ПОЛУГОДИЕ) КАК ПериодПолугодие,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ГОД)
+}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ // ДС в пути конвертация
+	ДанныеРегистра.ОбъектОплаты                        КАК Регистратор,
+	
+	ВЫБОР
+		КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+	КОНЕЦ КАК ПериодСекунда,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ДЕНЬ) КАК ПериодДень,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, НЕДЕЛЯ) КАК ПериодНеделя,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ДЕКАДА) КАК ПериодДекада,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, МЕСЯЦ) КАК ПериодМесяц,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, КВАРТАЛ) КАК ПериодКвартал,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ПОЛУГОДИЕ) КАК ПериодПолугодие,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ГОД) КАК ПериодГод,
+	
+	ДанныеРегистра.ХозяйственнаяОперация               КАК ХозяйственнаяОперация,
+	ДанныеРегистра.Организация                         КАК Организация,
+	ДанныеРегистра.Подразделение                       КАК Подразделение,
+	НЕОПРЕДЕЛЕНО                                       КАК НаправлениеДеятельностиДС,
+	НЕОПРЕДЕЛЕНО                                       КАК МестоХраненияДенежныхСредств,
+	ВЫБОР ДанныеРегистра.ФормаОплаты
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.Безналичная) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Безналичные)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.Наличная) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Наличные)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.ПлатежнаяКарта) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера)
+	КОНЕЦ КАК ТипДенежныхСредств,
+	
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств       КАК СтатьяДвиженияДенежныхСредств,
+	ДанныеРегистра.КорВалюта                           КАК Валюта,
+	
+	ДанныеРегистра.ПлательщикПолучатель                КАК КорАналитика,
+	
+	ДанныеРегистра.ОбъектОплаты                        КАК ОбъектОплаты,
+	ДанныеРегистра.НаправлениеДеятельности             КАК НаправлениеДеятельности,
+	ДанныеРегистра.ОбластьПланирования                 КАК ОбластьПланирования,
+	
+	0 КАК ПоступлениеПлан,
+	-ДанныеРегистра.СуммаДокумента * ЕСТЬNULL(КурсыВалют.Коэффициент, 1) КАК СписаниеПлан,
+	
+	ЗНАЧЕНИЕ(Перечисление.ТипыДвиженияДенежныхСредств.Списание) КАК ТипДвижения
+	
+ИЗ
+	РегистрСведений.ГрафикПлатежей КАК ДанныеРегистра
+	
+	ЛЕВОЕ СОЕДИНЕНИЕ
+		КурсыВалют КАК КурсыВалют
+	ПО
+		КурсыВалют.Валюта = ДанныеРегистра.Валюта
+	
+ГДЕ
+	ДанныеРегистра.ДатаПлатежа &lt;= &amp;КонецПериода
+	И &amp;ВыводитьДСВПути
+	И ДанныеРегистра.ТипСуммы В (
+		ЗНАЧЕНИЕ(Перечисление.ВидыПереводовДенежныхСредств.ПриобретениеВалюты),
+		ЗНАЧЕНИЕ(Перечисление.ВидыПереводовДенежныхСредств.РеализацияВалюты)
+	)
+{ГДЕ
+	ДанныеРегистра.ХозяйственнаяОперация.*,
+	ДанныеРегистра.Организация.*,
+	ДанныеРегистра.Подразделение.*,
+	ДанныеРегистра.БанковскийСчетКасса.НаправлениеДеятельности.* КАК НаправлениеДеятельностиДС,
+	ДанныеРегистра.БанковскийСчетКасса.* КАК МестоХраненияДенежныхСредств,
+	(ВЫБОР ДанныеРегистра.ФормаОплаты
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.Безналичная) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Безналичные)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.Наличная) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.Наличные)
+		КОГДА ЗНАЧЕНИЕ(Перечисление.ФормыОплаты.ПлатежнаяКарта) ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыДенежныхСредств.ДенежныеСредстваУЭквайера)
+	КОНЕЦ).* КАК ТипДенежныхСредств,
+	ДанныеРегистра.СтатьяДвиженияДенежныхСредств.*,
+	ДанныеРегистра.Валюта.*,
+	ДанныеРегистра.НаправлениеДеятельности.*,
+	ДанныеРегистра.ПлательщикПолучатель.*,
+	ДанныеРегистра.ПлательщикПолучатель.* КАК КорАналитика,
+	ДанныеРегистра.ОбъектОплаты.*,
+	ДанныеРегистра.ОбластьПланирования.*,
+	ДанныеРегистра.ОбъектОплаты КАК Регистратор,
+	ВЫБОР
+		КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+	КОНЕЦ КАК ПериодСекунда,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ДЕНЬ) КАК ПериодДень,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, НЕДЕЛЯ) КАК ПериодНеделя,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ДЕКАДА) КАК ПериодДекада,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, МЕСЯЦ) КАК ПериодМесяц,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, КВАРТАЛ) КАК ПериодКвартал,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ПОЛУГОДИЕ) КАК ПериодПолугодие,
+	НАЧАЛОПЕРИОДА(
+		ВЫБОР КОГДА ДанныеРегистра.ДатаПлатежа &lt; &amp;ДатаРасчета ТОГДА
+			ДОБАВИТЬКДАТЕ(&amp;ДатаРасчета, ДЕНЬ, -1)
+		ИНАЧЕ
+			ДанныеРегистра.ДатаПлатежа
+		КОНЕЦ, ГОД)
+}</query>
+		</item>
+	</dataSet>
+	<dataSetLink>
+		<sourceDataSet>ТаблицаПериодов</sourceDataSet>
+		<destinationDataSet>ЦелевыеЗначения</destinationDataSet>
+		<sourceExpression>Период</sourceExpression>
+		<destinationExpression>ДатаРасчета</destinationExpression>
+		<parameter>ДатаРасчета</parameter>
+		<parameterListAllowed>false</parameterListAllowed>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>ТаблицаПериодов</sourceDataSet>
+		<destinationDataSet>ДанныеДляАнализа</destinationDataSet>
+		<sourceExpression>Период</sourceExpression>
+		<destinationExpression>ПериодДень</destinationExpression>
+		<parameter>ДатаРасчета</parameter>
+		<parameterListAllowed>false</parameterListAllowed>
+	</dataSetLink>
+	<totalField>
+		<dataPath>ЦелевоеЗначение</dataPath>
+		<expression>ЕстьNull(Сумма(ЦелевоеЗначение),0)</expression>
+		<group>Период</group>
+	</totalField>
+	<totalField>
+		<dataPath>ЦелевойДиапазонМаксимум</dataPath>
+		<expression>ЕстьNull(Сумма(ЦелевойДиапазонМаксимум),0)</expression>
+		<group>Период</group>
+	</totalField>
+	<totalField>
+		<dataPath>ЦелевойДиапазонМинимум</dataPath>
+		<expression>ЕстьNull(Сумма(ЦелевойДиапазонМинимум),0)</expression>
+		<group>Период</group>
+	</totalField>
+	<totalField>
+		<dataPath>ГраничноеПозитивноеОтклонение</dataPath>
+		<expression>ЕстьNull(Сумма(ГраничноеПозитивноеОтклонение),0)</expression>
+		<group>Период</group>
+	</totalField>
+	<totalField>
+		<dataPath>ГраничноеНегативноеОтклонение</dataPath>
+		<expression>ЕстьNull(Сумма(ГраничноеНегативноеОтклонение),0)</expression>
+		<group>Период</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПриведенноеГраничноеПозитивноеОтклонение</dataPath>
+		<expression>ЕстьNull(Сумма(ПриведенноеГраничноеПозитивноеОтклонение),0)</expression>
+		<group>Период</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПриведенноеГраничноеНегативноеОтклонение</dataPath>
+		<expression>ЕстьNull(Сумма(ПриведенноеГраничноеНегативноеОтклонение),0)</expression>
+		<group>Период</group>
+	</totalField>
+	<totalField>
+		<dataPath>ЦелевоеЗначение</dataPath>
+		<expression>ЕстьNull(Сумма(ВЫБОР КОГДА Период = НАЧАЛОПЕРИОДА(&amp;КонецПериода, "ДЕНЬ") ТОГДА ЦелевоеЗначение ИНАЧЕ 0 КОНЕЦ),0)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЦелевойДиапазонМаксимум</dataPath>
+		<expression>ЕстьNull(Сумма(ВЫБОР КОГДА Период = НАЧАЛОПЕРИОДА(&amp;КонецПериода, "ДЕНЬ") ТОГДА ЦелевойДиапазонМаксимум ИНАЧЕ 0 КОНЕЦ),0)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЦелевойДиапазонМинимум</dataPath>
+		<expression>ЕстьNull(Сумма(ВЫБОР КОГДА Период = НАЧАЛОПЕРИОДА(&amp;КонецПериода, "ДЕНЬ") ТОГДА ЦелевойДиапазонМинимум ИНАЧЕ 0 КОНЕЦ),0)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГраничноеПозитивноеОтклонение</dataPath>
+		<expression>ЕстьNull(Сумма(ВЫБОР КОГДА Период = НАЧАЛОПЕРИОДА(&amp;КонецПериода, "ДЕНЬ") ТОГДА ГраничноеПозитивноеОтклонение ИНАЧЕ 0 КОНЕЦ),0)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГраничноеНегативноеОтклонение</dataPath>
+		<expression>ЕстьNull(Сумма(ВЫБОР КОГДА Период = НАЧАЛОПЕРИОДА(&amp;КонецПериода, "ДЕНЬ") ТОГДА ГраничноеНегативноеОтклонение ИНАЧЕ 0 КОНЕЦ),0)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПриведенноеГраничноеНегативноеОтклонение</dataPath>
+		<expression>ЕстьNull(Сумма(ВЫБОР КОГДА Период = НАЧАЛОПЕРИОДА(&amp;КонецПериода, "ДЕНЬ") ТОГДА ПриведенноеГраничноеПозитивноеОтклонение ИНАЧЕ 0 КОНЕЦ),0)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПриведенноеГраничноеПозитивноеОтклонение</dataPath>
+		<expression>ЕстьNull(Сумма(ВЫБОР КОГДА Период = НАЧАЛОПЕРИОДА(&amp;КонецПериода, "ДЕНЬ") ТОГДА ПриведенноеГраничноеНегативноеОтклонение ИНАЧЕ 0 КОНЕЦ),0)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПоступлениеПлан</dataPath>
+		<expression>ЕстьNull(Сумма(ПоступлениеПлан),0)</expression>
+		<group>Период</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПоступлениеФакт</dataPath>
+		<expression>ЕстьNull(Сумма(ПоступлениеФакт),0)</expression>
+		<group>Период</group>
+	</totalField>
+	<totalField>
+		<dataPath>СписаниеПлан</dataPath>
+		<expression>ЕстьNull(Сумма(СписаниеПлан),0)</expression>
+		<group>Период</group>
+	</totalField>
+	<totalField>
+		<dataPath>СписаниеФакт</dataPath>
+		<expression>ЕстьNull(Сумма(СписаниеФакт),0)</expression>
+		<group>Период</group>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period start</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period end</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ПериодСравнения</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период сравнения</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Comparison period</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>НачалоПериодаСравнения</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода сравнения</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Comparison period start date</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодСравнения.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>КонецПериодаСравнения</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода сравнения</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Comparison period end date</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодСравнения.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаРасчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата расчета</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Settlement date</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ВариантАнализа</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вариант анализа</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Analysis option</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ВариантыАнализаЦелевыхПоказателей</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.ВариантыАнализаЦелевыхПоказателей.ПустаяСсылка</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ДанныеОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Данные отчета</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Report data</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">2</value>
+		<useRestriction>false</useRestriction>
+		<availableValue>
+			<value xsi:type="xs:decimal">2</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В валюте упр. учета</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>In the management accounting currency</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:decimal">3</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В валюте регл. учета</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>In the compliance accounting currency</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ВалютаРасчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Валюта расчета</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Payment currency</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Валюты</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.Валюты.ПустаяСсылка</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ВыводитьДСВПути</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить денежные средства в пути</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">true</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ПриведенноеНачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Приведенное начало периода</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПоступлениеПлан</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЦелевоеЗначение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЦелевойДиапазонМаксимум</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЦелевойДиапазонМинимум</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ГраничноеПозитивноеОтклонение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ГраничноеНегативноеОтклонение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПриведенноеГраничноеПозитивноеОтклонение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПриведенноеГраничноеНегативноеОтклонение</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДанныеОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">2</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВалютаРасчета</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьДСВПути</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Организация</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="dcscor:Field">ПараметрыДанных.НачалоПериода</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="dcscor:Field">ПараметрыДанных.КонецПериода</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Период</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>Day</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="dcscor:Field">ПараметрыДанных.НачалоПериода</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="dcscor:Field">ПараметрыДанных.КонецПериода</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

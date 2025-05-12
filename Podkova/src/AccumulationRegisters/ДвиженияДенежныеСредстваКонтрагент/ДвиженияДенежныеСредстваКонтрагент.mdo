@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="631636ea-6466-4e25-bd05-b06a55f86cd6">
+  <producedTypes>
+    <selectionType typeId="8b588e06-09cb-489d-9669-688e98ca326b" valueTypeId="5a06337a-15d4-42cc-908b-9b49fad4c8a7"/>
+    <listType typeId="e841e5b3-9795-42e4-bede-719d9bae5314" valueTypeId="470add83-bf13-482b-8d36-13a444664cd6"/>
+    <managerType typeId="11540da8-61e8-4d8b-b284-fbe3ff631f8a" valueTypeId="d0be6424-2ce8-4fa9-8f02-a4237d66390e"/>
+    <recordSetType typeId="75c09b80-7d74-4107-8d18-9aeb7a0fc508" valueTypeId="084eb635-7e09-49a4-8c3e-c3652c2146ae"/>
+    <recordKeyType typeId="c4291d5d-8322-4c7c-b859-be12bcf3846e" valueTypeId="24f6f1cf-23fe-401f-a9a6-c352c5055434"/>
+    <recordType typeId="80df9d83-8010-42df-b94d-c7096c93a5ba" valueTypeId="bb76833d-3419-4ebe-ab15-6b812ef300df"/>
+  </producedTypes>
+  <name>ДвиженияДенежныеСредстваКонтрагент</name>
+  <synonym>
+    <key>ru</key>
+    <value>Движения Денежные средства - Контрагент</value>
+  </synonym>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="2d2aedaf-bb19-4e15-8da0-acd66547f01e">
+    <name>СуммаОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма оплаты (упр.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма оплаты в валюте управленческого учета.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="ef370c63-9e2d-4041-9db9-eb3abfa66e6a">
+    <name>СуммаОплатыРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма оплаты (регл.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма оплаты в валюте регламентированного учета.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="26e1e082-7f2e-4e5a-b7c6-a66e3e882c70">
+    <name>СуммаОплатыВВалютеПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма оплаты</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма оплаты в валюте платежа.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="66a4a6a8-8b25-4c91-88a4-570453946565">
+    <name>СуммаПостоплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма постоплаты (упр.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма постоплаты в валюте управленческого учета.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="af46415a-7284-442d-ad97-5b8cb5cab85b">
+    <name>СуммаПостоплатыРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма постоплаты (регл.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма постоплаты в валюте регламентированного учета.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="12e8fd39-50f2-4474-aadb-c66f64b48e67">
+    <name>СуммаПостоплатыВВалютеПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма постоплаты</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма постоплаты в валюте платежа.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="7fa71d4b-5074-4922-84c2-c884abf3fde8">
+    <name>СуммаПредоплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма предоплаты (упр.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма предоплаты в валюте управленческого учета.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="6c46371f-a2bc-4bc8-81c8-488765cb8b4c">
+    <name>СуммаПредоплатыРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма предоплаты (регл.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма предоплаты в валюте регламентированного учета.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="bb811ccf-c75a-4156-bb17-6d9a7dd51431">
+    <name>СуммаПредоплатыВВалютеПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма предоплаты</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма предоплаты в валюте платежа.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="60b2912f-124d-427a-8849-ab8ee3d0d8ed">
+    <name>СуммаКВыплатеВРамкахЛимита</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма к выплате (в рамках лимита)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма к выплате в валюте заявки</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="fdac04b7-7bd5-40c6-93a9-8ffcb4c29d62">
+    <name>СуммаКВыплатеСверхЛимита</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма к выплате (сверх лимита)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма к выплате в валюте заявки</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="e9eca773-dae5-4447-9522-3ab879a9dd35">
+    <name>СуммаНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма НДС (упр.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма НДС в валюте управленческого учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="f2a38f8e-95bf-4ead-bbc2-005064d5d28c">
+    <name>СуммаНДСРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма НДС (регл.)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма НДС в валюте регламентированного учета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="1147b857-b350-42a2-9078-d39497538d5c">
+    <name>СуммаНДСВВалютеПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма НДС</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма НДС в валюте платежа</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="178abd80-b49f-4833-a563-3f87a07b4e90">
+    <name>ВалютаВзаиморасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта взаиморасчетов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Валюта взаиморасчетов.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="ace1ddf5-e007-4c5c-85ac-7fbfa292227f">
+    <name>СуммаОплатыВВалютеВзаиморасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма оплаты в валюте взаиморасчетов</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма оплаты в валюте взаиморасчетов.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="0e8c0eb2-c9d7-4c34-8311-509e933dfa19">
+    <name>СуммаПостоплатыВВалютеВзаиморасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма постоплаты в валюте взаиморасчетов</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма постоплаты в валюте взаиморасчетов.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="2624c226-b123-4ab7-ad08-20e00f1868b2">
+    <name>СуммаПредоплатыВВалютеВзаиморасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма предоплаты в валюте взаиморасчетов</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма предоплаты в валюте взаиморасчетов.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="80949ed6-ff81-4fdf-bef7-987b598521e0">
+    <name>ИсточникГФУДенежныхСредств</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник ГФУ денежных средств</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыКредитовИДепозитов</types>
+      <types>CatalogRef.БанковскиеСчетаОрганизаций</types>
+      <types>CatalogRef.Кассы</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Источник группы финансового учета денежных средств.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="48a7538d-2a54-44f2-8048-ef7f68a5d0dd">
+    <name>ИсточникГФУРасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник ГФУ расчетов</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РасходныйКассовыйОрдер</types>
+      <types>DocumentRef.ПриходныйКассовыйОрдер</types>
+      <types>DocumentRef.ПриобретениеТоваровУслуг</types>
+      <types>DocumentRef.ТаможеннаяДекларацияИмпорт</types>
+      <types>DocumentRef.ОтчетКомиссионера</types>
+      <types>DocumentRef.ЗаказПоставщику</types>
+      <types>DocumentRef.СписаниеБезналичныхДенежныхСредств</types>
+      <types>CatalogRef.ДоговорыМеждуОрганизациями</types>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациями</types>
+      <types>DocumentRef.ЗаявкаНаВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.ОтчетКомитенту</types>
+      <types>CatalogRef.ДоговорыКредитовИДепозитов</types>
+      <types>DocumentRef.РеализацияУслугПрочихАктивов</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациямиОСписании</types>
+      <types>DocumentRef.ОтчетКомитентуОСписании</types>
+      <types>DocumentRef.ПриобретениеУслугПрочихАктивов</types>
+      <types>DocumentRef.АктВыполненныхРабот</types>
+      <types>DocumentRef.ОтчетКомиссионераОСписании</types>
+      <types>DocumentRef.ПередачаТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.ЗаказКлиента</types>
+      <types>DocumentRef.ПоступлениеБезналичныхДенежныхСредств</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Источник группы финансового учета расчетов с партнерами.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="788bec07-36cf-4e20-aec1-afa02fdaaf0c">
+    <name>ОтложенноеПроведение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отложенное проведение</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак отложенного проведения.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="112d0dc3-6b61-4193-99b4-e641a59efd7c">
+    <name>СтавкаНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка НДС</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтавкиНДС</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Ставка НДС платежа</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="cdaca2f5-c1d3-4ed2-9ed5-da8b5fc8af7c">
+    <name>ХозяйственнаяОперация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Хозяйственная операция</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ХозяйственныеОперации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид операции, отражаемой в учете.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="60eba05e-31af-48a3-a6f3-47736f39339d">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация предприятия, данные по которой отражаются в учете.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="baf94c4b-916d-4592-b148-61a5d5f463a8">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение, к которому относится хозяйственная операция в рамках управленческого учета.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="0519c696-546b-4100-a24d-26dab983d0d5">
+    <name>НаправлениеДеятельностиДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Направление деятельности денежных средств</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НаправленияДеятельности</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Направление деятельности, к которому относятся денежные средства в рамках управленческого учета.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="be435891-00d6-4018-8bfc-2c7b30d59533">
+    <name>ДенежныеСредства</name>
+    <synonym>
+      <key>ru</key>
+      <value>Денежные средства</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КассыККМ</types>
+      <types>CatalogRef.ДоговорыКредитовИДепозитов</types>
+      <types>CatalogRef.БанковскиеСчетаОрганизаций</types>
+      <types>CatalogRef.Контрагенты</types>
+      <types>CatalogRef.Кассы</types>
+      <types>CatalogRef.ФизическиеЛица</types>
+      <types>CatalogRef.ЭквайринговыеТерминалы</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Место учета денежных средств.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="0693c769-00b8-4cf4-8b69-24fde095a076">
+    <name>ТипДенежныхСредств</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип денежных средств</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыДенежныхСредств</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Тип денежных средств.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="e9544a0b-7607-4c8a-a657-8770856cf41f">
+    <name>СтатьяДвиженияДенежныхСредств</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья движения денежных средств</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатьиДвиженияДенежныхСредств</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статья движения денежных средств.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="3d3d6881-5edf-444a-9a6d-0946f447048f">
+    <name>ВалютаПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта платежа</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Валюта платежа</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="9a949406-4a60-4797-9d1a-fdeb6955fd33">
+    <name>СтатьяКалькуляции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья калькуляции</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="dac09136-5295-4414-8961-59a8f4e3a21c">
+    <name>ТипПлатежаФЗ275</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип платежа 275-ФЗ</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Тип платежа из перечня допустимых 275ФЗ</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="d479448f-211c-4cf2-8888-15de8cd5395c">
+    <name>НаправлениеДеятельностиКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Направление деятельности контрагента</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НаправленияДеятельности</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Направление деятельности, к которому относится контрагент в рамках управленческого учета.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="fd93bfbb-9f18-4458-aceb-bff9f1dbb0c8">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Клиент (упр.), от которого поступает оплата или которому возвращается оплата, либо поставщик (упр.), которому производится оплата или от которого возвращаются денежные средства.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="d27e22d1-ddca-4878-a858-de1595c211d2">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Клиент (регл.), от которого поступает оплата или которому возвращается оплата, либо поставщик (регл.), которому производится оплата или от которого возвращаются денежные средства.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="a23d6b21-9093-4cc0-a230-6fdf96e3fa47">
+    <name>Договор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыМеждуОрганизациями</types>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+      <types>CatalogRef.ДоговорыКредитовИДепозитов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Договор, в рамках которого ведутся расчеты с клиентом или поставщиком.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="cb5cdaaa-8159-4128-883d-96b4603460bd">
+    <name>ОбъектРасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект расчетов</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РасходныйКассовыйОрдер</types>
+      <types>DocumentRef.ПриходныйКассовыйОрдер</types>
+      <types>DocumentRef.ВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.ПриобретениеТоваровУслуг</types>
+      <types>DocumentRef.ОперацияПоПлатежнойКарте</types>
+      <types>DocumentRef.ТаможеннаяДекларацияИмпорт</types>
+      <types>DocumentRef.ОтчетКомиссионера</types>
+      <types>DocumentRef.ПервичныйДокумент</types>
+      <types>DocumentRef.ЗаказПоставщику</types>
+      <types>DocumentRef.ВозвратТоваровПоставщику</types>
+      <types>DocumentRef.СписаниеБезналичныхДенежныхСредств</types>
+      <types>CatalogRef.ДоговорыМеждуОрганизациями</types>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациями</types>
+      <types>DocumentRef.ЗаявкаНаВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.ОтчетКомитенту</types>
+      <types>DocumentRef.РеализацияУслугПрочихАктивов</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациямиОСписании</types>
+      <types>CatalogRef.ПодарочныеСертификаты</types>
+      <types>DocumentRef.ОтчетКомитентуОСписании</types>
+      <types>DocumentRef.ВыкупВозвратнойТарыКлиентом</types>
+      <types>DocumentRef.ПриобретениеУслугПрочихАктивов</types>
+      <types>DocumentRef.АктВыполненныхРабот</types>
+      <types>DocumentRef.ОтчетКомиссионераОСписании</types>
+      <types>DocumentRef.ПередачаТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.ВыкупВозвратнойТарыУПоставщика</types>
+      <types>DocumentRef.ЗаказКлиента</types>
+      <types>DocumentRef.ПоступлениеБезналичныхДенежныхСредств</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Объект расчетов с партнером.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="c5a14d11-1c4c-4b57-ad11-94b15a403a63">
+    <name>РасчетныйДокумент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчетный документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РасходныйКассовыйОрдер</types>
+      <types>DocumentRef.ПриходныйКассовыйОрдер</types>
+      <types>DocumentRef.ВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.ПриобретениеТоваровУслуг</types>
+      <types>DocumentRef.ОперацияПоПлатежнойКарте</types>
+      <types>DocumentRef.ТаможеннаяДекларацияИмпорт</types>
+      <types>DocumentRef.ОтчетКомиссионера</types>
+      <types>DocumentRef.ЗаказПоставщику</types>
+      <types>DocumentRef.ВозвратТоваровПоставщику</types>
+      <types>DocumentRef.СписаниеБезналичныхДенежныхСредств</types>
+      <types>DocumentRef.ОперацияПоЯндексКассе</types>
+      <types>DocumentRef.ВводОстатков</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациями</types>
+      <types>DocumentRef.ЗаявкаНаВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.ОтчетКомитенту</types>
+      <types>DocumentRef.РеализацияУслугПрочихАктивов</types>
+      <types>DocumentRef.КорректировкаРеализации</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.АвансовыйОтчет</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациямиОСписании</types>
+      <types>DocumentRef.КорректировкаПриобретения</types>
+      <types>DocumentRef.ОтчетКомитентуОСписании</types>
+      <types>DocumentRef.ПриобретениеУслугПрочихАктивов</types>
+      <types>DocumentRef.АктВыполненныхРабот</types>
+      <types>DocumentRef.СписаниеЗадолженности</types>
+      <types>DocumentRef.ВозвратТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.ОтчетКомиссионераОСписании</types>
+      <types>DocumentRef.ПередачаТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.ВзаимозачетЗадолженности</types>
+      <types>DocumentRef.ЗаказКлиента</types>
+      <types>DocumentRef.ПоступлениеБезналичныхДенежныхСредств</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Документ реализации товаров и услуг клиенту или документ получения оплаты от клиента, либо документ поступления товаров и услуг от поставщика или документ оплаты поставщику.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+</mdclass:AccumulationRegister>

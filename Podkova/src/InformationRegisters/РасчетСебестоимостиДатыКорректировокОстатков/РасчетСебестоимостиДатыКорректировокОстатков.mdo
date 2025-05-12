@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fd85315b-b2dd-4eca-97da-20e94ae4dab2">
+  <producedTypes>
+    <selectionType typeId="1e94f85c-ca8d-4ed8-88e1-a758bc89fac7" valueTypeId="be53d3d8-8d7b-4044-ad2b-68acd8cd9360"/>
+    <listType typeId="b79d9972-16f1-459e-b635-7ff01b70c95f" valueTypeId="ac6cff7e-7018-4ee2-8923-b945051939d0"/>
+    <managerType typeId="c8570def-be6d-4763-ba44-eb0b93fc354e" valueTypeId="b4156750-3e81-4b19-a500-3f00d9a56d00"/>
+    <recordSetType typeId="3aa8c7f5-9f99-4636-b9b3-fbf1f91f2a54" valueTypeId="cd391de2-0847-4481-b41c-9cccbb76ff09"/>
+    <recordKeyType typeId="04086da2-dd54-4bce-9f38-ee4ebcf457c6" valueTypeId="1ef5edba-7681-44ce-940b-e7b3a267f408"/>
+    <recordType typeId="ae0e539f-f84f-4056-99fa-18ea9ec7b0b7" valueTypeId="7d858f18-c378-4584-af38-a5b77c969e70"/>
+    <recordManagerType typeId="76290f58-63fd-42ce-a6db-34282699ce59" valueTypeId="8dad50a0-0843-4f88-a729-bbd3322a3474"/>
+  </producedTypes>
+  <name>РасчетСебестоимостиДатыКорректировокОстатков</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет себестоимости (даты корректировок остатков)</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <explanation>
+    <key>ru</key>
+    <value>Служебный, предназначен для хранения информации о выполнении операции корректировки начальных остатков.
+Нужен для тех операций корректировки, для которых нет константы, хранящей информацию о дате начала действия операции.</value>
+  </explanation>
+  <resources uuid="14730691-0763-4cb0-8ef3-6d6b5c1be9cf">
+    <name>ДатаКорректировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата корректировки</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="3084ebf5-08dc-4d4e-aafb-cc8c7ea48982">
+    <name>ДатаНачалаДействия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала действия</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="8e202723-43f0-4522-8889-a800b56c0f31">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3dc14335-7c73-4b88-9b52-b2d4f84ac955">
+    <name>ТипЗаписиКорректировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип записи корректировки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗаписейПартий</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="dfae5b35-2622-49ed-a1c7-99df5f931693">
+    <name>ИмяРегистра</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя регистра</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>255</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value>          </value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,157 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://fsrar.ru/WEGAIS/ClaimIssueFSM" elementFormQualified="true" attributeFormQualified="false">
+	<import namespace="http://fsrar.ru/WEGAIS/Common"/>
+	<import namespace="http://fsrar.ru/WEGAIS/CommonEnum"/>
+	<import namespace="http://fsrar.ru/WEGAIS/CommonV3"/>
+	<import namespace="http://fsrar.ru/WEGAIS/ClientRef_v2"/>
+	<import namespace="http://fsrar.ru/WEGAIS/ProductRef_v2"/>
+	<objectType name="CalculationDemandType">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="Spirit" type="d3p1:SpiritType" lowerBound="0" upperBound="-1" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="WineMaterial" type="d3p1:WineMaterialType" lowerBound="0" upperBound="-1" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="RawAged" type="d3p1:RawAgedType" lowerBound="0" upperBound="-1" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="MarkedAP" type="d3p1:MarkedAPType" lowerBound="0" upperBound="-1" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="WinemakingAP" type="d3p1:WinemakingAPType" lowerBound="0" upperBound="-1" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="WinemakingAPSTP" type="d3p1:WinemakingAPSTPType" lowerBound="0" upperBound="-1" nillable="false"/>
+	</objectType>
+	<objectType name="ClaimIssueFSMComplType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="TypeClaim1" type="d3p1:producedru" lowerBound="0"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="TypeClaim3" type="d3p1:producedts" lowerBound="0"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="TypeClaim2" type="d3p1:producedimp" lowerBound="0"/>
+	</objectType>
+	<objectType name="ClaimIssueFSMType">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Identity" type="d3p1:IdentityType" lowerBound="0" nillable="false"/>
+		<property name="Header">
+			<typeDef xsi:type="ObjectType" ordered="false" sequenced="true">
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="NUMBER" type="d5p1:NoEmptyString50"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="Date" type="d5p1:DateNoTime"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/ClientRef_v2" name="TerrOrganRAR" type="d5p1:OrgInfoRus_ClaimIssue" lowerBound="0"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/ClientRef_v2" name="Declarer" type="d5p1:OrgInfoRus_ClaimIssue"/>
+				<property name="Note" lowerBound="0">
+					<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="200"/>
+				</property>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/CommonEnum" name="ReportUseAutoProcess" type="d5p1:ReportUseAutoProcessType" lowerBound="0"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/Common" name="ParentClaimID" type="d5p1:NoEmptyString50" lowerBound="0"/>
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="TypeClaimM" type="d5p1:ClaimIssueFSMComplType" nillable="false"/>
+			</typeDef>
+		</property>
+		<property name="Content">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="Position" type="d5p1:PositionClaimType" upperBound="-1"/>
+			</typeDef>
+		</property>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="CalculationDemand" type="d3p1:CalculationDemandType" lowerBound="0" nillable="false"/>
+	</objectType>
+	<objectType name="ClaimRawType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ClaimNumber" type="d3p1:NoEmptyString50" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ClaimDate" type="d3p1:DateNoTime" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="SumAdvancePayment" type="d3p1:PositiveDecimalType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeAnhydrous" type="d3p1:PositiveDecimalType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ClaimNumberFNS" type="d3p1:NoEmptyString50" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="ClaimDateFNS" type="d3p1:DateNoTime" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeNotUsed" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+	</objectType>
+	<objectType name="MarkedAPType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="RestFSM" type="d3p1:VolumeMarkedProductType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="RequestFSM" type="d3p1:VolumeMarkedProductType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="TotalVolumeAnhydrousSpirit" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="TotalVolumeMarkedAP" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+	</objectType>
+	<objectType name="PositionClaimType" ordered="false" sequenced="true">
+		<property name="VidAP171fz" type="xs:string"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="alcPercent" type="d3p1:AlcPercentType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="QuantityDal" type="d3p1:PositiveDecimalType"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Capacity" type="d3p1:PositiveDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Identity" type="d3p1:IdentityType" nillable="false"/>
+		<property name="SampleFSM" type="xs:string"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="MarkType" type="d3p1:MarkGZTypeString"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Quantity" type="d3p1:PositiveDecimalType"/>
+	</objectType>
+	<objectType name="RawAgedType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="ExposureOneYear" type="d3p1:VolumeLocateAgainRawType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="ExposureThreeYear" type="d3p1:VolumeLocateAgainRawType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="ExposureFiveYear" type="d3p1:VolumeLocateAgainRawType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="ExposureSevenYear" type="d3p1:VolumeLocateAgainRawType" nillable="false"/>
+	</objectType>
+	<objectType name="SpiritType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ProductRef_v2" name="Raw" type="d3p1:ProductInfoAsiiu_v2" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeAnhydrousRest" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="VolumeProducedRaw" type="d3p1:VolumeSpiritType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="VolumeOutRaw" type="d3p1:VolumeSpiritType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="VolumeReceivedRaw" type="d3p1:VolumeReceivedRawType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="VolumeUsedRaw" type="d3p1:VolumeUsedRawType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="ClaimRaw" type="d3p1:ClaimRawType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="TotalRaw" type="d3p1:PositiveDecimalType" nillable="false"/>
+	</objectType>
+	<objectType name="VolumeLocateAgainRawType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="TypeRawMaterial" type="d3p1:NoEmptyString50" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeSpirit" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeRestOld" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeTransferred" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeReturned" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeRest" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+	</objectType>
+	<objectType name="VolumeMarkedProductType" ordered="false" sequenced="true">
+		<property name="SampleFSM" type="xs:string" lowerBound="0" nillable="false"/>
+		<property name="VidAP171fz" type="xs:string" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeSpirit" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeMarkedAP" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Capacity" type="d3p1:PositiveDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="AmountFSM" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeAnhydrousSpirit" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+	</objectType>
+	<objectType name="VolumeReceivedRawType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="VolumeFromAgingRaw" type="d3p1:VolumeSpiritType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="VolumeBuyRaw" type="d3p1:VolumeSpiritType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="VolumeConversionRaw" type="d3p1:VolumeSpiritType" nillable="false"/>
+	</objectType>
+	<objectType name="VolumeSpiritType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="Volume20C" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeAnhydrous" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+	</objectType>
+	<objectType name="VolumeUsedRawType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="VolumeToAgingRaw" type="d3p1:VolumeSpiritType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="VolumeToProducedRaw" type="d3p1:VolumeSpiritType" nillable="false"/>
+	</objectType>
+	<objectType name="WineMaterialType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ProductRef_v2" name="Raw" type="d3p1:ProductInfoAsiiu_v2" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeAnhydrousRest" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="VolumeProducedRaw" type="d3p1:VolumeSpiritType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="VolumeOutRaw" type="d3p1:VolumeSpiritType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="VolumeReceivedRaw" type="d3p1:VolumeReceivedRawType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClaimIssueFSM" name="VolumeUsedRaw" type="d3p1:VolumeUsedRawType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeEstimatedRest" type="d3p1:NoNegativeDecimalType" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="TotalRaw" type="d3p1:PositiveDecimalType" nillable="false"/>
+	</objectType>
+	<objectType name="WinemakingAPSTPType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ProductRef_v2" name="Raw" type="d3p1:ProductInfoAsiiu_v2" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeRest" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeGrapeCollect" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeGrapeUse" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeToAgingRaw" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeFromAgingRaw" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeUsedgRaw" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="TotalRaw" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+	</objectType>
+	<objectType name="WinemakingAPType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ProductRef_v2" name="Raw" type="d3p1:ProductInfoAsiiu_v2" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeGrape" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeGrapeGeographical" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeGrapeRegion" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="VolumeGrapeGrowing" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="TotalRaw" type="d3p1:NoNegativeDecimalType" nillable="false"/>
+	</objectType>
+	<objectType name="producedimp" ordered="false" sequenced="true">
+		<property name="TypeClaim" type="xs:anyType"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="CONTRACTNUMBER" type="d3p1:NoEmptyString50"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="CONTRACTDATE" type="d3p1:DateNoTime"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClientRef_v2" name="SHIPPER" type="d3p1:OrgInfoForeign_v2"/>
+	</objectType>
+	<objectType name="producedru" ordered="false" sequenced="true">
+		<property name="TypeClaim" type="xs:anyType"/>
+	</objectType>
+	<objectType name="producedts" ordered="false" sequenced="true">
+		<property name="TypeClaim" type="xs:anyType"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="CONTRACTNUMBER" type="d3p1:NoEmptyString50"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/Common" name="CONTRACTDATE" type="d3p1:DateNoTime"/>
+		<property xmlns:d3p1="http://fsrar.ru/WEGAIS/ClientRef_v2" name="SHIPPER" type="d3p1:OrgInfoForeign_v2"/>
+	</objectType>
+</package>

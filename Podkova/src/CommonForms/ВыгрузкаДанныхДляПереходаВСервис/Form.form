@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <title>
+    <key>ru</key>
+    <value>Переход в сервис</value>
+  </title>
+  <items xsi:type="form:Decoration">
+    <name>ДекорацияИнформация</name>
+    <id>16</id>
+    <title>
+      <key>ru</key>
+      <value>&lt;font Calibri>&lt;fontsize 12>У Вас есть возможность работать в облачном сервисе, ознакомьтесь с преимуществами работы в сервисе: &lt;/>&lt;/>&lt;link https://1cfresh.com/advantages>&lt;font Calibri>&lt;fontsize 12>Преимущества&lt;/>&lt;/>&lt;/>&lt;link https://1cfresh.com/advantages>&lt;font Calibri>&lt;fontsize 12> работы в сервисе&lt;/>&lt;/>&lt;/>.
+
+&lt;font Calibri>&lt;fontsize 12>Вы можете начать работать с &lt;/>&lt;/>&lt;link https://1cfresh.com/solutions/ca>&lt;font Calibri>&lt;fontsize 12>1С:Комплексная автоматизация 2&lt;/>&lt;/>&lt;/>&lt;font Calibri>&lt;fontsize 12> в сервисе сразу, без потери своих данных: &lt;/>&lt;/>&lt;link https://1cfresh.com/register>&lt;font Calibri>&lt;fontsize 12>Как начать работать в сервисе?&lt;/>&lt;/>&lt;/>
+
+&lt;font Calibri>&lt;fontsize 12>Переход в сервис простой, не требующий специальных знаний: &lt;/>&lt;/>&lt;link ОткрытьИнструкцию>&lt;font Calibri>&lt;fontsize 12>Как перенести данные в сервис?&lt;/>&lt;/>&lt;/></value>
+    </title>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <extendedTooltip>
+      <name>ДекорацияИнформацияРасширеннаяПодсказка</name>
+      <id>18</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>ДекорацияИнформацияКонтекстноеМеню</name>
+      <id>17</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <formatted>true</formatted>
+    <type>Label</type>
+    <autoMaxHeight>true</autoMaxHeight>
+    <extInfo xsi:type="form:LabelDecorationExtInfo">
+      <handlers>
+        <event>URLProcessing</event>
+        <name>ДекорацияИнформацияОбработкаНавигационнойСсылки</name>
+      </handlers>
+      <horizontalAlign>Left</horizontalAlign>
+    </extInfo>
+  </items>
+  <items xsi:type="form:Button">
+    <name>ОбновлениеПрограммы</name>
+    <id>19</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <extendedTooltip>
+      <name>ОбновлениеПрограммыРасширеннаяПодсказка</name>
+      <id>20</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>UsualButton</type>
+    <commandName>Form.Command.ОбновлениеПрограммы</commandName>
+    <representation>Auto</representation>
+    <autoMaxWidth>true</autoMaxWidth>
+    <autoMaxHeight>true</autoMaxHeight>
+    <placementArea>UserCmds</placementArea>
+    <representationInContextMenu>Auto</representationInContextMenu>
+  </items>
+  <items xsi:type="form:Button">
+    <name>ОбщаяКомандаВыгрузитьДанныеДляПереходаВСервис</name>
+    <id>1</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <defaultItem>true</defaultItem>
+    <extendedTooltip>
+      <name>ОбщаяКомандаВыгрузитьДанныеДляПереходаВСервисРасширеннаяПодсказка</name>
+      <id>2</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>UsualButton</type>
+    <commandName>CommonCommand.ВыгрузитьДанныеДляПереходаВСервис</commandName>
+    <representation>Auto</representation>
+    <defaultButton>true</defaultButton>
+    <autoMaxWidth>true</autoMaxWidth>
+    <autoMaxHeight>true</autoMaxHeight>
+    <placementArea>UserCmds</placementArea>
+    <font xsi:type="core:FontRef">
+      <font>Style.NormalTextFont</font>
+      <bold>true</bold>
+      <italic>false</italic>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+    </font>
+    <representationInContextMenu>Auto</representationInContextMenu>
+  </items>
+  <autoCommandBar>
+    <name>ФормаКоманднаяПанель</name>
+    <id>-1</id>
+    <horizontalAlign>Left</horizontalAlign>
+  </autoCommandBar>
+  <handlers>
+    <event>OnOpen</event>
+    <name>ПриОткрытии</name>
+  </handlers>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>ПриСозданииНаСервере</name>
+  </handlers>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <formCommands>
+    <name>ОбновлениеПрограммы</name>
+    <title>
+      <key>ru</key>
+      <value>Обновление программы</value>
+    </title>
+    <id>1</id>
+    <toolTip>
+      <key>ru</key>
+      <value>Обновление программы</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ОбновлениеПрограммы</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+</form:Form>

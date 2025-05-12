@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0cbf9cbf-259a-4d51-9f55-f49ba93dec3a">
+  <producedTypes>
+    <selectionType typeId="320ffcfd-c975-4f45-a138-76bc3f957700" valueTypeId="9486059f-c286-4db5-8963-9587fadbf064"/>
+    <listType typeId="b6dd579b-a3c3-475f-98f6-3e46838167b2" valueTypeId="af846cf6-32ff-4a1a-8962-e6e806ba6f5b"/>
+    <managerType typeId="5c87c6ee-eae4-4e19-a793-224a0ce87b62" valueTypeId="4f7834b0-acde-4e7a-be5f-933c54d83ee8"/>
+    <recordSetType typeId="639ee7d9-5aab-43a6-9d16-c744ab65bce4" valueTypeId="4c2dd932-67a2-45d2-9c54-67d061fa4093"/>
+    <recordKeyType typeId="862e598e-85ec-47ba-b89d-0027daee0d9d" valueTypeId="614a5708-c126-4b65-a47e-5c548c955031"/>
+    <recordType typeId="f9750644-e64d-4f6f-a87f-0ab44ddc5d82" valueTypeId="0f267cbb-0953-4c9c-8cc3-52408acd3ef6"/>
+    <recordManagerType typeId="82aeb9f3-a68a-49c1-abcd-919843cfd289" valueTypeId="156bf8f8-514d-4b2b-9265-49f86d0574e4"/>
+  </producedTypes>
+  <name>СвязиМеждуФизЛицами</name>
+  <synonym>
+    <key>ru</key>
+    <value>Связи между физическими лицами</value>
+  </synonym>
+  <defaultRecordForm>InformationRegister.СвязиМеждуФизЛицами.Form.ФормаЗаписи</defaultRecordForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:DateValue">
+      <value>0001-01-01T00:00:00</value>
+    </fillValue>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Связь между физическими лицами</value>
+  </recordPresentation>
+  <attributes uuid="cd187cd0-21de-4a52-a0f1-3e09ef702dec">
+    <name>Автор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Автор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сотрудник, зарегистрировавший связь.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Пользователи.EmptyRef</value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="2459b347-18a7-43a4-98ca-c5d578d30eb7">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Комментарии сотрудника, зарегистрировавшего связь.</value>
+    </toolTip>
+    <multiLine>true</multiLine>
+    <extendedEdit>true</extendedEdit>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="742db621-09cb-4838-87a0-528292a8e46b">
+    <name>ФизЛицо1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо 1</value>
+    </synonym>
+    <comment>Первое физическое лицо</comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.ФизическиеЛица.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="37cd13ab-e195-46d1-b547-bf0ce3e25044">
+    <name>ФизЛицо2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо 2</value>
+    </synonym>
+    <comment>Второе физическое лицо</comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.ФизическиеЛица.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="69eac1fe-46a2-484a-baa0-bcb1d769e7b9">
+    <name>ВидСвязи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид связи</value>
+    </synonym>
+    <comment>Вид связи между физическими лицами</comment>
+    <type>
+      <types>CatalogRef.ВидыСвязейМеждуФизЛицами</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид связи по классификации предприятия</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.ВидыСвязейМеждуФизЛицами.EmptyRef</value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="f9e401ba-2d48-4a4b-862b-f39ac100aa75">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d1ef8b0e-8c13-41e0-82d2-eda649fba0fe">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d6757a04-ca9a-48fe-8ab4-737266287d96">
+    <name>ФормаСпискаПараметрическая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка параметрическая</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

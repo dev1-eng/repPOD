@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ae5125d1-7a02-4b93-9bef-56502c334e01">
+  <producedTypes>
+    <selectionType typeId="8ed53b72-ae0d-4cab-9b09-0a176661e7e1" valueTypeId="f665b837-759c-4933-bf14-9d17eedbe4b0"/>
+    <listType typeId="ea0ae50f-cf4b-4436-b1ed-9f664996f7db" valueTypeId="35c868ab-c173-4a90-96d9-e972f00ab4b8"/>
+    <managerType typeId="98961819-2990-4b9d-a389-c435aea72f86" valueTypeId="b25c0c4e-5467-48ec-a630-efe9e22365de"/>
+    <recordSetType typeId="70a46591-c7f2-44cf-9af5-91990da3977d" valueTypeId="bf3ef394-aff8-407d-b4ff-332ddbb3affe"/>
+    <recordKeyType typeId="11752dfc-0e66-465e-9de4-492777bff2ce" valueTypeId="739079c3-8fb2-4ce8-81f2-42e85382d54a"/>
+    <recordType typeId="b78746b9-bc97-4816-98e2-b03a24dfdc6a" valueTypeId="89388692-0dea-449a-92a3-858385d86ce2"/>
+    <recordManagerType typeId="f58c38fa-48a8-499e-a168-032eda09cbb8" valueTypeId="7ad192fd-224b-4015-b87c-799364f98dfe"/>
+  </producedTypes>
+  <name>НастройкиАдресныхСкладов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройки адресных складов</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.НастройкиАдресныхСкладов.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.НастройкиАдресныхСкладов.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="6ec68739-3e7c-406e-990c-711c252cf554">
+    <name>ГлубинаАнализа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Глубина анализа</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество дней, которые учитываются при расчете класса упаковки и расчете показателей прогноза (среднедневного потребления, вероятности отгрузки и т.д.)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:NumberValue">
+      <value>15</value>
+    </fillValue>
+  </resources>
+  <resources uuid="de77169b-36e0-4b04-a781-bc395688036f">
+    <name>МинимальнаяВероятностьОтгрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Прогнозировать расход упаковок с вероятностью отгрузки в течение дня более</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:NumberValue">
+      <value>50</value>
+    </fillValue>
+  </resources>
+  <resources uuid="f7cdb0a8-b19e-4037-83cd-ed78d867bf86">
+    <name>УровеньОбслуживанияУпаковокКлассаX</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обеспечивать покрытие потребности в упаковках класса X с вероятностью</value>
+    </synonym>
+    <type>
+      <types>EnumRef.УровниОбслуживания</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.УровниОбслуживания.EnumValue.УровеньОбслуживания94_5</value>
+    </fillValue>
+  </resources>
+  <resources uuid="321db3e5-ca1d-47db-8b52-a5fef31cd175">
+    <name>УровеньОбслуживанияУпаковокКлассаY</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обеспечивать покрытие потребности в упаковках класса Y с вероятностью</value>
+    </synonym>
+    <type>
+      <types>EnumRef.УровниОбслуживания</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.УровниОбслуживания.EnumValue.УровеньОбслуживания84_0</value>
+    </fillValue>
+  </resources>
+  <resources uuid="e09b0e0a-9c44-4d67-98e6-7a232e80195c">
+    <name>УровеньОбслуживанияУпаковокКлассаZ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обеспечивать покрытие потребности в упаковках класса Z с вероятностью</value>
+    </synonym>
+    <type>
+      <types>EnumRef.УровниОбслуживания</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.УровниОбслуживания.EnumValue.УровеньОбслуживания65_5</value>
+    </fillValue>
+  </resources>
+  <resources uuid="3cf61dc5-41a3-43e8-8224-bb98bc795323">
+    <name>ИспользоватьПрогнозРасходаУпаковок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Прогнозировать расход упаковок</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="63853fec-e30d-4608-b83b-1b6e67f62c15">
+    <name>РегламентноеЗаданиеРасчетаПоказателейПрогноза</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регламентное задание расчета показателей прогноза</value>
+    </synonym>
+    <type>
+      <types>UUID</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="95987b04-2a15-4c9a-88bb-a107d7db05f1">
+    <name>ИспользоватьАдресноеХранение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать адресное хранение</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5ac8e9a6-6c31-4921-a3e1-7cc4edbd7ecb">
+    <name>ИспользоватьАдресноеХранениеСправочно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать адресное хранение справочно</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="908cf90a-6544-4483-a5a0-54732aac020c">
+    <name>ИспользоватьРабочиеУчастки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать рабочие участки</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="206a1ebf-25af-43d9-ad1a-56bead344173">
+    <name>УдалитьРегламентноеЗаданиеСозданиеЗаданийНаПодпитку</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) регламентное задание создание заданий на подпитку</value>
+    </synonym>
+    <type>
+      <types>UUID</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="85c9ed09-882e-4f40-b45d-23b8a9c44c85">
+    <name>РегламентноеЗаданиеСозданиеЗаданийНаОтбор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регламентное задание создание заданий на отбор</value>
+    </synonym>
+    <type>
+      <types>UUID</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2283048c-7a9c-4b66-b5a6-8954c5ae3b31">
+    <name>УдалитьИспользоватьРегламентноеЗаданиеСозданияЗаданийНаПодпитку</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется)  использовать регламентное задание создания заданий на подпитку</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="064b3324-8d07-45dc-b21a-f3cc50ed4fbe">
+    <name>ИспользоватьРегламентноеЗаданиеСозданияЗаданийНаОтбор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать регламентное задание создания заданий на отбор</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="465714fa-be73-4ebc-afb5-a25d230df374">
+    <name>НастройкаФормированияПоРабочимУчасткамОтбор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка формирования по рабочим участкам отбор</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="e3b6f8d1-ce41-478e-8b45-80422dd7bdd5">
+    <name>ОграничиватьПоВесуОтбор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ограничивать по весу отбор</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f427c83f-8d97-4c02-811d-b36c2abc45ab">
+    <name>ОграничиватьПоОбъемуОтбор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ограничивать по объему отбор</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="30798710-eb65-447e-bf4e-aca1681c9238">
+    <name>ОграничениеПоОбъемуОтбор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ограничение по объему отбор</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ed0cccd5-5596-493b-adc3-729d1769ed64">
+    <name>ОграничениеПоВесуОтбор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ограничение по весу отбор</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ba2a97f3-8ae8-42fe-9527-4565fd36149e">
+    <name>РабочийУчастокОтбор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рабочий участок отбор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РабочиеУчастки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="876923f1-92ad-4e61-8a1a-94c9f53817d8">
+    <name>ДатаНачалаАдресногоХраненияОстатков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала адресного хранения остатков</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="6a27b8a9-bec5-44e8-8db2-8b2fed2ce608">
+    <name>РегламентныеЗаданияСозданияЗаданийНаПересчетТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регламентные задания создания заданий на пересчет товаров</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="4ba182c2-6692-4853-b920-6add2db62a77">
+    <name>РегламентныеЗаданияСозданияЗаданийНаПеремещение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регламентные задания создания заданий на перемещение</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="b8302b7c-a527-485e-923a-6230a875dd0e">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d3d052bc-bc8d-4063-b5a0-e00b05ab6628">
+    <name>Помещение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Помещение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СкладскиеПомещения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="71330659-1862-4369-bd51-3fce4940f155">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="672dd953-5532-4369-8251-451d8c830802">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="9c33ba44-8900-4198-a24a-f8eea4ead65d">
+    <name>ФормаНастроекСозданияЗаданийНаПеремещение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создание заданий на перемещение товаров между ячейками</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

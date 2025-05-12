@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2449de66-5130-4c6a-b220-80786135b66f">
+  <name>ПроверитьНомерДокументаПоДатеОрганизацииКассовойКниге</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить номер документа по дате организации кассовой книге</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.РасходныйКассовыйОрдер</types>
+    <types>DocumentObject.ИнвентаризацияНаличныхДенежныхСредств</types>
+    <types>DocumentObject.ЛистКассовойКниги</types>
+    <types>DocumentObject.ПриходныйКассовыйОрдер</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ДенежныеСредстваСервер.ПроверитьНомерДокументаПоДатеОрганизацииКассовойКнигеПередЗаписью</handler>
+</mdclass:EventSubscription>

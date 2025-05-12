@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Номенклатура</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Характеристика</dataPath>
+			<field>Характеристика</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Характеристика</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>GTIN</dataPath>
+			<field>GTIN</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>GTIN</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Штрихкод</dataPath>
+			<field>Штрихкод</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код маркировки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ШаблонЭтикетки</dataPath>
+			<field>ШаблонЭтикетки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон этикетки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КодМаркировки</dataPath>
+			<field>КодМаркировки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код маркировки (без криптохвоста)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерВГруппе</dataPath>
+			<field>НомерВГруппе</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер короба</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ПоляGS1</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификаторы применения GS1</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ПоляSSCC</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поля SSCC</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПоляSSCC.КонтрольноеЧисло</dataPath>
+			<field>КонтрольноеЧисло</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрольное число</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПоляSSCC.ПрефиксКомпанииGS1</dataPath>
+			<field>ПрефиксКомпанииGS1</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Префикс компании GS1</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПоляSSCC.ЦифраРасширения</dataPath>
+			<field>ЦифраРасширения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цифра расширения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПоляSSCC.СерийныйНомерSSCC</dataPath>
+			<field>СерийныйНомерSSCC</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Серийный номер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СодержимоеКоличество</dataPath>
+			<field>СодержимоеКоличество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество внутри</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокГодности</dataPath>
+			<field>СрокГодности</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПредставлениеНоменклатуры</dataPath>
+			<field>ПредставлениеНоменклатуры</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ИсходныеДанные.Номенклатура КАК Номенклатура,
+	ИсходныеДанные.Характеристика КАК Характеристика,
+	ИсходныеДанные.ШаблонЭтикетки КАК ШаблонЭтикетки,
+	ИсходныеДанные.Штрихкод КАК Штрихкод,
+	ИсходныеДанные.КодМаркировки КАК КодМаркировки,
+	ИсходныеДанные.GTIN КАК GTIN,
+	ИсходныеДанные.ПредставлениеНоменклатуры КАК ПредставлениеНоменклатуры,
+	ИсходныеДанные.СрокГодности КАК СрокГодности,
+	ИсходныеДанные.Порядок КАК Порядок,
+	ИсходныеДанные.НомерВГруппе КАК НомерВГруппе,
+	ИсходныеДанные.СодержимоеКоличество КАК СодержимоеКоличество,
+	ИсходныеДанные.Количество КАК Количество,
+	ИсходныеДанные.ЦифраРасширения,
+	ИсходныеДанные.ПрефиксКомпанииGS1,
+	ИсходныеДанные.СерийныйНомерSSCC,
+	ИсходныеДанные.КонтрольноеЧисло
+ПОМЕСТИТЬ ИсходныеДанные
+ИЗ
+	(ВЫБРАТЬ
+		0 КАК Количество,
+		0 КАК НомерВГруппе,
+		0 КАК СодержимоеКоличество,
+		"" КАК Штрихкод,
+		"" КАК КодМаркировки,
+		"" КАК GTIN,
+		"" КАК ПредставлениеНоменклатуры,
+		"" КАК СрокГодности,
+		0 КАК ЦифраРасширения,
+		0 КАК ПрефиксКомпанииGS1,
+		0 КАК СерийныйНомерSSCC,
+		0 КАК КонтрольноеЧисло,
+		ЗНАЧЕНИЕ(Справочник.Номенклатура.ПустаяСсылка) КАК Номенклатура,
+		ЗНАЧЕНИЕ(Справочник.ХарактеристикиНоменклатуры.ПустаяСсылка) КАК Характеристика,
+		ЗНАЧЕНИЕ(Справочник.ШаблоныЭтикетокИЦенников.ПустаяСсылка) КАК ШаблонЭтикетки,
+		0 КАК Порядок) КАК ИсходныеДанные
+;
+////////////////////////////////////////////////////////////////////////////////
+ ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ИсходныеДанныеПоследнийЗапрос.Штрихкод КАК Штрихкод,
+	ИсходныеДанныеПоследнийЗапрос.КодМаркировки КАК КодМаркировки,
+	ИсходныеДанныеПоследнийЗапрос.GTIN КАК GTIN,
+	ИсходныеДанныеПоследнийЗапрос.ПредставлениеНоменклатуры КАК ПредставлениеНоменклатуры,
+	ИсходныеДанныеПоследнийЗапрос.СрокГодности КАК СрокГодности,
+	ИсходныеДанныеПоследнийЗапрос.Номенклатура КАК Номенклатура,
+	ИсходныеДанныеПоследнийЗапрос.Характеристика КАК Характеристика,
+	ИсходныеДанныеПоследнийЗапрос.ШаблонЭтикетки КАК ШаблонЭтикетки,
+	ИсходныеДанныеПоследнийЗапрос.Порядок КАК Порядок,
+	ИсходныеДанныеПоследнийЗапрос.НомерВГруппе КАК НомерВГруппе,
+	ИсходныеДанныеПоследнийЗапрос.СодержимоеКоличество КАК СодержимоеКоличество,
+	ИсходныеДанныеПоследнийЗапрос.Количество КАК Количество,
+	ИсходныеДанныеПоследнийЗапрос.ЦифраРасширения КАК ЦифраРасширения,
+	ИсходныеДанныеПоследнийЗапрос.ПрефиксКомпанииGS1 КАК ПрефиксКомпанииGS1,
+	ИсходныеДанныеПоследнийЗапрос.СерийныйНомерSSCC КАК СерийныйНомерSSCC,
+	ИсходныеДанныеПоследнийЗапрос.КонтрольноеЧисло КАК КонтрольноеЧисло
+{ВЫБРАТЬ
+	Штрихкод,
+	КодМаркировки,
+	НомерВГруппе,
+	СодержимоеКоличество,
+	GTIN,
+	ПредставлениеНоменклатуры,
+	СрокГодности,
+	Номенклатура.*,
+	Характеристика.*,
+	ШаблонЭтикетки.*,
+	Количество,
+	ЦифраРасширения,
+	ПрефиксКомпанииGS1,
+	СерийныйНомерSSCC,
+	КонтрольноеЧисло}
+ИЗ
+	ИсходныеДанные КАК ИсходныеДанныеПоследнийЗапрос
+{ГДЕ
+	ИсходныеДанныеПоследнийЗапрос.Номенклатура.* КАК Номенклатура}
+УПОРЯДОЧИТЬ ПО
+	ИсходныеДанныеПоследнийЗапрос.Порядок</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

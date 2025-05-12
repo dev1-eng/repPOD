@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2452953b-69ec-477a-8724-2149efa064f9">
+  <producedTypes>
+    <objectType typeId="208d126a-1cc3-4804-8243-eaec7e9ba806" valueTypeId="0f70a286-72d6-4578-ac03-b399ca2ef310"/>
+    <managerType typeId="afe46979-b3b7-4dcb-bc02-c688998e8e5a" valueTypeId="667b8b3e-6ed5-4b14-9839-d0db66d834d1"/>
+  </producedTypes>
+  <name>ПомощникФормированияСкладскихДокументовПоВыводуИзАссортимента</name>
+  <synonym>
+    <key>ru</key>
+    <value>Помощник формирования складских документов по выводу из ассортимента</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ПомощникФормированияСкладскихДокументовПоВыводуИзАссортимента.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="d8122dcc-55be-49fb-abad-6b98619e1cb8">
+    <name>ДокументОснование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ основание</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ИзменениеАссортимента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7e0e8cb7-4ccc-44b3-ad14-b0db54813ea7">
+    <name>ВидСоздаваемыхДокументов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид создаваемых документов</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="34e318f3-5549-4c55-96fe-097416d36065">
+    <name>ОбработкаВыполнена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обработка выполнена</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="3865d963-1107-478c-b9e8-89beb7e3d790">
+    <producedTypes>
+      <objectType typeId="b0f47d29-1796-45e2-b464-b7aba7558872" valueTypeId="c2dfd184-580a-40d4-a33f-e66353a76439"/>
+      <rowType typeId="47e01f0d-e40f-407f-ac7a-08638619b735" valueTypeId="78b68876-1c52-487d-9e37-d70db10b23aa"/>
+    </producedTypes>
+    <name>ЗаказыНаВнутреннееПотребление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы на внутреннее потребление</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="42dc0bff-bc20-450e-ac27-8948ec6883b8">
+      <name>Склад</name>
+      <synonym>
+        <key>ru</key>
+        <value>Склад</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Склады</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d9696937-f80d-42ed-8b8b-1c5e919dbde3">
+      <name>ЗаказНаВнутреннееПотребление</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ на внутреннее потребление</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <types>DocumentRef.ЗаказНаВнутреннееПотребление</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="7559e3df-78e8-4153-9e97-d3de6be72d8a">
+    <producedTypes>
+      <objectType typeId="0d1b88a6-a74f-4de1-8a1e-c5ed6a162020" valueTypeId="c6120898-e14c-4ae6-9f1c-6567fc1c42ea"/>
+      <rowType typeId="f3fc430f-bf93-40e2-bbac-6dc0d52f2122" valueTypeId="668b05d5-4be2-4a9e-ad95-618b23be68ef"/>
+    </producedTypes>
+    <name>ЗаказыНаПеремещениеТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы на перемещение товаров</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="a998f7a0-ad88-4496-8be2-43e9f202f837">
+      <name>Склад</name>
+      <synonym>
+        <key>ru</key>
+        <value>Склад отправитель</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Склады</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2e85cdcb-a173-4ba7-bf75-f4132763a10d">
+      <name>СкладПолучатель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Склад получатель</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Склады</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ba9501e6-8b5c-40d5-9f89-0a037b360187">
+      <name>ЗаказНаПеремещение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ на перемещение</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <types>DocumentRef.ЗаказНаПеремещение</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="6d080a36-b458-4c17-bda7-95edaf92f3fc">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

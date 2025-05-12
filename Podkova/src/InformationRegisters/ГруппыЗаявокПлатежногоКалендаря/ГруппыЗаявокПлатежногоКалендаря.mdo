@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bb07d62e-3bb0-4898-9fcb-6db6ad6002e3">
+  <producedTypes>
+    <selectionType typeId="7d62f25f-4269-4064-bed5-a0a2ee8c3a86" valueTypeId="46e675df-8aee-47b4-970e-f7ca4b21e183"/>
+    <listType typeId="6ab7ddba-5615-41e4-a91f-ecce2b3e6cad" valueTypeId="1e796efe-4dd1-4f44-ba6d-9d1f24fd8cc9"/>
+    <managerType typeId="a4bf0ff1-2d49-4856-b5be-0d30f42bef0d" valueTypeId="eafd040d-d24a-4c32-b6c7-7618e24ae913"/>
+    <recordSetType typeId="127e4a3f-4f9f-484a-b6d9-fba0968554fc" valueTypeId="37518921-be81-46c0-a044-f745748bdff6"/>
+    <recordKeyType typeId="074b21f5-c8e4-42c7-939c-69727770507c" valueTypeId="85c48372-e258-4959-84c6-d9dbc83e83a5"/>
+    <recordType typeId="e9454bf3-7fd8-466a-b007-492635b53398" valueTypeId="325a212e-0aa1-460a-8326-f7085a21a0b9"/>
+    <recordManagerType typeId="326167fa-0704-4946-899c-56abdb60a83b" valueTypeId="d479e956-7c4f-4936-828d-5396cb5831f9"/>
+  </producedTypes>
+  <name>ГруппыЗаявокПлатежногоКалендаря</name>
+  <synonym>
+    <key>ru</key>
+    <value>Группы заявок платежного календаря</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="ef30d6e2-b925-44cd-b5b4-1732bcf06055">
+    <name>Группа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группа</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="cb7ce4ed-7275-439f-84f5-aae772c902ad">
+    <name>ДатаНазначения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата назначения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <dimensions uuid="f35260c5-f4ef-4f87-9000-962970ef57fa">
+    <name>ЗаявкаНаРасходованиеДенежныхСредств</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка на расходование денежных средств</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+      <types>DocumentRef</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

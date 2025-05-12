@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1beaafd4-9e83-4fef-a24b-2ed1ba072beb">
+  <producedTypes>
+    <selectionType typeId="6b56376c-e899-4284-b0dd-cb5496e85b9c" valueTypeId="9a33eecc-a8cf-48da-aa37-9426b2ec6c21"/>
+    <listType typeId="fe4340ac-a14b-4273-a4d9-4e951056e05d" valueTypeId="8a0358bf-ba0d-4361-afd9-ff6aa2f460f0"/>
+    <managerType typeId="470ebe14-804b-4a6b-8afd-ca3e64b6e782" valueTypeId="c6a94d9c-39be-4d57-a78d-6dfa9bc68340"/>
+    <recordSetType typeId="bdd87194-60dc-4e85-bcba-a1d80702240b" valueTypeId="142b84b5-73df-4ed5-bc2c-377e243e7c74"/>
+    <recordKeyType typeId="c21ff640-999a-44a1-88ea-2629ca4c1dc5" valueTypeId="a150dcd6-e007-4a30-ada5-af6d2ce28cfa"/>
+    <recordType typeId="4dc63413-d7fb-4b56-80de-f30b54d3a9fe" valueTypeId="e5a1f49d-14c7-473c-82d4-28fefae55ff0"/>
+  </producedTypes>
+  <name>ДвиженияСерийТоваров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Движения серий товаров</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="3ac7b0d7-bb5e-4658-8f25-c6fcd64025ce">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="c0d120e9-7ff3-481b-9744-9fcd3fefabfc">
+    <name>Серия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СерииНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <field>AccumulationRegister.ДвиженияСерийТоваров.Dimension.Номенклатура</field>
+    </choiceParameterLinks>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="dbc39670-ee82-4e26-844b-f35d4c1c5544">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="139b3d05-8733-431a-a4d7-5187579bfb8d">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <field>AccumulationRegister.ДвиженияСерийТоваров.Dimension.Номенклатура</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="2774a29e-72ce-4444-81c2-e8f618a12c3d">
+    <name>Назначение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Назначения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <field>AccumulationRegister.ДвиженияСерийТоваров.Dimension.Номенклатура</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="6efe3d1d-a930-4197-8190-e7d9cc757cb1">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ВнутреннееПотреблениеТоваров</types>
+      <types>DocumentRef.АктОРасхожденияхПослеПеремещения</types>
+      <types>DocumentRef.РасходныйОрдерНаТовары</types>
+      <types>DocumentRef.АктОРасхожденияхПослеОтгрузки</types>
+      <types>DocumentRef.ИсходящаяТранспортнаяОперацияВЕТИС</types>
+      <types>DocumentRef.ТТНВходящаяЕГАИС</types>
+      <types>DocumentRef.ВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.ПриобретениеТоваровУслуг</types>
+      <types>DocumentRef.ЧекККМВозврат</types>
+      <types>DocumentRef.ЗапросСкладскогоЖурналаВЕТИС</types>
+      <types>DocumentRef.ПроизводственнаяОперацияВЕТИС</types>
+      <types>DocumentRef.ЧекЕГАИСВозврат</types>
+      <types>DocumentRef.ЗаказПоставщику</types>
+      <types>DocumentRef.ВходящаяТранспортнаяОперацияВЕТИС</types>
+      <types>DocumentRef.ВозвратТоваровПоставщику</types>
+      <types>DocumentRef.ОрдерНаОтражениеПересортицыТоваров</types>
+      <types>DocumentRef.АктОРасхожденияхПослеПриемки</types>
+      <types>DocumentRef.ЧекЕГАИС</types>
+      <types>DocumentRef.ПеремаркировкаТоваровГИСМ</types>
+      <types>DocumentRef.КорректировкаИзлишковНедостачПоТоварнымМестам</types>
+      <types>DocumentRef.ТТНИсходящаяЕГАИС</types>
+      <types>DocumentRef.ВводОстатков</types>
+      <types>DocumentRef.ЧекККМКоррекции</types>
+      <types>DocumentRef.ПоступлениеТоваровНаСклад</types>
+      <types>DocumentRef.АктПостановкиНаБалансЕГАИС</types>
+      <types>DocumentRef.МаркировкаТоваровГИСМ</types>
+      <types>DocumentRef.ОрдерНаОтражениеИзлишковТоваров</types>
+      <types>DocumentRef.ЗаявкаНаВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.СписаниеНедостачТоваров</types>
+      <types>DocumentRef.ПеремещениеТоваров</types>
+      <types>DocumentRef.ОрдерНаОтражениеНедостачТоваров</types>
+      <types>DocumentRef.ОрдерНаОтражениеПорчиТоваров</types>
+      <types>DocumentRef.ЗаказНаСборку</types>
+      <types>DocumentRef.ИнвентаризацияПродукцииВЕТИС</types>
+      <types>DocumentRef.АктСписанияЕГАИС</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.КорректировкаПоОрдеруНаТовары</types>
+      <types>DocumentRef.ПересортицаТоваров</types>
+      <types>DocumentRef.ПересчетТоваров</types>
+      <types>DocumentRef.ОтчетОРозничныхПродажах</types>
+      <types>DocumentRef.ЗаказНаПеремещение</types>
+      <types>DocumentRef.ОприходованиеИзлишковТоваров</types>
+      <types>DocumentRef.ЧекККМ</types>
+      <types>DocumentRef.ВозвратТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.СборкаТоваров</types>
+      <types>DocumentRef.ПередачаВРегистр2ЕГАИС</types>
+      <types>DocumentRef.ОтборРазмещениеТоваров</types>
+      <types>DocumentRef.ПередачаТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.ПриходныйОрдерНаТовары</types>
+      <types>DocumentRef.ПрочееОприходованиеТоваров</types>
+      <types>DocumentRef.ЗаказНаВнутреннееПотребление</types>
+      <types>DocumentRef.ЗаказКлиента</types>
+      <types>DocumentRef.ВозвратИзРегистра2ЕГАИС</types>
+      <types>DocumentRef.ОрдерНаПеремещениеТоваров</types>
+      <types>DocumentRef.ПорчаТоваров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="d26b7a42-dbc1-442f-9a6d-8a7cc31b86a5">
+    <name>Отправитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+      <types>CatalogRef.Партнеры</types>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="f5bbe64b-6d52-4f8b-8a01-53a0745f1439">
+    <name>ПомещениеОтправителя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Помещение отправителя</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СкладскиеПомещения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>AccumulationRegister.ДвиженияСерийТоваров.Dimension.Отправитель</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="c922f830-b615-456e-9f4d-adca3f0895f1">
+    <name>СкладскаяОперация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Складская операция</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СкладскиеОперации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="4efdf53d-645f-4129-98e8-79287fc619f0">
+    <name>Получатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получатель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+      <types>CatalogRef.СтруктураПредприятия</types>
+      <types>CatalogRef.Партнеры</types>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Куда пришла серия номенклатуры</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="c9124565-7b2c-4e75-a527-1cc65b698123">
+    <name>ПомещениеПолучателя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Помещение получателя</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СкладскиеПомещения</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Определяет помещение, если серия пришла на склад</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>AccumulationRegister.ДвиженияСерийТоваров.Dimension.Получатель</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="d3703b3c-6ce6-418e-87ec-77ccf3768cf2">
+    <name>ХарактеристикаПолучателя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика получателя</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <field>AccumulationRegister.ДвиженияСерийТоваров.Dimension.Номенклатура</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="1024d3a9-d708-4665-8812-bcd572b0d993">
+    <name>ЭтоСкладскоеДвижение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это складское движение</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Если используется ордерная схема, то для ордера Истина, а для накладных Ложь</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+</mdclass:AccumulationRegister>

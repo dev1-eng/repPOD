@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a9440ea3-b47c-426d-a89f-6f8d30e08460">
+  <producedTypes>
+    <selectionType typeId="4b97a956-8ca1-4b5d-989b-db9fcbf95e48" valueTypeId="0cf8221e-e2d6-4c77-bd96-5afab8d6eb41"/>
+    <listType typeId="300b4d0e-2bd9-4d8c-993f-d65948b44d9a" valueTypeId="1d44dbdb-b516-4865-a32b-87b279cf9348"/>
+    <managerType typeId="377d2790-c7f9-4921-8875-5cbce0a1cbc8" valueTypeId="633d76db-0e40-4759-8c1b-be4bc8807fc4"/>
+    <recordSetType typeId="5745879f-d856-4f4c-b89a-76fb8c7fe1bb" valueTypeId="281656b2-3331-4d99-b9ef-dea1d1d80b25"/>
+    <recordKeyType typeId="89866c76-da83-4088-9b6b-7ed550e41805" valueTypeId="87f4a53d-108d-48cc-ae88-14719cd6956b"/>
+    <recordType typeId="5e5d04d0-591e-424b-b83a-61110ade4d6f" valueTypeId="df3d933c-a220-4116-b14a-3f7fe9828fa4"/>
+    <recordManagerType typeId="be0fdfdd-d3c0-44c0-b97b-ddec7a1ec070" valueTypeId="298499be-861a-41aa-85a5-619982f66102"/>
+  </producedTypes>
+  <name>ШМ_НоменклатураПрофессии</name>
+  <synonym>
+    <key>ru</key>
+    <value>ШМ номенклатура и профессии</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="00ea2464-4dce-4950-a836-d26e788d39ab">
+    <name>ВидОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид оплаты</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ШМ_ВидОплатыЗаРаботу</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3a8357cc-6872-4f0f-bb06-0bd3cc2386dd">
+    <name>РазмерОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Размер оплаты</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d5324ee2-aa07-4850-83ba-a09b189a8c12">
+    <name>МатериальныйВычет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Материальный вычет</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="bf9186cd-5659-4438-b10b-139332fa6c64">
+    <name>Материал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Материал</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="990b5ac6-6c22-4689-bdb6-7b5dc6115eec">
+    <name>ИспГрузики</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исп грузики</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ab1d3a48-7e74-47b5-aca8-6ca85c4d6011">
+    <name>Дископравка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дископравка</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ШМ_Дископравка</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ШМ_Дископравка.EmptyRef</value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="978ccf66-2c65-4776-b721-e8c9abd8c839">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="79791490-2cdc-428b-a002-5f0ee36a8b44">
+    <name>Профессия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Профессия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ШМ_Должности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

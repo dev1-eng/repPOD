@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4f82c31e-bd7d-45e4-8f7d-1b310f4e0250">
+  <name>ПередЗаписьюКурсовВалют</name>
+  <synonym>
+    <key>ru</key>
+    <value>Перед записью курсов валют</value>
+  </synonym>
+  <comment>Выгружает в менеджер временных таблиц исходное состояние регистра. Используется в подписке на события ПроверитьНеобходимостьПереоценкиДенежныхСредств.</comment>
+  <source>
+    <types>InformationRegisterRecordSet.КурсыВалют</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ЗакрытиеМесяцаСервер.СчитатьКурсыВалютПередЗаписью</handler>
+</mdclass:EventSubscription>

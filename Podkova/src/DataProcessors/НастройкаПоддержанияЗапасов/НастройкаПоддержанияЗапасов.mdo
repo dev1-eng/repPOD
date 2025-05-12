@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f82eb591-8e69-4d56-8312-281c23a2a0a8">
+  <producedTypes>
+    <objectType typeId="b54f858b-ad01-43ff-bf27-458188c16965" valueTypeId="a2b52bba-6349-4a76-9380-ebc1c9a4d86d"/>
+    <managerType typeId="ccc72be0-56ae-4c31-abac-81fb0b3de2a8" valueTypeId="32197a01-2be1-4e25-8fbd-5f893bb1823a"/>
+  </producedTypes>
+  <name>НастройкаПоддержанияЗапасов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройка поддержания запасов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.НастройкаПоддержанияЗапасов.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="c1ee8c14-b7f0-4afd-8f66-7d2231677503">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d19d2987-ed6c-4f07-95d8-73ef21b58f97">
+    <name>Формат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Формат магазина (склада)</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФорматыМагазинов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="31f78cd7-56b6-4f71-a671-49e7dd02f6e5">
+    <name>ТоварнаяКатегория</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товарная категория</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТоварныеКатегории</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="720737d0-9f0b-4ea2-a239-3c8d00e3cf39">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="247db5a0-4cf2-41cb-b6b4-da2e41a7154f">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <changeMode>DontChange</changeMode>
+      <field>DataProcessor.НастройкаПоддержанияЗапасов.Attribute.Номенклатура</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="b61895c5-938d-4d1b-a87a-49b3c0b0b830">
+    <name>ИзменениеАссортимента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменение ассортимента</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ИзменениеАссортимента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="57bd4578-6c60-48ec-b050-8340cde40e7c">
+    <name>СегментНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сегмент номенклатуры</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СегментыНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.СпособФормирования</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.СпособыФормированияСегментов.EnumValue.ПериодическиОбновлять</value>
+      </value>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Отбор.СпособФормирования1</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.СпособыФормированияСегментов.EnumValue.ФормироватьВручную</value>
+      </value>
+    </choiceParameters>
+  </attributes>
+  <forms uuid="764d91cb-1431-4dbb-919c-227a50094c56">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Параметры обеспечения потребностей</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="9886e222-bda0-4088-9719-75df0d98f657">
+    <name>НастройкаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="80c36b55-9c38-4cca-9279-100e6cc5b828">
+    <name>НастройкаПараметровРасчетаСреднедневногоПотребления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка параметров расчета среднедневного потребления</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="ad7d98a6-a857-4562-a8df-b27291e9b968">
+    <name>НастройкаПоддержанияЗапасов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка поддержания запасов</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

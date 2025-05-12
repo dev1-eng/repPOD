@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="60c3d5b3-5fa0-4b44-bcfe-43738fe83763">
+  <name>ОповещенияКлиентамПриЗаписиРегистры</name>
+  <synonym>
+    <key>ru</key>
+    <value>Оповещения клиентам при записи регистры</value>
+  </synonym>
+  <source>
+    <types>AccumulationRegisterRecordSet.БонусныеБаллы</types>
+    <types>InformationRegisterRecordSet.СостоянияЗаказовКлиентов</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.РассылкиИОповещенияКлиентам.ИсточникОповещенияПриЗаписиРегистры</handler>
+</mdclass:EventSubscription>

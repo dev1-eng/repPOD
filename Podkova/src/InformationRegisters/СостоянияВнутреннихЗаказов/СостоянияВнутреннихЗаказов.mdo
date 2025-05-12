@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="277b37d7-a269-40fb-aacf-5623068eb05b">
+  <producedTypes>
+    <selectionType typeId="f7329ec0-9e93-4258-82c1-61f5871443a3" valueTypeId="779c4ad2-d3c3-4b13-b6e3-dac48f3c3a3c"/>
+    <listType typeId="04280560-08f2-45aa-ba0e-696d66991d50" valueTypeId="fc36aea4-9649-42d8-b380-cfa88517134c"/>
+    <managerType typeId="f590342c-4f6d-4cff-93f6-d343e2d5d3f3" valueTypeId="9c0c0048-01fe-45e2-b24e-889377013e8c"/>
+    <recordSetType typeId="6097e018-dbb8-46a9-bce9-ef29f3fd2bb0" valueTypeId="7b114b69-d3b2-4590-825c-77ad344ce5bf"/>
+    <recordKeyType typeId="903051c1-83e9-44af-a079-dcdaad18ffc1" valueTypeId="d1fb1a02-c699-4d48-b2da-7604b2f8dd66"/>
+    <recordType typeId="96787a82-3ce0-489a-b685-e7a2d2384594" valueTypeId="85bb3e7c-7dd0-4dea-bac4-81fefa04d907"/>
+    <recordManagerType typeId="37390b53-4d64-4cd0-aff6-29a03ac42c43" valueTypeId="31e2e436-3d81-408a-bc0b-e9b582281d98"/>
+  </producedTypes>
+  <name>СостоянияВнутреннихЗаказов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состояния внутренних заказов</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.СостоянияВнутреннихЗаказов.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="dad22ae3-6a2a-46b3-8192-aa5a61e17306">
+    <name>Состояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СостоянияВнутреннихЗаказов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Текущее состояние заказа</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="e8733e26-ffd4-4f99-b9c9-3d3d464a4463">
+    <name>ЕстьРасхожденияОрдерНакладная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Есть расхождения ордер накладная</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="7b2b5c5d-1e84-4b7f-a8f3-b71e0e30a565">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказНаСборку</types>
+      <types>DocumentRef.ЗаказНаПеремещение</types>
+      <types>DocumentRef.ЗаказНаВнутреннееПотребление</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="36d2e448-bef5-471b-978d-808957d418b3">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1d8e4d06-ed65-41b2-b9b6-17df47e650c4">
+  <producedTypes>
+    <selectionType typeId="ad79da5f-1778-49d0-be95-92abdec79df1" valueTypeId="f03607cb-4e5a-4e09-8ca3-30c73c43f970"/>
+    <listType typeId="d986e025-4255-4b08-86ea-799a98d43ab0" valueTypeId="333905a0-7876-4cec-a4e9-338b72be9fcd"/>
+    <managerType typeId="c9795185-beda-4cc7-83ca-e4e052a84250" valueTypeId="65d53ca0-fba3-4089-a7b1-0ca4a4d7c583"/>
+    <recordSetType typeId="ebfdbad8-dd7c-4f79-8cc5-88da7cf0e57f" valueTypeId="a4d6ef69-1d8c-4cd0-86e6-0103d53fd82e"/>
+    <recordKeyType typeId="afc0e19a-df44-438a-b950-66557bb60bfc" valueTypeId="0da8fbc2-1e81-4e1a-8798-5c80ec7db8b3"/>
+    <recordType typeId="68ccc73e-5b1f-47f4-b5af-ebbc9dfdfb08" valueTypeId="8e8ef4fe-412b-4f7d-bf6d-81e78982e0c9"/>
+    <recordManagerType typeId="d9807029-9323-45ad-94a1-958b4e9ac760" valueTypeId="219b058b-ead4-4a0b-a809-a317c39c413c"/>
+  </producedTypes>
+  <name>ИерархияПартнеров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Иерархия партнеров</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="e26ec919-0f39-4a67-bcb3-a0a89be094fe">
+    <name>Уровень</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уровень</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Уровень иерархии, на котором находится родитель партнера</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="334d6b18-7cc6-4de4-aefd-a02ca8874375">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Партнер для которого записана иерархия</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="20d4baa2-0bb4-48f2-b6cd-ddc9dbfe2dcd">
+    <name>Родитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Родитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Родитель партнера согласно иерархии</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>
